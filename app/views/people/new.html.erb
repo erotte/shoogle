@@ -1,0 +1,27 @@
+<h1>New entry</h1>
+
+<% form_for(@entry) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_email %><br />
+    <%= f.text_field :user_email %>
+  </p>
+  <p>
+    <%= f.label :shoe1_id %><br />
+    <%= f.text_field :shoe1_id %>
+  </p>
+  <p>
+    <%= f.label :shoe2_id %><br />
+    <%= f.text_field :shoe2_id %>
+  </p>
+  <p>
+    <%= f.label :shoe3_id %><br />
+    <%= f.text_field :shoe3_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', entries_path %>

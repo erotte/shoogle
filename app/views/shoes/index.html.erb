@@ -1,0 +1,24 @@
+<h1>Listing shoes</h1>
+
+<table>
+  <tr>
+    <th>Manufacturer</th>
+    <th>Model</th>
+    <th>Size</th>
+  </tr>
+
+<% @shoes.each do |shoe| %>
+  <tr>
+    <td><%=h shoe.manufacturer %></td>
+    <td><%=h shoe.model %></td>
+    <td><%=h shoe.size %></td>
+    <td><%= link_to 'Show', shoe %></td>
+    <td><%= link_to 'Edit', edit_shoe_path(shoe) %></td>
+    <td><%= link_to 'Destroy', shoe, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New shoe', new_shoe_path %>
