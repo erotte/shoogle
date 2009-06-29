@@ -8,14 +8,14 @@
     <th>Shoe3</th>
   </tr>
 
-<% @entries.each do |entry| %>
+<% @people.each do |person| %>
   <tr>
-    <td><%=h entry.user_email %></td>
-    <td><%=h entry.shoe1_id %></td>
-    <td><%=h entry.shoe2_id %></td>
-    <td><%=h entry.shoe3_id %></td>
-    <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+    <td><%=h person.user_email %></td>
+    <td><%=h person.shoe1_id %></td>
+    <td><%=h person.shoe2_id %></td>
+    <td><%=h person.shoe3_id %></td>
+    <td><%= link_to 'Show', person %></td>
+    <td><%= link_to 'Edit', edit_person_path(person) %></td>
     <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -23,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New entry', new_entry_path %>
+<%= link_to 'New entry' %>

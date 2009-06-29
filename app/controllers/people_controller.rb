@@ -1,84 +1,84 @@
 class PeopleController < ApplicationController
-  # GET /entries
-  # GET /entries.xml
+  # GET /people
+  # GET /people.xml
   def index
-    @entries = Entry.all
+    @people = Person.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @entries }
+      format.xml  { render :xml => @people }
     end
   end
 
-  # GET /entries/1
-  # GET /entries/1.xml
+  # GET /people/1
+  # GET /people/1.xml
   def show
-    @entry = Entry.find(params[:id])
+    @person = Person.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @entry }
+      format.xml  { render :xml => @person }
     end
   end
 
-  # GET /entries/new
-  # GET /entries/new.xml
+  # GET /people/new
+  # GET /people/new.xml
   def new
-    @entry = Entry.new
+    @person = Person.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @entry }
+      format.xml  { render :xml => @person }
     end
   end
 
-  # GET /entries/1/edit
+  # GET /people/1/edit
   def edit
-    @entry = Entry.find(params[:id])
+    @person = Person.find(params[:id])
   end
 
-  # POST /entries
-  # POST /entries.xml
+  # POST /people
+  # POST /people.xml
   def create
-    @entry = Entry.new(params[:entry])
+    @person = Person.new(params[:entry])
 
     respond_to do |format|
-      if @entry.save
-        flash[:notice] = 'Entry was successfully created.'
-        format.html { redirect_to(@entry) }
-        format.xml  { render :xml => @entry, :status => :created, :location => @entry }
+      if @person.save
+        flash[:notice] = 'People was successfully created.'
+        format.html { redirect_to(@person) }
+        format.xml  { render :xml => @person, :status => :created, :location => @person }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @entry.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @person.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /entries/1
-  # PUT /entries/1.xml
+  # PUT /people/1
+  # PUT /people/1.xml
   def update
-    @entry = Entry.find(params[:id])
+    @person = People.find(params[:id])
 
     respond_to do |format|
-      if @entry.update_attributes(params[:entry])
-        flash[:notice] = 'Entry was successfully updated.'
-        format.html { redirect_to(@entry) }
+      if @person.update_attributes(params[:entry])
+        flash[:notice] = 'People was successfully updated.'
+        format.html { redirect_to(@person) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @entry.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @person.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /entries/1
-  # DELETE /entries/1.xml
+  # DELETE /people/1
+  # DELETE /people/1.xml
   def destroy
-    @entry = Entry.find(params[:id])
-    @entry.destroy
+    @person = People.find(params[:id])
+    @person.destroy
 
     respond_to do |format|
-      format.html { redirect_to(entries_url) }
+      format.html { redirect_to(people_url) }
       format.xml  { head :ok }
     end
   end

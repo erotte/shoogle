@@ -1,23 +1,23 @@
 <p>
   <b>User email:</b>
-  <%=h @entry.user_email %>
+  <%=h @person.user_email %>
 </p>
 
 <p>
   <b>Shoe1:</b>
-  <%=h @entry.shoe1_id %>
+  <%=h @person.shoe1_id %>
 </p>
 
 <p>
   <b>Shoe2:</b>
-  <%=h @entry.shoe2_id %>
+  <%=h @person.shoe2_id %>
 </p>
 
 <p>
   <b>Shoe3:</b>
-  <%=h @entry.shoe3_id %>
+  <%=h @person.shoe3_id %>
 </p>
 
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Edit', edit_entry_path(@person) %> |
 <%= link_to 'Back', entries_path %>
