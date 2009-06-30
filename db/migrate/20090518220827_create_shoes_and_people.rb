@@ -7,7 +7,7 @@ class CreateShoesAndPeople < ActiveRecord::Migration
       t.integer :user_id
       t.timestamps
     end
-    create_table :people, :force => true do |t|
+    create_table :feet, :force => true do |t|
       t.string :email
       t.timestamps
     end

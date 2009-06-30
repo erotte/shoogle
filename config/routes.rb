@@ -1,6 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :entries
+  map.resources :feet
 
+  map.resources :shoes
+
+  map.resources :feet
   map.resources :shoes
 
   # The priority is based upon order of creation: first created -> highest priority.

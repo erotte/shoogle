@@ -738,3 +738,633 @@ Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 00:45:33) [GET]
 Rendering template within layouts/shoes
 Rendering shoes/index
 Completed in 162ms (View: 115, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 00:51:18) [GET]
+  [4;36;1mShoe Load (3.0ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 82ms (View: 71, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ShoesController#edit (for 127.0.0.1 at 2009-06-30 00:51:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 3) [0m
+Rendering template within layouts/shoes
+Rendering shoes/edit
+Completed in 38ms (View: 29, DB: 1) | 200 OK [http://localhost/shoes/3/edit]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 00:51:23) [GET]
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#new (for 127.0.0.1 at 2009-06-30 00:51:25) [GET]
+Rendering template within layouts/shoes
+Rendering shoes/new
+Completed in 38ms (View: 32, DB: 0) | 200 OK [http://localhost/shoes/new]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 00:51:31) [GET]
+  [4;35;1mShoe Load (0.8ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 01:01:44) [GET]
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#new (for 127.0.0.1 at 2009-06-30 01:04:51) [GET]
+Rendering template within layouts/shoes
+Rendering shoes/new
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/shoes/new]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 01:04:54) [GET]
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 19:29:36) [GET]
+  [4;36;1mShoe Load (0.8ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 77ms (View: 70, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ShoesController#edit (for 127.0.0.1 at 2009-06-30 19:29:39) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 3) [0m
+Rendering template within layouts/shoes
+Rendering shoes/edit
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/shoes/3/edit]
+
+
+Processing ShoesController#show (for 127.0.0.1 at 2009-06-30 19:29:42) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 3) [0m
+Rendering template within layouts/shoes
+Rendering shoes/show
+Completed in 35ms (View: 26, DB: 0) | 200 OK [http://localhost/shoes/3]
+
+
+Processing ShoesController#edit (for 127.0.0.1 at 2009-06-30 19:29:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 3) [0m
+Rendering template within layouts/shoes
+Rendering shoes/edit
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/shoes/3/edit]
+
+
+Processing ShoesController#update (for 127.0.0.1 at 2009-06-30 19:29:46) [PUT]
+  Parameters: {"shoe"=>{"size"=>"11.0", "manufacturer"=>"Adidas", "model"=>"Blafasel"}, "commit"=>"Update", "authenticity_token"=>"rgTLn2sSA0HBEGoqrz6C/cv2Cso8YXnZwap5n3YIsrA=", "id"=>"3"}
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 3) [0m
+Redirected to http://localhost:3000/shoes/3
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/shoes/3]
+
+
+Processing ShoesController#show (for 127.0.0.1 at 2009-06-30 19:29:46) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 3) [0m
+Rendering template within layouts/shoes
+Rendering shoes/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/shoes/3]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:09:15) [GET]
+  [4;36;1mShoe Load (0.8ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ShoesController#show (for 127.0.0.1 at 2009-06-30 20:09:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 3) [0m
+Rendering template within layouts/shoes
+Rendering shoes/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/shoes/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-30 20:10:16) [GET]
+
+NameError (uninitialized constant EntriesController):
+  
+
+Rendered rescues/_trace (89.7ms)
+Rendered rescues/_request_and_response (16.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-30 20:10:21) [GET]
+
+ActionController::RoutingError (No route matches "/entry" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:10:53) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 83ms (View: 15, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:10:56) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 8ms (View: 1, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:10:57) [GET]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 8ms (View: 1, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:10:58) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:10:58) [GET]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:10:59) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:10:59) [GET]
+  [4;36;1mPerson Load (2.2ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 8ms (View: 1, DB: 2) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:10:59) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:11:00) [GET]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 9ms (View: 1, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:11:00) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2009-06-30 20:11:00) [GET]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 7ms (View: 1, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:15:39) [GET]
+
+NameError (uninitialized constant FeetController::Foot):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (46.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:16:16) [GET]
+  [4;35;1mFoot Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (104.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (2.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateShoesAndPeople (20090518220827)
+  [4;36;1mSQL (10.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (58.4ms)[0m   [0mDROP TABLE "people"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mDROP TABLE "shoes"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090518220827'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateShoesAndPeople (20090518220827)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "shoes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "manufacturer" varchar(255), "model" varchar(255), "size" float, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "feet" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090518220827')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("feet")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("shoes")[0m
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:30) [GET]
+  [4;36;1mFoot Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:32) [GET]
+  [4;35;1mFoot Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:33) [GET]
+  [4;36;1mFoot Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (103.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:33) [GET]
+  [4;35;1mFoot Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:34) [GET]
+  [4;36;1mFoot Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (111.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:35) [GET]
+  [4;35;1mFoot Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:36) [GET]
+  [4;36;1mFoot Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (49.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:36) [GET]
+  [4;35;1mFoot Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:37) [GET]
+  [4;36;1mFoot Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:18:38) [GET]
+  [4;35;1mFoot Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: foots: SELECT * FROM "foots" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: foots: SELECT * FROM "foots" ):
+  app/controllers/feet_controller.rb:5:in `index'
+  haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (102.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:20:30) [GET]
+  [4;36;1mFoot Load (2.8ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering feet/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #11 of app/views/feet/index.html.erb:
+8:     <th>Shoe3</th>
+9:   </tr>
+10: 
+11: <% @people.each do |person| %>
+12:   <tr>
+13:     <td><%=h person.user_email %></td>
+14:     <td><%=h person.shoe1_id %></td>
+
+    app/views/feet/index.html.erb:11
+    haml (2.0.9) [v] lib/haml/helpers/action_view_mods.rb:14:in `render'
+    app/controllers/feet_controller.rb:7:in `index'
+    haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:20:32) [GET]
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" [0m
+Rendering feet/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #11 of app/views/feet/index.html.erb:
+8:     <th>Shoe3</th>
+9:   </tr>
+10: 
+11: <% @people.each do |person| %>
+12:   <tr>
+13:     <td><%=h person.user_email %></td>
+14:     <td><%=h person.shoe1_id %></td>
+
+    app/views/feet/index.html.erb:11
+    haml (2.0.9) [v] lib/haml/helpers/action_view_mods.rb:14:in `render'
+    app/controllers/feet_controller.rb:7:in `index'
+    haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (98.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:25:03) [GET]
+  [4;36;1mFoot Load (3.0ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/feet
+Rendering feet/index
+Completed in 85ms (View: 10, DB: 3) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#new (for 127.0.0.1 at 2009-06-30 20:25:06) [GET]
+Rendering template within layouts/feet
+Rendering feet/new
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/feet/new]
+
+
+Processing FeetController#create (for 127.0.0.1 at 2009-06-30 20:25:07) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"rgTLn2sSA0HBEGoqrz6C/cv2Cso8YXnZwap5n3YIsrA="}
+  [4;35;1mFoot Create (1.5ms)[0m   [0mINSERT INTO "feet" ("updated_at", "email", "created_at") VALUES('2009-06-30 18:25:07', NULL, '2009-06-30 18:25:07')[0m
+Redirected to http://localhost:3000/feet/1
+Completed in 63ms (DB: 1) | 302 Found [http://localhost/feet]
+
+
+Processing FeetController#show (for 127.0.0.1 at 2009-06-30 20:25:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 1) [0m
+Rendering template within layouts/feet
+Rendering feet/show
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/feet/1]
+
+
+Processing FeetController#edit (for 127.0.0.1 at 2009-06-30 20:25:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 1) [0m
+Rendering template within layouts/feet
+Rendering feet/edit
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://localhost/feet/1/edit]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-06-30 20:25:12) [GET]
+  [4;36;1mFoot Load (0.8ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/feet
+Rendering feet/index
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/feet]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:25:18) [GET]
+  [4;35;1mShoe Load (0.7ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 98ms (View: 90, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#new (for 127.0.0.1 at 2009-06-30 20:25:19) [GET]
+Rendering template within layouts/shoes
+Rendering shoes/new
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/shoes/new]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:25:22) [GET]
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:28:18) [GET]
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#new (for 127.0.0.1 at 2009-06-30 20:28:20) [GET]
+Rendering template within layouts/shoes
+Rendering shoes/new
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/shoes/new]
+
+
+Processing ShoesController#create (for 127.0.0.1 at 2009-06-30 20:28:22) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"rgTLn2sSA0HBEGoqrz6C/cv2Cso8YXnZwap5n3YIsrA="}
+  [4;36;1mShoe Create (0.6ms)[0m   [0;1mINSERT INTO "shoes" ("size", "updated_at", "manufacturer", "user_id", "model", "created_at") VALUES(NULL, '2009-06-30 18:28:22', NULL, NULL, NULL, '2009-06-30 18:28:22')[0m
+Redirected to http://localhost:3000/shoes/1
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/shoes]
+
+
+Processing ShoesController#show (for 127.0.0.1 at 2009-06-30 20:28:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 1) [0m
+Rendering template within layouts/shoes
+Rendering shoes/show
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/shoes/1]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:28:23) [GET]
+  [4;36;1mShoe Load (0.8ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:28:53) [GET]
+  [4;35;1mShoe Load (0.9ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:28:56) [GET]
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 77ms (View: 3, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#new (for 127.0.0.1 at 2009-06-30 20:28:57) [GET]
+Rendering template within layouts/shoes
+Rendering shoes/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/shoes/new]
+
+
+Processing ShoesController#create (for 127.0.0.1 at 2009-06-30 20:29:06) [POST]
+  Parameters: {"shoe"=>{"size"=>"12", "manufacturer"=>"Adidas", "model"=>"blafasel"}, "commit"=>"Create", "authenticity_token"=>"rgTLn2sSA0HBEGoqrz6C/cv2Cso8YXnZwap5n3YIsrA="}
+  [4;35;1mShoe Create (0.6ms)[0m   [0mINSERT INTO "shoes" ("size", "updated_at", "manufacturer", "user_id", "model", "created_at") VALUES(12.0, '2009-06-30 18:29:06', 'Adidas', NULL, 'blafasel', '2009-06-30 18:29:06')[0m
+Redirected to http://localhost:3000/shoes/2
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/shoes]
+
+
+Processing ShoesController#show (for 127.0.0.1 at 2009-06-30 20:29:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 2) [0m
+Rendering template within layouts/shoes
+Rendering shoes/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/shoes/2]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:29:10) [GET]
+  [4;35;1mShoe Load (0.7ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:31:30) [GET]
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#destroy (for 127.0.0.1 at 2009-06-30 20:31:35) [DELETE]
+  Parameters: {"authenticity_token"=>"rgTLn2sSA0HBEGoqrz6C/cv2Cso8YXnZwap5n3YIsrA=", "id"=>"1"}
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 1) [0m
+  [4;36;1mShoe Destroy (0.7ms)[0m   [0;1mDELETE FROM "shoes" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/shoes
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/shoes/1]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:31:35) [GET]
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:32:17) [GET]
+  [4;36;1mShoe Load (0.8ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:32:19) [GET]
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 73ms (View: 4, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:32:20) [GET]
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#new (for 127.0.0.1 at 2009-06-30 20:32:37) [GET]
+Rendering template within layouts/shoes
+Rendering shoes/new
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/shoes/new]
