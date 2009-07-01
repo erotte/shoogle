@@ -1368,3 +1368,16 @@ Processing ShoesController#new (for 127.0.0.1 at 2009-06-30 20:32:37) [GET]
 Rendering template within layouts/shoes
 Rendering shoes/new
 Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/shoes/new]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-06-30 20:34:40) [GET]
+  [4;35;1mShoe Load (0.9ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/shoes
+Rendering shoes/index
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#new (for 127.0.0.1 at 2009-06-30 20:34:43) [GET]
+Rendering template within layouts/shoes
+Rendering shoes/new
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/shoes/new]
