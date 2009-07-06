@@ -3,6 +3,21 @@
 <% form_for(@foot) do |f| %>
   <%= f.error_messages %>
 
+  <% f.fields_for :shoes do |s| %>
+	  <p>
+	    <%= s.label :manufacturer %><br />
+	    <%= s.text_field :manufacturer %>
+	  </p>
+	  <p>
+	    <%= s.label :model %><br />
+	    <%= s.text_field :model %>
+	  </p>
+	  <p>
+	    <%= s.label :size %><br />
+	    <%= s.text_field :size %>
+	  </p>
+  <% end %>
+
   <p>
     <%= f.submit 'Create' %>
   </p>

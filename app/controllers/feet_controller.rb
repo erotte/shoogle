@@ -26,6 +26,8 @@ class FeetController < ApplicationController
   def new
     @foot = Foot.new
 
+    3.times{@foot.shoes << Shoe.new}
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @foot }
