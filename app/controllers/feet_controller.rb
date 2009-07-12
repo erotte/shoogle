@@ -42,7 +42,7 @@ class FeetController < ApplicationController
   # POST /feet 
   # POST /feet .xml
   def create
-    @foot = Foot.new(params[:entry])
+    @foot = Foot.new(params[:foot])
 
     respond_to do |format|
       if @foot.save
