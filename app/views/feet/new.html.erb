@@ -1,25 +1,30 @@
 <h1>New foot</h1>
 
-<% form_for(@foot) do |f| %>
-  <%= f.error_messages %>
-
-  <% f.fields_for :shoes do |s| %>
-	  <p>
-	    <%= s.label :manufacturer %><br />
-	    <%= s.text_field :manufacturer %>
-	  </p>
-	  <p>
-	    <%= s.label :model %><br />
-	    <%= s.text_field :model %>
-	  </p>
-	  <p>
-	    <%= s.label :size %><br />
-	    <%= s.text_field :size %>
-	  </p>
-  <% end %>
+<% form_for  :foot,  :url => feet_path do |footform| %>
+  <%= footform.error_messages %>
+  <table border="0" cellspacing="5" cellpadding="5">
+    <tr>
+      <th>Hersteller</th>
+      <th>Modell</th>
+      <th>Größe</th>
+    </tr>
+    <% footform.fields_for :shoes do |shoeform| %>
+	  <tr>
+	    <td>
+	      <%= shoeform.text_field :manufacturer %>
+	    </td>
+	    <td>
+	      <%= shoeform.text_field :model %>
+	    </td>
+	    <td>
+	    <%= shoeform.text_field :size %>
+	    </td>
+    </tr>
+    <% end %>
+  </table>
 
   <p>
-    <%= f.submit 'Create' %>
+    <%= footform.submit 'Create' %>
   </p>
 <% end %>
 

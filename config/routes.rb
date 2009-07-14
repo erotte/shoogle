@@ -1,10 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :feet
-
+  map.resources :feet, :has_many => :shoes, :shallow => true
   map.resources :shoes
+  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
+  map.root :feet
 
-  map.resources :feet
-  map.resources :shoes
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -37,8 +36,6 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "shoes"
 
   # See how all your routes lay out with "rake routes"
 

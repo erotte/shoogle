@@ -25,8 +25,7 @@ class FeetController < ApplicationController
   # GET /feet /new.xml
   def new
     @foot = Foot.new
-
-    3.times{@foot.shoes << Shoe.new}
+    3.times {@foot.shoes.build }
     
     respond_to do |format|
       format.html # new.html.erb
@@ -80,7 +79,7 @@ class FeetController < ApplicationController
     @foot.destroy
 
     respond_to do |format|
-      format.html { redirect_to(feet _url) }
+      format.html { redirect_to(feet_url) }
       format.xml  { head :ok }
     end
   end

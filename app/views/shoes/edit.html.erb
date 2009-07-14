@@ -1,23 +1,27 @@
 <h1>Editing shoes</h1>
 
-<% form_for(@shoe) do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :manufacturer %><br />
-    <%= f.text_field :manufacturer %>
-  </p>
-  <p>
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
-  </p>
-  <p>
-    <%= f.label :size %><br />
-    <%= f.text_field :size %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<% form_for @shoe do |shoeform| %>
+  <%= shoeform.error_messages %>
+  <table>
+    <tr>
+      <td>
+        <%= shoeform.label :manufacturer %><br />
+        <%= shoeform.text_field :manufacturer %>
+      </td>
+      <td>
+        <%= shoeform.label :model %><br />
+        <%= shoeform.text_field :model %>
+      </td>
+      <td>
+        <%= shoeform.label :size %><br />
+        <%= shoeform.text_field :size %>
+      </td>
+      <td>
+        <%= shoeform.submit 'Update' %>
+        <%= link_to 'Show', @shoe %> |
+        <%= link_to 'Back', shoes_path %>
+      </td>
+    </tr>
+  </table>
 <% end %>
 
-<%= link_to 'Show', @shoe %> |
-<%= link_to 'Back', shoes_path %>
