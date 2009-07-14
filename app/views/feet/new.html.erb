@@ -1,6 +1,6 @@
 <h1>New foot</h1>
 
-<% form_for  :foot,  :url => feet_path do |footform| %>
+<% form_for  @foot do |footform| %>
   <%= footform.error_messages %>
   <table border="0" cellspacing="5" cellpadding="5">
     <tr>
@@ -8,8 +8,7 @@
       <th>Modell</th>
       <th>Größe</th>
     </tr>
-    <% for shoe in @foot.shoes  %>
-      <% footform.fields_for :shoes do |shoeform| %>
+      <% footform.fields_for :shoes, :index => :shoes do |shoeform| %>
     	  <tr>
     	    <td>
     	      <%= shoeform.text_field :manufacturer %>
@@ -22,7 +21,6 @@
     	    </td>
         </tr>
       <% end %>  
-    <% end %>  
   </table>
 
   <p class="tar buttonbox">
