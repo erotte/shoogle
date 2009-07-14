@@ -25,7 +25,7 @@ class FeetController < ApplicationController
   # GET /feet /new.xml
   def new
     @foot = Foot.new
-    3.times {@foot.shoes.build }
+    3.times {@foot.shoes.build}
     
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,7 @@ class FeetController < ApplicationController
   # POST /feet 
   # POST /feet .xml
   def create
-    @foot = Foot.new(params[:foot])
+    @foot = Foot.new(params[:entry])
 
     respond_to do |format|
       if @foot.save

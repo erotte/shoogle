@@ -8,24 +8,26 @@
       <th>Modell</th>
       <th>Größe</th>
     </tr>
-    <% footform.fields_for :shoes do |shoeform| %>
-	  <tr>
-	    <td>
-	      <%= shoeform.text_field :manufacturer %>
-	    </td>
-	    <td>
-	      <%= shoeform.text_field :model %>
-	    </td>
-	    <td>
-	    <%= shoeform.text_field :size %>
-	    </td>
-    </tr>
-    <% end %>
+    <% for shoe in @foot.shoes  %>
+      <% footform.fields_for :shoes do |shoeform| %>
+    	  <tr>
+    	    <td>
+    	      <%= shoeform.text_field :manufacturer %>
+    	    </td>
+    	    <td>
+    	      <%= shoeform.text_field :model %>
+    	    </td>
+    	    <td>
+    	    <%= shoeform.text_field :size %>
+    	    </td>
+        </tr>
+      <% end %>  
+    <% end %>  
   </table>
 
-  <p>
+  <p class="tar buttonbox">
     <%= footform.submit 'Create' %>
+    <%= link_to 'Back', feet_path %>
   </p>
 <% end %>
 
-<%= link_to 'Back', feet_path %>
