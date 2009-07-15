@@ -41,35 +41,16 @@ class FeetController < ApplicationController
   # POST /feet 
   # POST /feet .xml
   def create
-    @foot = Foot.new(params[:entry])
-
-    respond_to do |format|
-      if @foot.save
-        flash[:notice] = 'Foot was successfully created.'
-        format.html { redirect_to(@foot) }
-        format.xml  { render :xml => @foot, :status => :created, :location => @foot }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @foot.errors, :status => :unprocessable_entity }
-      end
-    end
+    @foot = Foot.new(params[:foot])
+    @foot.save ? redirect_to(foot_path(@foot)) : render(:action => :new)
   end
 
   # PUT /feet /1
   # PUT /feet /1.xml
   def update
     @foot = Foot.find(params[:id])
-
-    respond_to do |format|
-      if @foot.update_attributes(params[:entry])
-        flash[:notice] = 'Foot was successfully updated.'
-        format.html { redirect_to(@foot) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @foot.errors, :status => :unprocessable_entity }
-      end
-    end
+    @foot.update_attributes(params[:person]) ?
+        redirect_to(foot_path(@person)) : render(:action => :edit)
   end
 
   # DELETE /feet /1

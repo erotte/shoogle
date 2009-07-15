@@ -8,7 +8,7 @@
       <th>Modell</th>
       <th>Größe</th>
     </tr>
-      <% footform.fields_for :shoes, :index => :shoes do |shoeform| %>
+      <% footform.fields_for :shoes do |shoeform| %>
     	  <tr>
     	    <td>
     	      <%= shoeform.text_field :manufacturer %>
