@@ -1,6 +1,6 @@
 <h1>New foot</h1>
 
-<% form_for  @foot do |footform| %>
+<% form_for @foot do |footform| %>
   <%= footform.error_messages %>
   <table border="0" cellspacing="5" cellpadding="5">
     <tr>
@@ -8,19 +8,7 @@
       <th>Modell</th>
       <th>Größe</th>
     </tr>
-      <% footform.fields_for :shoes do |shoeform| %>
-    	  <tr>
-    	    <td>
-    	      <%= shoeform.text_field :manufacturer %>
-    	    </td>
-    	    <td>
-    	      <%= shoeform.text_field :model %>
-    	    </td>
-    	    <td>
-    	    <%= shoeform.text_field :size %>
-    	    </td>
-        </tr>
-      <% end %>  
+    <%= render :partial => 'shoe_fields',  :locals => {:subform => footform} %>
   </table>
 
   <p class="tar buttonbox">
