@@ -8,10 +8,21 @@
       <th>Modell</th>
       <th>Größe</th>
     </tr>
-    <%= render :partial => 'shoe_fields',  :locals => {:subform => footform} %>
+    <%= render :partial => 'shoes',  :locals => {:subform => footform} %>
+    <%# footform.fields_for :shoes do |shoe| %>
+      <%# @shoed = shoe %>
+      <%#= render :partial => 'shoes', :locals  => { :shoe => shoe} %>
+    <%# end %>
+    <tr id="insert_shoe_button_row">
+      <td colspan="3"></td>
+      <td>
+        <%= add_shoe_button(@shoed) %>
+      </td>
+    </tr>
   </table>
 
   <p class="tar buttonbox">
+    
     <%= footform.submit 'Create' %>
     <%= link_to 'Back', feet_path %>
   </p>

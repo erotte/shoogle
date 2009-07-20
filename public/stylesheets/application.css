@@ -2,6 +2,13 @@ body {
 	background: #887ba6;
 }
 
+
+a:link img, 
+a:hover img, 
+a:visited img { 
+	border: 0 solid;
+}
+
 #satzspiegel {
 	width: 78%;
 	margin: 4% auto;
