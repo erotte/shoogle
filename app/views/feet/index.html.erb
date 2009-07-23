@@ -1,18 +1,9 @@
-<h1>Listing feet</h1>
+%h1 Listing feet
 
-<table>
-  <tr>
-  </tr>
+%table
+- @feet.each do |foot|
+  %tr
+    %td
 
-<% @feet.each do |foot| %>
-  <tr>
-    <td><%= link_to 'Show', foot %></td>
-    <td><%= link_to 'Edit', edit_foot_path(foot) %></td>
-    <td><%= link_to 'Destroy', foot, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
-
-<%= link_to 'New foot', new_foot_path %>
+= link_to 'New foot', new_foot_path

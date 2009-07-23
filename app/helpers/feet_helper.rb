@@ -4,9 +4,9 @@ module FeetHelper
     "$(this).parents('tr').remove()", :title => text 
   end
   
-  def add_shoe_button(formobject) 
+  def add_shoe_button(shoe) 
     link_to_function image_tag('app/add.gif', :alt => " + ") do |page| 
-      page.insert_html :before, :insert_shoe_button_row, :partial => 'shoes', :locals => {:shoe => formobject}
+      page.insert_html :before, :insert_shoe_button_row, :partial => 'shoes', :object => shoe
     end 
   end
 end
