@@ -1,0 +1,13 @@
+%h1 Listing Feet and Shoes
+    
+- @feet.each do |foot|
+  %h2=gender_text(foot)
+  %table{:border => 1, :cellpadding => 4 }
+    - foot.shoes.each do |shoe|
+      %tr
+        %td=shoe.manufacturer
+        %td=shoe.model
+        %td=shoe.size
+        %td=link_to("Bearbeiten", edit_shoe_path(shoe))
+        %td=link_to 'Löschen', shoe, :confirm => 'Wirklich löschen?', :method => :delete
+  

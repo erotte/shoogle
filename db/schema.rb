@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20090712123358) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "gender"
   end
 
   create_table "shoes", :force => true do |t|

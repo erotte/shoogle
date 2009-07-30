@@ -1,0 +1,23 @@
+%h1 deine Schuhe:
+
+- form_for @foot do |footform| 
+  = footform.error_messages
+  = footform.radio_button(:gender, 'm') 
+  = footform.label "gender_m", "Damengröße"
+  
+  = footform.radio_button(:gender, 'f') 
+  = footform.label "gender_f",  "Herrengröße"
+  %table{ :border => "0", :cellspacing => "5", :cellpadding =>"5"}
+    %tr
+      %th Hersteller
+      %th Modell
+      %th Größe
+    = render :partial => 'shoe_fields',  :locals => {:subform => footform} 
+    %tr#insert_shoe_button_row
+      %td{ :colspan =>"3"}
+      -# %td=  add_shoe_button(shoe) 
+
+  %p.tar.buttonbox
+    = footform.submit 'Create'
+    = link_to 'Back', feet_path 
+
