@@ -2,4 +2,10 @@
 
 arbo:
   id: 1
+  gender: 
+  created_at: <%= Date.today %>
+
+
+ecki:
+  id: 2
   created_at: <%= Date.today %>

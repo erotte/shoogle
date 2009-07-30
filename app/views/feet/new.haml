@@ -3,10 +3,10 @@
 - form_for @foot do |footform| 
   = footform.error_messages
   = footform.radio_button(:gender, 'm') 
-  = footform.label "gender_m", "Damengröße"
+  = footform.label "gender_m", "Herrengröße"
   
   = footform.radio_button(:gender, 'f') 
-  = footform.label "gender_f",  "Herrengröße"
+  = footform.label "gender_f",  "Damengröße"
   %table{ :border => "0", :cellspacing => "5", :cellpadding =>"5"}
     %tr
       %th Hersteller
