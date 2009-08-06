@@ -19,7 +19,10 @@ class FootTest < ActiveSupport::TestCase
 
   test "should find shoe of the second foot" do
     assert @arbos_fuss.fitting_shoes.include?(@eckis_camper)
-    # p @arbos_fuss.fitting_shoes
+  end
+  
+  test "should find shoe of the second foot" do
+    assert @arbos_fuss.fitting_shoes.include?(@eckis_camper)
   end
   
 end
