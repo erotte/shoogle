@@ -4841,3 +4841,299 @@ Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/]
   [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
   [4;36;1mSQL (5.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090712123358')[0m
   [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090518220827')[0m
+
+
+Processing FeetController#create (for 127.0.0.1 at 2009-07-30 22:53:24) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "foot"=>{"shoes_attributes"=>{"0"=>{"size"=>"", "manufacturer"=>"", "model"=>""}, "1"=>{"size"=>"", "manufacturer"=>"", "model"=>""}, "2"=>{"size"=>"", "manufacturer"=>"", "model"=>""}}, "gender"=>"m"}}
+Rendering template within layouts/application
+Rendering feet/new
+Rendered feet/_shoe_fields (2.0ms)
+Completed in 38ms (View: 6, DB: 0) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#new (for 127.0.0.1 at 2009-07-30 23:37:17) [GET]
+Rendering template within layouts/application
+Rendering feet/new
+Rendered feet/_shoe_fields (3.7ms)
+Completed in 35ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing FeetController#new (for 127.0.0.1 at 2009-08-01 00:29:42) [GET]
+Rendering template within layouts/application
+Rendering feet/new
+Rendered feet/_shoe_fields (10.4ms)
+Completed in 160ms (View: 76, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing FeetController#new (for 127.0.0.1 at 2009-08-01 00:32:32) [GET]
+Rendering template within layouts/application
+Rendering feet/new
+Rendered feet/_shoe_fields (1.7ms)
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing FeetController#new (for 127.0.0.1 at 2009-08-01 00:32:33) [GET]
+Rendering template within layouts/application
+Rendering feet/new
+Rendered feet/_shoe_fields (1.8ms)
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing FeetController#create (for 127.0.0.1 at 2009-08-01 00:35:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "foot"=>{"shoes_attributes"=>{"0"=>{"size"=>"12", "manufacturer"=>"addi", "model"=>"b"}}}}
+  [4;36;1mFoot Create (16.8ms)[0m   [0;1mINSERT INTO "feet" ("updated_at", "gender", "email", "created_at") VALUES('2009-07-31 22:35:12', NULL, NULL, '2009-07-31 22:35:12')[0m
+  [4;35;1mShoe Create (0.3ms)[0m   [0mINSERT INTO "shoes" ("size", "updated_at", "foot_id", "manufacturer", "user_id", "model", "created_at") VALUES(12.0, '2009-07-31 22:35:12', 10, 'addi', NULL, 'b', '2009-07-31 22:35:12')[0m
+Redirected to http://localhost:3000/feet
+Completed in 36ms (DB: 17) | 302 Found [http://localhost/feet]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:35:12) [GET]
+  [4;36;1mFoot Load (0.8ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 6) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 7) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 10) [0m
+Completed in 33ms (View: 26, DB: 3) | 200 OK [http://localhost/feet]
+
+
+Processing ShoesController#destroy (for 127.0.0.1 at 2009-08-01 00:36:10) [DELETE]
+  Parameters: {"authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "id"=>"420164816"}
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 420164816) [0m
+  [4;35;1mShoe Destroy (0.6ms)[0m   [0mDELETE FROM "shoes" WHERE "id" = 420164816[0m
+Redirected to http://localhost:3000/shoes
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/shoes/420164816]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-08-01 00:36:10) [GET]
+  [4;36;1mShoe Load (0.9ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/application
+Rendering shoes/index
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing ShoesController#destroy (for 127.0.0.1 at 2009-08-01 00:36:16) [DELETE]
+  Parameters: {"authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "id"=>"420164812"}
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 420164812) [0m
+  [4;36;1mShoe Destroy (0.4ms)[0m   [0;1mDELETE FROM "shoes" WHERE "id" = 420164812[0m
+Redirected to http://localhost:3000/shoes
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/shoes/420164812]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-08-01 00:36:16) [GET]
+  [4;35;1mShoe Load (0.8ms)[0m   [0mSELECT * FROM "shoes" [0m
+Rendering template within layouts/application
+Rendering shoes/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:37:06) [GET]
+  [4;36;1mFoot Load (0.8ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 6) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 7) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+  [4;35;1mShoe Load (0.1ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 10) [0m
+Completed in 19ms (View: 12, DB: 2) | 200 OK [http://localhost/feet]
+
+
+Processing ShoesController#destroy (for 127.0.0.1 at 2009-08-01 00:37:11) [DELETE]
+  Parameters: {"authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "id"=>"420164815"}
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 420164815) [0m
+  [4;35;1mShoe Destroy (0.4ms)[0m   [0mDELETE FROM "shoes" WHERE "id" = 420164815[0m
+Redirected to http://localhost:3000/shoes
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/shoes/420164815]
+
+
+Processing ShoesController#index (for 127.0.0.1 at 2009-08-01 00:37:11) [GET]
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" [0m
+Rendering template within layouts/application
+Rendering shoes/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/shoes]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:37:37) [GET]
+  [4;35;1mFoot Load (0.8ms)[0m   [0mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 6) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 7) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+  [4;36;1mShoe Load (0.1ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 10) [0m
+Completed in 20ms (View: 12, DB: 2) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:38:51) [GET]
+  [4;35;1mFoot Load (1.0ms)[0m   [0mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 6) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 7) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;35;1mShoe Load (0.1ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+  [4;36;1mShoe Load (0.1ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 10) [0m
+Completed in 24ms (View: 16, DB: 2) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:39:15) [GET]
+  [4;35;1mFoot Load (0.8ms)[0m   [0mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+
+ActionView::TemplateError (There's no Ruby code for = to evaluate.) on line #4 of app/views/feet/index.haml:
+1: %h1 Listing Feet and Shoes
+2:     
+3: - @feet.each do |foot|
+4:   %h2=
+5:     gender_text(foot)
+6:     %small=link_to 'Fuß löschen', foot, :confirm => 'Wirklich löschen?', :method => :delete
+7:   
+
+    app/views/feet/index.haml:4
+    haml (2.0.9) [v] lib/haml/precompiler.rb:586:in `render_tag'
+    haml (2.0.9) [v] lib/haml/precompiler.rb:192:in `process_line'
+    haml (2.0.9) [v] lib/haml/precompiler.rb:156:in `precompile'
+    haml (2.0.9) [v] lib/haml/precompiler.rb:122:in `each'
+    haml (2.0.9) [v] lib/haml/precompiler.rb:122:in `each_with_index'
+    haml (2.0.9) [v] lib/haml/precompiler.rb:122:in `precompile'
+    haml (2.0.9) [v] lib/haml/engine.rb:100:in `initialize'
+    haml (2.0.9) [v] rails/./lib/haml/template/plugin.rb:21:in `new'
+    haml (2.0.9) [v] rails/./lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.0.9) [v] lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) [v] lib/haml/helpers/action_view_mods.rb:14:in `render'
+    app/controllers/feet_controller.rb:7:in `index'
+    haml (2.0.9) [v] rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (44.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:39:35) [GET]
+  [4;36;1mFoot Load (0.9ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 6) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 7) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;36;1mShoe Load (0.1ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+  [4;35;1mShoe Load (0.1ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 10) [0m
+Completed in 24ms (View: 17, DB: 2) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:40:18) [GET]
+  [4;36;1mFoot Load (0.8ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 6) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 7) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+  [4;35;1mShoe Load (0.1ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 10) [0m
+Completed in 24ms (View: 17, DB: 2) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#destroy (for 127.0.0.1 at 2009-08-01 00:40:27) [DELETE]
+  Parameters: {"authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "id"=>"6"}
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 6) [0m
+  [4;35;1mFoot Destroy (0.5ms)[0m   [0mDELETE FROM "feet" WHERE "id" = 6[0m
+Redirected to http://localhost:3000/feet
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/feet/6]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:40:27) [GET]
+  [4;36;1mFoot Load (0.7ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 7) [0m
+  [4;36;1mShoe Load (0.8ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+  [4;36;1mShoe Load (0.1ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 10) [0m
+Completed in 20ms (View: 12, DB: 2) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#destroy (for 127.0.0.1 at 2009-08-01 00:40:31) [DELETE]
+  Parameters: {"authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "id"=>"7"}
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 7) [0m
+  [4;36;1mFoot Destroy (0.4ms)[0m   [0;1mDELETE FROM "feet" WHERE "id" = 7[0m
+Redirected to http://localhost:3000/feet
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/feet/7]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:40:32) [GET]
+  [4;35;1mFoot Load (0.7ms)[0m   [0mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+  [4;36;1mShoe Load (0.1ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 10) [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#destroy (for 127.0.0.1 at 2009-08-01 00:40:36) [DELETE]
+  Parameters: {"authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "id"=>"10"}
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 10) [0m
+  [4;36;1mFoot Destroy (0.4ms)[0m   [0;1mDELETE FROM "feet" WHERE "id" = 10[0m
+Redirected to http://localhost:3000/feet
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/feet/10]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:40:36) [GET]
+  [4;35;1mFoot Load (0.6ms)[0m   [0mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 9) [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#destroy (for 127.0.0.1 at 2009-08-01 00:40:39) [DELETE]
+  Parameters: {"authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "id"=>"9"}
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 9) [0m
+  [4;35;1mFoot Destroy (0.8ms)[0m   [0mDELETE FROM "feet" WHERE "id" = 9[0m
+Redirected to http://localhost:3000/feet
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/feet/9]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:40:39) [GET]
+  [4;36;1mFoot Load (0.7ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#new (for 127.0.0.1 at 2009-08-01 00:41:24) [GET]
+Rendering template within layouts/application
+Rendering feet/new
+Rendered feet/_shoe_fields (1.8ms)
+Completed in 87ms (View: 76, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing FeetController#create (for 127.0.0.1 at 2009-08-01 00:41:51) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NWTQVdDjx4j9/C/Ap0cZ3dfdnU4FfhtEaLCitAicZBU=", "foot"=>{"shoes_attributes"=>{"0"=>{"size"=>"12", "manufacturer"=>"Nike", "model"=>"Air Force One"}}}}
+  [4;36;1mFoot Create (0.6ms)[0m   [0;1mINSERT INTO "feet" ("updated_at", "gender", "email", "created_at") VALUES('2009-07-31 22:41:51', NULL, NULL, '2009-07-31 22:41:51')[0m
+  [4;35;1mShoe Create (0.2ms)[0m   [0mINSERT INTO "shoes" ("size", "updated_at", "foot_id", "manufacturer", "user_id", "model", "created_at") VALUES(12.0, '2009-07-31 22:41:51', 11, 'Nike', NULL, 'Air Force One', '2009-07-31 22:41:51')[0m
+Redirected to http://localhost:3000/feet
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/feet]
+
+
+Processing FeetController#index (for 127.0.0.1 at 2009-08-01 00:41:51) [GET]
+  [4;36;1mFoot Load (0.6ms)[0m   [0;1mSELECT * FROM "feet" [0m
+Rendering template within layouts/application
+Rendering feet/index
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 8) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 11) [0m
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/feet]
+
+
+Processing FeetController#new (for 127.0.0.1 at 2009-08-02 09:49:29) [GET]
+Rendering template within layouts/application
+Rendering feet/new
+Rendered feet/_shoe_fields (18.5ms)
+Completed in 1009ms (View: 950, DB: 0) | 200 OK [http://localhost/]
