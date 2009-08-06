@@ -1,37 +1,55 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 airforce:
-  foot_id: 1
+  foot: arbo
   manufacturer: Nike
   model: Air Force 1
   size: 46
 
 adilow:
-  foot_id: 1
+  foot: arbo
   manufacturer: Adidas
   model: Adi Racer Low
   size: 45
 
 nikecourt:
-  foot_id: 1
+  foot: arbo
   manufacturer: Adidas
   model: Court Tradition
   size: 45.5  
 
 airforce2:
-  foot_id: 2
+  foot: ecki
   manufacturer: Nike
   model: Air Force 1
   size: 46
 
 adihigh:
-  foot_id: 2
+  foot: ecki
   manufacturer: Adidas
   model: Adi Racer High
   size: 46.5
 
 camper:
-  foot_id: 2
+  foot: ecki
   manufacturer: Camper
   model: Trabant
   size: 45  
+
+airforce3:
+  foot: peter
+  manufacturer: Nike
+  model: Air Force 1
+  size: 46
+
+adihigh:
+  foot: peter
+  manufacturer: Adidas
+  model: Adi Racer High
+  size: 47
+
+adiletten:
+  foot: peter
+  manufacturer: Adidas
+  model: Adiletten
+  size: 46
