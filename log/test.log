@@ -771,3 +771,1309 @@ Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/shoes/new]
  and f.id = a.foot_id;[0m
   [4;36;1mShoe Load (1.0ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
   [4;35;1mShoe Load (0.7ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.6ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (64.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.8ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.6ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (65.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.6ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (64.8ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.7ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (9.3ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (3.9ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.6ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (1.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.8ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.8ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (1.6ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.9ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.8ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.7ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.6ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.8ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.7ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (1.1ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (1.6ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.7ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.2ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.6ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.9ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.2ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.5ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.6ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.2ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.6ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.4ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.9ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;35;1mFoot Load (0.3ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;35;1mShoe Load (0.4ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;36;1mShoe Load (0.3ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;35;1mFoot Load (0.4ms)[0m   [0m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
+  [4;36;1mFoot Load (0.3ms)[0m   [0;1mSELECT * FROM "feet" WHERE ("feet"."id" = 664344288) [0m
+  [4;35;1mFoot Load (0.2ms)[0m   [0mSELECT * FROM "feet" WHERE ("feet"."id" = 146690211) [0m
+  [4;36;1mShoe Load (0.4ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes"."id" = 168970625) [0m
+  [4;35;1mShoe Load (0.3ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes"."id" = 647905092) [0m
+  [4;36;1mFoot Load (0.5ms)[0m   [0;1m
+ select f.* from feet as f, shoes as a, shoes as b 
+ where a.size = b.size 
+ and a.model = b.model
+ and a.manufacturer = b.manufacturer 
+ and a.foot_id != b.foot_id
+ and b.foot_id = 664344288
+ and f.id = a.foot_id;[0m
+  [4;35;1mShoe Load (0.5ms)[0m   [0mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 830538776) [0m
+  [4;36;1mShoe Load (0.5ms)[0m   [0;1mSELECT * FROM "shoes" WHERE ("shoes".foot_id = 146690211) [0m
