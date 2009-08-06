@@ -15,7 +15,27 @@ class Foot < ActiveRecord::Base
       and f.id = a.foot_id;"
   end
   
-  def fitting_shoes
+  def shoes_of_similar_feet
     Foot.similar_feet(self).collect(&:shoes).flatten
+  end
+  
+  def fitting_shoes
+    
+    model_to_shoes = {}
+    
+    shoes_of_similar_feet.each{ |shoe|
+      key = shoe.model+"--"+shoe.manufacturer
+      
+      model_to_shoes[key] = [] unless model_to_shoes[key]
+      model_to_shoes[key] << shoe
+    }
+    
+    model_to_shoes.values.map{ |shoes|
+      shoe = shoes.first
+      avg_size = shoes.inject(0){|sum, s| sum + s.size } / shoes.size
+        
+      shoe.size = avg_size
+      shoe
+    }
   end
 end

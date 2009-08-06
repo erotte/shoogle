@@ -28,7 +28,7 @@ adihigh:
   foot: ecki
   manufacturer: Adidas
   model: Adi Racer High
-  size: 46.5
+  size: 46
 
 camper:
   foot: ecki
@@ -42,7 +42,7 @@ airforce3:
   model: Air Force 1
   size: 46
 
-adihigh:
+peters_adihigh:
   foot: peter
   manufacturer: Adidas
   model: Adi Racer High
