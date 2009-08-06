@@ -6,7 +6,7 @@ class Foot < ActiveRecord::Base
   
   def self.similar_feet another_foot 
     self.find_by_sql "
-      select f.* from feet a  s f, shoes as a, shoes as b 
+      select f.* from feet as f, shoes as a, shoes as b 
       where a.size = b.size 
       and a.model = b.model
       and a.manufacturer = b.manufacturer 
