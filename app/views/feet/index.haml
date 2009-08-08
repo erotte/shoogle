@@ -2,6 +2,8 @@
     
 - @feet.each do |foot|
   %h2=gender_text(foot)
+  %p=link_to 'Fuß löschen', foot, :confirm => 'Wirklich löschen?', :method => :delete
+  
   %table{:border => 1, :cellpadding => 4 }
     - foot.shoes.each do |shoe|
       %tr
@@ -9,5 +11,5 @@
         %td=shoe.model
         %td=shoe.size
         %td=link_to("Bearbeiten", edit_shoe_path(shoe))
-        %td=link_to 'Löschen', shoe, :confirm => 'Wirklich löschen?', :method => :delete
+        %td=link_to 'Schuh löschen', shoe, :confirm => 'Wirklich löschen?', :method => :delete
   

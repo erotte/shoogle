@@ -41,16 +41,15 @@ class FeetController < ApplicationController
   # POST /feet 
   # POST /feet .xml
   def create
-    @foot = Foot.new(params[:foot])
-    @foot.save ? redirect_to(feet_path) : render(:action => :new)
+      @foot.save ? redirect_to(feet_path) : render(:action => :new)
   end
 
   # PUT /feet /1
   # PUT /feet /1.xml
   def update
     @foot = Foot.find(params[:id])
-    @foot.update_attributes(params[:person]) ?
-        redirect_to(foot_path(@person)) : render(:action => :edit)
+    @foot.update_attributes(params[:foot]) ?
+        redirect_to(foot_path(@foot)) : render(:action => :edit)
   end
 
   # DELETE /feet /1
@@ -60,7 +59,7 @@ class FeetController < ApplicationController
     @foot.destroy
 
     respond_to do |format|
-      format.html { redirect_to(feet_url) }
+      format.html { redirect_to(feet_path) }
       format.xml  { head :ok }
     end
   end
