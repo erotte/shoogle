@@ -21,30 +21,13 @@ class Foot < ActiveRecord::Base
   
   def fitting_shoes
     group_by_model(shoes_of_similar_feet).map{ |shoes|   
-      Shoe.new :model => shoes.first.model, :manufacturer => shoes.first.manufacturer, :size => avg_of(shoes.map(&:size))
+      Shoe.new :model => shoes.first.model, :manufacturer => shoes.first.manufacturer, :size => shoes.map(&:size).median
     }
   end
   
   def fitting args
     result = fitting_shoes.select{ |shoe| shoe.model == args[:model] and shoe.manufacturer == args[:manufacturer] }  
     result.first if result
-  end
-
-  def avg_of values
-    values.inject(0.0){|sum, val| sum + val } / values.size
-  end
-
-  def median_of values
-    values.sort!
-    s = values.size
-
-    if s == 1
-      values.first
-    elsif (s % 2) == 1
-      values[ (s-1)/2 ]
-    else
-      ( values[ (s-1)/2 ] + values[ s/2 ] ) / 2.0
-    end
   end
 
   def group_by_model shoes
