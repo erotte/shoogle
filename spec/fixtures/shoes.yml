@@ -53,3 +53,22 @@ adiletten:
   manufacturer: Adidas
   model: Adiletten
   size: 46
+  
+airforce4:
+  foot: sascha
+  manufacturer: Nike
+  model: Air Force 1
+  size: 44
+
+superstar:
+  foot: sascha
+  manufacturer: Adidas
+  model: Superstar
+  size: 43
+
+urban:
+  foot: sascha
+  manufacturer: Puma
+  model: Urban Runner
+  size: 44
+  
