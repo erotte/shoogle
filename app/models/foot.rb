@@ -27,7 +27,11 @@ class Foot < ActiveRecord::Base
   
   def fitting args
     result = fitting_shoes.select{ |shoe| shoe.model == args[:model] and shoe.manufacturer == args[:manufacturer] }  
-    result.first if result
+    unless result.empty?
+      result.first
+    else 
+      Shoe.new :model => args[:model], :manufacturer => args[:manufacturer], :size  => shoes.map(&:size).mean_average
+    end
   end
 
   def group_by_model shoes

@@ -8,6 +8,7 @@ describe Foot do
     @arbos_fuss = feet(:arbo)
     @eckis_fuss = feet(:ecki)
     @eckis_camper = shoes(:camper)
+    @saschas_fuss = feet(:sascha)
   end
   
   it "should find similar feet" do
@@ -34,4 +35,12 @@ describe Foot do
     @arbos_fuss.fitting( :manufacturer => "Adidas",  :model  => "Adi Racer High" ).size.should == 46.5
   end
 
+  it "should compute the mean average of its shoes to suggest a shoe size of a shoe not found on other feet" do
+    @arbos_fuss.fitting( :manufacturer => "Vans",  :model  => "Old Skool" ).size.should == 46
+  end
+
+  it "should convert a shoe size to match similar feet and find fitting shoes" do
+    # noch nicht implementiert.. fail :)
+    @saschas_fuss.fitting( :manufacturer => "Adidas",  :model  => "Adi Racer High" ).size.should == 44.5
+  end
 end
