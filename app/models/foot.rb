@@ -33,7 +33,6 @@ class Foot < ActiveRecord::Base
     model_to_shoes.values.map{ |shoes|
       shoe = shoes.first
       avg_size = shoes.inject(0){|sum, s| sum + s.size } / shoes.size
-        
       shoe.size = avg_size
       shoe
     }
