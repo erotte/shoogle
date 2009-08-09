@@ -20,21 +20,29 @@ class Foot < ActiveRecord::Base
   end
   
   def fitting_shoes
-    
+    group_by_model(shoes_of_similar_feet).map{ |shoes|   
+      Shoe.new :model => shoes.first.model, :manufacturer => shoes.first.manufacturer, :size => shoes.map(&:size).median
+    }
+  end
+  
+  def fitting args
+    result = fitting_shoes.select{ |shoe| shoe.model == args[:model] and shoe.manufacturer == args[:manufacturer] }  
+    unless result.empty?
+      result.first
+    else 
+      Shoe.new :model => args[:model], :manufacturer => args[:manufacturer], :size  => shoes.map(&:size).mean_average
+    end
+  end
+ 
+  def group_by_model shoes
     model_to_shoes = {}
     
-    shoes_of_similar_feet.each{ |shoe|
+    shoes.each{ |shoe|
       key = shoe.model+"--"+shoe.manufacturer
-      
       model_to_shoes[key] = [] unless model_to_shoes[key]
       model_to_shoes[key] << shoe
     }
     
-    model_to_shoes.values.map{ |shoes|
-      shoe = shoes.first
-      avg_size = shoes.inject(0){|sum, s| sum + s.size } / shoes.size
-      shoe.size = avg_size
-      shoe
-    }
+    model_to_shoes.values
   end
 end

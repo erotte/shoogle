@@ -8,3 +8,6 @@ ecki:
 
 peter:
   created_at: <%= Date.today %>
+
+sascha:
+  created_at: <%= Date.today %>
