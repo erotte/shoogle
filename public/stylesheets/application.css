@@ -26,18 +26,20 @@ pre {
 
 #satzspiegel {
   width: 78%;
-	margin: 4% auto;
-	background: #fff;
-	padding: 20px 30px;
-  border: thin outset #aaa;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
-  border-radius: 30px;
-  -moz-box-shadow: 10px 10px 5px #888;
-  -webkit-box-shadow: 10px 10px 5px #888;
-  box-shadow: 10px 10px 5px #888;
+  margin: 4% auto;
 }
 
+#panel {
+  	background: #fff;
+	padding: 20px 30px;
+  	border: thin outset #aaa;
+  	-moz-border-radius: 30px;
+  	-webkit-border-radius: 30px;
+  	border-radius: 30px;
+  	-moz-box-shadow: 10px 10px 5px #888;
+  	-webkit-box-shadow: 10px 10px 5px #888;
+  	box-shadow: 10px 10px 5px #888;
+}
 /* @end */
 
 /* @group Style Helpers */
@@ -114,6 +116,7 @@ p.buttonbox {
   border-radius: 20px; 
 }
 
+
 #errorExplanation p {
   color: #333;
   margin: 12px;
@@ -127,10 +130,36 @@ p.buttonbox {
   list-style: square;
 }
 
-
-
-
 /* @end */
 
+/* @group Result Shoes */
+ 
+table.shoes {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 17px;
+  margin: 15px 0 30px 0;
+} 
+table.shoes tbody {
+    border-left: 1px solid #ccc;
+}
+table.shoes th{
+	font-size: 12px;
+  	border: 1px solid #ccc;	
+} 
+
+table.shoes td{
+  padding: 8px 14px;
+  border-right: 1px solid #ccc;
+} 
+.shoes tr.odd td{
+   background-color: #efefef;
+}
+table.shoes tr:hover td{
+	background: #b4a5bb!important;
+} 
+
+/* @end */
 
 
