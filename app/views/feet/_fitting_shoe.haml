@@ -1,0 +1,13 @@
+%h2 Passende Schuhe:
+%table.shoes
+  %thead
+    %tr
+      %th Hersteller
+      %th Modell
+      %th Größe
+  %tbody    
+    -@foot.fitting_shoes.each do |fitting_shoe|
+      %tr{ :class => cycle('odd','even') }
+        %td=fitting_shoe.manufacturer
+        %td=fitting_shoe.model
+        %td Größe: #{fitting_shoe.size}

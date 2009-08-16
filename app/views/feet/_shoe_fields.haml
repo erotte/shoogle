@@ -1,0 +1,11 @@
+-subform.fields_for :shoes do |sf|
+  %tr
+    %td
+      =sf.text_field(:manufacturer, :class => "manufacturer")
+    %td
+      =sf.text_field(:model, :class => 'model') 
+    %td
+      =sf.text_field(:size, :class => 'size')
+    %td
+      =remove_shoe_button("Zeile löschen")
+  
