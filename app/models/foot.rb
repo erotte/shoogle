@@ -1,7 +1,7 @@
 class Foot < ActiveRecord::Base
   GENDER = {'m' => 'Herrengröße', 'f' => "Frauengröße"}
   has_many :shoes       
-  accepts_nested_attributes_for :shoes #, :reject_if  => :all_blank?
+  accepts_nested_attributes_for :shoes
   validates_associated :shoes
   
   def self.similar_feet another_foot 
@@ -42,7 +42,6 @@ class Foot < ActiveRecord::Base
       model_to_shoes[key] = [] unless model_to_shoes[key]
       model_to_shoes[key] << shoe
     }
-    
     model_to_shoes.values
   end
 end

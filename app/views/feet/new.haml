@@ -1,13 +1,14 @@
 %h1 deine Schuhe:
 
-- form_for @foot do |footform| 
+- form_for @foot, :html => {:class => 'foot_shoes_form'} do |footform| 
   = footform.error_messages
   = footform.radio_button(:gender, 'm') 
   = footform.label "gender_m", "Herrengröße"
   
   = footform.radio_button(:gender, 'f') 
   = footform.label "gender_f",  "Damengröße"
-  %table{ :border => "0", :cellspacing => "5", :cellpadding =>"5"}
+  
+  %table.footform
     %tr
       %th Hersteller
       %th Modell
@@ -18,8 +19,7 @@
       -# %td=  add_shoe_button(shoe) 
 
   %p.tar.buttonbox
-    = footform.submit 'Create'
-    = link_to 'Back', feet_path 
+    = footform.submit 'Speichern und Ergebnisse anzeigen'
 
   #matching_shoes
   

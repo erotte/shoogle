@@ -1,7 +1,12 @@
-body {
-	background: #887ba6;
-}
+/* @group Basic Styles */
 
+body {
+	background: #9e7fae;
+	font: normal 13px/18px helvetica, arial, sans-serif;
+}
+/*a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }*/
 
 a:link img, 
 a:hover img, 
@@ -9,21 +14,123 @@ a:visited img {
 	border: 0 solid;
 }
 
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* @end */
+
+/* @group Base Layout */
+
 #satzspiegel {
-	width: 78%;
+  width: 78%;
 	margin: 4% auto;
 	background: #fff;
 	padding: 20px 30px;
   border: thin outset #aaa;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  -moz-box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 10px 10px 5px #888;
 }
+
+/* @end */
+
+/* @group Style Helpers */
 
 .tar {
 	text-align: right;
 }
 
-p.buttonbox {
-	width: 600px;
+
+/* @end */
+
+/* @group Foot with Shoes Form */
+
+form.foot_shoes_form {
+
 }
+.foot_shoes_form input {
+  font-size: 1.7em;
+  
+}
+.foot_shoes_form input:focus {
+  font-size: 1.7em;
+  background: #feffbe;	
+}
+
+.foot_shoes_form input.manufacturer {
+  width: 14em;
+}
+.foot_shoes_form input.model {
+  width: 14em;
+}
+.foot_shoes_form input.size {
+  width: 5em;
+}
+
+table.footform {
+  border-collapse: separate;
+  border-spacing: 16px;
+  
+}
+
+/* @end */
+
+p.buttonbox {
+	width: 88%;
+}
+
+/* @group Form Errors */
+.fieldWithErrors input,
+.fieldWithErrors textarea,
+.fieldWithErrors select{
+  background-color: #ffa8a9;
+}
+
+#errorExplanation {
+  border: 1px solid #c00;
+  margin-bottom: 20px;
+  background: #f4f4f4;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px; 
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 0.6em 20px;
+  margin: 0;
+  font-size: 16px;
+  background-color: #c00;
+  color: #fff;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px; 
+}
+
+#errorExplanation p {
+  color: #333;
+  margin: 12px;
+  padding: 5px;
+}
+#errorExplanation ul {
+  margin: 12px;
+}
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+
+
+
+/* @end */
 
 
 

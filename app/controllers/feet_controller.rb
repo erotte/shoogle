@@ -3,10 +3,9 @@ class FeetController < ApplicationController
   # GET /feet .xml
   def index
     @feet  = Foot.all
-
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @feet  }
+      format.xml  { render :xml => @feet }
     end
   end
 
@@ -14,7 +13,6 @@ class FeetController < ApplicationController
   # GET /feet /1.xml
   def show
     @foot = Foot.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @foot }
@@ -26,7 +24,6 @@ class FeetController < ApplicationController
   def new
     @foot = Foot.new
     3.times {@foot.shoes.build}
-    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @foot }
@@ -41,7 +38,8 @@ class FeetController < ApplicationController
   # POST /feet 
   # POST /feet .xml
   def create
-      @foot.save ? redirect_to(feet_path) : render(:action => :new)
+      @foot = Foot.new params[:foot]
+      @foot.save ? redirect_to(edit_foot_path(@foot)) : render(:action => :new)
   end
 
   # PUT /feet /1
@@ -57,7 +55,6 @@ class FeetController < ApplicationController
   def destroy
     @foot = Foot.find(params[:id])
     @foot.destroy
-
     respond_to do |format|
       format.html { redirect_to(feet_path) }
       format.xml  { head :ok }
