@@ -1,13 +1,13 @@
 #Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 arbo:
-  created_at: <%= Date.today %>
+  email: arbo@gmail.com
 
 ecki:
-  created_at: <%= Date.today %>
+  email: erotte@gmail.com
 
 peter:
-  created_at: <%= Date.today %>
+  email: peter@hotmail.com
 
 sascha:
-  created_at: <%= Date.today %>
+  email: sascha@yahoo.com

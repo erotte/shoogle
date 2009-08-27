@@ -27,14 +27,25 @@ class Foot < ActiveRecord::Base
   end
   
   def fitting args
-    result = fitting_shoes.select{ |shoe| shoe.model == args[:model] and shoe.manufacturer == args[:manufacturer] }  
-    unless result.empty?
-      result.first
-    else 
+    result = connection.execute "
+      select s.size, a.size, b.size from shoes as s, shoes as a, shoes as b
+      where s.manufacturer = '#{args[:manufacturer]}'
+      and s.model = '#{args[:model]}'
+      and a.model = b.model
+      and a.manufacturer = b.manufacturer 
+      and s.foot_id  = a.foot_id
+      and a.foot_id != b.foot_id 
+      and b.foot_id  = #{id};"
+      
+    if result.any?
+      Shoe.new :model => args[:model], :manufacturer => args[:manufacturer], :size  => result.map{ |row| row[0].to_f - row[1].to_f + row[2].to_f }.median
+    else
       Shoe.new :model => args[:model], :manufacturer => args[:manufacturer], :size  => shoes.map(&:size).mean_average
     end
   end
- 
+  
+  private 
+  
   def group_by_model shoes
     model_to_shoes = {}
     
