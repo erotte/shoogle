@@ -17,7 +17,8 @@
     = render :partial => 'shoe_fields',  :locals => {:subform => footform, :disabled  => true} 
     %tr#insert_shoe_button_row
       %td{ :colspan =>"3"}
-      -# %td=  add_shoe_button(shoe) 
+      -#%td=add_shoe_button 
+      %td=link_to_function image_tag('app/add.gif', :alt => " + "), "add_shoe_fields()", :id => 'add_shoe_fields'
 
   %p.tar.buttonbox
     = footform.submit 'Speichern und Ergebnisse anzeigen'

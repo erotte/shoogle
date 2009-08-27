@@ -75,12 +75,42 @@ form.foot_shoes_form {
   width: 5em;
 }
 
-table.footform {
-  border-collapse: separate;
-  border-spacing: 16px;
-  
+.shoe_row {
+	border-top: 2px solid #eee;
+	margin-bottom: 1em;
+	padding: 1em 0 1em 100px;
+	width: 800px;
+}
+.remove_shoe {
+	text-decoration: none;
+	margin-left: 10px;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	border: 1px solid red;
+	background: url(/images/app/cross2.png) no-repeat 2px 2px;
+}
+.remove_shoe span {
+	visibility: hidden;
+}
+.remove_shoe:active {
+  background-position:  2px -30px;	
+}
+.remove_shoe.disabled {
+  background-position:  2px -15px;	
 }
 
+
+
+#insert_shoe_button_row {
+	text-align: right;
+	width: 880px;
+}
+
+#foot_submit {
+	border: outset 2px	;
+	-moz-border-radius: 7px;
+}
 /* @end */
 
 p.buttonbox {
@@ -159,7 +189,6 @@ table.shoes td{
 table.shoes tr:hover td{
 	background: #b4a5bb!important;
 } 
-
 /* @end */
 
 

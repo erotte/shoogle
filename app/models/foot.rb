@@ -1,7 +1,8 @@
 class Foot < ActiveRecord::Base
   GENDER = {'m' => 'Herrengröße', 'f' => "Frauengröße"}
   has_many :shoes       
-  accepts_nested_attributes_for :shoes
+  accepts_nested_attributes_for :shoes, :allow_destroy => true, :reject_if => proc { |attributes| attributes.all? {|k,v| v.blank?} }
+  
   validates_associated :shoes
   
   def self.similar_feet another_foot 
