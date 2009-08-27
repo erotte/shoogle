@@ -40,7 +40,6 @@ describe Foot do
   end
 
   it "should convert a shoe size to match similar feet and find fitting shoes" do
-    # noch nicht implementiert.. fail :)
     @saschas_fuss.fitting( :manufacturer => "Adidas",  :model  => "Adi Racer High" ).size.should == 44.5
   end
 end
