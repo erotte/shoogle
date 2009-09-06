@@ -8,17 +8,8 @@
   
   = footform.radio_button(:gender, 'f') 
   = footform.label "gender_f",  "Damengröße"
-  
-  %table.footform
-    %tr
-      %th Hersteller
-      %th Modell
-      %th Größe
-    = render :partial => 'shoe_fields',  :locals => {:subform => footform, :disabled  => true} 
-    %tr#insert_shoe_button_row
-      %td{ :colspan =>"3"}
-      -#%td=add_shoe_button 
-      %td=link_to_function image_tag('app/add.gif', :alt => " + "), "add_shoe_fields()", :id => 'add_shoe_fields'
+  = render :partial => 'shoe_fields',  :locals => {:subform => footform, :disabled  => true} 
+  %p#insert_shoe_button_row=link_to_function image_tag('app/add.gif', :alt => " + "), "add_shoe_fields(this)", :id => 'add_shoe_fields'
 
   %p.tar.buttonbox
     = footform.submit 'Speichern und Ergebnisse anzeigen'

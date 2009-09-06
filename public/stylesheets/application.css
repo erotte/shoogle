@@ -1,7 +1,7 @@
 /* @group Basic Styles */
 
 body {
-	background: #9e7fae;
+	background: #ccf;
 	font: normal 13px/18px helvetica, arial, sans-serif;
 }
 /*a { color: #000; }
@@ -36,9 +36,9 @@ pre {
   	-moz-border-radius: 30px;
   	-webkit-border-radius: 30px;
   	border-radius: 30px;
-  	-moz-box-shadow: 10px 10px 5px #888;
-  	-webkit-box-shadow: 10px 10px 5px #888;
-  	box-shadow: 10px 10px 5px #888;
+  	-moz-box-shadow: 5px 5px 3px #779;
+  	-webkit-box-shadow: 5px 5px 3px #779;
+  	box-shadow: 5px 5px 3px #779;
 }
 /* @end */
 
@@ -78,7 +78,7 @@ form.foot_shoes_form {
 .shoe_row {
 	border-top: 2px solid #eee;
 	margin-bottom: 1em;
-	padding: 1em 0 1em 100px;
+	padding: 1em 0 1em 0;
 	width: 800px;
 }
 .remove_shoe {
@@ -90,6 +90,7 @@ form.foot_shoes_form {
 	border: 1px solid red;
 	background: url(/images/app/cross2.png) no-repeat 2px 2px;
 }
+
 .remove_shoe span {
 	visibility: hidden;
 }
@@ -104,11 +105,11 @@ form.foot_shoes_form {
 
 #insert_shoe_button_row {
 	text-align: right;
-	width: 880px;
+	width: 788px;
 }
 
 #foot_submit {
-	border: outset 2px	;
+	border: outset 2px #666;
 	-moz-border-radius: 7px;
 }
 /* @end */
@@ -189,6 +190,13 @@ table.shoes td{
 table.shoes tr:hover td{
 	background: #b4a5bb!important;
 } 
+
+#model_caption{
+	margin-left:260px;
+}
+#size_caption{
+	margin-left:275px;
+}
 /* @end */
 
 

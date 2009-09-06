@@ -10,7 +10,7 @@ add_shoe_fields =	function(event){
 		cloned_row = $('#insert_shoe_button_row').prev().clone(true) 
 		$('input', cloned_row ).val("")
 		rows_size =  $(".shoe_row").length
-		cloned_row = cloned_row.html().replace(/\[\d\]/g, "["+rows_size+"]").replace(/_\d_/g, "_"+rows_size+"_")
+		cloned_row = cloned_row.html().replace(/\[\d\]/g, "["+rows_size+"]").replace(/_\d_/g, "_"+rows_size+"_").replace(/value="[^"]*"/g, 'value=""')
 		$('#insert_shoe_button_row').before('<div class="shoe_row">'+cloned_row+'</div>').prev().hide().slideDown(100)
 		return false
 		// event.preventDefault()
