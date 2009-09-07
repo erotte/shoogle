@@ -1,0 +1,8 @@
+- form_for @foot, :html => {:class => 'foot_shoes_form'} do |footform| 
+  = footform.error_messages
+
+  - @counter = 0
+  = render :partial => 'shoe_fields',  :locals => {:subform => footform} 
+  %p#insert_shoe_button_row=link_to_function image_tag('app/add.gif', :alt => " + "), "add_shoe_fields(this)", :id => 'add_shoe_fields'
+  %p.tar.buttonbox
+    = footform.submit 'Speichern und Ergebnisse anzeigen'
