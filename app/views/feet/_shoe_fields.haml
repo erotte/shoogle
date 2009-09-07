@@ -7,7 +7,7 @@
 
 -subform.fields_for :shoes do |sf|
   .shoe_row
-    =sf.text_field(:manufacturer, :class => "manufacturer", :id => nil, :autocomplete => "off" )
+    =sf.text_field(:manufacturer, :class => "manufacturer", :id => nil )
     =sf.text_field(:model, :class => 'model', :id => nil) 
     =sf.text_field(:size, :class => 'size', :id => nil)
     =remove_shoe_button("Zeile löschen")

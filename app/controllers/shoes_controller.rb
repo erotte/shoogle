@@ -82,9 +82,4 @@ class ShoesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  def auto_complete_for_manufacturer
-    @manufacturers = ["Nike|nike", "Adidas|adidas", "Puma|puma"]
-    render :layout  => false
-  end
 end
