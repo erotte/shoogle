@@ -1,4 +1,9 @@
 class ShoeType < ActiveRecord::Base
   belongs_to :manufacturer
-  validate_presence_of :model, :article_number
+  has_many :shoes
+  
+  validates_presence_of :model
+  
+  accepts_nested_attributes_for :manufacturer,
+    :reject_if => proc { |attributes| attributes.all? {|k,v| v.blank?} }
 end

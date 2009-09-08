@@ -10,19 +10,24 @@ class Shoe < ActiveRecord::Base
   validates_numericality_of :size
   
   def manufacturer
-    shoe_type.manufacturer.name if shoe_type and shoetype.manufactuerer
+    shoe_type.manufacturer.name if shoe_type and shoe_type.manufacturer
   end
   
   def manufacturer=(name)
-    shoe_type.manufacturer = Manufacturer.get_or_create_by_name name
+    self.shoe_type = ShoeType.new unless shoe_type 
+    self.shoe_type.manufacturer = Manufacturer.find_or_create_by_name name
   end
   
   def model
     shoe_type.model if shoe_type
   end
   
-  def model=(name)
-    shoe_type = ShoeType.get_or_create_by_model name
+  def model=(model)
+    if self.shoe_type
+      self.shoe_type.model = model
+    else
+      self.shoe_type = ShoeType.find_or_create_by_model name 
+    end
   end
   
 end
