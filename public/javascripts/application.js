@@ -2,6 +2,9 @@
 // This file is automatically included by javascript_include_tag :defaults
 $(document).ready(function(){
 	$(".foot_shoes_form .remove_shoe:first").hide()
+	
+    $(".manufacturer").autocomplete("/manufacturers.js")
+
 })	
 
 // Muss zunächst direkt als Funktionsaufruf in das onClick-Attribut, da sont nach jeder Aktion neu initialisiert werden müsste.

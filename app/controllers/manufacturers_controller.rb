@@ -6,6 +6,7 @@ class ManufacturersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js  { render 'index.js' }
       format.xml  { render :xml => @manufacturers }
     end
   end

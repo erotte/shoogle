@@ -2,8 +2,8 @@
 %html
   %head
     %title shoe size finder 
-    = stylesheet_link_tag 'application'
-    = javascript_include_tag 'jquery', 'application' 
+    = stylesheet_link_tag 'application', 'jquery.autocomplete'
+    = javascript_include_tag 'jquery', 'jquery.autocomplete', 'application' 
     = yield :head
   %body
     #satzspiegel
