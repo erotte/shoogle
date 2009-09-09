@@ -2,73 +2,60 @@
 
 airforce:
   foot: arbo
-  manufacturer: Nike
-  model: Air Force 1
+  shoe_type: af1
   size: 46
 
 adilow:
   foot: arbo
-  manufacturer: Adidas
-  model: Adi Racer Low
+  shoe_type: adilow
   size: 45
 
 nikecourt:
   foot: arbo
-  manufacturer: Adidas
-  model: Court Tradition
-  size: 47 
+  shoe_type: court
+  size: 47
 
 airforce2:
   foot: ecki
-  manufacturer: Nike
-  model: Air Force 1
+  shoe_type: af1
   size: 46
 
 adihigh:
   foot: ecki
-  manufacturer: Adidas
-  model: Adi Racer High
+  shoe_type: adihigh
   size: 46
 
 camper:
   foot: ecki
-  manufacturer: Camper
-  model: Trabant
-  size: 45  
+  shoe_type: trabant
+  size: 45
 
 airforce3:
   foot: peter
-  manufacturer: Nike
-  model: Air Force 1
+  shoe_type: af1
   size: 46
 
 peters_adihigh:
   foot: peter
-  manufacturer: Adidas
-  model: Adi Racer High
+  shoe_type: adihigh
   size: 47
 
 adiletten:
   foot: peter
-  manufacturer: Adidas
-  model: Adiletten
+  shoe_type: adiletten
   size: 46
   
 airforce4:
   foot: sascha
-  manufacturer: Nike
-  model: Air Force 1
+  shoe_type: af1
   size: 44
 
 superstar:
   foot: sascha
-  manufacturer: Adidas
-  model: Superstar
+  shoe_type: superstar
   size: 43
 
 urban:
   foot: sascha
-  manufacturer: Puma
-  model: Urban Runner
+  shoe_type: urban
   size: 44
-

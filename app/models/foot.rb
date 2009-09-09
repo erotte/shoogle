@@ -9,8 +9,7 @@ class Foot < ActiveRecord::Base
     self.find_by_sql "
       select f.* from feet as f, shoes as a, shoes as b 
       where a.size = b.size 
-      and a.model = b.model
-      and a.manufacturer = b.manufacturer 
+      and a.shoe_type_id = b.shoe_type_id
       and a.foot_id != b.foot_id
       and b.foot_id = #{another_foot.id}
       and f.id = a.foot_id;"
@@ -21,18 +20,19 @@ class Foot < ActiveRecord::Base
   end
   
   def fitting_shoes
-    group_by_model(shoes_of_similar_feet).map{ |shoes|   
-      Forecast.new :model => shoes.first.model, :manufacturer => shoes.first.manufacturer, :size => shoes.map(&:size).median, :direct_matches => shoes.size
+    group_by_shoe_type(shoes_of_similar_feet).map{ |shoes|
+      Forecast.new :model => shoes.first.shoe_type.model, :manufacturer => shoes.first.shoe_type.manufacturer.name, :size => shoes.map(&:size).median, :direct_matches => shoes.size
     }
   end
   
   def fitting args
     result = connection.execute "
-      select s.size, a.size, b.size from shoes as s, shoes as a, shoes as b
-      where s.manufacturer = '#{args[:manufacturer]}'
-      and s.model = '#{args[:model]}'
-      and a.model = b.model
-      and a.manufacturer = b.manufacturer 
+      select s.size, a.size, b.size from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b
+      where sm.name = '#{args[:manufacturer]}'
+      and st.model = '#{args[:model]}'
+      and sm.id = st.manufacturer_id
+      and st.id = s.shoe_type_id
+      and a.shoe_type_id = b.shoe_type_id
       and s.foot_id  = a.foot_id
       and a.foot_id != b.foot_id 
       and b.foot_id  = #{id};"
@@ -61,14 +61,14 @@ class Foot < ActiveRecord::Base
   
   private 
   
-  def group_by_model shoes
-    model_to_shoes = {}
+  def group_by_shoe_type shoes
+    shoe_type_to_shoes = {}
     
     shoes.each{ |shoe|
-      key = shoe.model+"--"+shoe.manufacturer
-      model_to_shoes[key] = [] unless model_to_shoes[key]
-      model_to_shoes[key] << shoe
+      key = shoe.shoe_type_id
+      shoe_type_to_shoes[key] = [] unless shoe_type_to_shoes[key]
+      shoe_type_to_shoes[key] << shoe
     }
-    model_to_shoes.values
+    shoe_type_to_shoes.values
   end
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+puma:
+  name: Puma
+
+adidas:
+  name: Adidas
+
+nike:
+  name: Nike
+
+camper:
+  name: Camper

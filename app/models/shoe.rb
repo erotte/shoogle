@@ -9,25 +9,23 @@ class Shoe < ActiveRecord::Base
   validates_presence_of :size
   validates_numericality_of :size
   
+  attr_writer :model, :manufacturer
+  after_save :assign_model_and_manufacturer_name
+  
+  
   def manufacturer
     shoe_type.manufacturer.name if shoe_type and shoe_type.manufacturer
   end
-  
-  def manufacturer=(name)
-    self.shoe_type = ShoeType.new unless shoe_type 
-    self.shoe_type.manufacturer = Manufacturer.find_or_create_by_name name
-  end
-  
+
   def model
     shoe_type.model if shoe_type
   end
   
-  def model=(model)
-    if self.shoe_type
-      self.shoe_type.model = model
-    else
-      self.shoe_type = ShoeType.find_or_create_by_model name 
-    end
-  end
+  private 
+    
+  def assign_model_and_manufacturer_name
+    manufacturer = Manufacturer.find_or_create_by_name(@manufacturer)
+    self.shoe_type = ShoeType.find_or_create_by_model_and_manufacturer_id(@model, manufacturer.id)
+  end    
   
 end

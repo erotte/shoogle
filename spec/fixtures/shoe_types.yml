@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+af1:
+  manufacturer: nike
+  model: Air Force 1
+
+adilow:
+  manufacturer: adidas
+  model: Adi Racer Low
+  
+court:
+  manufacturer: adidas
+  model: Court Tradition
+
+adihigh:
+  manufacturer: adidas
+  model: Adi Racer High
+  
+trabant:
+  manufacturer: camper
+  model: Trabant
+  
+adiletten:
+  manufacturer: adidas
+  model: Adiletten
+
+superstar:
+  manufacturer: adidas
+  model: Superstar
+  
+urban:
+  manufacturer: puma
+  model: Urban Runner

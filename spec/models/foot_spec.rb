@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Foot do
 
-  fixtures :shoes, :feet
+  fixtures :shoes, :feet, :shoe_types, :manufacturers
   
   before(:each) do
     @arbos_fuss = feet(:arbo)
