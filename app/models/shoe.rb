@@ -2,15 +2,13 @@ class Shoe < ActiveRecord::Base
   belongs_to :foot
   belongs_to :shoe_type
   
-  accepts_nested_attributes_for :shoe_type, 
-    :allow_destroy => true, 
-    :reject_if => proc { |attributes| attributes.all? {|k,v| v.blank?} }
-    
+  validates_associated :shoe_type
+  
   validates_presence_of :size
   validates_numericality_of :size
   
   attr_writer :model, :manufacturer
-  after_save :assign_model_and_manufacturer_name
+  before_save :assign_model_and_manufacturer_name
   
   
   def manufacturer
