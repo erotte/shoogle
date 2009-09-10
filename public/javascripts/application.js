@@ -3,8 +3,19 @@
 $(document).ready(function(){
 	$(".foot_shoes_form .remove_shoe:first").hide()
 	
-    $(".manufacturer").autocomplete("/manufacturers.js")
+  $(".manufacturer").autocomplete("/manufacturers.js")
 
+/* FIXME geht noch nicht.. manufacturer param wird noch nicht gefüllt und controller ist noch nicht vorbereitet
+	$(".model").each(function(){
+		model_input = $(this)
+		manufacturer_input = $(model_input.prev('.manufacturer')[0])
+		model_input.autocomplete("/model.js", {
+		   extraParams: {
+		       manufacturer: function() { return manufacturer_input.val(); }
+		   }
+		})
+	})
+*/
 })	
 
 // Muss zunächst direkt als Funktionsaufruf in das onClick-Attribut, da sont nach jeder Aktion neu initialisiert werden müsste.

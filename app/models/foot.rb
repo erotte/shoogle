@@ -5,18 +5,14 @@ class Foot < ActiveRecord::Base
   
   validates_associated :shoes
   
-  def self.similar_feet another_foot 
-    self.find_by_sql "
-      select f.* from feet as f, shoes as a, shoes as b 
-      where a.size = b.size 
-      and a.shoe_type_id = b.shoe_type_id
-      and a.foot_id != b.foot_id
-      and b.foot_id = #{another_foot.id}
-      and f.id = a.foot_id;"
-  end
+  named_scope :similar_feet, lambda { |foot_id| {
+    :joins => "join shoes as other on feet.id = other.foot_id 
+               join shoes as mine  on other.size = mine.size and 
+               other.shoe_type_id = mine.shoe_type_id and mine.foot_id = #{foot_id}" }}
+
   
   def shoes_of_similar_feet
-    Foot.similar_feet(self).collect(&:shoes).flatten
+    Foot.similar_feet(self.id).collect(&:shoes).flatten
   end
   
   def fitting_shoes
@@ -53,9 +49,15 @@ class Foot < ActiveRecord::Base
         
         searched + mine - other
       }
-      Forecast.new :model => args[:model], :manufacturer => args[:manufacturer], :size  => sizes.median, :direct_matches => shoes.size, :transposed_matches => transposed_matches
+      Forecast.new :model => args[:model], 
+                   :manufacturer => args[:manufacturer], 
+                   :size  => sizes.median, 
+                   :direct_matches => shoes.size, 
+                   :transposed_matches => transposed_matches
     else
-      Forecast.new :model => args[:model], :manufacturer => args[:manufacturer], :size  => shoes.map(&:size).mean_average
+      Forecast.new :model => args[:model], 
+                   :manufacturer => args[:manufacturer], 
+                   :size  => shoes.map(&:size).mean_average
     end
   end
   

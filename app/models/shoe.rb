@@ -22,8 +22,10 @@ class Shoe < ActiveRecord::Base
   private 
     
   def assign_model_and_manufacturer_name
-    manufacturer = Manufacturer.find_or_create_by_name(@manufacturer)
-    self.shoe_type = ShoeType.find_or_create_by_model_and_manufacturer_id(@model, manufacturer.id)
+    if @model.present? and @manufacturer.present?
+      manufacturer = Manufacturer.find_or_create_by_name(@manufacturer)
+      self.shoe_type = ShoeType.find_or_create_by_model_and_manufacturer_id(@model, manufacturer.id)
+    end
   end    
   
 end
