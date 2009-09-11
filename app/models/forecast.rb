@@ -1,6 +1,6 @@
 class Forecast
   attr_accessor :manufacturer, :model, :size, :direct_matches, :transposed_matches
-  
+
   def initialize params = {}
     @manufacturer = params[:manufacturer]
     @model = params[:model]
