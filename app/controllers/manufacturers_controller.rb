@@ -2,7 +2,7 @@ class ManufacturersController < ApplicationController
   # GET /manufacturers
   # GET /manufacturers.xml
   def index
-    collect_manufacturer_names
+    @manufacturers = Manufacturer.find(:all, :conditions => ["name LIKE ?", "%#{params[:q]}%"])
     respond_to do |format|
       format.html # index.html.erb
       format.js  { render 'index.js' }
@@ -81,13 +81,5 @@ class ManufacturersController < ApplicationController
       format.html { redirect_to(manufacturers_url) }
       format.xml  { head :ok }
     end
-  end
-  
-  private
-  
-  def collect_manufacturer_names
-    @manufacturer_names ||= Manufacturer.find(:all).collect(&:name).uniq 
-    @manufacturer_names += YAML.load(File.open(RAILS_ROOT + "/data/sneaker_manufacturer_names.yml"))['manufacturer_names']
-    @manufacturer_names = @manufacturer_names.uniq!.grep(/#{params[:q]}/i)
   end
 end
