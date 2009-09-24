@@ -1,3 +1,15 @@
+# == Schema Information
+# Schema version: 20090921145038
+#
+# Table name: feet
+#
+#  id         :integer         not null, primary key
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  gender     :string(255)
+#
+
 class Foot < ActiveRecord::Base
   GENDER = {'m' => 'Herrengröße', 'f' => "Frauengröße"}
   has_many :shoes       

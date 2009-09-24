@@ -1,7 +1,21 @@
+# == Schema Information
+# Schema version: 20090921145038
+#
+# Table name: shoes
+#
+#  id           :integer         not null, primary key
+#  size         :float
+#  user_id      :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  foot_id      :integer
+#  shoe_type_id :integer
+#
+
 class Shoe < ActiveRecord::Base
   belongs_to :foot
   belongs_to :shoe_type
-  
+  composed_of :formatted_size, :class_name => 'ShoeSize', :mapping => %w(size value)
   validates_associated :shoe_type
   
   validates_presence_of :size
