@@ -1,6 +1,5 @@
-- form_tag('/forecasts', :method => :get) do
+- form_tag(foot_forecasts_path(@foot), :method => :get) do
   .shoe_row
-    = hidden_field_tag "foot_id", @foot.id
     = text_field_tag "manufacturer", nil, :class => "manufacturer"
     = text_field_tag "model", nil, :class => "model"
-    = submit_tag 'Suchen'
+    = submit_tag 'Suchen', :name => nil

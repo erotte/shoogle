@@ -19,8 +19,10 @@ class Foot < ActiveRecord::Base
   
   named_scope :similar_feet, lambda { |foot_id| {
     :joins => "join shoes as other on feet.id = other.foot_id 
-               join shoes as mine  on other.size = mine.size and 
-               other.shoe_type_id = mine.shoe_type_id and mine.foot_id = #{foot_id}" }}
+               join shoes as mine  on other.size = mine.size 
+                 and other.shoe_type_id = mine.shoe_type_id 
+                 and mine.foot_id = #{foot_id} 
+                 and other.foot_id != #{foot_id}" }}
 
   validates_presence_of :shoes
   

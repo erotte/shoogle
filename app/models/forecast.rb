@@ -8,4 +8,13 @@ class Forecast
     @direct_matches = params[:direct_matches] ? params[:direct_matches] : 0
     @transposed_matches = params[:transposed_matches] ? params[:transposed_matches] : 0
   end
+  
+  def rating_as_text
+    case @direct_matches
+      when 8..100 then "mit Sicherheit" 
+      when 4..7 then "bestimmt" 
+      when 1..3 then "wahrscheinlich" 
+      else "vieleicht"
+    end
+  end
 end
