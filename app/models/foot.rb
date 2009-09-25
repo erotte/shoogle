@@ -10,15 +10,16 @@ class Foot < ActiveRecord::Base
                join shoes as mine  on other.size = mine.size and 
                other.shoe_type_id = mine.shoe_type_id and mine.foot_id = #{foot_id}" }}
 
+  validates_presence_of :shoes
   
   def shoes_of_similar_feet
     Foot.similar_feet(self.id).collect(&:shoes).flatten
   end
   
   def fitting_shoes
-    group_by_shoe_type(shoes_of_similar_feet).map{ |shoes|
+    group_by_shoe_type(shoes_of_similar_feet).map do |shoes|
       Forecast.new :model => shoes.first.shoe_type.model, :manufacturer => shoes.first.shoe_type.manufacturer.name, :size => shoes.map(&:size).median, :direct_matches => shoes.size
-    }
+    end
   end
   
   def fitting args
@@ -36,7 +37,7 @@ class Foot < ActiveRecord::Base
     if result.any?
       direct_matches = 0
       transposed_matches = 0
-      sizes = result.map{ |row| 
+      sizes = result.map do |row| 
         searched = row[0].to_f
         other = row[1].to_f
         mine = row[2].to_f 
@@ -48,7 +49,7 @@ class Foot < ActiveRecord::Base
         end
         
         searched + mine - other
-      }
+      end
       Forecast.new :model => args[:model], 
                    :manufacturer => args[:manufacturer], 
                    :size  => sizes.median, 
@@ -66,11 +67,11 @@ class Foot < ActiveRecord::Base
   def group_by_shoe_type shoes
     shoe_type_to_shoes = {}
     
-    shoes.each{ |shoe|
+    shoes.each do |shoe|
       key = shoe.shoe_type_id
       shoe_type_to_shoes[key] = [] unless shoe_type_to_shoes[key]
       shoe_type_to_shoes[key] << shoe
-    }
+    end
     shoe_type_to_shoes.values
   end
 end

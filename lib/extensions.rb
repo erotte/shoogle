@@ -17,3 +17,5 @@ class Array
   end
   
 end
+
+Object.class_eval {def why?; raise "Because it is #{inspect}" ; end}
