@@ -14,7 +14,7 @@ class Forecast
       when 8..100 then "mit Sicherheit" 
       when 4..7 then "bestimmt" 
       when 1..3 then "wahrscheinlich" 
-      else "vieleicht"
+      else "vielleicht"
     end
   end
 end

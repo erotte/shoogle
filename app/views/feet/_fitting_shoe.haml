@@ -1,3 +1,5 @@
+%br
+%br
 %h2 Passende Schuhe:
 %table.shoes
   %thead
@@ -6,7 +8,6 @@
       %th Modell
       %th Größe
       %th Direkte Treffer
-      %th Umgerechnete Treffer
   %tbody    
     -@foot.fitting_shoes.each do |fitting_shoe|
       %tr{ :class => cycle('odd','even') }
@@ -14,4 +15,3 @@
         %td=fitting_shoe.model
         %td Größe: #{fitting_shoe.size}
         %td=fitting_shoe.direct_matches
-        %td=fitting_shoe.transposed_matches

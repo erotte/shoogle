@@ -1,10 +1,9 @@
 
 %br
 %br
-%span#manufacturer_caption="Hersteller"
-%span#model_caption="Modell"
-%span#size_caption="Größe"
-
+%span.manufacturer_caption="Hersteller"
+%span.model_caption="Modell"
+%span.size_caption="Größe"
 -subform.fields_for :shoes do |sf|
   .shoe_row
     =sf.text_field(:manufacturer, :class => "manufacturer", :id => nil )

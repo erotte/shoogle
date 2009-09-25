@@ -191,12 +191,38 @@ table.shoes tr:hover td{
 	background: #b4a5bb!important;
 } 
 
-#model_caption{
+.model_caption{
 	margin-left:260px;
 }
-#size_caption{
+.size_caption{
 	margin-left:275px;
 }
 /* @end */
 
+/* @group Search fitting shoes*/
+.search_shoes_form {
+}
 
+.search_shoes_form input {
+  font-size: 1.7em;
+  
+}
+.search_shoes_form input:focus {
+  font-size: 1.7em;
+  background: #feffbe;	
+}
+.search_shoes_form input.manufacturer,
+.search_shoes_form input.model {
+  width: 14em;
+}
+#search_shoes_submit {
+	border: outset 2px #666;
+	-moz-border-radius: 7px;
+}
+/* @end*/
+
+/* @group Forecast*/
+.forecast {
+	font-size: 17px;	
+}
+/* @end*/
