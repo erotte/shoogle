@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :feet, :has_many => :shoes, :shallow => true
   map.resources :shoes
+  map.resources :forecasts
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "feet", :action => "new"
   
