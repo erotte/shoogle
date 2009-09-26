@@ -1,11 +1,3 @@
-.forecast
-  Dir passt der
-  %strong= @forecast.model 
-  von
-  %strong= @forecast.manufacturer 
-  = @forecast.rating_as_text
-  in der Größe
-  %strong= @forecast.size 
- 
-%p
-  ( Direkte Treffer #{@forecast.direct_matches}, umgerechnete Treffer #{@forecast.transposed_matches} )
+#matching_shoes
+  =render :partial => 'fitting_shoe'
+  =render :partial => 'similar_shoe'

@@ -1,7 +1,7 @@
 %h1 Listing Feet and Shoes
     
 - @feet.each do |foot|
-  %h2=gender_text(foot)
+  %p=link_to("Show", foot)
   %p=link_to 'Fuß löschen', foot, :confirm => 'Wirklich löschen?', :method => :delete
   
   %table{:border => 1, :cellpadding => 4 }

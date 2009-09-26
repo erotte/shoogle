@@ -9,12 +9,26 @@ class Forecast
     @transposed_matches = params[:transposed_matches] ? params[:transposed_matches] : 0
   end
   
-  def rating_as_text
+  def rating
     case @direct_matches
-      when 8..100 then "mit Sicherheit" 
-      when 4..7 then "bestimmt" 
-      when 1..3 then "wahrscheinlich" 
+      when 8..100 then 3
+      when 4..7 then 2
+      when 1..3 then 1
+      else 0
+    end
+  end
+
+  def rating_as_text
+    case rating
+      when 3 then "mit Sicherheit" 
+      when 2 then "bestimmt" 
+      when 1 then "wahrscheinlich" 
       else "vielleicht"
     end
+  end
+
+  
+  def rating_as_sign
+    '*' *  rating + '°' *  -(rating - 4)
   end
 end

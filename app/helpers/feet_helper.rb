@@ -9,8 +9,4 @@ module FeetHelper
       page.insert_html :before, :insert_shoe_button_row, :partial => 'shoe_fields', :locals => {:subform => footform }
     end 
   end
-  
-  def gender_text(foot) 
-    Foot::GENDER.fetch(foot.gender,  "unbekannt") 
-  end
 end

@@ -1,9 +1,0 @@
-%br
-%br
-%span.manufacturer_caption="Hersteller"
-%span.model_caption="Modell"
-- form_tag(foot_forecasts_path(@foot), :method => :get, :class => "search_shoes_form") do
-  .shoe_row
-    = text_field_tag "manufacturer", nil, :class => "manufacturer"
-    = text_field_tag "model", nil, :class => "model"
-    = submit_tag 'Suchen', :name => nil, :id => "search_shoes_submit"

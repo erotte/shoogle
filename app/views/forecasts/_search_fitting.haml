@@ -1,0 +1,9 @@
+- form_tag(fitting_url(@foot), :method => :get, :class => "search_shoes_form") do
+  .forecast
+    .shoe_row
+      In welcher Größe passt mir von
+      = text_field_tag "manufacturer", params[:manufacturer], :class => "manufacturer"
+      der 
+      = text_field_tag "model", params[:model], :class => "model"
+      ?
+      = submit_tag 'Suchen', :name => nil, :id => "search_shoes_submit"
