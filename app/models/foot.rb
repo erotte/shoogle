@@ -11,7 +11,9 @@
 #
 
 class Foot < ActiveRecord::Base
-  has_many :shoes       
+  has_many :shoes
+  has_many :direct_matches
+  
   accepts_nested_attributes_for :shoes, :allow_destroy => true, :reject_if => proc { |attributes| attributes.all? {|k,v| v.blank?} }
   
   validates_associated :shoes
@@ -36,38 +38,14 @@ class Foot < ActiveRecord::Base
   end
   
   def fitting args
-    result = connection.execute "
-      select s.size, a.size, b.size from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b
-      where sm.name = '#{args[:manufacturer]}'
-      and st.model = '#{args[:model]}'
-      and sm.id = st.manufacturer_id
-      and st.id = s.shoe_type_id
-      and a.shoe_type_id = b.shoe_type_id
-      and s.foot_id  = a.foot_id
-      and a.foot_id != b.foot_id 
-      and b.foot_id  = #{id};"
+    directs = direct_matches.find_all_by_manufacturer_name_and_model_name args[:manufacturer], args[:model]
       
-    if result.any?
-      direct_matches = 0
-      transposed_matches = 0
-      sizes = result.map do |row| 
-        searched = row[0].to_f
-        other = row[1].to_f
-        mine = row[2].to_f 
-        
-        if mine == other
-          direct_matches += 1
-        else
-          transposed_matches +=1
-        end
-        
-        searched + mine - other
-      end
+    if directs.any?
       Forecast.new :model => args[:model], 
                    :manufacturer => args[:manufacturer], 
-                   :size  => sizes.median, 
-                   :direct_matches => shoes.size, 
-                   :transposed_matches => transposed_matches
+                   :size  => directs.map(&:size).median, 
+                   :direct_matches => directs.size, 
+                   :transposed_matches => 0
     else
       Forecast.new :model => args[:model], 
                    :manufacturer => args[:manufacturer], 

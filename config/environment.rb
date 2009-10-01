@@ -24,6 +24,10 @@ Rails::Initializer.run do |config|
   config.gem "rspec", :lib => false, :version => ">= 1.2.0"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+  
+  # direkt als plugin -> git clone   http://github.com/aeden/rails_sql_views vendor/plugins
+  #config.gem 'rails_sql_views', :lib => 'rails_sql_views', :source => "http://gems.github.com"
+  
   # config.gem "aws-s3", :lib => "aws/s3"
 
   # Only load the plugins named here, in the order given (default is alphabetical).

@@ -3,13 +3,13 @@
   %strong= @forecast.model 
   von
   %strong= @forecast.manufacturer 
-  = @forecast.rating_as_text
+  = rating_as_text
   in der Größe
   %strong= @forecast.size 
   %p  
     Passt 
-    %span.rating= @forecast.rating_as_sign
-    (#{@forecast.rating_as_text})
+    %span.rating= rating_as_sign
+    (#{rating_as_text})
  
 %p
   ( Direkte Treffer #{@forecast.direct_matches}, umgerechnete Treffer #{@forecast.transposed_matches} )

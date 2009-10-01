@@ -223,9 +223,15 @@ table.shoes tr:hover td{
 
 /* @group Forecast*/
 .rating {
-	color:brown;
-	font-size:24px;
-	vertical-align:sub;}
+	font-size:25px;
+	vertical-align:sub;
+}
+.rating .good_stars {
+	color:#f85;
+}
+.rating .bad_stars {
+	color:#aaa;
+}
 
 .forecast {
 	font-size: 17px;	

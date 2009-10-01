@@ -18,17 +18,7 @@ class Forecast
     end
   end
 
-  def rating_as_text
-    case rating
-      when 3 then "mit Sicherheit" 
-      when 2 then "bestimmt" 
-      when 1 then "wahrscheinlich" 
-      else "vielleicht"
-    end
-  end
-
-  
-  def rating_as_sign
-    '*' *  rating + '°' *  -(rating - 4)
+  def max_rating
+    3
   end
 end
