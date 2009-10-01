@@ -4,6 +4,17 @@ $(document).ready(function(){
 	$(".foot_shoes_form .remove_shoe:first").hide()
   
 	init_autocompletion()
+	
+	$('#manufacturer').val("Hersteller").addClass('disabled')
+	$('#manufacturer').click(function(){
+		$(this).val("").removeClass('disabled')
+	})
+	
+	$('#model').val("Modell").addClass('disabled')
+	$('#model').click(function(){
+		$(this).val("").removeClass('disabled')
+	})
+	
 })	
 
 init_autocompletion = function() {

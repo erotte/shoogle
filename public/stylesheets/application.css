@@ -76,7 +76,6 @@ form.foot_shoes_form {
 }
 
 .shoe_row {
-	border-top: 2px solid #eee;
 	margin-bottom: 1em;
 	padding: 1em 0 1em 0;
 	width: 800px;
@@ -204,21 +203,26 @@ table.shoes tr:hover td{
 }
 
 .search_shoes_form input {
-  font-size: 1.7em;
+  font-size: 1em;
   
 }
 .search_shoes_form input:focus {
-  font-size: 1.7em;
+  font-size: 1em;
   background: #feffbe;	
 }
 .search_shoes_form input.manufacturer,
 .search_shoes_form input.model {
-  width: 14em;
+  width: 12em;
 }
 #search_shoes_submit {
 	border: outset 2px #666;
 	-moz-border-radius: 7px;
 }
+
+.disabled {
+	color: grey;	
+}
+
 /* @end*/
 
 /* @group Forecast*/
@@ -237,3 +241,4 @@ table.shoes tr:hover td{
 	font-size: 17px;	
 }
 /* @end*/
+
