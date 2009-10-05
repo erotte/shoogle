@@ -1,9 +1,20 @@
+#foot_fields
+  .foot_caption
+    Bitte gib ein paar Schuhe ein, die gut passen:
+
+= subform.error_messages
+- content_for :jstemplates do 
+  = "var shoe='#{generate_template(subform, :shoes, :partial => "feet/shoe")}'" 
+
 %span.manufacturer_caption="Hersteller"
 %span.model_caption="Modell"
 %span.size_caption="Größe in EUR"
+
 -subform.fields_for :shoes do |sf|
   .shoe_row
     =sf.text_field(:manufacturer, :class => "manufacturer", :id => nil )
     =sf.text_field(:model, :class => 'model', :id => nil) 
     =sf.text_field(:size, :class => 'size', :id => nil)
     =remove_button_unless_new_record(sf)
+%p#insert_shoe_button_row
+  =add_shoe_button

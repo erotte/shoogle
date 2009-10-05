@@ -217,7 +217,9 @@ table.shoes tr:hover td{
 .search_shoes_form input.model {
   width: 12em;
 }
+#forecast_new_foot_submit,
 #search_shoes_submit {
+	font-size: 1.7em;
 	border: outset 2px #666;
 	-moz-border-radius: 7px;
 }
@@ -240,13 +242,19 @@ table.shoes tr:hover td{
 	color:#aaa;
 }
 
+.foot_caption{
+	margin-bottom: 15px;
+}
+
+.foot_caption,
 #manufacturer,
 #model,
 .forecast {
 	font-size: 17px; 	
 }
-#foot_fields {
+#forecast_new_foot_fields {
 	display:none;
 }
+
 /* @end*/
 

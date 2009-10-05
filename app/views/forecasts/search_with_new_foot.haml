@@ -1,21 +1,16 @@
 
 - form_for @foot, :html => {:class => 'foot_shoes_form'} do |footform| 
-  .forecast
-    .shoe_row
-      In welcher Größe passt mir von
-      = text_field_tag "manufacturer", params[:manufacturer], :class => "manufacturer"
-      der 
-      = text_field_tag "model", params[:model], :class => "model"
-      ?
 
-  #foot_fields
-    .foot_caption
-      Bitte gib ein paar Schuhe ein, die gut passen:
-    = footform.error_messages
-
-    - @counter = 0
-    = render :partial => 'feet/shoe_fields',  :locals => {:subform => footform} 
-    %p#insert_shoe_button_row=link_to_function image_tag('app/add.gif', :alt => " + "), "add_shoe_fields(this)", :id => 'add_shoe_fields'
+  = render :partial => "search_fitting_fields"
+  #forecast_new_foot_fields
+    = render :partial => 'feet/shoe_fields', :locals => {:subform => footform} 
   %p.tar.buttonbox
-    = footform.submit 'Suchen', :id => 'forecast_foot_submit'
+    = footform.submit 'Suchen', :id => 'forecast_new_foot_submit'
     
+
+
+
+
+
+
+      

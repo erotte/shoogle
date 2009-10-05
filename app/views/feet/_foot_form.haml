@@ -1,11 +1,4 @@
 - form_for @foot, :html => {:class => 'foot_shoes_form'} do |footform| 
-
-  = footform.error_messages
-  - content_for :jstemplates do 
-    = "var shoe='#{generate_template(footform, :shoes)}'" 
-    
   = render :partial => 'shoe_fields', :locals => {:subform => footform} 
-  %p#insert_shoe_button_row
-    =add_shoe_button
   %p.tar.buttonbox
     = footform.submit 'Speichern'

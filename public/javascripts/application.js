@@ -11,13 +11,13 @@ $(document).ready(function(){
 	})
 	
 	$('#model').val("Modell").addClass('disabled')
-	$('#model').click(function(){
+	$('#model').focus(function(){
 		$(this).val("").removeClass('disabled')
 	})
 	
-	$('#forecast_foot_submit').click(function(){
-		if ($('#foot_fields').is(':hidden')){ 
-			$('#foot_fields').fadeIn() 
+	$('#forecast_new_foot_submit').click(function(){
+		if ($('#forecast_new_foot_fields').is(':hidden')){ 
+			$('#forecast_new_foot_fields').fadeIn() 
 			return false 
 		}
 	})

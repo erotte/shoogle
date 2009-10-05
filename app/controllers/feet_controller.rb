@@ -39,7 +39,15 @@ class FeetController < ApplicationController
   # POST /feet .xml
   def create
       @foot = Foot.new params[:foot]
-      @foot.save ? redirect_to(foot_path(@foot)) : render(:action => :new)
+      if @foot.save 
+        if params[:manufacturer].present? and params[:model].present?
+          redirect_to fitting_url(@foot, :manufacturer => params[:manufacturer], :model => params[:model])
+        else
+          redirect_to foot_path(@foot)
+        end
+      else 
+        render :action => :new
+      end
   end
 
   # PUT /feet /1
