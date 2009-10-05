@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090930200426) do
+ActiveRecord::Schema.define(:version => 20091005120223) do
 
   create_table "feet", :force => true do |t|
     t.string   "email"
@@ -46,10 +46,19 @@ ActiveRecord::Schema.define(:version => 20090930200426) do
     t.integer  "shoe_type_id"
   end
 
-  create_view "direct_matches", "CREATE VIEW \"direct_matches\" AS  select st.model as model_name, sm.name as manufacturer_name, s.size as size, b.foot_id as foot_id \n        from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b\n        where sm.id = st.manufacturer_id\n        and st.id = s.shoe_type_id\n        and a.size = b.size \n        and a.shoe_type_id = b.shoe_type_id\n        and s.foot_id  = a.foot_id\n        and a.foot_id != b.foot_id", :force => true do |v|
+  create_view "direct_matches", "select st.model as model_name, sm.name as manufacturer_name, s.size as size, b.foot_id as foot_id \n        from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b\n        where sm.id = st.manufacturer_id\n        and st.id = s.shoe_type_id\n        and a.size = b.size \n        and a.shoe_type_id = b.shoe_type_id\n        and s.foot_id  = a.foot_id\n        and a.foot_id != b.foot_id", :force => true do |v|
     v.column :model_name
     v.column :manufacturer_name
     v.column :size
+    v.column :foot_id
+  end
+
+  create_view "transposed_matches", "select st.model as model_name, sm.name as manufacturer_name, s.size as size, a.size as size_of_other, b.size as size_of_this, b.foot_id as foot_id \n        from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b\n        where sm.id = st.manufacturer_id\n        and st.id = s.shoe_type_id\n        and a.size != b.size \n        and a.shoe_type_id = b.shoe_type_id\n        and s.foot_id  = a.foot_id\n        and a.foot_id != b.foot_id", :force => true do |v|
+    v.column :model_name
+    v.column :manufacturer_name
+    v.column :size
+    v.column :size_of_other
+    v.column :size_of_this
     v.column :foot_id
   end
 

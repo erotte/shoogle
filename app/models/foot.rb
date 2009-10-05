@@ -13,6 +13,7 @@
 class Foot < ActiveRecord::Base
   has_many :shoes
   has_many :direct_matches
+  has_many :transposed_matches
   
   accepts_nested_attributes_for :shoes, :allow_destroy => true, :reject_if => proc { |attributes| attributes.all? {|k,v| v.blank?} }
   
@@ -39,13 +40,14 @@ class Foot < ActiveRecord::Base
   
   def fitting args
     directs = direct_matches.find_all_by_manufacturer_name_and_model_name args[:manufacturer], args[:model]
-      
+    transposed = transposed_matches.find_all_by_manufacturer_name_and_model_name args[:manufacturer], args[:model]
+    
     if directs.any?
       Forecast.new :model => args[:model], 
                    :manufacturer => args[:manufacturer], 
                    :size  => directs.map(&:size).median, 
                    :direct_matches => directs.size, 
-                   :transposed_matches => 0
+                   :transposed_matches => transposed.size
     else
       Forecast.new :model => args[:model], 
                    :manufacturer => args[:manufacturer], 
