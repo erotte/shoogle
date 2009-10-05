@@ -15,6 +15,13 @@ $(document).ready(function(){
 		$(this).val("").removeClass('disabled')
 	})
 	
+	$('#forecast_foot_submit').click(function(){
+		if ($('#foot_fields').is(':hidden')){ 
+			$('#foot_fields').fadeIn() 
+			return false 
+		}
+	})
+	
 })	
 
 init_autocompletion = function() {

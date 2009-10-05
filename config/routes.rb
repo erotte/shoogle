@@ -3,14 +3,15 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :feet, :has_many => :shoes, :shallow => true
   map.resources :shoes
-  
+
+
   map.search  'feet/:foot_id/forecasts/search',  :controller => 'forecasts', :action => 'search'
   map.fitting 'feet/:foot_id/forecasts/fitting', :controller => 'forecasts', :action => 'fitting'
   map.resources :feet, :has_many => :forecasts
 
   
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "feet", :action => "new"
+  map.root :controller => "forecasts", :action => "search"
   
   # The priority is based upon order of creation: first created -> highest priority.
 

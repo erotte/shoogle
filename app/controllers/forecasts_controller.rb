@@ -14,11 +14,21 @@ class ForecastsController < ApplicationController
   end
   
   def search
+    if @foot.id
+      render "search"
+    else
+      render "search_with_new_foot"
+    end
   end
   
   private 
   
   def fetch_foot
-    @foot = Foot.find params[:foot_id]
+    begin
+      @foot = Foot.find params[:foot_id] 
+    rescue
+      @foot = Foot.new
+      3.times {@foot.shoes.build}
+    end
   end
 end

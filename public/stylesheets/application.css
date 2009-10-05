@@ -237,8 +237,13 @@ table.shoes tr:hover td{
 	color:#aaa;
 }
 
+#manufacturer,
+#model,
 .forecast {
-	font-size: 17px;	
+	font-size: 17px; 	
+}
+#foot_fields {
+	display:none;
 }
 /* @end*/
 
