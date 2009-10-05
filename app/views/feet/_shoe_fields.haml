@@ -1,6 +1,3 @@
-
-%br
-%br
 %span.manufacturer_caption="Hersteller"
 %span.model_caption="Modell"
 %span.size_caption="Größe"
@@ -9,4 +6,4 @@
     =sf.text_field(:manufacturer, :class => "manufacturer", :id => nil )
     =sf.text_field(:model, :class => 'model', :id => nil) 
     =sf.text_field(:size, :class => 'size', :id => nil)
-    =remove_shoe_button("Zeile löschen")
+    =remove_button_unless_new_record(sf)

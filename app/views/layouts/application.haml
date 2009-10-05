@@ -5,6 +5,8 @@
     = stylesheet_link_tag 'application', 'jquery.autocomplete'
     = javascript_include_tag 'jquery', 'jquery.autocomplete', 'application' 
     = yield :head
+    -javascript_tag do 
+      = yield(:jstemplates) 
   %body
     #satzspiegel
       #panel
