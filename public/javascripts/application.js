@@ -40,7 +40,7 @@ init_autocompletion = function() {
 
 // Muss zunächst direkt als Funktionsaufruf in das onClick-Attribut, da sont nach jeder Aktion neu initialisiert werden müsste.
 // $('#add_shoe_fields').click( 
-add_shoe_fields =	function(event){
+add_shoe_fields = function(event){
 		cloned_row = $('#insert_shoe_button_row').prev().clone(true) 
 		$('input', cloned_row ).val("")
 		rows_size =  $(".shoe_row").length
@@ -51,5 +51,6 @@ add_shoe_fields =	function(event){
 		// event.preventDefault()
 	}
 remove_shoe_fields = function(elem){
-	 $(elem).parent('.shoe_row').slideUp(100, function(){$(this).remove()})
+	
+	 console.debug($(elem).parent('.shoe_row').slideUp(100).children('input[name*=_delete]').val('1'))
 }

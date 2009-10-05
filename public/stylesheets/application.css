@@ -54,12 +54,13 @@ pre {
 /* @group Foot with Shoes Form */
 
 form.foot_shoes_form {
-
+	margin-top: 50px;
 }
+
 .foot_shoes_form input {
   font-size: 1.7em;
-  
 }
+
 .foot_shoes_form input:focus {
   font-size: 1.7em;
   background: #feffbe;	
@@ -68,9 +69,11 @@ form.foot_shoes_form {
 .foot_shoes_form input.manufacturer {
   width: 14em;
 }
+
 .foot_shoes_form input.model {
   width: 14em;
 }
+
 .foot_shoes_form input.size {
   width: 5em;
 }

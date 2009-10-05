@@ -19,7 +19,6 @@ class Shoe < ActiveRecord::Base
   validates_associated :shoe_type
   
   validates_presence_of :size
-  validates_numericality_of :size
   
   attr_writer :model, :manufacturer
   before_save :assign_model_and_manufacturer_name

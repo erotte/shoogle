@@ -1,0 +1,10 @@
+%h1 Editing foot
+
+- form_for(@foot) do |f|
+  = f.error_messages 
+  %p
+    = f.submit 'Update'
+  
+
+= link_to 'Show', @foot |
+= link_to 'Back', feet_path 
