@@ -9,8 +9,8 @@ module ForecastsHelper
   end
 
   def rating_as_sign
-    good_stars = '*' *  @forecast.rating
-    bad_stars = '*' *  (@forecast.max_rating + 1 - @forecast.rating)
+    good_stars = '*' * (@forecast.rating + 1)
+    bad_stars = '*' *  (@forecast.max_rating - @forecast.rating)
     
     "<span class='good_stars'>#{good_stars}</span><span class='bad_stars'>#{bad_stars}</span>"
   end
