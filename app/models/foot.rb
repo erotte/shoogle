@@ -34,25 +34,12 @@ class Foot < ActiveRecord::Base
   
   def fitting_shoes
     group_by_shoe_type(shoes_of_similar_feet).map do |shoes|
-      Forecast.new :model => shoes.first.shoe_type.model, :manufacturer => shoes.first.shoe_type.manufacturer.name, :size => shoes.map(&:size).median, :direct_matches => shoes.size
+      Forecast.new :foot => self, :model => shoes.first.shoe_type.model, :manufacturer => shoes.first.shoe_type.manufacturer.name
     end
   end
   
   def fitting args
-    directs = direct_matches.find_all_by_manufacturer_name_and_model_name args[:manufacturer], args[:model]
-    transposed = transposed_matches.find_all_by_manufacturer_name_and_model_name args[:manufacturer], args[:model]
-    
-    if directs.any?
-      Forecast.new :model => args[:model], 
-                   :manufacturer => args[:manufacturer], 
-                   :size  => directs.map(&:size).median, 
-                   :direct_matches => directs.size, 
-                   :transposed_matches => transposed.size
-    else
-      Forecast.new :model => args[:model], 
-                   :manufacturer => args[:manufacturer], 
-                   :size  => shoes.map(&:size).mean_average
-    end
+    Forecast.new :foot => self, :manufacturer => args[:manufacturer], :model => args[:model]
   end
   
   private 

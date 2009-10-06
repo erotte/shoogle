@@ -12,4 +12,6 @@
     (#{rating_as_text})
  
 %p
-  ( Direkte Treffer #{@forecast.direct_matches}, umgerechnete Treffer #{@forecast.transposed_matches} )
+  ( Direkte Treffer #{@forecast.direct_matches} ergeben #{@forecast.direct_matches_size}, |
+  umgerechnete Treffer #{@forecast.transposed_matches} ergeben #{@forecast.transposed_matches_size}, |
+  durchschnittliche Schuhgröße #{@forecast.average_shoe_size})
