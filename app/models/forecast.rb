@@ -9,29 +9,31 @@ class Forecast
     @manufacturer = params[:manufacturer]
     @model = params[:model]
     
+    compute_average_size
+    compute_direct_matches
+    compute_transposed_matches
+    
+    choose_recommended_size
+  end
+  
+  def compute_average_size
     @average_shoe_size = @foot.shoes.map(&:size).mean_average
-
-    direct_matches = @foot.direct_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model
-    @direct_matches_size = direct_matches.map(&:size).median if direct_matches.any?
-    @direct_matches = direct_matches.size
-
-    transposed_matches = @foot.transposed_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model    
-    if transposed_matches.any?
-      transposed_sizes = transposed_matches.map do |transposed_match|
-        transposed_match.size + transposed_match.size_of_this - transposed_match.size_of_other
-      end
-      @transposed_matches_size = transposed_sizes.median 
-    end
-    
-    @transposed_matches = transposed_matches.size
-    
-    @size = if direct_matches.any?
-      @direct_matches_size
-    elsif transposed_matches.any?
-      @transposed_matches_size
-    else
-      @average_shoe_size
-    end
+  end
+  
+  def compute_direct_matches
+    matches = @foot.direct_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model
+    @direct_matches_size = matches.map(&:size).median if matches.any?
+    @direct_matches = matches.size
+  end
+  
+  def compute_transposed_matches
+    matches = @foot.transposed_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model    
+    @transposed_matches_size = matches.map{|m| m.size + m.size_of_this - m.size_of_other}.median if matches.any?
+    @transposed_matches = matches.size
+  end
+  
+  def choose_recommended_size
+    @size = @direct_matches_size || @transposed_matches_size || @average_shoe_size
   end
   
   def rating
