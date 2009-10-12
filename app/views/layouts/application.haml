@@ -8,6 +8,13 @@
     -javascript_tag do 
       = yield(:jstemplates) 
   %body
-    #satzspiegel
-      #panel
-        = yield
+    #header_wrapper
+      #header.centered
+        %h1=link_to "<small>[logo]</small> schuhkombinat.de", root_path
+    #claim_wrapper
+      #claim.centered 
+        Kein Ärger mehr mit falschen Schuhgrößen.
+        %br Das Schuhkombinat findet die passende Größe für dich!
+        
+    #panel.centered
+      = yield

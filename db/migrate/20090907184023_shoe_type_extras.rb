@@ -1,9 +1,7 @@
 class ShoeTypeExtras < ActiveRecord::Migration
   def self.up
     add_column :shoes, :shoe_type_id, :integer
-    remove_column :shoes, :model
-    remove_column :shoes, :manufacturer
-    remove_column :shoes, :gender
+    remove_columns :shoes, :model, :manufacturer, :gender
   end
 
   def self.down

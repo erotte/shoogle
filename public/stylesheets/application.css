@@ -1,8 +1,14 @@
 /* @group Basic Styles */
 
+html, body {
+	height: 100%
+}
+
 body {
-	background: #ccf;
-	font: normal 13px/18px helvetica, arial, sans-serif;
+	font: normal 13px/1.4 helvetica, arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	background: #eaeaea;
 }
 /*a { color: #000; }
 a:visited { color: #666; }
@@ -24,21 +30,57 @@ pre {
 
 /* @group Base Layout */
 
-#satzspiegel {
-  width: 78%;
-  margin: 4% auto;
+.centered {
+  width: 960px;
+  margin: 0 auto;
 }
 
+#header_wrapper {
+	background: #424343;
+	border-top: 1px solid #1796fb;
+	border-bottom: 1px solid #a3a3a3;
+	margin: 0;
+	color: #fff;
+
+}
+#header_wrapper a,
+#header_wrapper a:visited, {
+	color: #fff;
+	text-decoration: none;
+	
+}
+header_wrapper a:hover {
+	color: #ff86d5
+}
+#header{
+	color: #fff;
+	padding: 0;
+}
+#header h1{
+	color: #fff;
+	padding: 0;
+	margin: 6px 0;
+	font-size: 20px;
+}
+
+#header a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+#claim_wrapper {
+	background: #1796fb;
+	border-bottom: 1px solid #a3a3a3;
+	
+}
+#claim {
+	color: #fff;
+	font-size: 28px;
+	padding: 30px 0;
+}
 #panel {
   	background: #fff;
-	padding: 20px 30px;
-  	border: thin outset #aaa;
-  	-moz-border-radius: 30px;
-  	-webkit-border-radius: 30px;
-  	border-radius: 30px;
-  	-moz-box-shadow: 5px 5px 3px #779;
-  	-webkit-box-shadow: 5px 5px 3px #779;
-  	box-shadow: 5px 5px 3px #779;
+	padding: 10px 30px 30px 30px;
+    height: 90%;
 }
 /* @end */
 
