@@ -61,6 +61,7 @@ header_wrapper a:hover {
 	padding: 0;
 	margin: 6px 0;
 	font-size: 20px;
+	font-weight: normal;
 }
 
 #header a:visited {
@@ -80,7 +81,7 @@ header_wrapper a:hover {
 #panel {
   	background: #fff;
 	padding: 10px 30px 30px 30px;
-    height: 90%;
+    min-height: 90%;
 }
 /* @end */
 
