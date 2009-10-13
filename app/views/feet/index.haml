@@ -1,8 +1,14 @@
 %h1 Listing Feet and Shoes
     
 - @feet.each do |foot|
-  %p=link_to("Show", foot)
-  %p=link_to 'Fuß löschen', foot, :confirm => 'Wirklich löschen?', :method => :delete
+  %br 
+  =link_to("Anzeigen", foot)
+  |
+  =link_to 'Fuß löschen', foot, :confirm => 'Wirklich löschen?', :method => :delete
+  |
+  =link_to("passende Schuhe suchen", search_url(foot))
+  |
+  =link_to("weitere passende Schuhe", more_fitting_url(foot))
   
   %table{:border => 1, :cellpadding => 4 }
     - foot.shoes.each do |shoe|

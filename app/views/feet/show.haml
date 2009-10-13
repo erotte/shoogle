@@ -2,6 +2,8 @@
 = render :partial => 'forecasts/search_fitting'
 = render :partial => 'foot_form'
 
+%p=link_to("passende Schuhe", more_fitting_url(@foot))
+
 = link_to 'Edit', edit_foot_path(@foot) 
 |
 = link_to 'Back', feet_path 

@@ -23,6 +23,7 @@ class Shoe < ActiveRecord::Base
   attr_writer :model, :manufacturer
   before_save :assign_model_and_manufacturer_name
   
+  named_scope :grouped_by_shoe_type, :group => :shoe_type
   
   def manufacturer
     shoe_type.manufacturer.name if shoe_type and shoe_type.manufacturer

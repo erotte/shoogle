@@ -33,9 +33,10 @@ class Foot < ActiveRecord::Base
   end
   
   def fitting_shoes
-    group_by_shoe_type(shoes_of_similar_feet).map do |shoes|
+    fitting = group_by_shoe_type(shoes_of_similar_feet).map do |shoes|
       Forecast.new :foot => self, :model => shoes.first.shoe_type.model, :manufacturer => shoes.first.shoe_type.manufacturer.name
     end
+    fitting.sort{|forecast1,forecast2| forecast2.direct_matches <=> forecast1.direct_matches }
   end
   
   def fitting args

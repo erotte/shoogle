@@ -10,8 +10,10 @@
     Passt 
     %span.rating= rating_as_sign
     (#{rating_as_text})
- 
 %p
   ( Direkte Treffer: #{@forecast.direct_matches} ergeben #{@forecast.direct_matches_size}, |
   umgerechnete Treffer: #{@forecast.transposed_matches} ergeben #{@forecast.transposed_matches_size}, |
   durchschnittliche Schuhgröße: #{@forecast.average_shoe_size})
+
+%p=link_to("Weitere passende Schuhe", more_fitting_url(@foot))
+  

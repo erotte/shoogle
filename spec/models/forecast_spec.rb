@@ -13,7 +13,6 @@ describe Forecast do
     @transposed_matches = mock('transposed_matches')
     @foot.stub(:transposed_matches).and_return @transposed_matches
     @transposed_matches.stub(:find_all_by_manufacturer_name_and_model_name).and_return []
-    
   end
   
   it "should compute median for direct matches" do
