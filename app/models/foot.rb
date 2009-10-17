@@ -17,23 +17,23 @@ class Foot < ActiveRecord::Base
   has_many :transposed_matches
   has_many :size_equalities
   has_many :similar_feet, :through => :size_equalities
-  
+
   accepts_nested_attributes_for :shoes, :allow_destroy => true, :reject_if => proc { |attributes| attributes.all? {|k,v| v.blank?} }
-  
-  validates_associated :shoes
+
+  validates_associated  :shoes
   validates_presence_of :shoes
 
   def shoes_of_similar_feet
-    similar_feet.collect(&:shoes).flatten
+    Shoe.fitting_on_foot self.id
   end
-  
+
   def fitting_shoes
     fitting = fitting_shoe_types.map do |shoe_type|
       Forecast.new :foot => self, :model => shoe_type.model, :manufacturer => shoe_type.manufacturer.name
     end
     fitting.sort{|forecast1,forecast2| forecast2.direct_matches <=> forecast1.direct_matches }
   end
-  
+
   def fitting args
     Forecast.new :foot => self, :manufacturer => args[:manufacturer], :model => args[:model]
   end
