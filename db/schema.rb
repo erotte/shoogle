@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091005120223) do
+ActiveRecord::Schema.define(:version => 20091017201224) do
 
   create_table "feet", :force => true do |t|
     t.string   "email"
@@ -46,14 +46,21 @@ ActiveRecord::Schema.define(:version => 20091005120223) do
     t.integer  "shoe_type_id"
   end
 
-  create_view "direct_matches", "select st.model as model_name, sm.name as manufacturer_name, s.size as size, b.foot_id as foot_id \n        from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b\n        where sm.id = st.manufacturer_id\n        and st.id = s.shoe_type_id\n        and a.size = b.size \n        and a.shoe_type_id = b.shoe_type_id\n        and s.foot_id  = a.foot_id\n        and a.foot_id != b.foot_id", :force => true do |v|
+  create_view "direct_matches", "select st.id as shoe_type_id, st.model as model_name, sm.name as manufacturer_name, s.size as size, b.foot_id as foot_id \n        from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b\n        where sm.id = st.manufacturer_id\n        and st.id = s.shoe_type_id\n        and a.size = b.size \n        and a.shoe_type_id = b.shoe_type_id\n        and s.foot_id  = a.foot_id\n        and a.foot_id != b.foot_id", :force => true do |v|
+    v.column :shoe_type_id
     v.column :model_name
     v.column :manufacturer_name
     v.column :size
     v.column :foot_id
   end
 
-  create_view "transposed_matches", "select st.model as model_name, sm.name as manufacturer_name, s.size as size, a.size as size_of_other, b.size as size_of_this, b.foot_id as foot_id \n        from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b\n        where sm.id = st.manufacturer_id\n        and st.id = s.shoe_type_id\n        and a.size != b.size \n        and a.shoe_type_id = b.shoe_type_id\n        and s.foot_id  = a.foot_id\n        and a.foot_id != b.foot_id", :force => true do |v|
+  create_view "size_equalities", "SELECT own_shoes.foot_id AS foot_id, other_shoes.foot_id AS similar_foot_id \n       FROM shoes AS own_shoes, shoes AS other_shoes WHERE\n       own_shoes.foot_id != other_shoes.foot_id and\n       own_shoes.size = other_shoes.size and\n       own_shoes.shoe_type_id = other_shoes.shoe_type_id", :force => true do |v|
+    v.column :foot_id
+    v.column :similar_foot_id
+  end
+
+  create_view "transposed_matches", "select st.id as shoe_type_id, st.model as model_name, sm.name as manufacturer_name, s.size as size, a.size as size_of_other, b.size as size_of_this, b.foot_id as foot_id \n        from shoes as s, manufacturers as sm, shoe_types as st, shoes as a, shoes as b\n        where sm.id = st.manufacturer_id\n        and st.id = s.shoe_type_id\n        and a.size != b.size \n        and a.shoe_type_id = b.shoe_type_id\n        and s.foot_id  = a.foot_id\n        and a.foot_id != b.foot_id", :force => true do |v|
+    v.column :shoe_type_id
     v.column :model_name
     v.column :manufacturer_name
     v.column :size

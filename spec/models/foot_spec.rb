@@ -12,7 +12,7 @@ describe Foot do
   end
   
   it "should find similar feet" do
-    Foot.similar_feet(@arbos_fuss.id).should include(@eckis_fuss)
+    @arbos_fuss.similar_feet.should include(@eckis_fuss)
   end
     
   it "should find shoes of the similar feet" do
