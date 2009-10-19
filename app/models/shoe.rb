@@ -24,17 +24,17 @@ class Shoe < ActiveRecord::Base
   before_save :assign_model_and_manufacturer_name
   
   named_scope :grouped_by_shoe_type, :group => :shoe_type
-  named_scope :fitting_on_foot, lambda{ |foot_id| { 
+  named_scope :of_equal_sized_feet, lambda{ |foot_id| { 
     :joins => 'JOIN size_equalities ON shoes.foot_id = size_equalities.similar_foot_id',
     :conditions => ['size_equalities.foot_id = ?', foot_id]
   }}
   
   def manufacturer
-    shoe_type.manufacturer.name if shoe_type and shoe_type.manufacturer
+    @manufacturer ||= shoe_type.manufacturer.name if shoe_type and shoe_type.manufacturer
   end
 
   def model
-    shoe_type.model if shoe_type
+    @model ||= shoe_type.model if shoe_type
   end
   
   private 

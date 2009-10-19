@@ -24,14 +24,14 @@ class Foot < ActiveRecord::Base
   validates_presence_of :shoes
 
   def shoes_of_similar_feet
-    Shoe.fitting_on_foot self.id
+    Shoe.of_equal_sized_feet self.id
   end
 
   def fitting_shoes
     fitting = fitting_shoe_types.map do |shoe_type|
       Forecast.new :foot => self, :model => shoe_type.model, :manufacturer => shoe_type.manufacturer.name
     end
-    fitting.sort{|forecast1,forecast2| forecast2.direct_matches <=> forecast1.direct_matches }
+    fitting.sort{ |a,b| a.direct_matches <=> b.direct_matches }
   end
 
   def fitting args

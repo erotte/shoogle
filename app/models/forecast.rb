@@ -28,7 +28,7 @@ class Forecast
   
   def compute_transposed_matches
     matches = @foot.transposed_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model    
-    @transposed_matches_size = matches.map{|m| m.size + m.size_of_this - m.size_of_other}.median if matches.any?
+    @transposed_matches_size = matches.map(&:transposed_size).median if matches.any?
     @transposed_matches = matches.size
   end
   
