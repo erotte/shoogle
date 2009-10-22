@@ -8,6 +8,7 @@ class Forecast
     @foot = params[:foot]
     @manufacturer = params[:manufacturer]
     @model = params[:model]
+    @ignore_own_match = params[:ignore_own_match] || false
     
     compute_average_size
     compute_direct_matches
@@ -21,13 +22,23 @@ class Forecast
   end
   
   def compute_direct_matches
-    matches = @foot.direct_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model
+    matches = if @ignore_own_match
+      @foot.direct_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model, 
+        :conditions => ["foot_id != ?", @foot.id]
+    else
+      @foot.direct_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model
+    end
     @direct_matches_size = matches.map(&:size).median if matches.any?
     @direct_matches = matches.size
   end
   
   def compute_transposed_matches
-    matches = @foot.transposed_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model    
+    matches = if @ignore_own_match 
+      @foot.transposed_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model, 
+        :conditions => ["foot_id != ?", @foot.id]
+    else
+      @foot.transposed_matches.find_all_by_manufacturer_name_and_model_name @manufacturer, @model    
+    end
     @transposed_matches_size = matches.map(&:transposed_size).median if matches.any?
     @transposed_matches = matches.size
   end

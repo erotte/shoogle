@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Forecast do
   
   before(:each) do
-    @foot = mock('foot')
+    @foot = mock 'foot', :id => 1
     @foot.stub(:shoes).and_return []
     
     @direct_matches = mock('direct_matches')

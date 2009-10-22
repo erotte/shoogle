@@ -5,10 +5,10 @@ describe Foot do
   fixtures :shoes, :feet, :shoe_types, :manufacturers
   
   before(:each) do
-    @arbos_fuss = feet(:arbo)
-    @eckis_fuss = feet(:ecki)
-    @eckis_camper = shoes(:camper)
-    @saschas_fuss = feet(:sascha)
+    @arbos_fuss = feet :arbo
+    @eckis_fuss = feet :ecki
+    @eckis_camper = shoes :camper
+    @saschas_fuss = feet :sascha
   end
   
   it "should find similar feet" do
