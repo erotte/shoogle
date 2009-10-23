@@ -1,0 +1,76 @@
+--- !ruby/object:Gem::Specification 
+name: vlad-git
+version: !ruby/object:Gem::Version 
+  version: 2.1.0
+platform: ruby
+authors: 
+- John Barnette
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-10-14 00:00:00 +02:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: hoe
+  type: :development
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 2.3.3
+    version: 
+description: |-
+  Vlad plugin for Git support. This was previously part of Vlad, but all
+  modules outside the core recipe have been extracted.
+email: 
+- jbarnette@rubyforge.org
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- Manifest.txt
+- CHANGELOG.rdoc
+- README.rdoc
+files: 
+- .autotest
+- CHANGELOG.rdoc
+- Manifest.txt
+- README.rdoc
+- Rakefile
+- lib/vlad/git.rb
+- test/test_vlad_git.rb
+has_rdoc: true
+homepage: http://github.com/jbarnette/vlad-git
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --main
+- README.rdoc
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: hitsquad
+rubygems_version: 1.3.4
+signing_key: 
+specification_version: 3
+summary: Vlad plugin for Git support
+test_files: 
+- test/test_vlad_git.rb

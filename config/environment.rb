@@ -27,7 +27,7 @@ Rails::Initializer.run do |config|
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
   config.gem 'less'
   config.gem 'vlad'
-  config.gem 'vlad-git'
+  # config.gem 'vlad-git'
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins
   # config.gem 'rails_sql_views', :lib => 'rails_sql_views', :version => '>= 0.7.0', :source => "http://gems.github.com"
