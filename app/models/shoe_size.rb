@@ -7,6 +7,4 @@ class ShoeSize
   def value
     @size_string.gsub(',', '.').to_f
   end
-  
-  
 end
