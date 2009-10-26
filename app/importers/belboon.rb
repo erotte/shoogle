@@ -4,7 +4,8 @@ importer :belboon do
   file Dir.glob("data/belboon/*.csv")
   col_sep "\t"
   quote_char "'"
-
+  converters :all
+  
   before do
     BelboonProduct.delete_all
   end
