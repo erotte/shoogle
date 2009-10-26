@@ -4,6 +4,11 @@ class Forecast
     :direct_matches, :direct_matches_size, 
     :transposed_matches, :transposed_matches_size
 
+  def belboon_product
+    products = BelboonProduct.named(@manufacturer).named(@model)
+    products.first if products.any?
+  end
+  
   def initialize params
     @foot = params[:foot]
     @manufacturer = params[:manufacturer]

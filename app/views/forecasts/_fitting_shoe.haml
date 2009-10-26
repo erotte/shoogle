@@ -7,6 +7,7 @@
       %th Hersteller
       %th Modell
       %th Größe
+      %th Bild
       %th Direkte Treffer
   %tbody    
     -@foot.fitting_shoes.each do |fitting_shoe|
@@ -14,4 +15,6 @@
         %td=fitting_shoe.manufacturer
         %td=fitting_shoe.model
         %td Größe: #{fitting_shoe.size}
+        %td
+          =render :partial => 'belboon_products/show', :locals => { :product => fitting_shoe.belboon_product}
         %td=fitting_shoe.direct_matches
