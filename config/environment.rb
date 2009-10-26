@@ -25,6 +25,8 @@ Rails::Initializer.run do |config|
   config.gem "rspec", :lib => false, :version => ">= 1.2.0"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+  config.gem "simple_importer", :lib => false, :source => "http://gemcutter.org/"
+  config.gem "fastercsv"
   config.gem 'less'
   config.gem 'vlad'
   # config.gem 'vlad-git'

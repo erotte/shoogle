@@ -10,6 +10,10 @@
     Passt 
     %span.rating= rating_as_sign
     (#{rating_as_text})
+	
+  =render :partial => 'belboon_products/show', :locals => { :product => @forecast.belboon_product} if @forecast.belboon_product
+    
+
 %p
   ( Direkte Treffer: #{@forecast.direct_matches} ergeben #{@forecast.direct_matches_size}, |
   umgerechnete Treffer: #{@forecast.transposed_matches} ergeben #{@forecast.transposed_matches_size}, |
