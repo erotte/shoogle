@@ -103,7 +103,9 @@ header_wrapper a:hover {
 .tar {
 	text-align: right;
 }
-
+.hide {
+	display: none
+}
 
 /* @end */
 
@@ -146,6 +148,16 @@ header_wrapper a:hover {
 }
 
 /* @end */
+/* @group Formtastic Overwrites */
+form.formtastic fieldset ol li label {
+	width: 30%!important;
+}
+
+.foot_shoes_form.formtastic input[type=text] {
+  font-size: 1.5em;
+}
+/* @end */
+
 /* @group Foot with Shoes Form */
 
 form.foot_shoes_form {
@@ -157,16 +169,15 @@ form.foot_shoes_form {
 }
 
 .foot_shoes_form input:focus {
-  font-size: 1.5em;
   background: #feffbe;	
 }
 
 .foot_shoes_form input.manufacturer {
-  width: 14em;
+  width: 10em;
 }
 
 .foot_shoes_form input.model {
-  width: 14em;
+  width: 10em;
 }
 
 .foot_shoes_form input.size {
@@ -288,6 +299,9 @@ table.shoes tr:hover td{
 .size_caption{
 	margin-left:275px;
 }
+table#forecast_shoes {
+	width:  80%;
+}
 /* @end */
 
 /* @group Search fitting shoes*/
@@ -308,7 +322,6 @@ table.shoes tr:hover td{
 }
 #forecast_new_foot_submit,
 #search_shoes_submit {
-	font-size: 1.7em;
 	border: outset 2px #666;
 	-moz-border-radius: 7px;
 }
@@ -321,8 +334,8 @@ table.shoes tr:hover td{
 
 /* @group Forecast*/
 .rating {
-	font-size:25px;
-	vertical-align:sub;
+	font-size: 25px;
+	vertical-align: sub;
 }
 .rating .good_stars {
 	color:#f85;
@@ -342,9 +355,13 @@ table.shoes tr:hover td{
 	font-size: 15px; 	
 }
 #forecast_new_foot_fields {
-	display:none;
+	padding: 2px;
+	background: @color1;
 }
 
+#show_result_button {
+	width:  800px;
+}
 /* @end*/
 /* @group awesome Buttons */
 /*http://www.zurb.com/blog_uploads/0000/0485/buttons-02.html*/

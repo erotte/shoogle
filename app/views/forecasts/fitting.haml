@@ -1,3 +1,4 @@
+
 .forecast
   Dir passt der
   %strong= @forecast.model 
@@ -10,7 +11,7 @@
     Passt 
     %span.rating= rating_as_sign
     (#{rating_as_text})
-	
+  
   =render :partial => 'belboon_products/show', :locals => { :product => @forecast.belboon_product} if @forecast.belboon_product
     
 
@@ -20,4 +21,3 @@
   durchschnittliche Schuhgröße: #{@forecast.average_shoe_size})
 
 %p=link_to("Weitere passende Schuhe", more_fitting_url(@foot))
-  

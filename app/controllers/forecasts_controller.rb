@@ -1,34 +1,32 @@
 class ForecastsController < ApplicationController
   
-  before_filter :fetch_foot
+  before_filter :find_current_or_create_foot
   
   def index    
   end
+
+  def wizard
+    @foot.shoes.build
+  end
   
-  def fitting
+  def add_target_shoe
     @forecast = @foot.fitting params
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @shoes }
+      format.html {  }
+      format.js { render :partial => 'add_shoe_form',  :layout => false }
     end
   end
   
-  def search
-    if @foot.id
-      render "search"
-    else
-      render "search_with_new_foot"
+  
+  def show_result
+    @forecast = @foot.fitting
+    respond_to do |format|
+      format.html {  }
+      format.js { render :partial => 'fitting_shoes',  :layout => false }
     end
   end
   
   private 
   
-  def fetch_foot
-    begin
-      @foot = Foot.find params[:foot_id] 
-    rescue
-      @foot = Foot.new
-      3.times {@foot.shoes.build}
-    end
-  end
+
 end

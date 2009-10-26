@@ -1,0 +1,16 @@
+=debug_toggle @foot
+
+/ -semantic_remote_form_for @foot, :update => 'forecast_shoes' do |form| 
+/   =form.inputs :manufacturer, :model, :size, :for => :shoe 
+/   =form.buttons
+ 
+=render :partial => 'requested_shoe_form'
+
+#forecast_shoes_form
+  = render :partial => 'add_shoe_form' unless  shoes_blank?
+%table#forecast_shoes.shoes
+  =render :partial => 'feet/shoe', :collection => @foot.shoes.delete_if{|shoe| shoe.new_record?} 
+
+#show_result_button.tar{:class => "#{ shoes_blank? ? 'hide' : ''}"  } 
+  =submit_to_remote 'show_result', "Passende Schuhe anzeigen",  :url => {:action => 'show_result'}, :update => 'forecast_result', :html => {:class => 'awesome'}  
+#forecast_result 

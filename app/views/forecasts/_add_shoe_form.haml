@@ -1,0 +1,18 @@
+- remote_form_for @foot, :html => {:class => 'foot_shoes_form formtastic'}, :update  => 'forecast_shoes', :success => '$("#show_result_button").show("normal")' do |footform| 
+  #foot_fields
+    .foot_caption
+      Bitte gib ein paar Schuhe ein, die gut passen:
+    - footform.fields_for 'shoes_attributes[]', Shoe.new  do |shoe|
+      %fieldset.inputs
+        %ol.shoe_row
+          %li
+            =shoe.label(:manufacturer, 'Hersteller ')
+            =shoe.text_field(:manufacturer, :class => "manufacturer")
+          %li
+            =shoe.label(:model, 'Modell ')
+            =shoe.text_field(:model, :class => 'model') 
+          %li
+            =shoe.label(:size, 'Größe')
+            =shoe.text_field(:size, :class => 'size')
+          %li
+            =footform.submit 'Schuhe hinzufügen', :class => 'awesome orange'

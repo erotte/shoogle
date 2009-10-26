@@ -1,4 +1,6 @@
 class ShoesController < ApplicationController
+  
+  before_filter :find_current_or_create_foot
   # GET /shoes
   # GET /shoes.xml
   def index
@@ -40,7 +42,7 @@ class ShoesController < ApplicationController
   # POST /shoes
   # POST /shoes.xml
   def create
-    @shoe = Shoe.new(params[:shoe])
+    @shoe = Shoe.new(params[:shoe].merge(:foot => @foot))
 
     respond_to do |format|
       if @shoe.save
@@ -79,6 +81,7 @@ class ShoesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(shoes_url) }
+      format.js { render :partial => 'feet/shoe', :collection => @foot.shoes }
       format.xml  { head :ok }
     end
   end

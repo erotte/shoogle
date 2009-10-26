@@ -54,8 +54,11 @@ class FeetController < ApplicationController
   # PUT /feet /1.xml
   def update
     @foot = Foot.find(params[:id])
-    @foot.update_attributes(params[:foot]) ?
-        redirect_to(foot_path(@foot)) : render(:action => :edit)
+    @foot.update_attributes(params[:foot])
+    respond_to do |format|
+      format.html # new.html.erb
+      format.js  { render :partial => 'feet/shoe', :collection => @foot.shoes }
+    end  
   end
 
   # DELETE /feet /1

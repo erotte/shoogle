@@ -14,4 +14,8 @@ module ForecastsHelper
     
     "<span class='good_stars'>#{good_stars}</span><span class='bad_stars'>#{bad_stars}</span>"
   end
+  
+  def shoes_blank?
+    @foot.shoes.delete_if{|shoe| shoe.new_record?}.blank?
+  end
 end

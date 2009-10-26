@@ -1,14 +1,7 @@
-%tr
-  %td
-    <%= shoe.text_field :manufacturer %>
-       
-  %td      
-    <%= shoe.text_field :model %>
-       
-  %td      
-    <%= shoe.text_field :size %>
-       
-  %td
-    <%= remove_shoe_button "Zeile löschen" %>
+%tr{ :class => cycle('odd','even') }
+  %td= shoe.manufacturer 
+  %td= shoe.model 
+  %td= shoe.size 
+  %td= link_to_remote "löschen", :url => "/shoes/#{shoe.id}", :method => :delete, :update => 'forecast_shoes'
   
   

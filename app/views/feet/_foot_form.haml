@@ -1,4 +1,10 @@
-- form_for @foot, :html => {:class => 'foot_shoes_form'} do |footform| 
-  = render :partial => 'shoe_fields', :locals => {:subform => footform} 
+- remote_form_for @foot, :html => {:class => 'foot_shoes_form'}, :update  => 'forecast_shoes' do |footform| 
+  #foot_fields
+    .foot_caption
+      Bitte gib ein paar Schuhe ein, die gut passen:
+      %span.manufacturer_caption="Hersteller"
+      %span.model_caption="Modell"
+      %span.size_caption="Größe in EUR"
+
   %p.tar.buttonbox
-    = footform.submit 'Speichern'
+    = footform.submit 'passende Schuhe anzeigen'

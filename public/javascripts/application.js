@@ -1,5 +1,9 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
+jQuery.ajaxSetup({
+'beforeSend': function(xhr){xhr.setRequestHeader('Accept','text/javascript')}
+})
+
 $(document).ready(function(){
 	$(".foot_shoes_form .remove_shoe:first").hide()
   
@@ -21,7 +25,9 @@ $(document).ready(function(){
 			return false 
 		}
 	})
-	
+	// $('#search_shoes_submit').click(function(){
+	// 	$("#forecast_shoes_form").show();return false
+	// })	
 })	
 
 init_autocompletion = function() {
@@ -38,19 +44,3 @@ init_autocompletion = function() {
 	})
 }
 
-// Muss zunächst direkt als Funktionsaufruf in das onClick-Attribut, da sont nach jeder Aktion neu initialisiert werden müsste.
-// $('#add_shoe_fields').click( 
-add_shoe_fields = function(event){
-		cloned_row = $('#insert_shoe_button_row').prev().clone(true) 
-		$('input', cloned_row ).val("")
-		rows_size =  $(".shoe_row").length
-		cloned_row = cloned_row.html().replace(/\[\d\]/g, "["+rows_size+"]").replace(/_\d_/g, "_"+rows_size+"_").replace(/value="[^"]*"/g, 'value=""')
-		$('#insert_shoe_button_row').before('<div class="shoe_row">'+cloned_row+'</div>').prev().hide().slideDown(100)
-		init_autocompletion()
-		return false
-		// event.preventDefault()
-	}
-remove_shoe_fields = function(elem){
-	
-	 console.debug($(elem).parent('.shoe_row').slideUp(100).children('input[name*=_delete]').val('1'))
-}

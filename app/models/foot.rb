@@ -18,10 +18,10 @@ class Foot < ActiveRecord::Base
   has_many :size_equalities
   has_many :similar_feet, :through => :size_equalities
 
-  accepts_nested_attributes_for :shoes, :allow_destroy => true, :reject_if => proc { |attributes| attributes.all? {|k,v| v.blank?} }
+  accepts_nested_attributes_for :shoes, :allow_destroy => true
 
-  validates_associated  :shoes
-  validates_presence_of :shoes
+  # validates_associated  :shoes
+  # validates_presence_of :shoes
 
   
   def shoes_of_similar_feet

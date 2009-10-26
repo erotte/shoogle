@@ -15,4 +15,14 @@ class ApplicationController < ActionController::Base
         user_name == USER_NAME && password == PASSWORD
       end
     end
+    
+    def find_current_or_create_foot
+      if session[:foot_id]
+         @foot ||= Foot.find(session[:foot_id])     
+      else
+        @foot = Foot.create
+        session[:foot_id] = @foot.id
+      end  
+      @foot
+    end
 end
