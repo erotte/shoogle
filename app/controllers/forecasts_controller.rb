@@ -10,7 +10,7 @@ class ForecastsController < ApplicationController
   end
   
   def add_target_shoe
-    @forecast = @foot.fitting params
+    @forecast = Forecast.new  params.merge(:foot => @foot)
     respond_to do |format|
       format.html {  }
       format.js { render :partial => 'add_shoe_form',  :layout => false }
@@ -19,7 +19,7 @@ class ForecastsController < ApplicationController
   
   
   def show_result
-    @forecast = @foot.fitting
+    @forecast.update_attributes :foot => @foot
     respond_to do |format|
       format.html {  }
       format.js { render :partial => 'fitting_shoes',  :layout => false }
