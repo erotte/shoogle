@@ -9,24 +9,25 @@ class ForecastsController < ApplicationController
     @foot.shoes.build
   end
   
+  def new
+    session[:foot_id] = nil
+    redirect_to root_url
+  end
+  
   def add_target_shoe
-    @forecast = Forecast.new  params.merge(:foot => @foot)
+    session[:searched_manufacturer] = params[:manufacturer]
+    session[:searched_model] = params[:model]
+    
     respond_to do |format|
       format.html {  }
       format.js { render :partial => 'add_shoe_form',  :layout => false }
     end
   end
   
-  
-  def show_result
-    @forecast.update_attributes :foot => @foot
+  def fitting
+    @forecast = @foot.fitting :manufacturer => session[:searched_manufacturer], :model => session[:searched_model]
     respond_to do |format|
-      format.html {  }
-      format.js { render :partial => 'fitting_shoes',  :layout => false }
+      format.html
     end
   end
-  
-  private 
-  
-
 end

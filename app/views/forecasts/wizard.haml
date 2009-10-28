@@ -6,11 +6,15 @@
  
 =render :partial => 'requested_shoe_form'
 
+
 #forecast_shoes_form
-  = render :partial => 'add_shoe_form' unless  shoes_blank?
+  = render :partial => 'add_shoe_form' unless shoes_blank?
+= link_to "Löschen", :action => :new, :controller => :forecasts
 %table#forecast_shoes.shoes
   =render :partial => 'feet/shoe', :collection => @foot.shoes.delete_if{|shoe| shoe.new_record?} 
 
 #show_result_button.tar{:class => "#{ shoes_blank? ? 'hide' : ''}"  } 
-  =submit_to_remote 'show_result', "Passende Schuhe anzeigen",  :url => {:action => 'show_result'}, :update => 'forecast_result', :html => {:class => 'awesome'}  
+  =link_to "Ergebnis Anzeigen", fitting_url(@foot)
+  %br
+  =link_to "Alle passenden Schuhe", more_fitting_url(@foot)
 #forecast_result 

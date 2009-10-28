@@ -23,7 +23,6 @@ class FeetController < ApplicationController
   # GET /feet /new.xml
   def new
     @foot = Foot.new
-    3.times {@foot.shoes.build}
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @foot }
@@ -40,10 +39,10 @@ class FeetController < ApplicationController
   def create
       @foot = Foot.new params[:foot]
       if @foot.save 
-        if params[:manufacturer].present? and params[:model].present?
-          redirect_to fitting_url(@foot, :manufacturer => params[:manufacturer], :model => params[:model])
-        else
-          redirect_to foot_path(@foot)
+        session[:foot_id] = @foot.id
+        respond_to do |format|
+          format.html {redirect_to foot_path(@foot)}
+          format.js  { render :partial => 'feet/shoe', :collection => @foot.shoes }
         end
       else 
         render :action => :new
