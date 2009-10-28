@@ -1,18 +1,24 @@
+# require 'iconv'
+# ICONV = Iconv.new( 'UTF-8', 'ISO-8859-1' )
+# FasterCSV::Converters.merge!(:utf8 => lambda{|val| ICONV.iconv(val) })
+
 importer :belboon do
   desc 'Import affiliate data from belboon/adbutler'
   
   file Dir.glob("data/belboon/*.csv")
   col_sep "\t"
   quote_char "'"
-  converters :all
   
+  converters :all
+   
   before do
     BelboonProduct.delete_all
   end
 
   foreach_file do |file|
     puts "importing all belboon products from #{file} .."
-    
+    system "cp #{file} #{file}.src"
+    system "iconv -c -t UTF-8 -f ISO-8859-1 #{file}.src > #{file}"
     foreach do |row|
       print '.'
       BelboonProduct.create(
