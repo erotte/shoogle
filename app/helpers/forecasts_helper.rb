@@ -18,4 +18,10 @@ module ForecastsHelper
   def shoes_blank?
     @foot.shoes.delete_if{|shoe| shoe.new_record?}.blank?
   end
+
+  def first_shoe?
+    @foot.shoes.delete_if{|shoe| shoe.new_record?}.size == 1
+  end
+
+
 end

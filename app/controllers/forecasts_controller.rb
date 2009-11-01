@@ -15,9 +15,7 @@ class ForecastsController < ApplicationController
   end
   
   def add_target_shoe
-    session[:searched_manufacturer] = params[:manufacturer]
-    session[:searched_model] = params[:model]
-    
+    place_target_shoe
     respond_to do |format|
       format.html {  }
       format.js { render :partial => 'add_shoe_form',  :layout => false }
@@ -29,5 +27,12 @@ class ForecastsController < ApplicationController
     respond_to do |format|
       format.html
     end
+  end
+
+  private
+  
+  def place_target_shoe
+    session[:searched_manufacturer] = params[:manufacturer]
+    session[:searched_model] = params[:model]
   end
 end

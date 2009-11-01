@@ -1,0 +1,10 @@
+%table#forecast_shoes 
+  =render( :partial => 'feet/shoe', :collection => @foot.shoes)  
+
+#show_result_button.tar{:class => "#{ shoes_blank? ? 'hide' : ''}"  } 
+  =link_to "Ergebnis Anzeigen", fitting_url(@foot), :class => 'awesome orange'
+  %br
+  %br
+  =link_to "Alle passenden Schuhe", more_fitting_url(@foot), :class => 'awesome orange'
+  
+  
