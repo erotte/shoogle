@@ -56,7 +56,7 @@ class FeetController < ApplicationController
     @foot.update_attributes(params[:foot])
     respond_to do |format|
       format.html # new.html.erb
-      format.js  { render :partial => 'feet/shoes', :collection => @foot.shoes }
+      format.js  { render :partial => 'feet/shoes' }
     end  
   end
 

@@ -6,7 +6,6 @@ class Array
  
   def median
     values = entries.sort
- 
     if size == 1
       values.first
     elsif size.odd?
