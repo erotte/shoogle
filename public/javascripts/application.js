@@ -25,9 +25,6 @@ $(document).ready(function(){
 			return false 
 		}
 	})
-	// $('#search_shoes_submit').click(function(){
-	// 	$("#forecast_shoes_form").show();return false
-	// })	
 })	
 
 init_autocompletion = function() {
