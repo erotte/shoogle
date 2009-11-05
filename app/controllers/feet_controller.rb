@@ -41,8 +41,8 @@ class FeetController < ApplicationController
       if @foot.save 
         session[:foot_id] = @foot.id
         respond_to do |format|
-          format.html {redirect_to foot_path(@foot)}
-          format.js  { render :partial => 'feet/shoes' }
+          format.html { redirect_to :controller => :forecasts, :action => :wizard}
+          format.js   { render :partial => 'feet/shoes' }
         end
       else 
         render :action => :new
@@ -55,7 +55,7 @@ class FeetController < ApplicationController
     @foot = Foot.find(params[:id])
     @foot.update_attributes(params[:foot])
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { redirect_to :controller => :forecasts, :action => :wizard}
       format.js  { render :partial => 'feet/shoes' }
     end  
   end
