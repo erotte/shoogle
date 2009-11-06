@@ -1,6 +1,7 @@
 class ForecastsController < ApplicationController
   
   before_filter :find_current_or_create_foot
+  helper_method :searched_shoe
   
   def index    
   end
@@ -15,24 +16,23 @@ class ForecastsController < ApplicationController
   end
   
   def add_target_shoe
-    place_target_shoe
+    @searched_shoe = session[:searched_shoe] = SearchedShoe.new(params)
     respond_to do |format|
-      format.html {  }
+      format.html { render :wizard }
       format.js { render :partial => 'add_shoe_form',  :layout => false }
     end
   end
   
   def fitting
-    @forecast = @foot.fitting :manufacturer => session[:searched_manufacturer], :model => session[:searched_model]
+    @forecast = @foot.fitting :manufacturer => searched_shoe.manufacturer, :model => searched_shoe.model
     respond_to do |format|
       format.html
     end
   end
 
-  private
+  protected
   
-  def place_target_shoe
-    session[:searched_manufacturer] = params[:manufacturer]
-    session[:searched_model] = params[:model]
+  def searched_shoe 
+    session[:searched_shoe]
   end
 end
