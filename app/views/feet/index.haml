@@ -1,10 +1,12 @@
 %h1 Listing Feet and Shoes
+-if flash[:message]
+  %p.message=flash[:message]   
     
 - @feet.each do |foot|
   %br 
   =link_to("Anzeigen", foot)
   |
-  =link_to 'Fuß löschen', foot, :confirm => 'Wirklich löschen?', :method => :delete
+  =link_to 'Fuß löschen', foot, :method => :delete #, :confirm => 'Wirklich löschen?'
   |
   =link_to("passende Schuhe suchen", search_url(foot))
   |
@@ -17,5 +19,5 @@
         %td=shoe.model
         %td=shoe.size
         %td=link_to("Bearbeiten", edit_shoe_path(shoe))
-        %td=link_to 'Schuh löschen', shoe, :confirm => 'Wirklich löschen?', :method => :delete
+        %td=link_to 'Schuh löschen', shoe, :method => :delete #, :confirm => 'Wirklich löschen?'
   

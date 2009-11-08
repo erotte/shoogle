@@ -65,6 +65,7 @@ class FeetController < ApplicationController
   def destroy
     @foot = Foot.find(params[:id])
     @foot.destroy
+    flash[:message] = "Shoe #{params[:id]} destroyed."
     respond_to do |format|
       format.html { redirect_to(feet_path) }
       format.xml  { head :ok }
