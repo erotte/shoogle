@@ -5,7 +5,7 @@ class SearchedShoe
     @model, @manufacturer = args[:model], args[:manufacturer] 
     @errors = []
   end
-  
+  # Bullshit, das brauchen wir nicht, mehr später
   def validate
     error_text = "Um eine Suche nach einem Schuh durchführen zu können, brauchen 
       wir mindestens einen Herstellernamen. Die Suche funktioniert besser, wenn 
