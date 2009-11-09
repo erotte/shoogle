@@ -11,7 +11,7 @@ class ForecastsController < ApplicationController
   end
   
   def new
-    session[:foot_id] = nil
+    session[:foot_id] = session[:searched_shoe] = nil
     redirect_to root_url
   end
   

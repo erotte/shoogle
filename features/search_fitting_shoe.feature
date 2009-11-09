@@ -29,6 +29,7 @@ Feature: Searching for a fitting shoe
     And I have a "Adidas" "Samba" in "45"
     When I follow "Ergebnis Anzeigen"
     Then I should see "Dir passt der" 
+    And I should see "Nike" 
     And I should see "Air Force 1" 
     And I should see "in der Größe"
     And I should see "45.5"
