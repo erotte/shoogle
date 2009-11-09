@@ -7,12 +7,18 @@ Feature: Searching for a fitting shoe
     Given I am on the homepage
     Then I should not see "Bitte gib ein paar Schuhe ein, die gut passen:"
 
+  Scenario: New visitor gets an error message if searched shoe form submission is empty 
+    Given I am on the homepage
+    And I press "Weiter"
+    Then I should see "mindestens einen Herstellernamen"
+
   Scenario: New visitor saves its searched shoe 
     Given I am on the homepage
     When I fill in "manufacturer" with "Nike"
     And I fill in "model" with "Air Force 1"
     And I press "Weiter"
     Then I should see "Bitte gib ein paar Schuhe ein, die gut passen:"
+
 
   Scenario: The visitor saves a shoe
     Given I am on the homepage

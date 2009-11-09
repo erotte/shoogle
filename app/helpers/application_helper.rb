@@ -6,5 +6,9 @@ module ApplicationHelper
     out +=  content_tag :small, link_to_function( "debug", '$("#debug").toggle("normal")')  
     out 
   end
-    
+  
+  def render_flash_for 
+    return "" if flash.blank? 
+    render  :partial  => '/layouts/flash'  
+  end  
 end

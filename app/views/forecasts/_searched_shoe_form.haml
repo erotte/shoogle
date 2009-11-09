@@ -1,10 +1,11 @@
-- remote_form_for( :foot, :url => {:action => 'add_target_shoe'}, :update => 'forecast_shoes_form', :complete => '$("#forecast_shoes_form").show(); init_autocompletion();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :class => "search_shoes_form") do |foot|
+=debug @searched_shoe
+=error_messages_for :searched_shoe
+- remote_form_for :searched_shoe, @searched_shoe, :url => {:action => 'add_target_shoe'}, :update => 'forecast_shoes_form', :complete => '$("#forecast_shoes_form").show(); init_autocompletion();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :class => "search_shoes_form" do |searched_shoe|
   .forecast
     .shoe_row
       In welcher Größe passt mir von
-      = text_field_tag "manufacturer", params[:manufacturer], :class => "manufacturer", :id => "manufacturer"
+      =searched_shoe.text_field :manufacturer
       der 
-      = text_field_tag "model", params[:model], :class => "model", :id => "model"
-      ?
+      =searched_shoe.text_field :model
       = submit_tag 'Weiter', :id => "search_shoes_submit",  :class => 'awesome orange'
-      
+        

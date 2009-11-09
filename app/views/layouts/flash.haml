@@ -1,0 +1,8 @@
+-unless flash[:error].blank?
+  %p.flash.error
+    =flash[:error]
+
+-unless flash[:notice].blank?
+  %p.flash.notice
+    =flash[:notice]
+  =javascript_tag "$$('.flash')[0].fade( {duration: 7})"

@@ -1,0 +1,69 @@
+--- !ruby/object:Gem::Specification 
+name: simple_importer
+version: !ruby/object:Gem::Version 
+  version: 0.1.0
+platform: ruby
+authors: 
+- Justin Marney
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-10-22 00:00:00 +02:00
+default_executable: 
+dependencies: []
+
+description: Provides a simple dsl for creating csv import tasks.
+email: gotascii@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- LICENSE
+- README.rdoc
+files: 
+- .gitignore
+- LICENSE
+- README.rdoc
+- Rakefile
+- VERSION
+- data/example.csv
+- importers/example.rb
+- lib/simple_importer.rb
+- lib/simple_importer/tasks.rb
+- lib/simple_importer/tasks/simple_importer.rake
+- simple_importer.gemspec
+- test/test_helper.rb
+- test/test_simple_importer.rb
+has_rdoc: true
+homepage: http://github.com/vigetlabs/simple_importer
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.4
+signing_key: 
+specification_version: 3
+summary: Simple api for importing from csv.
+test_files: 
+- test/test_helper.rb
+- test/test_simple_importer.rb

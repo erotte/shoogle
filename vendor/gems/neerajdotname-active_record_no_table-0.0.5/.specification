@@ -1,0 +1,62 @@
+--- !ruby/object:Gem::Specification 
+name: neerajdotname-active_record_no_table
+version: !ruby/object:Gem::Version 
+  version: 0.0.5
+platform: ruby
+authors: 
+- Neeraj Singh
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-06-30 00:00:00 +02:00
+default_executable: 
+dependencies: []
+
+description: validate non active record model.
+email: 
+- neerajdotname@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- History.txt
+- PostInstall.txt
+- README.markdown
+files: 
+- History.txt
+- PostInstall.txt
+- README.markdown
+- lib/active_record_no_table.rb
+has_rdoc: true
+homepage: http://github.com/neerajdotname/active_record_no_table
+licenses: []
+
+post_install_message: README.markdown
+rdoc_options: 
+- --main
+- README.markdown
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: neerajdotname
+rubygems_version: 1.3.4
+signing_key: 
+specification_version: 2
+summary: validate a non active record model
+test_files: []
+
