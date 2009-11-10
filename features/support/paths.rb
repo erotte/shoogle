@@ -10,6 +10,8 @@ module NavigationHelpers
     
     when /the home\s?page/
       '/'
+    when /listing feet page/
+      '/feet'
     
     # Add more mappings here.
     # Here is a more fancy example:
