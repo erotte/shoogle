@@ -19,7 +19,7 @@ class ForecastsController < ApplicationController
     @searched_shoe = session[:searched_shoe] = SearchedShoe.new(params)
     respond_to do |format|
       format.html { render :wizard }
-      format.js { render :partial => 'add_shoe_form',  :layout => false }
+      format.js { render :partial => 'add_shoe_form',  :layout => false  }
     end
   end
   

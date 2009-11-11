@@ -25,10 +25,11 @@ Rails::Initializer.run do |config|
   config.gem "sqlite3-ruby", :lib => "sqlite3"
   config.gem 'haml'
   config.gem "simple_importer", :lib => false, :source => "http://gemcutter.org/"
-  config.gem "fastercsv"
-  config.gem 'less'
-  config.gem 'vlad'
-#  config.gem 'vlad-git'
+  config.gem "fastercsv", :lib => false
+  config.gem 'less', :lib => false
+  config.gem 'vlad', :lib => false
+  config.gem 'vlad-git', :lib => false
+
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins
   # config.gem 'rails_sql_views', :lib => 'rails_sql_views', :version => '>= 0.7.0', :source => "http://gems.github.com"
