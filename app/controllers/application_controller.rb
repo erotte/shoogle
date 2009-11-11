@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   USER_NAME, PASSWORD = "shoomoo", "mooshoo"
-  before_filter :authenticate, :except => [ :index ] if RAILS_ENV.eql?('production')
+  #before_filter :authenticate, :except => [ :index ] if RAILS_ENV.eql?('production')
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
