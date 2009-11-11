@@ -10,7 +10,7 @@ Feature: Footcheck
     When I am on listing feet page
     And I follow "foot_check"
     Then I should see "Air Force 1"
-    And I should see "45.5"
+    And I should see "Durchschnittliche Größe"
   
   
   

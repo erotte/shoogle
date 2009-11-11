@@ -49,7 +49,8 @@ class Forecast
   end
   
   def choose_recommended_size
-    @size = @direct_matches_size || @transposed_matches_size || @average_shoe_size
+    size = @direct_matches_size || @transposed_matches_size || @average_shoe_size
+    @size = round(size, 2)
   end
   
   def rating
@@ -63,5 +64,10 @@ class Forecast
 
   def max_rating
     3
+  end
+  
+  def round(f, digits)
+    factor = (10 ** digits).to_f
+    (f * factor).round / factor
   end
 end
