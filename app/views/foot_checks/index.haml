@@ -1,0 +1,32 @@
+%table#foot_check_shoes.shoes
+  %thead
+    %tr
+      %th Hersteller
+      %th Modell
+      %th Größe
+      %th Vorgeschlag
+      %th direct Anzahl
+      %th Größe
+      %th transposed Anzahl
+      %th Größe
+      %th Durchschnittliche Größe
+  %tbody
+  
+  - @foot.shoes.each do |shoe|
+    - forecast = @foot_check.forecast_for shoe  
+    %tr{ :class => cycle('odd','even') }
+      %td=shoe.manufacturer
+      %td=shoe.model
+      %td Größe: #{shoe.size}
+      %td=forecast.size
+      %td=forecast.direct_matches
+      %td=forecast.direct_matches_size
+      %td=forecast.transposed_matches
+      %td=forecast.transposed_matches_size
+      %td=forecast.average_shoe_size
+      
+
+  
+  
+    
+    
