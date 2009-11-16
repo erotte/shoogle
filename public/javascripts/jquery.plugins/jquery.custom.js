@@ -7,11 +7,16 @@
 		if ($(this).length < 1) 
 			return;
 		$(this).focus(function() {
-			$(this).val( $(this).val() == this.defaultValue ?	"" : null);
+			if ($(this).val() == this.defaultValue){
+				$(this).val("");
+				$(this).toggleClass("passive")
+			}	
 		});
 		$(this).blur(function() {
-			strg = $(this).val().replace(/\s/, "") == "" ? this.defaultValue : $(this).val();
-			$(this).val(strg) 
+			if ($(this).val().replace(/\s/, "") == "") {
+				$(this).val(this.defaultValue);
+				$(this).toggleClass("passive")
+			}
 		});
 	};
 })(jQuery);

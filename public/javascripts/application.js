@@ -7,7 +7,6 @@ jQuery.ajaxSetup({
 $(document).ready(function(){
   
 	init_autocompletion();
-	// $("input.passive").click(function(){return console.debug(this)});
 	$("input.passive").toggleDefaultValue();
 	
 })	
