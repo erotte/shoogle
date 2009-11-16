@@ -6,27 +6,19 @@ jQuery.ajaxSetup({
 
 $(document).ready(function(){
   
-	init_autocompletion()
+	init_autocompletion();
+	// $("input.passive").click(function(){return console.debug(this)});
+	$("input.passive").toggleDefaultValue();
 	
-	$('#forecast_new_foot_submit').click(function(){
-		if ($('#forecast_new_foot_fields').is(':hidden')){ 
-			$('#forecast_new_foot_fields').fadeIn() 
-			return false 
-		}
-	})
 })	
 
 init_autocompletion = function() {
-	$(".manufacturer").autocomplete("/manufacturers.js")
-	
-	$(".model").each(function(i){
-		$(this).autocomplete("/shoe_types/models.js", {
-			extraParams: {
-		  	manufacturer: function() { 
-					return $($('.manufacturer')[i]).val()
-				}
-		  }
-		})
+	$("input.manufacturer").autocomplete("/manufacturers.js");
+	$("input.model").autocomplete("/shoe_types/models.js", {
+		extraParams: {
+		 	manufacturer: function() { 
+				return $('.manufacturer', $(this).parents('.shoe_row')).val()
+			}
+		}
 	})
 }
-

@@ -60,25 +60,6 @@ blockquote, q {
 
 /* @group Basic Styles */
 
-/* @group Forms */
-input[type="text"], input[type="password"], textarea {
-	padding: 1px 1px 1px 5px!important;
-	border: 1px solid @light_blue;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-}
-input[type="text"]:focus, input[type="password"]:focus, 
-textarea:focus {
-	border-color:  @claim_bg_blue;
-}
-input.disabled{
-	border: 0 solid;
-	
-}
-
-/* @end */
-
 html, body {
 	height: 100%;
 	border-color: #106fbf;
@@ -111,6 +92,10 @@ ul, li{
 	list-style: none;
 }
 
+h3 {
+	font-size: 16px;
+	margin: 2.2em 0 0.7em 0; 
+}
 
 /* @end */
 
@@ -266,53 +251,46 @@ ul#metanav li a:hover {
 }
 
 /* @end */
-/* @group Formtastic Overwrites */
-form.formtastic fieldset ol li label {
-	width: 30%!important;
+
+/* @group Forms */
+
+	/* @group Formtastic Overwrites */
+	form.formtastic fieldset ol li label {
+		width: 30%!important;
+	}
+	
+	form.formtastic input[type="text"], 
+	form.formtastic input[type="password"], 
+	form.formtastic textarea {
+	  	font-size: 1.7em;
+	}	
+	/* @end */
+
+input[type="text"], input[type="password"], textarea {
+	padding: 1px 1px 1px 5px!important;
+ 	border: 1px solid @light_blue;
+  	-moz-border-radius: 4px;
+  	-webkit-border-radius: 4px;
+  	border-radius: 4px;
+  	font-size: 1.7em;
 }
 
-.foot_shoes_form.formtastic input[type=text] {
-  font-size: 1.5em;
+input[type="text"]:focus, input[type="password"]:focus, 
+textarea:focus {
+	border-color:  @claim_bg_blue;
 }
-/* @end */
-
-/* @group Foot with Shoes Form */
-
-form.foot_shoes_form {
-	margin-top: 20px;
-}
-
-.foot_shoes_form input {
-  font-size: 1.5em;
-}
-
-.foot_shoes_form input:focus {
+input:focus {
   background: #feffbe;	
 }
 
-.foot_shoes_form input.manufacturer {
-  width: 10em;
+
+input.passive {
+	color: #d9d9d9;
 }
 
-.foot_shoes_form input.model {
-  width: 10em;
-}
-
-.foot_shoes_form input.size {
-  width: 5em;
-}
-
-.shoe_row {
-	margin-bottom: 1em;
-	padding: 1em 0 1em 0;
-	width: 800px;
-}
-
-#foot_submit {
-	border: outset 2px #666;
-	-moz-border-radius: 7px;
-}
 /* @end */
+
+
 
 p.buttonbox {
 	width: 88%;
@@ -357,113 +335,31 @@ p.buttonbox {
 
 /* @end */
 
-/* @group Result Shoes */
- 
-table.shoes {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  font-size: 12px;
-  margin: 15px 0 30px 0;
-} 
-table.shoes tbody {
-    border-left: 1px solid #ccc;
-}
-table.shoes th{
-	font-size: 12px;
-  	border: 1px solid #ccc;	
-} 
-
-table.shoes td{
-  padding: 4px 8px;
-  border-right: 1px solid #ccc;
-} 
-.shoes tr.odd td{
-   background-color: #efefef;
-}
-table.shoes tr:hover td{
-	background: @light_blue!important;
-} 
-table.shoes .actions {
-	text-align: center;
-}
-.model_caption{
-	margin-left:260px;
-}
-.size_caption{
-	margin-left:275px;
-}
-table#forecast_shoes {
-	width:  80%;
+/* @group Wizard */
+.foot_shoes_form input.manufacturer {
+  width: 10em;
 }
 
-table#foot_check_shoes {
-	width:  95%;
+.foot_shoes_form input.model {
+  width: 10em;
+}
+
+.foot_shoes_form input.size {
+  width: 5em;
+}
+
+ul#search_options{
+	margin: 15px 0 20px 160px;
+}
+
+#search_options li {
+	display: inline;
+	margin: 0 50px;
 }
 
 /* @end */
 
-/* @group Search fitting shoes*/
-.search_shoes_form {
-}
 
-.search_shoes_form input {
-  font-size: 1em;
-  
-}
-.search_shoes_form input:focus {
-  font-size: 1em;
-  background: #feffbe;	
-}
-.search_shoes_form input.manufacturer,
-.search_shoes_form input.model {
-  width: 12em;
-}
-#forecast_new_foot_submit,
-#search_shoes_submit {
-	border: outset 2px #666;
-	-moz-border-radius: 7px;
-}
-
-.disabled {
-	color: grey;	
-}
-
-/* @end*/
-
-/* @group Forecast*/
-.rating {
-	font-size: 25px;
-	vertical-align: sub;
-}
-.rating .good_stars {
-	color:#f85;
-}
-.rating .bad_stars {
-	color:#aaa;
-}
-
-.foot_caption{
-	margin-bottom: 15px;
-}
-
-.foot_caption,
-#manufacturer,
-#model,
-.forecast {
-	font-size: 15px; 	
-}
-#forecast_new_foot_fields {
-	padding: 2px;
-	background: @light_grey;
-}
-
-#show_result_button {
-	width:  766px;
-	margin-top: 30px;
-}
-/* @end*/
 /* @group awesome Buttons */
 /*http://www.zurb.com/blog_uploads/0000/0485/buttons-02.html*/
 /* IE Fallback not implemented yet...*/

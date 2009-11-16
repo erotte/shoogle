@@ -3,10 +3,8 @@
   %head
     %title shoe size finder 
     = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic'
-    = javascript_include_tag 'jquery', 'jquery.autocomplete', 'application' 
+    = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete', 'jquery.plugins/jquery.custom', 'application' 
     = yield :head
-    -javascript_tag do 
-      = yield(:jstemplates) 
   %body
     #header_wrapper
       #header.centered

@@ -1,10 +1,15 @@
-- remote_form_for( :foot, :url => {:action => 'add_target_shoe'}, :update => 'forecast_shoes_form', :complete => '$("#forecast_shoes_form").show(); init_autocompletion();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :class => "search_shoes_form") do |foot|
+=debug_toggle @foot
+- remote_form_for( :foot, :url => {:action => 'add_target_shoe'}, :update => 'forecast_shoes_form', :complete => '$("#forecast_shoes_form").show(); init_autocompletion();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :html => {:class => "foot_shoes_form"}) do |foot|
   .forecast
     .shoe_row
       In welcher Größe passt mir von
-      = text_field_tag "manufacturer", params[:manufacturer], :class => "manufacturer", :id => "manufacturer"
-      der 
-      = text_field_tag "model", params[:model], :class => "model", :id => "model"
+      = text_field_tag "manufacturer", params[:manufacturer], :class => "manufacturer passive", :id => "manufacturer", :value => "Hersteller"
+      das Modell 
+      = text_field_tag "model", params[:model], :class => "model passive", :id => "model", :value => "Modell"
       ?
       = submit_tag 'Weiter', :id => "search_shoes_submit",  :class => 'awesome orange'
       
+      
+  %ul#search_options
+    %li=link_to( "Nur nach Marke suchen", "#", :id => "toggle_model_search" )  
+    %li=link_to( "alle passenden Schuhe anzeigen", "#", :id => "toggle_searched_shoe_search")    
