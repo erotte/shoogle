@@ -16,7 +16,7 @@ class ForecastsController < ApplicationController
   end
   
   def add_target_shoe
-    @searched_shoe = session[:searched_shoe] = SearchedShoe.new(params)
+    @searched_shoe = session[:searched_shoe] = SearchedShoe.new(params) unless params.blank?
     respond_to do |format|
       format.html { render :wizard }
       format.js { render :partial => 'add_shoe_form',  :layout => false  }

@@ -2,7 +2,7 @@
 Given /^I am searching a "([^\"]*)" "([^\"]*)"$/ do |manufacturer, model|
     fill_in("manufacturer", :with => manufacturer)
     fill_in("model", :with => model)
-    click_button("search_shoes_submit")
+    click_button("searched_shoe_submit")
 end
 
 Given /^I enter shoe "([^\"]*)" "([^\"]*)" in "([^\"]*)"$/ do |manufacturer, model, size|
