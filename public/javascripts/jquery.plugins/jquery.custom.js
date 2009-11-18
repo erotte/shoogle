@@ -20,3 +20,10 @@
 		});
 	};
 })(jQuery);
+
+(function($) {
+	jQuery.fn.highlight = function() {
+		$(this).animate({backgroundColor: '#ffb429', opacity: 0.7}, 150)
+		.animate({backgroundColor: 'transparent', opacity: 1}, 300, 'swing')
+	}
+})(jQuery);
