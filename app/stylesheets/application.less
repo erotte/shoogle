@@ -361,8 +361,53 @@ ul#search_options{
 	position: relative;
 	top:  -4px;
 }
+
+table#forecast_shoes {
+	width: 80%;
+	border: 1px solid #ccc;
+}
+
+#forecast_shoes td{
+  padding: 4px 8px;
+  border-right: 1px solid #ccc;
+} 
+#forecast_shoes tr.odd td{
+   background-color: #efefef;
+}
+#forecast_shoes tr:hover td{
+	background: @light_blue!important;
+} 
+#forecast_shoes .actions {
+	text-align: center;
+}
+
+table#foot_check_shoes {
+	width:  95%;
+}
 /* @end */
 
+/* @group Forecast*/
+.rating {
+	font-size: 25px;
+	vertical-align: sub;
+}
+.rating .good_stars {
+	color:#f85;
+}
+.rating .bad_stars {
+	color:#aaa;
+}
+
+#forecast_new_foot_fields {
+	padding: 2px;
+	background: @light_grey;
+}
+
+#show_result_button {
+	width:  766px;
+	margin-top: 30px;
+}
+/* @end*/
 
 /* @group awesome Buttons */
 /*http://www.zurb.com/blog_uploads/0000/0485/buttons-02.html*/
