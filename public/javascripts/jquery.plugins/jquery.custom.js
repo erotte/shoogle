@@ -27,3 +27,14 @@
 		.animate({backgroundColor: 'transparent', opacity: 1}, 300, 'swing')
 	}
 })(jQuery);
+
+
+/**
+ * Enables or disables any matching elements.
+ */
+$.fn.enable = function(b) { 
+    if (b == undefined) b = true;
+    return this.each(function() { 
+        this.disabled = !b 
+    });
+};

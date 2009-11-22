@@ -10,8 +10,6 @@ Rails::Initializer.run do |config|
   require 'extensions'
   require 'patches'
   
-  #Haml::Template.options[:format] = :html4
-
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -30,7 +28,6 @@ Rails::Initializer.run do |config|
   config.gem 'vlad', :lib => false
   config.gem 'vlad-git', :lib => false
   config.gem 'formtastic'
-
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins
   # config.gem 'rails_sql_views', :lib => 'rails_sql_views', :version => '>= 0.7.0', :source => "http://gems.github.com"

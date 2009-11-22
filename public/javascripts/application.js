@@ -1,14 +1,15 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 jQuery.ajaxSetup({
-'beforeSend': function(xhr){xhr.setRequestHeader('Accept','text/javascript')}
+	'beforeSend': function(xhr){xhr.setRequestHeader('Accept','text/javascript')}
 })
 
 $(document).ready(function(){
   
 	init_autocompletion();
 	$("input.passive").toggleDefaultValue();
-  init_searched_shoe_toggles()	
+  init_searched_shoe_toggles();
+  init_searched_shoe_radio_toggles()	
 })	
 
 init_autocompletion = function() {
@@ -19,6 +20,20 @@ init_autocompletion = function() {
 				return $('.manufacturer', $(this).parents('.shoe_row')).val()
 			}
 		}
+	})
+}
+
+init_searched_shoe_radio_toggles = function(){
+	
+  var $searched_shoe_form = $('#searched_shoe_form')
+  var $shoe_row = $('.shoe_row', $searched_shoe_form)
+	$("#with_searched_shoe_false").change(function(event){
+    this.checked ? $shoe_row.hide('normal') : $shoe_row.show('normal') 
+    $('input[type=text]', $searched_shoe_form).attr('disabled', 'disabled')	 
+	})
+  $("#with_searched_shoe_true").change(function(event){
+    this.checked ? $shoe_row.show('normal') : $shoe_row.hide('normal') 
+    $('input[type=text]', $searched_shoe_form).removeAttr('disabled')	 	 
 	})
 }
 
@@ -33,16 +48,6 @@ init_searched_shoe_toggles = function(){
 				$("#searched_shoe_intro").text(intro).highlight();
 		})
 	});
-	$('#toggle_searched_shoe_search').click( function(event){
-		event.preventDefault()
-		var $clicked_link = $(this);
-		var $form = $(this).closest('form');
-		$('input.manufacturer, input.model', $form).val("");
-		$('.shoe_row', $form).toggle();
-		$("#searched_shoe_submit").click();
-	  var linktext = $form.is(":visible") ? "alle passenden Schuhe anzeigen" : "Nach Hersteller und Modell suchen"
-	  $clicked_link.text(linktext)
-	  $("#toggle_model_search").toggle()	
-  });
+
 	
 }
