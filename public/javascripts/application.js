@@ -10,6 +10,12 @@ $(document).ready(function(){
 	$("input.passive").toggleDefaultValue();
   init_searched_shoe_toggles();
   init_searched_shoe_radio_toggles()	
+
+ 	$("#forecast_shoes_form form").submit(function(){ 
+		$('.manufacturer, .model, .size', $(this)).val('');
+		$('.manufacturer').focus();
+	})
+
 })	
 
 init_autocompletion = function() {
@@ -49,5 +55,9 @@ init_searched_shoe_toggles = function(){
 		})
 	});
 
-	
+
+}
+
+shoe_add_success = function(that){
+	// console.debug(that)
 }

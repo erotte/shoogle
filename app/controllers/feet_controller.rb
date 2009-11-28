@@ -37,7 +37,7 @@ class FeetController < ApplicationController
   # POST /feet 
   # POST /feet .xml
   def create
-      @foot = Foot.new params[:foot]
+      @foot = Foot.new params[:foot] 
       if @foot.save 
         session[:foot_id] = @foot.id
         respond_to do |format|

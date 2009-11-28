@@ -1,13 +1,15 @@
 class ForecastsController < ApplicationController
   
-  before_filter :find_current_or_create_foot
+  before_filter :find_current_or_create_foot, :except => [:new, :wizard]
+  before_filter :find_current_or_new_foot, :only =>  :wizard
+  before_filter :set_seached_shoe
+  
   helper_method :searched_shoe
   
   def index    
   end
 
   def wizard
-    @foot.shoes.build
   end
   
   def new
@@ -31,8 +33,13 @@ class ForecastsController < ApplicationController
   end
 
   protected
+
+  def set_seached_shoe
+    @searched_shoe = session[:searched_shoe]
+  end
   
   def searched_shoe 
     session[:searched_shoe]
   end
+
 end

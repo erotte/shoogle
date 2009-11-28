@@ -1,4 +1,3 @@
-=debug_toggle @searched_shoe
 - remote_form_for( :foot, :url => {:action => 'add_target_shoe'}, :update => 'forecast_shoes_form', :complete => '$("#forecast_shoes_form").show(); init_autocompletion();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }) do |foot|
   .forecast
     %h3
