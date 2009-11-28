@@ -15,9 +15,6 @@ class ApplicationController < ActionController::Base
         user_name == USER_NAME && password == PASSWORD
       end
     end
-    # =========================================================================
-    # = TODO: foot sollte erst nach erstem Speicherrequest persistiert werden =
-    # =========================================================================
     
     def find_current_or_create_foot      
       @foot = session[:foot_id].blank? ? Foot.create : Foot.find_or_create_by_id(session[:foot_id])
@@ -26,7 +23,7 @@ class ApplicationController < ActionController::Base
     end
 
     def find_current_or_new_foot      
-      @foot = Foot.new if session[:foot_id].blank? 
+      @foot = session[:foot_id].blank? ? Foot.new : Foot.find_or_create_by_id(session[:foot_id])
     end    
 
 end
