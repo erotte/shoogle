@@ -2,14 +2,18 @@ require 'spec_helper'
 
 describe ForecastsController do
   before(:each) do
-    Foot.stub!(:new).and_return(@foot = mock_model(Foot))
     session[:foot_id] = nil
+    Foot.stub!(:new).and_return(@foot = mock_model(Foot))
   end
 
   it "should create a new instance of foot" do
     Foot.should_receive(:new).and_return(@foot)
     get :wizard
-    assigns(:foot).should be_an_instance_of(Foot)
+    foot = assigns(:foot)
+    p foot
+    foot.should be_an_instance_of(Foot)
+    # foot.should be_new_record
+    
   end
 
   it "should persist foot after setting an searched shoe" do

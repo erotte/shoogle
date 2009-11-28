@@ -9,11 +9,15 @@
     #header_wrapper
       #header.centered
         %h1#logo=link_to "<small>[logo]</small> schuhkombinat.de", root_path
-        %ul#metanav
+        %ul.metanav
           %li= link_to "nochmal", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
           
     =render :partial => 'layouts/claim' 
-
         
     #panel.centered
-      = yield
+      = yield 
+      
+    #footer_wrapper
+      %ul.metanav
+        %li= link_to "Impressum", '#'
+        %li= link_to "AGB", '#'

@@ -11,11 +11,7 @@ $(document).ready(function(){
   init_searched_shoe_toggles();
   init_searched_shoe_radio_toggles()	
 
- 	$("#forecast_shoes_form form").submit(function(){ 
-		$('.manufacturer, .model, .size', $(this)).val('');
-		$('.manufacturer').focus();
-	})
-
+ 
 })	
 
 init_autocompletion = function() {
@@ -30,7 +26,6 @@ init_autocompletion = function() {
 }
 
 init_searched_shoe_radio_toggles = function(){
-	
   var $searched_shoe_form = $('#searched_shoe_form')
   var $shoe_row = $('.shoe_row', $searched_shoe_form)
 	$("#with_searched_shoe_false").change(function(event){
@@ -59,5 +54,7 @@ init_searched_shoe_toggles = function(){
 }
 
 shoe_add_success = function(that){
-	// console.debug(that)
+	$('.manufacturer, .model, .size', $(that.target)).val('');
+	$('.manufacturer').focus();
+	
 }

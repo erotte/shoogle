@@ -2,7 +2,7 @@
 @light_grey: #eaeaea;
 @dark_bg_grey: #424343;
 @claim_bg_blue: #1796fb;
-@light_blue: #aed9fb;
+@light_blue: #82bbe9;
 @medium_gray: #a3a3a3;
 @white: #fff;
 @medium_gray_pre: #eee;
@@ -69,7 +69,7 @@ body {
 	font: normal 13px/1.4 helvetica, arial, sans-serif;
 	padding: 0;
 	margin: 0;
-	background: @light_grey;
+	background: @medium_gray_pre;
 }
 /*a { color: #000; }
 a:visited { color: #666; }
@@ -106,21 +106,28 @@ h3 {
   margin: 0 auto;
 }
 
-#header_wrapper {
+#header_wrapper,
+#footer_wrapper {
 	background: @dark_bg_grey;
 	border-top: 1px solid @claim_bg_blue;
 	border-bottom: 1px solid @medium_gray;
 	margin: 0;
 	color: @white;
-
+  position: relative;
+}
+#footer_wrapper {
+	min-height: 30px;
+	_height: 30px;
 }
 #header_wrapper a,
+#footer_wrapper a,
+#footer_wrapper a:visited,
 #header_wrapper a:visited {
 	color: @white;
 	text-decoration: none;
 }
 
-header_wrapper a:hover {
+#header_wrapper a:hover {
 	color: @light_pink
 }
 #header{
@@ -142,25 +149,30 @@ header_wrapper a:hover {
 }
 
 /* @group Metanav */
-ul#metanav{
+ul.metanav{
 	margin: 0;
 	padding: 0;
 	position: absolute;
 	right: 40px;
 	top: 4px;
 } 
-ul#metanav li {
+ul.metanav li {
    display:  inline;
 }
-ul#metanav li a {
+ul.metanav li a {
 	display: inline;
 	padding: 1px 8px;
+	margin-left: 18px;
 	border: 1px solid #767676;
 	background: #575757;
 }
-ul#metanav li a:hover {
+ul.metanav li a:hover {
   background: #696969;
   border: 1px solid #8c8c8c;
+}
+
+#footer_wrapper .metanav {
+	top: 6px;
 }
 
 /* @end */
@@ -285,7 +297,7 @@ input:focus {
 
 
 input.passive {
-	color: #d9d9d9;
+	color: @light_grey;
 }
 
 /* @end */
@@ -397,11 +409,6 @@ table#foot_check_shoes {
 }
 .rating .bad_stars {
 	color:#aaa;
-}
-
-#forecast_new_foot_fields {
-	padding: 2px;
-	background: @light_grey;
 }
 
 #show_result_button {
