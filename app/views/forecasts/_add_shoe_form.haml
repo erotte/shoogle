@@ -5,7 +5,7 @@
       Bitte gib ein paar Schuhe ein, die Dir gut passen:
     - footform.fields_for 'shoes_attributes[]', Shoe.new do |shoe|
       %fieldset.inputs
-        %ol.shoe_row
+        %ol.shoe_row.shoe_completer
           %li
             =shoe.label(:manufacturer, 'Hersteller ')
             =shoe.text_field(:manufacturer, :class => "manufacturer")

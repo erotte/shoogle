@@ -22,6 +22,35 @@
 })(jQuery);
 
 (function($) {
+   $.fn.myPlugin = function(settings) {
+     var config = {'foo': 'bar'};
+     if (settings) $.extend(config, settings);
+     this.each(function() {
+       console.debug(this)
+     });
+     return this;
+   };
+ })(jQuery);
+
+(function($) {
+	jQuery.fn.shoe_completer = function() {
+    this.each(function(i, that) {
+			var $manufacturer = $('input.manufacturer', $(that))
+			var $model = $('input.model', $(that))
+			var manufacturer_value = function(){return $manufacturer.val()};
+			$manufacturer.autocomplete("/manufacturers.js");
+			$model.autocomplete("/shoe_types/models.js", {
+				extraParams: {
+				 	manufacturer: function(){ return $manufacturer.val()}
+				}
+			})
+    });
+    return this;
+	}
+})(jQuery);
+
+
+(function($) {
 	jQuery.fn.highlight = function() {
 		$(this).animate({backgroundColor: '#ffb429'}, 150)
 		.animate({backgroundColor: 'transparent', opacity: 1}, 300, 'swing')

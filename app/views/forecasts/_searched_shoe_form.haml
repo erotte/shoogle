@@ -3,7 +3,7 @@
     %h3
       =radio_button_tag :with_searched_shoe, 'true', true 
       =label_tag :with_searched_shoe_true, "Ich möchte nach einem bestimmten Schuh oder einer Marke suchen"
-    .shoe_row
+    .shoe_row.shoe_completer
       %span#searched_shoe_intro In welcher Größe passt mir von
       = text_field_tag "manufacturer", params[:manufacturer], :class => "manufacturer passive", :id => "manufacturer", :value => "Hersteller"
       %span.model

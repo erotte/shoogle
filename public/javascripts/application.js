@@ -6,24 +6,13 @@ jQuery.ajaxSetup({
 
 $(document).ready(function(){
   
-	init_autocompletion();
+	$('.shoe_completer').shoe_completer();
 	$("input.passive").toggleDefaultValue();
   init_searched_shoe_toggles();
   init_searched_shoe_radio_toggles()	
-
- 
 })	
 
-init_autocompletion = function() {
-	$("input.manufacturer").autocomplete("/manufacturers.js");
-	$("input.model").autocomplete("/shoe_types/models.js", {
-		extraParams: {
-		 	manufacturer: function() { 
-				return $('.manufacturer', $(this).parents('.shoe_row')).val()
-			}
-		}
-	})
-}
+
 
 init_searched_shoe_radio_toggles = function(){
   var $searched_shoe_form = $('#searched_shoe_form')
