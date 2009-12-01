@@ -5,14 +5,15 @@ jQuery.ajaxSetup({
 })
 
 $(document).ready(function(){
-  
-	$('.shoe_completer').shoe_completer();
+	init_shoe_completer();
 	$("input.passive").toggleDefaultValue();
   init_searched_shoe_toggles();
   init_searched_shoe_radio_toggles()	
 })	
 
-
+init_shoe_completer = function(){
+	$('.shoe_completer').shoe_completer();
+}
 
 init_searched_shoe_radio_toggles = function(){
   var $searched_shoe_form = $('#searched_shoe_form')
