@@ -20,10 +20,8 @@ class Foot < ActiveRecord::Base
 
   accepts_nested_attributes_for :shoes, :allow_destroy => true
 
-  # validates_associated  :shoes
-  # validates_presence_of :shoes
+  validates_associated  :shoes
 
-  
   def shoes_of_similar_feet
     Shoe.of_equal_sized_feet self.id
   end

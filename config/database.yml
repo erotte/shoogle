@@ -1,6 +1,14 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
+  # adapter: mysql
+  # encoding: utf8
+  # reconnect: false
+  # database: shoogle_development
+  # pool: 5
+  # username: root
+  # password: geheim
+  # socket: /opt/local/var/run/mysql5/mysqld.sock
   adapter: postgresql
   database: shoogle_development
   username: shooser

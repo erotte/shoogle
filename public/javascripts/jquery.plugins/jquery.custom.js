@@ -22,17 +22,6 @@
 })(jQuery);
 
 (function($) {
-   $.fn.myPlugin = function(settings) {
-     var config = {'foo': 'bar'};
-     if (settings) $.extend(config, settings);
-     this.each(function() {
-       console.debug(this)
-     });
-     return this;
-   };
- })(jQuery);
-
-(function($) {
 	jQuery.fn.shoe_completer = function() {
     this.each(function(i, that) {
 			var $manufacturer = $('input.manufacturer', $(that))

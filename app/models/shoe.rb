@@ -16,11 +16,11 @@ class Shoe < ActiveRecord::Base
   belongs_to :foot
   belongs_to :shoe_type
   composed_of :formatted_size, :class_name => 'ShoeSize', :mapping => %w(size value)
+
   validates_associated :shoe_type
-  
   validates_presence_of :size
-  
-  attr_writer :model, :manufacturer
+    
+  attr_accessor :model, :manufacturer
   before_save :assign_model_and_manufacturer_name
   
   named_scope :grouped_by_shoe_type, :group => :shoe_type
