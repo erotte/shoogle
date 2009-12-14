@@ -1,5 +1,6 @@
 
 Given /^I am searching a "([^\"]*)" "([^\"]*)"$/ do |manufacturer, model|
+    visit "/"
     fill_in("manufacturer", :with => manufacturer)
     fill_in("model", :with => model)
     click_button("searched_shoe_submit")

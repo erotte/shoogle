@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091026065030) do
+ActiveRecord::Schema.define(:version => 20091214214658) do
 
   create_table "belboon_products", :force => true do |t|
     t.string   "belboon_productnumber"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20091026065030) do
     t.datetime "updated_at"
   end
 
+  create_table "searched_shoes", :force => true do |t|
+    t.string   "manufacturer_name"
+    t.string   "model_name"
+    t.integer  "foot_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shoe_sizes", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -72,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20091026065030) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "shoe_types", [nil], :name => "index_shoe_types_on_model"
 
   create_table "shoes", :force => true do |t|
     t.float    "size"

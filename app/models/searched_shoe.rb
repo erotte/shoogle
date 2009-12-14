@@ -1,19 +1,3 @@
-class SearchedShoe
-  attr_accessor :model, :manufacturer, :errors
-  
-  def initialize args
-    @model, @manufacturer = args[:model], args[:manufacturer] 
-    @errors = []
-  end
-  # Bullshit, das brauchen wir nicht, mehr später
-  def validate
-    error_text = "Um eine Suche nach einem Schuh durchführen zu können, brauchen 
-      wir mindestens einen Herstellernamen. Die Suche funktioniert besser, wenn 
-      du auch einen Schuhmodell angibst. "
-    valid? ? @errors.clear : @errors << error_text 
-  end
-  
-  def valid?
-    @manufacturer.present?
-  end
+class SearchedShoe < ActiveRecord::Base
+  belongs_to :foot
 end

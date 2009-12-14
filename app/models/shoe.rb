@@ -17,10 +17,9 @@ class Shoe < ActiveRecord::Base
   belongs_to :shoe_type
   composed_of :formatted_size, :class_name => 'ShoeSize', :mapping => %w(size value)
 
-  validates_associated :shoe_type
-  validates_presence_of :size
+  validates_presence_of :size, :model, :manufacturer
     
-  attr_accessor :model, :manufacturer
+  attr_writer :model, :manufacturer
   before_save :assign_model_and_manufacturer_name
   
   named_scope :grouped_by_shoe_type, :group => :shoe_type
@@ -30,11 +29,11 @@ class Shoe < ActiveRecord::Base
   }}
   
   def manufacturer
-    @manufacturer ||= shoe_type.manufacturer.name if shoe_type and shoe_type.manufacturer
+    @manufacturer ||= try(:shoe_type).try(:manufacturer).try(:name)
   end
 
   def model
-    @model ||= shoe_type.model if shoe_type
+    @model ||= (shoe_type.model if shoe_type)
   end
   
   private 

@@ -8,23 +8,19 @@ Feature: Searching for a fitting shoe
     Then I should not see "Bitte gib ein paar Schuhe ein"
 
   Scenario: New visitor saves its searched shoe 
-    Given I am on the homepage
-    When I fill in "manufacturer" with "Nike"
-    And I fill in "model" with "Air Force 1"
+    Given I am searching a "Nike" "Air Force 1"    
     And I press "Weiter"
     Then I should see "Bitte gib ein paar Schuhe ein"
 
   Scenario: The visitor saves a shoe
-    Given I am on the homepage
-    And I am searching a "Nike" "Air Force 1"
+    Given I am searching a "Nike" "Air Force 1"
     And I enter shoe "Adidas" "Superstar" in "46"
     When I press "Schuhe hinzufügen"
     Then I should see "Adidas"
     And I should see "46.0"
 
   Scenario: The visitor proceeds to the result page
-    Given I am on the homepage
-    And I am searching a "Nike" "Air Force 1"
+    Given I am searching a "Nike" "Air Force 1"
     And I have a "Adidas" "Superstar" in "46"
     And I have a "Adidas" "Samba" in "45"
     When I follow "Ergebnis Anzeigen"

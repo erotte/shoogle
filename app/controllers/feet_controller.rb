@@ -1,4 +1,5 @@
 class FeetController < ApplicationController
+
   # GET /feet 
   # GET /feet .xml
   def index
@@ -23,6 +24,7 @@ class FeetController < ApplicationController
   # GET /feet /new.xml
   def new
     @foot = Foot.new
+    @foot.build_searched_shoe
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @foot }
@@ -55,7 +57,7 @@ class FeetController < ApplicationController
     @foot = Foot.find(params[:id])
     @foot.update_attributes(params[:foot])
     respond_to do |format|
-      format.html { redirect_to :controller => :forecasts, :action => :wizard}
+      format.html { redirect_to :controller => :forecasts, :action => :wizard }
       format.js  { render :partial => 'feet/shoes' }
     end  
   end

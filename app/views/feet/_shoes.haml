@@ -1,6 +1,7 @@
-=debug_toggle @foot
+=debug_toggle @foot.shoes
 = error_messages_for :foot, :object_name => 'Fuß', :header_message => nil, :message => 'Bitte prüfen Sie die eingegeben Daten' 
 -unless shoes_blank?
+  %p Gna3
   %table#forecast_shoes.shoes  
     =render( :partial => 'feet/shoe', :collection => @foot.shoes)  
 

@@ -17,10 +17,12 @@ class Foot < ActiveRecord::Base
   has_many :transposed_matches
   has_many :size_equalities
   has_many :similar_feet, :through => :size_equalities
-
+  
+  has_one  :searched_shoe
+  
   accepts_nested_attributes_for :shoes, :allow_destroy => true
+  accepts_nested_attributes_for :searched_shoe, :allow_destroy => true
 
-  validates_associated  :shoes
 
   def shoes_of_similar_feet
     Shoe.of_equal_sized_feet self.id
