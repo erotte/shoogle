@@ -1,7 +1,7 @@
 - remote_form_for( @foot, :update => 'forecast_shoes_form', :complete => '$("#forecast_shoes_form").show(); init_shoe_completer();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }) do |f|
   .forecast
+  - f.fields_for :searched_shoe do |searched|
     %h3
-    - f.fields_for :searched_shoe do |searched|
       = radio_button_tag :with_searched_shoe, 'true', true 
       = searched.label :with_searched_shoe_true, "Ich möchte nach einem bestimmten Schuh oder einer Marke suchen"
       .shoe_row.shoe_completer
