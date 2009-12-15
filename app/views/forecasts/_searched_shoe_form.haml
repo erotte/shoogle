@@ -9,7 +9,7 @@
         = searched.text_field :manufacturer_name, :class => "manufacturer passive"
         %span.model
           das Modell 
-          = searched.text_field :model, :class => "model passive", :id => "model", :value => "Modell"
+          = searched.text_field :model_name, :class => "model passive", :id => "model", :value => "Modell"
           ?
       %ul#search_options
         %li=link_to( "Nur nach Marke suchen", "#", :id => "toggle_model_search" )  
