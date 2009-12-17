@@ -1,5 +1,5 @@
 class FeetController < ApplicationController
-
+  before_filter :find_current_or_new_foot,  :only =>[:new, :create, :update]
   # GET /feet 
   # GET /feet .xml
   def index
@@ -23,7 +23,6 @@ class FeetController < ApplicationController
   # GET /feet /new
   # GET /feet /new.xml
   def new
-    @foot = Foot.new
     @foot.build_searched_shoe
     respond_to do |format|
       format.html # new.html.erb
@@ -39,12 +38,10 @@ class FeetController < ApplicationController
   # POST /feet 
   # POST /feet .xml
   def create
-      @foot = Foot.new params[:foot] 
-      if @foot.save 
-        session[:foot_id] = @foot.id
+      if @foot.update_attributes(params[:foot]) 
         respond_to do |format|
-          format.html { redirect_to :controller => :forecasts, :action => :wizard}
-          format.js   { render :partial => 'feet/shoes' }
+          format.html { redirect_to edit_foot_path(@foot) }
+          format.js   { render :partial => 'feet/add_shoe_form' }
         end
       else 
         render :action => :new
@@ -57,7 +54,7 @@ class FeetController < ApplicationController
     @foot = Foot.find(params[:id])
     @foot.update_attributes(params[:foot])
     respond_to do |format|
-      format.html { redirect_to :controller => :forecasts, :action => :wizard }
+      format.html { redirect_to edit_foot_path(@foot) }
       format.js  { render :partial => 'feet/shoes' }
     end  
   end

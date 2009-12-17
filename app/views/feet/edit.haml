@@ -1,10 +1,8 @@
-%h1 Editing foot
+=render :partial => 'feet/searched_shoe_form'
 
-- form_for(@foot) do |f|
-  = f.error_messages 
-  %p
-    = f.submit 'Update'
-  
+#add_shoe_form
+  = render :partial => 'feet/add_shoe_form' unless @foot.new_record?
+#shoes_list
+  = render :partial => 'feet/shoes' unless @foot.shoes.blank?
 
-= link_to 'Show', @foot |
-= link_to 'Back', feet_path 
+#forecast_result

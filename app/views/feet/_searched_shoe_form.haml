@@ -1,4 +1,4 @@
-- remote_form_for( @foot, :update => 'forecast_shoes_form', :complete => '$("#forecast_shoes_form").show(); init_shoe_completer();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }) do |f|
+- remote_form_for( @foot, :update => 'add_shoe_form', :complete => '$("#add_shoe_form").show(); init_shoe_completer();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }) do |f|
   .forecast
   - f.fields_for :searched_shoe do |searched|
     %h3
@@ -9,7 +9,7 @@
         = searched.text_field :manufacturer_name, :class => "manufacturer passive"
         %span.model
           das Modell 
-          = searched.text_field :model_name, :class => "model passive", :id => "model", :value => "Modell"
+          = searched.text_field :model_name, :class => "model passive", :id => "model"
           ?
       %ul#search_options
         %li=link_to( "Nur nach Marke suchen", "#", :id => "toggle_model_search" )  

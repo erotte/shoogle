@@ -24,6 +24,5 @@ class ApplicationController < ActionController::Base
 
     def find_current_or_new_foot      
       @foot = session[:foot_id].blank? ? Foot.new : Foot.find_or_create_by_id(session[:foot_id])
-    end    
-
+    end 
 end
