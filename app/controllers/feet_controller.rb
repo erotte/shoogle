@@ -39,6 +39,7 @@ class FeetController < ApplicationController
   # POST /feet .xml
   def create
       if @foot.update_attributes(params[:foot]) 
+        session[:foot_id] = @foot.id
         respond_to do |format|
           format.html { redirect_to edit_foot_path(@foot) }
           format.js   { render :partial => 'feet/add_shoe_form' }
@@ -54,8 +55,8 @@ class FeetController < ApplicationController
     @foot = Foot.find(params[:id])
     @foot.update_attributes(params[:foot])
     respond_to do |format|
-      format.html { redirect_to edit_foot_path(@foot) }
-      format.js  { render :partial => 'feet/shoes' }
+      format.html { render :edit }
+      format.js   { render :partial => 'feet/shoes' }
     end  
   end
 

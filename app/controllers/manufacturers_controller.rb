@@ -2,7 +2,7 @@ class ManufacturersController < ApplicationController
   # GET /manufacturers
   # GET /manufacturers.xml
   def index
-    @manufacturers = Manufacturer.find(:all, :conditions => ["name ILIKE ?", "%#{params[:q]}%"])
+    @manufacturers = Manufacturer.find(:all, :conditions => ["name LIKE ?", "%#{params[:q]}%"])
     respond_to do |format|
       format.html # index.html.erb
       format.js  { render 'index.js' }

@@ -1,9 +1,10 @@
+
 =render :partial => 'feet/searched_shoe_form'
 
 #add_shoe_form
   = render :partial => 'feet/add_shoe_form' unless @foot.new_record?
 
 #shoes_list
-  = render :partial => 'feet/shoes' unless @foot.shoes.blank?
+  = render :partial => 'feet/shoes' 
 
 #forecast_result

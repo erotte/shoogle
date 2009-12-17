@@ -1,6 +1,6 @@
-require 'spec_helper'
+require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe SearchedShoes do
+describe SearchedShoe do
   before(:each) do
     @valid_attributes = {
       :manufacturer_name => "value for manufacturer_name",
@@ -9,6 +9,6 @@ describe SearchedShoes do
   end
 
   it "should create a new instance given valid attributes" do
-    SearchedShoes.create!(@valid_attributes)
+    SearchedShoe.create!(@valid_attributes)
   end
 end

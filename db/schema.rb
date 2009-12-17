@@ -81,8 +81,6 @@ ActiveRecord::Schema.define(:version => 20091214214658) do
     t.datetime "updated_at"
   end
 
-  add_index "shoe_types", [nil], :name => "index_shoe_types_on_model"
-
   create_table "shoes", :force => true do |t|
     t.float    "size"
     t.integer  "user_id"
@@ -92,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20091214214658) do
     t.integer  "shoe_type_id"
   end
 
-  create_view "direct_matches", "SELECT st.id AS shoe_type_id, st.model AS model_name, sm.name AS manufacturer_name, s.size, b.foot_id FROM shoes s, manufacturers sm, shoe_types st, shoes a, shoes b WHERE ((((((sm.id = st.manufacturer_id) AND (st.id = s.shoe_type_id)) AND (a.size = b.size)) AND (a.shoe_type_id = b.shoe_type_id)) AND (s.foot_id = a.foot_id)) AND (a.foot_id <> b.foot_id));", :force => true do |v|
+  create_view "direct_matches", "select `st`.`id` AS `shoe_type_id`,`st`.`model` AS `model_name`,`sm`.`name` AS `manufacturer_name`,`s`.`size` AS `size`,`b`.`foot_id` AS `foot_id` from ((((`shoes` `s` join `manufacturers` `sm`) join `shoe_types` `st`) join `shoes` `a`) join `shoes` `b`) where ((`sm`.`id` = `st`.`manufacturer_id`) and (`st`.`id` = `s`.`shoe_type_id`) and (`a`.`size` = `b`.`size`) and (`a`.`shoe_type_id` = `b`.`shoe_type_id`) and (`s`.`foot_id` = `a`.`foot_id`) and (`a`.`foot_id` <> `b`.`foot_id`))", :force => true do |v|
     v.column :shoe_type_id
     v.column :model_name
     v.column :manufacturer_name
@@ -100,12 +98,12 @@ ActiveRecord::Schema.define(:version => 20091214214658) do
     v.column :foot_id
   end
 
-  create_view "size_equalities", "SELECT own_shoes.foot_id, other_shoes.foot_id AS similar_foot_id FROM shoes own_shoes, shoes other_shoes WHERE (((own_shoes.foot_id <> other_shoes.foot_id) AND (own_shoes.size = other_shoes.size)) AND (own_shoes.shoe_type_id = other_shoes.shoe_type_id));", :force => true do |v|
+  create_view "size_equalities", "select `own_shoes`.`foot_id` AS `foot_id`,`other_shoes`.`foot_id` AS `similar_foot_id` from (`shoes` `own_shoes` join `shoes` `other_shoes`) where ((`own_shoes`.`foot_id` <> `other_shoes`.`foot_id`) and (`own_shoes`.`size` = `other_shoes`.`size`) and (`own_shoes`.`shoe_type_id` = `other_shoes`.`shoe_type_id`))", :force => true do |v|
     v.column :foot_id
     v.column :similar_foot_id
   end
 
-  create_view "transposed_matches", "SELECT st.id AS shoe_type_id, st.model AS model_name, sm.name AS manufacturer_name, s.size, a.size AS size_of_other, b.size AS size_of_this, b.foot_id FROM shoes s, manufacturers sm, shoe_types st, shoes a, shoes b WHERE ((((((sm.id = st.manufacturer_id) AND (st.id = s.shoe_type_id)) AND (a.size <> b.size)) AND (a.shoe_type_id = b.shoe_type_id)) AND (s.foot_id = a.foot_id)) AND (a.foot_id <> b.foot_id));", :force => true do |v|
+  create_view "transposed_matches", "select `st`.`id` AS `shoe_type_id`,`st`.`model` AS `model_name`,`sm`.`name` AS `manufacturer_name`,`s`.`size` AS `size`,`a`.`size` AS `size_of_other`,`b`.`size` AS `size_of_this`,`b`.`foot_id` AS `foot_id` from ((((`shoes` `s` join `manufacturers` `sm`) join `shoe_types` `st`) join `shoes` `a`) join `shoes` `b`) where ((`sm`.`id` = `st`.`manufacturer_id`) and (`st`.`id` = `s`.`shoe_type_id`) and (`a`.`size` <> `b`.`size`) and (`a`.`shoe_type_id` = `b`.`shoe_type_id`) and (`s`.`foot_id` = `a`.`foot_id`) and (`a`.`foot_id` <> `b`.`foot_id`))", :force => true do |v|
     v.column :shoe_type_id
     v.column :model_name
     v.column :manufacturer_name
