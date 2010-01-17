@@ -10,13 +10,14 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   private
-    def authenticate
-      authenticate_or_request_with_http_basic do |user_name, password|
-        user_name == USER_NAME && password == PASSWORD
-      end
+  def authenticate
+    authenticate_or_request_with_http_basic do |user_name, password|
+      user_name == USER_NAME && password == PASSWORD
     end
+  end
 
-    def find_current_or_new_foot      
-      @foot = session[:foot_id].blank? ? Foot.new : Foot.find_or_create_by_id(session[:foot_id])
-    end 
+  def find_current_or_new_foot      
+    @foot = session[:foot_id].blank? ? Foot.new : Foot.find_or_create_by_id(session[:foot_id])
+  end 
+
 end

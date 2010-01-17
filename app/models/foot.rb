@@ -13,7 +13,7 @@
 class Foot < ActiveRecord::Base
   has_many :shoes
   has_many :direct_matches
-  has_many :fitting_shoe_types, :through => :direct_matches, :source => :shoe_type, :group =>  "shoe_types.id"
+  has_many :fitting_shoe_types, :through => :direct_matches, :source => :shoe_type, :group =>  ShoeType.column_names.collect {|c| "shoe_types.#{c}"}.join(", ")
   has_many :transposed_matches
   has_many :size_equalities
   has_many :similar_feet, :through => :size_equalities
