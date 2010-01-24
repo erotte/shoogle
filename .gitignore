@@ -2,3 +2,4 @@
 log/*
 db/*.sqlite3
 *.DS_Store
+rerun.txt
