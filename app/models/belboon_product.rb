@@ -1,3 +1,3 @@
 class BelboonProduct < ActiveRecord::Base
-  named_scope :named, lambda {|name| {:conditions => ["productname LIKE ?", "%#{name}%"]}}
+  named_scope :named, lambda {|name| {:conditions => ["productname ILIKE ?", "%#{name}%"]}}
 end
