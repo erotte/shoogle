@@ -29,7 +29,11 @@ class ForecastRenderer
   end
 
   def compute_average_size
-    @average_shoe_size = @foot.shoes.map(&:size).mean_average
+    @average_shoe_size = exclude_us_sizes(@foot.shoes).map(&:size).mean_average
+  end
+  
+  def exclude_us_sizes shoes
+    shoes.reject{|shoe| shoe.size < 30}
   end
 
   def choose_recommended_size

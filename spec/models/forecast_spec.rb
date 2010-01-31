@@ -44,4 +44,15 @@ describe Forecast do
     
     forecast.size.should == 45.25
   end
+  
+  it "should ignore sizes <= 30 when computing the average shoe size" do
+    @foot.stub(:shoes).and_return [
+      mock('match44',   :size => 29),
+      mock('match44_2', :size => 30),
+      mock('match45',   :size => 40)]
+      
+    forecast = Forecast.new :foot => @foot, :manufacturer => "Nike", :model => "AF1"
+
+    forecast.average_shoe_size.should == 35.0
+  end
 end
