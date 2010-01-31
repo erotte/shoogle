@@ -1,4 +1,6 @@
 class ForecastRenderer
+  # TODO rendert nicht nur sondern berechnet auch. das sollten zwei verschiedene klassen machen SRP!
+  
   attr_accessor :manufacturer, :model, :size, 
     :average_shoe_size,
     :direct_matches, :direct_matches_size, 
@@ -24,6 +26,7 @@ class ForecastRenderer
 
   def compute_transposed_matches
     matches = fetch_transposed_matches
+    log("transposed matches", matches)
     @transposed_matches_size = matches.map(&:transposed_size).median if matches.any?
     @transposed_matches = matches.size
   end
@@ -69,9 +72,9 @@ class ForecastRenderer
   end
   
   def log msg, matches 
-    matches.each { |match|
-      Rails.logger.debug("#{msg} #{match}")
-    }
+    matches.each do |match|
+      Rails.logger.debug "#{msg} #{match.inspect}"
+    end
   end
 
 end
