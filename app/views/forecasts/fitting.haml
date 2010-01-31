@@ -1,13 +1,17 @@
 
 .forecast
-  Dir passt der
-  %strong= @forecast.model 
-  von
+  Dir passt 
+  - if @forecast.has_model?
+    der
+    %strong= @forecast.model
+    von
+  - else
+    die Marke
   %strong= @forecast.manufacturer 
   = rating_as_text
   in der Größe
   %strong= @forecast.size 
-  %p  
+  %p
     Passt 
     %span.rating= rating_as_sign
     (#{rating_as_text})

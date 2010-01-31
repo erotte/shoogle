@@ -36,6 +36,10 @@ class Foot < ActiveRecord::Base
   end
 
   def fitting args
-    Forecast.new :foot => self, :manufacturer => args[:manufacturer], :model => args[:model]
+    if args[:model].present?
+      Forecast.new :foot => self, :manufacturer => args[:manufacturer], :model => args[:model]
+    else
+      ManufacturerForecast.new :foot => self, :manufacturer => args[:manufacturer]
+    end
   end
 end

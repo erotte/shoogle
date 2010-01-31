@@ -33,7 +33,7 @@ class Shoe < ActiveRecord::Base
   end
 
   def model
-    @model ||= (shoe_type.model if shoe_type)
+    @model ||= try(:shoe_type).try(:model)
   end
   
   private 
