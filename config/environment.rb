@@ -24,7 +24,6 @@ Rails::Initializer.run do |config|
   config.gem 'haml'
   config.gem "simple_importer", :lib => false, :source => "http://gemcutter.org/"
   config.gem "fastercsv", :lib => false
-  config.gem 'less', :lib => false
   config.gem 'vlad', :lib => false
   config.gem 'vlad-git', :lib => false
   config.gem 'formtastic'

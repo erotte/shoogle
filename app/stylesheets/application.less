@@ -10,36 +10,34 @@
 @error_rose: #ffa8a9;
 @mid_blue: #106fbf;
 
-/* @group Css Reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	font-family: inherit;
-	vertical-align: baseline;
-}
 
-*:focus{
-  	outline: 0;
+
+
+/* @end */
+
+/* @group Basic Styles and Reset */
+
+* {
+	margin: 0;
+}
+html {
+  background:  url(/images/app/karton_bg.jpg) repeat-x;
 }
 
 body {
-  line-height: 1;
-  color: black;
-  background: white;
-	
+	font: normal 13px/1.4 helvetica, arial, sans-serif;
+	background: @medium_gray_pre;
 }
+/*a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }*/
 
 ol, ul {
   	list-style: none;
 }
 
 table {
-	border-collapse: separate;
+  border-collapse: separate;
   border-spacing: 0;
 }
 
@@ -56,24 +54,6 @@ blockquote, q {
 	quotes: "" "";
 }
 
-/* @end */
-
-/* @group Basic Styles */
-
-html, body {
-	height: 100%;
-	border-color: #106fbf;
-}
-
-body {
-	font: normal 13px/1.4 helvetica, arial, sans-serif;
-	padding: 0;
-	margin: 0;
-	background: @medium_gray_pre;
-}
-/*a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }*/
 
 a:link img, 
 a:hover img, 
@@ -221,50 +201,10 @@ ul.metanav li a:hover {
 
 /* @end */
 
-/* @group Tab Navigation */
-
-#tab_nav, #tab_nav li {
-	list-style: none;
-	margin: 0 0 0 20%;
-} 
-
-#tab_nav li {
-  margin-left: 10px;
-  display: inline-block;
-}
-
- #tab_nav li a {
-  text-decoration: none;
-  font-size: 15px;
-  color: black;	
-  display: block;
-  background: #fff ;
-  padding: 4px 15px 2px 15px;
-  border: 1px solid @mid_blue;
-  border-bottom: 0 solid;	
-  -moz-border-radius-topleft: 10px;
-  -moz-border-radius-topright: 10px;
-  -moz-box-shadow: 3px 0px 0 rgba(0,0,0,0.5);
-  -webkit-border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -webkit-box-shadow: 3px -2px 3px rgba(0,0,0,0.5);
-}
-
- #tab_nav li a:hover {
-  text-decoration: underline;
-}
- #tab_nav li.active {
-  position: relative;
-  top: 1px;	
-}
- #tab_nav li.active a,
- #tab_nav li a:hover{
-	padding: 7px 18px 2px 18px ;
-}
-
-/* @end */
-
 /* @group Forms */
+	form h3 {
+	font-weight: normal;
+}
 
 	/* @group Formtastic Overwrites */
 	form.formtastic fieldset ol li label {

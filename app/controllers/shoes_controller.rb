@@ -1,6 +1,6 @@
 class ShoesController < ApplicationController
   
-  before_filter :find_current_or_create_foot
+  before_filter :find_current_or_new_foot
   # GET /shoes
   # GET /shoes.xml
   def index

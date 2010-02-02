@@ -6,18 +6,22 @@
     = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete', 'jquery.plugins/jquery.custom', 'application' 
     = yield :head
   %body
-    #header_wrapper
-      #header.centered
-        %h1#logo=link_to "<small>[logo]</small> schuhkombinat.de", root_path
-        %ul.metanav
-          %li= link_to "nochmal", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
+    #opacity_layer.active
+    #page
+      #header_wrapper
+        #header.centered
+          %h1#logo=link_to "<small>[logo]</small> schuhkombinat.de", root_path
+          %ul.metanav
+            %li= link_to "nochmal", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
           
-    =render :partial => 'layouts/claim' 
+      =render :partial => 'layouts/claim' 
         
-    #panel.centered
-      = yield 
+      #panel.centered
+        = yield 
       
-    #footer_wrapper
-      %ul.metanav
-        %li= link_to "Impressum", '#'
-        %li= link_to "AGB", '#'
+      #footer_wrapper
+        %ul.metanav
+          %li= link_to "Impressum", '#'
+          %li= link_to "AGB", '#'
+
+        
