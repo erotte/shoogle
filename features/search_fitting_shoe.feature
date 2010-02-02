@@ -28,4 +28,3 @@ Feature: Searching for a fitting shoe
     And I should see "Nike" 
     And I should see "Air Force 1" 
     And I should see "in der Größe"
-    And I should see "45.5"

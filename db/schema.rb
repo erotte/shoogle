@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091214214658) do
+ActiveRecord::Schema.define(:version => 20100131104113) do
 
   create_table "belboon_products", :force => true do |t|
     t.string   "belboon_productnumber"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(:version => 20091214214658) do
     v.column :similar_foot_id
   end
 
-  create_view "transposed_matches", "SELECT st.id AS shoe_type_id, st.model AS model_name, sm.name AS manufacturer_name, s.size, a.size AS size_of_other, b.size AS size_of_this, b.foot_id FROM shoes s, manufacturers sm, shoe_types st, shoes a, shoes b WHERE ((((((sm.id = st.manufacturer_id) AND (st.id = s.shoe_type_id)) AND (a.size <> b.size)) AND (a.shoe_type_id = b.shoe_type_id)) AND (s.foot_id = a.foot_id)) AND (a.foot_id <> b.foot_id));", :force => true do |v|
+  create_view "transposed_matches", "SELECT st.id AS shoe_type_id, st.model AS model_name, sm.name AS manufacturer_name, s.size, a.size AS size_of_other, b.size AS size_of_this, b.foot_id FROM shoes s, manufacturers sm, shoe_types st, shoes a, shoes b WHERE ((((((((sm.id = st.manufacturer_id) AND (st.id = s.shoe_type_id)) AND (a.size <> b.size)) AND (a.shoe_type_id = b.shoe_type_id)) AND (s.foot_id = a.foot_id)) AND (a.foot_id <> b.foot_id)) AND (a.size > (30)::double precision)) AND (b.size > (30)::double precision));", :force => true do |v|
     v.column :shoe_type_id
     v.column :model_name
     v.column :manufacturer_name

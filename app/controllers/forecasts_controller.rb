@@ -1,6 +1,7 @@
 class ForecastsController < ApplicationController
     
-  #todo woanders hin!
+  #todo woanders hin! .. hmm vielleicht doch nicht. man möchte ja tatsächlich einen neuen forecast beginnen
+  
   def new
     session[:foot_id] = session[:searched_shoe] = nil
     redirect_to root_url
@@ -17,6 +18,5 @@ class ForecastsController < ApplicationController
       format.html
     end
   end
-
 
 end
