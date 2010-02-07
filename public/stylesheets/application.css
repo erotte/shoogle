@@ -1,0 +1,421 @@
+/* @override 
+	http://localhost:3000/stylesheets/application.css?1264376197
+	http://localhost:3000/stylesheets/application.css?1264376863
+	http://localhost:3000/stylesheets/application.css?1265240747
+	http://localhost:3000/stylesheets/application.css?1265240842
+	http://localhost:3000/stylesheets/application.css?1265241615
+	http://localhost:3000/stylesheets/application.css?1265241861
+	http://localhost:3000/stylesheets/application.css?1265242228
+	http://localhost:3000/stylesheets/application.css?1265325227
+	http://localhost:3000/stylesheets/application.css?1265325785
+	http://localhost:3000/stylesheets/application.css?1265325853
+	http://localhost:3000/stylesheets/application.css?1265558209
+	http://localhost:3000/stylesheets/application.css?1265558235
+	http://localhost:3000/stylesheets/application.css?1265558723
+	http://localhost:3000/stylesheets/application.css?1265562072
+	http://localhost:3000/stylesheets/application.css?1265562217
+	http://localhost:3000/stylesheets/application.css?1265562426
+	http://localhost:3000/stylesheets/application.css?1265568350
+	http://localhost:3000/stylesheets/application.css?1265570017
+	http://localhost:3000/stylesheets/application.css?1265570048
+	http://localhost:3000/stylesheets/application.css?1265570143
+	http://localhost:3000/stylesheets/application.css?1265570459
+	http://localhost:3000/stylesheets/application.css?1265571722
+	http://localhost:3000/stylesheets/application.css?1265571925
+	http://localhost:3000/stylesheets/application.css?1265572011
+	http://localhost:3000/stylesheets/application.css?1265572686
+	http://localhost:3000/stylesheets/application.css?1265573300
+	http://localhost:3000/stylesheets/application.css?1265573446
+	http://localhost:3000/stylesheets/application.css?1265573570
+	http://localhost:3000/stylesheets/application.css?1265574337
+*/
+
+/* @group basics and resets */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+
+blockquote:before {
+	content: "";
+}
+
+blockquote:after {
+	content: "";
+}
+
+q:before {
+	content: "";
+}
+
+q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+a:link img {
+	border: 0 solid;
+}
+
+a:hover img {
+	border: 0 solid;
+}
+
+a:visited img {
+	border: 0 solid;
+}
+
+pre {
+	background-color: #eeeeee;
+	padding: 10px;
+	font-size: 11px;
+}
+
+
+/* @end */
+
+/* @group base Typo */
+
+h3 {
+	font-size: 16px;
+	margin: 2.2em 0 0.7em 0;
+}
+
+/* @end */
+
+/* @group Layout */
+
+html {
+	background: #0080C9 url(/images/app/karton_bg.jpg) repeat-x;
+}
+
+body {
+	font: normal 13px/1.4 helvetica, arial, sans-serif;
+}
+
+#opacity_layer {
+	position: fixed;
+	top:  0;
+	width: 100%;
+	height: 101%;
+	background-color:#a6d4ef;
+	margin: auto;
+	opacity: 0.7
+}
+
+#opacity_layer.active {
+	opacity: 0.7
+}
+
+#page {
+	position: absolute;
+	width: 80%;
+	margin: 0 8%;
+	
+}
+#footer_wrapper {
+	background: white;
+	height: 70px;
+	margin-top: 200px;
+	width: 100%;
+	-moz-border-radius: 4px;
+	-webkit-border-top-left-radius: 24px;
+	-webkit-border-top-right-radius: 24px;
+    
+}
+
+/* @end */
+
+/* @group Helper */
+
+.tar {
+	text-align: right;
+}
+
+.hide {
+	display: none;
+}
+
+/* @end */
+
+/* @group Metanav */
+
+ul.metanav {
+}
+
+ul.metanav li {
+}
+
+ul.metanav li a {
+	padding: 1px 8px;
+	margin-left: 18px;
+	border: 1px solid #767676;
+}
+
+ul.metanav li a:hover {
+	background: #696969;
+	border: 1px solid #8c8c8c;
+}
+
+/* @end */
+
+
+
+/* @group Claim */
+
+#claim_wrapper {
+	margin-top: 150px;
+	border: 1px solid green	;
+}
+
+#claim {
+	
+}
+
+/* @end */
+
+#panel {
+	background: #fff;
+	width:  820px;
+	padding: 15px;
+	margin-top: 180px;
+	-moz-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
+	}
+	
+#grow_wrap {
+	background: #fff url(/images/app/grau_bg.gif) repeat-y top right;
+	position: relative;
+}
+.message {
+	border: 3px solid #00bd47;
+}
+
+/* @group Forms */
+
+/* @group formtastic overwrites */
+
+form.formtastic fieldset ol li label {
+	width: 30% !important;
+}
+
+form.formtastic input[type="text"] {
+	font-size: 1.7em;
+}
+
+form.formtastic input[type="password"] {
+	font-size: 1.7em;
+}
+
+form.formtastic textarea {
+	font-size: 1.7em;
+}
+
+/* @end */
+
+/* @group Defaults */
+
+fieldset {
+	border: 0 solid;
+}
+
+input[type="text"], input[type="password"], textarea {
+	padding: 1px 1px 1px 5px !important;
+	font-size: 20px;
+	border-color: #eaeaea;
+	border-width: 2px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+
+}
+
+input[type="text"]:focus {
+}
+
+input[type="password"]:focus {
+}
+
+textarea:focus {
+}
+
+input:focus {
+	background: #feffbe;
+}
+
+/* @end */
+
+.labelwrap {
+  display: inline-block;
+  background: #b8b8b8;
+  padding: 3px 8px 8px 8px;
+  color: #fff;
+  font-size: 17px;
+  margin-right: 5px; 	
+}
+.labelwrap label{
+  display: block;	
+}
+
+#searched_shoe_form .labelwrap {
+	width: 270px;
+}
+#searched_shoe_form .labelwrap input{
+	width: 260px;
+}
+
+#add_shoe_form .labelwrap.size {
+	width: 96px;
+}
+#add_shoe_form .labelwrap.size input{
+	width: 86px;
+}
+
+.right_submit {
+	margin-left: 10px;
+}
+
+input.passive {
+	color: #eaeaea;
+}
+
+p.buttonbox {
+	width: 88%;
+}
+
+/* @group Error Fields */
+
+.fieldWithErrors input {
+	background-color: #ffa8a9;
+}
+
+.fieldWithErrors textarea {
+	background-color: #ffa8a9;
+}
+
+.fieldWithErrors select {
+	background-color: #ffa8a9;
+}
+
+#errorExplanation {
+	border: 1px solid #cc0000;
+	margin-bottom: 20px;
+	background: #f4f4f4;
+}
+
+#errorExplanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 0.6em 20px;
+	margin: 0;
+	font-size: 16px;
+	background-color: #cc0000;
+	color: #ffffff;
+}
+
+#errorExplanation p {
+	color: #333333;
+	margin: 12px;
+	padding: 5px;
+}
+
+#errorExplanation ul {
+	margin: 12px;
+}
+
+#errorExplanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+
+/* @end */
+
+.foot_shoes_form input.manufacturer {
+	width: 10em;
+}
+
+.foot_shoes_form input.model {
+	width: 10em;
+}
+
+.foot_shoes_form input.size {
+	width: 5em;
+}
+
+ul#search_options {
+	margin: 15px 0 20px 160px;
+}
+
+#search_options li {
+	display: inline;
+	margin: 0 70px;
+}
+
+/* @end */
+
+/* @group Forecast */
+
+ol#forecast_shoes {
+	width: 583px;
+	margin-top: 8px;
+	
+}
+
+#forecast_shoes li {
+	padding: 4px 8px;
+	color: #333;
+	background-color: #b8b8b8;
+	font-size: 20px;
+	margin-bottom:8px;
+}
+
+#forecast_shoes .delete {
+	float: right;
+	margin-top: 5px;
+}
+
+table#foot_check_shoes {
+	width: 95%;
+}
+
+/* @end */
+
+/* @group Rating */
+
+.rating {
+	font-size: 25px;
+	vertical-align: sub;
+}
+
+.rating .good_stars {
+	color: #ff8855;
+}
+
+.rating .bad_stars {
+	color: #aaaaaa;
+}
+
+#show_result_button {
+	width: 766px;
+	margin-top: 30px;
+}
+
+/* @end */
+

@@ -1,6 +1,3 @@
-%tr{ :class => cycle('odd','even') }
-  %td= shoe.manufacturer 
-  %td= shoe.model 
-  %td= shoe.size 
-  %td.actions
-    = link_to_remote "löschen", :url => "/shoes/#{shoe.id}", :method => :delete, :update => 'forecast_shoes'
+%li{ :class => cycle('odd','even') }
+  =link_to_remote image_tag('app/cross.png' , :class => 'delete'), :url => "/shoes/#{shoe.id}", :method => :delete, :update => 'forecast_shoes' 
+  = "#{shoe.manufacturer} // #{shoe.model} // Größe: #{shoe.size}" 

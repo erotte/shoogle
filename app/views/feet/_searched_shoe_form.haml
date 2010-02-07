@@ -1,24 +1,11 @@
 - remote_form_for( @foot, :update => 'add_shoe_form', :complete => '$("#add_shoe_form").show(); init_shoe_completer();  $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }) do |f|
   .forecast
   - f.fields_for :searched_shoe do |searched|
-    %h3
-      = radio_button_tag :with_searched_shoe, 'true', true 
-      = searched.label :with_searched_shoe_true, "Ich möchte nach einem bestimmten Schuh oder einer Marke suchen"
-      .shoe_row.shoe_completer
-        %span#searched_shoe_intro In welcher Größe passt mir von
-        = searched.text_field :manufacturer_name, :class => "manufacturer passive"
-        %span.model
-          das Modell 
-          = searched.text_field :model_name, :class => "model passive"
-          ?
-      %ul#search_options
-        %li=link_to( "Nur nach Marke suchen", "#", :id => "toggle_model_search" )  
-    
-    %h3  
-      =radio_button_tag :with_searched_shoe, 'false', false 
-      =label_tag :with_searched_shoe_false, "Ich möchte einfach passende Schuhe suchen, egal von welchem Hersteller."
-    
-    
-    %p.tar= submit_tag 'Weiter', :id => "searched_shoe_submit",  :class => 'awesome orange'
-      
-    
+    %ol.shoe_row.shoe_completer
+      %li.labelwrap
+        = searched.label( :manufacturer_name, "Hersteller")
+        = searched.text_field( :manufacturer_name, :class => "manufacturer passive")
+      %li.labelwrap
+        = searched.label(:model_name, "Modell")
+        = searched.text_field(:model_name, :class => "model passive")
+      =submit_tag( 'Speichern', :id => "searched_shoe_submit",  :class => 'awesome orange right_submit')

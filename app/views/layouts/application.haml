@@ -2,21 +2,21 @@
 %html
   %head
     %title shoe size finder 
-    = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic'
+    = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons'
     = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete', 'jquery.plugins/jquery.custom', 'application' 
     = yield :head
   %body
-    #opacity_layer.active
+    #opacity_layer
     #page
       #header_wrapper
-        #header.centered
+        #header
           %h1#logo=link_to "<small>[logo]</small> schuhkombinat.de", root_path
           %ul.metanav
             %li= link_to "nochmal", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
           
-      =render :partial => 'layouts/claim' 
+      =#render :partial => 'layouts/claim' 
         
-      #panel.centered
+      #panel
         = yield 
       
       #footer_wrapper

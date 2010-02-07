@@ -1,18 +1,18 @@
-- remote_form_for @foot, :html => {:class => 'foot_shoes_form formtastic'}, :update => 'shoes_list', :success => 'shoe_add_success(event)' do |footform| 
+- remote_form_for @foot, :html => {:class => 'foot_shoes_form'}, :update => 'shoes_list', :success => 'shoe_add_success(event)' do |footform| 
   #foot_fields
-    %h3
-      Bitte gib ein paar Schuhe ein, die Dir gut passen:
+    %p
+      Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!
     - footform.fields_for 'shoes_attributes[]', Shoe.new do |shoe|
       %fieldset.inputs
         %ol.shoe_row.shoe_completer
-          %li
+          %li.labelwrap
             =shoe.label(:manufacturer, 'Hersteller ')
             =shoe.text_field(:manufacturer, :class => "manufacturer")
-          %li
+          %li.labelwrap
             =shoe.label(:model, 'Modell ')
             =shoe.text_field(:model, :class => 'model') 
-          %li
+          %li.labelwrap.size
             =shoe.label(:size, 'Größe')
             =shoe.text_field(:size, :class => 'size')
-          %li
-            =footform.submit 'Schuhe hinzufügen', :class => 'awesome orange'
+
+          =footform.submit 'Schuhe hinzufügen', :class => 'awesome orange right_submit'

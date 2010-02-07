@@ -2,8 +2,8 @@
 = error_messages_for :foot, :header_message => nil, :message => 'Bitte prüfen Sie die eingegeben Daten' 
 
 -unless @foot.shoes.blank?
-  %p 
-  %table#forecast_shoes.shoes  
+   
+  %ol#forecast_shoes  
     =render( :partial => 'feet/shoe', :collection => @foot.shoes.select(&:valid?))  
 
 #show_result_button.tar{:class => "#{ shoes_blank? ? 'hide' : ''}"  } 
