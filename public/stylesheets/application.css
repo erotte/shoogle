@@ -1,33 +1,8 @@
 /* @override 
-	http://localhost:3000/stylesheets/application.css?1264376197
-	http://localhost:3000/stylesheets/application.css?1264376863
-	http://localhost:3000/stylesheets/application.css?1265240747
-	http://localhost:3000/stylesheets/application.css?1265240842
-	http://localhost:3000/stylesheets/application.css?1265241615
-	http://localhost:3000/stylesheets/application.css?1265241861
-	http://localhost:3000/stylesheets/application.css?1265242228
-	http://localhost:3000/stylesheets/application.css?1265325227
-	http://localhost:3000/stylesheets/application.css?1265325785
-	http://localhost:3000/stylesheets/application.css?1265325853
-	http://localhost:3000/stylesheets/application.css?1265558209
-	http://localhost:3000/stylesheets/application.css?1265558235
-	http://localhost:3000/stylesheets/application.css?1265558723
-	http://localhost:3000/stylesheets/application.css?1265562072
-	http://localhost:3000/stylesheets/application.css?1265562217
-	http://localhost:3000/stylesheets/application.css?1265562426
-	http://localhost:3000/stylesheets/application.css?1265568350
-	http://localhost:3000/stylesheets/application.css?1265570017
-	http://localhost:3000/stylesheets/application.css?1265570048
-	http://localhost:3000/stylesheets/application.css?1265570143
-	http://localhost:3000/stylesheets/application.css?1265570459
-	http://localhost:3000/stylesheets/application.css?1265571722
-	http://localhost:3000/stylesheets/application.css?1265571925
-	http://localhost:3000/stylesheets/application.css?1265572011
-	http://localhost:3000/stylesheets/application.css?1265572686
-	http://localhost:3000/stylesheets/application.css?1265573300
-	http://localhost:3000/stylesheets/application.css?1265573446
-	http://localhost:3000/stylesheets/application.css?1265573570
-	http://localhost:3000/stylesheets/application.css?1265574337
+	http://localhost:3000/stylesheets/application.css?1265574431
+	http://localhost:3000/stylesheets/application.css?1265582007
+	http://localhost:3000/stylesheets/application.css?1265582024
+	http://localhost:3000/stylesheets/application.css?1265582506
 */
 
 /* @group basics and resets */
@@ -268,7 +243,7 @@ input:focus {
   padding: 3px 8px 8px 8px;
   color: #fff;
   font-size: 17px;
-  margin-right: 5px; 	
+  margin-right: 5px;
 }
 .labelwrap label{
   display: block;	
@@ -290,6 +265,11 @@ input:focus {
 
 .right_submit {
 	margin-left: 10px;
+}
+
+#los_eingeben {
+	width:  500px;
+	margin: 15px 10px;
 }
 
 input.passive {
@@ -380,15 +360,17 @@ ol#forecast_shoes {
 
 #forecast_shoes li {
 	padding: 4px 8px;
+	line-height: 1.4em;
 	color: #333;
-	background-color: #b8b8b8;
+	background-color: #f0f2f2;
 	font-size: 20px;
 	margin-bottom:8px;
+	border: 1px solid #b8b8b8;
 }
 
 #forecast_shoes .delete {
 	float: right;
-	margin-top: 5px;
+	margin-top: 6px;
 }
 
 table#foot_check_shoes {

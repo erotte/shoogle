@@ -4,6 +4,9 @@
     %title shoe size finder 
     = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons'
     = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete', 'jquery.plugins/jquery.custom', 'application' 
+    /[if lte IE8]
+      = stylesheet_link_tag 'ie'
+    
     = yield :head
   %body
     #opacity_layer
