@@ -3,7 +3,9 @@
   %head
     %title shoe size finder 
     = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons'
-    = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete', 'jquery.plugins/jquery.custom', 'application' 
+    = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete', | 
+      'jquery.plugins/jquery.custom', 'ui.min/ui.core.min','ui.min/effects.core.min', |
+      'ui.min/effects.scale.min',  'application' |
     /[if lte IE8]
       = stylesheet_link_tag 'ie'
     
@@ -19,7 +21,7 @@
           
       =#render :partial => 'layouts/claim' 
         
-      #panel
+      #panel.passive
         = yield 
       
       #footer_wrapper

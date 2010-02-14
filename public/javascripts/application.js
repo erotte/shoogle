@@ -9,7 +9,16 @@ $(document).ready(function(){
 	$("input.passive").toggleDefaultValue();
   init_searched_shoe_toggles();
   init_searched_shoe_radio_toggles()	
+	init_opacity_layer()
 })	
+
+	init_opacity_layer = function() {
+		$(window).one('mousemove', function(event){
+			$('#opacity_layer').animate({opacity:0.75}, 800 )
+			$('#panel.passive').switchClass('passive', 'active', 900, function(){$('#foot_searched_shoe_attributes_manufacturer_name').focus()} )
+		})
+	}
+
 
 init_shoe_completer = function(){
 	$('.shoe_completer').shoe_completer();
@@ -48,3 +57,5 @@ shoe_add_success = function(that){
 	$('.manufacturer').focus();
 	
 }
+
+
