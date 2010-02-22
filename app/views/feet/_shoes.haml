@@ -4,9 +4,9 @@
 -unless @foot.shoes.blank?
    
   %ol#forecast_shoes  
-    =render( :partial => 'feet/shoe', :collection => @foot.shoes.select(&:valid?))  
+    =render( :partial => 'feet/shoe', :collection => @foot.shoes)  
 
-#show_result_button.tar{:class => "#{ shoes_blank? ? 'hide' : ''}"  } 
+#show_result_button.tar
   =link_to "Ergebnis Anzeigen", fitting_url(@foot), :class => 'awesome orange'
   %br
   %br

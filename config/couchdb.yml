@@ -1,0 +1,4 @@
+
+development: sizefinder_development
+test: sizefinder_test
+production: http://db.server/production_sizefinder

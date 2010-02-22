@@ -20,13 +20,15 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  config.gem "sqlite3-ruby", :lib => "sqlite3"
   config.gem 'haml'
   config.gem "simple_importer", :lib => false, :source => "http://gemcutter.org/"
   config.gem "fastercsv", :lib => false
   config.gem 'vlad', :lib => false
   config.gem 'vlad-git', :lib => false
   config.gem 'formtastic'
+  config.gem 'couch_potato', :source => 'http://gemcutter.org'
+  
+  
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins
   # config.gem 'rails_sql_views', :lib => 'rails_sql_views', :version => '>= 0.7.0', :source => "http://gems.github.com"
@@ -40,7 +42,8 @@ Rails::Initializer.run do |config|
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
-
+  config.frameworks -= [:active_record]
+  
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 

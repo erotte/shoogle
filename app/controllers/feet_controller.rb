@@ -13,7 +13,7 @@ class FeetController < ApplicationController
   # GET /feet /1
   # GET /feet /1.xml
   def show
-    @foot = Foot.find(params[:id])
+    @foot = db.load_document(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @foot }
@@ -23,7 +23,6 @@ class FeetController < ApplicationController
   # GET /feet /new
   # GET /feet /new.xml
   def new
-    @foot.build_searched_shoe
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @foot }
@@ -32,28 +31,35 @@ class FeetController < ApplicationController
 
   # GET /feet /1/edit
   def edit
-    @foot = Foot.find(params[:id])
+    @foot = db.load_document(params[:id])
   end
 
   # POST /feet 
   # POST /feet .xml
   def create
-      if @foot.update_attributes(params[:foot]) 
-        session[:foot_id] = @foot.id
-        respond_to do |format|
-          format.html { redirect_to edit_foot_path(@foot) }
-          format.js   { render :partial => 'feet/add_shoe_form' }
-        end
-      else 
-        render :action => :new
+    @foot = Foot.new params[:foot]
+    if db.save(@foot)
+      session[:foot_id] = @foot.id
+      respond_to do |format|
+        format.html { redirect_to edit_foot_path(@foot) }
+        format.js   { render :partial => 'feet/add_shoe_form' }
       end
+    else 
+      render :action => :new
+    end
   end
 
   # PUT /feet /1
   # PUT /feet /1.xml
   def update
-    @foot = Foot.find(params[:id])
-    @foot.update_attributes(params[:foot])
+    @foot = db.load_document(params[:id])
+    if params[:foot][:shoes]
+      @foot.shoes = params[:foot][:shoes].concat(@foot.shoes)
+    else
+      @foot.attributes = params[:foot]
+    end
+    @foot.attributes = params[:foot]
+    db.save(@foot)
     respond_to do |format|
       format.html { render :edit }
       format.js   { render :partial => 'feet/shoes' }
@@ -63,7 +69,7 @@ class FeetController < ApplicationController
   # DELETE /feet /1
   # DELETE /feet /1.xml
   def destroy
-    @foot = Foot.find(params[:id])
+    @foot = db.load_document(params[:id])
     @foot.destroy
     flash[:message] = "Shoe #{params[:id]} destroyed."
     respond_to do |format|

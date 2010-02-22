@@ -13,5 +13,4 @@ class SelfCheckForecast < ForecastRenderer
       @model, 
       :conditions => ["foot_id != ?", @foot.id])
   end
-  
 end
