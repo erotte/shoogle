@@ -315,6 +315,7 @@ p.buttonbox {
 	border: 1px solid #cc0000;
 	margin: 20px 0;
 	background: #f4f4f4;
+	width:579px;
 }
 
 #errorExplanation h2 {

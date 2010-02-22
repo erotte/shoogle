@@ -62,7 +62,7 @@ class FeetController < ApplicationController
     db.save(@foot)
     respond_to do |format|
       format.html { render :edit }
-      format.js   { render :partial => 'feet/shoes' }
+      format.js   { render :partial => 'feet/shoe_area' }
     end  
   end
 

@@ -1,6 +1,7 @@
-- remote_form_for [@foot, Shoe.new], :html => {:class => 'foot_shoes_form', :id => 'foot_fields'}, :update => 'shoes_list', :success => 'shoe_add_success(event)' do |f| 
+- remote_form_for [@foot, @shoe || Shoe.new], :html => {:class => 'foot_shoes_form', :id => 'foot_fields'}, :update => 'shoe_area' do |f| 
   %p#losjetzt_eingeben
     Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!
+  = error_messages_for :shoe, :header_message => nil, :message => 'Bitte prüfen Sie die eingegeben Daten' 
   %fieldset.inputs
     %ol.shoe_row.shoe_completer
       %li.labelwrap
@@ -11,6 +12,6 @@
         =f.text_field(:model, :class => 'model') 
       %li.labelwrap.size
         =f.label(:size, 'Größe')
-        =f.text_field(:size, :class => 'size')
+        =f.text_field(:size, :class => 'size', :autocomplete => 'off')
       %li.buttonwrap  
         =f.submit 'Schuhe hinzufügen', :class => 'awesome red right_submit'

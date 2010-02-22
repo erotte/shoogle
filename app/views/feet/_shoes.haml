@@ -1,8 +1,4 @@
-
-= error_messages_for :foot, :header_message => nil, :message => 'Bitte prüfen Sie die eingegeben Daten' 
-
--unless @foot.shoes.blank?
-   
+-unless @foot.shoes.blank?   
   %ol#forecast_shoes  
     =render( :partial => 'feet/shoe', :collection => @foot.shoes.reverse)  
 %ol

@@ -7,9 +7,10 @@ class ShoesController < ApplicationController
     if @shoe.valid?
       @foot.shoes << @shoe
       db.save_document @foot
+      @shoe = Shoe.new
     end
     respond_to do |format|
-      format.js   { render :partial => 'feet/shoes' }
+      format.js   { render :partial => 'feet/shoe_area' }
     end
   end
 
