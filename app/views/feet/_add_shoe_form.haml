@@ -1,17 +1,16 @@
-- remote_form_for @foot, :html => {:class => 'foot_shoes_form', :id => 'foot_fields'}, :update => 'shoes_list', :success => 'shoe_add_success(event)' do |footform| 
-  - footform.fields_for 'shoes[]', Shoe.new  do |shoe|
-    %p#losjetzt_eingeben
-      Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!
-    %fieldset.inputs
-      %ol.shoe_row.shoe_completer
-        %li.labelwrap
-          =shoe.label(:manufacturer, 'Hersteller ')
-          =shoe.text_field(:manufacturer, :class => "manufacturer")
-        %li.labelwrap
-          =shoe.label(:model, 'Modell ')
-          =shoe.text_field(:model, :class => 'model') 
-        %li.labelwrap.size
-          =shoe.label(:size, 'Größe')
-          =shoe.text_field(:size, :class => 'size')
-        %li.buttonwrap  
-          =footform.submit 'Schuhe hinzufügen', :class => 'awesome red right_submit'
+- remote_form_for [@foot, Shoe.new], :html => {:class => 'foot_shoes_form', :id => 'foot_fields'}, :update => 'shoes_list', :success => 'shoe_add_success(event)' do |f| 
+  %p#losjetzt_eingeben
+    Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!
+  %fieldset.inputs
+    %ol.shoe_row.shoe_completer
+      %li.labelwrap
+        =f.label(:manufacturer, 'Hersteller ')
+        =f.text_field(:manufacturer, :class => "manufacturer")
+      %li.labelwrap
+        =f.label(:model, 'Modell ')
+        =f.text_field(:model, :class => 'model') 
+      %li.labelwrap.size
+        =f.label(:size, 'Größe')
+        =f.text_field(:size, :class => 'size')
+      %li.buttonwrap  
+        =f.submit 'Schuhe hinzufügen', :class => 'awesome red right_submit'

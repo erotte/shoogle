@@ -53,7 +53,7 @@ class FeetController < ApplicationController
   # PUT /feet /1.xml
   def update
     @foot = db.load_document(params[:id])
-    if params[:foot][:shoes]
+    if params[:foot][:shoes] and @foot.shoes
       @foot.shoes = params[:foot][:shoes].concat(@foot.shoes)
     else
       @foot.attributes = params[:foot]

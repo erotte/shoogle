@@ -4,12 +4,7 @@
 -unless @foot.shoes.blank?
    
   %ol#forecast_shoes  
-    =render( :partial => 'feet/shoe', :collection => @foot.shoes)  
-
-#show_result_button.tar
-  =link_to "Ergebnis Anzeigen", fitting_url(@foot), :class => 'awesome orange'
-  %br
-  %br
-  =link_to "Alle passenden Schuhe", more_fitting_url(@foot), :class => 'awesome orange'
-  
-  
+    =render( :partial => 'feet/shoe', :collection => @foot.shoes.reverse)  
+%ol
+  %li#result_buttonwrap.buttonwrap
+    =link_to "Ergebnis", fitting_url(@foot), :class => 'awesome red right_submit'

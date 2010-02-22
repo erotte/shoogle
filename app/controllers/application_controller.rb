@@ -20,8 +20,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def find_current_or_new_foot      
+  def find_current_or_new_foot
     @foot = session[:foot_id].blank? ? Foot.new : db.load_document(session[:foot_id])
+    unless @foot 
+      redirect :action => :new, :controller => :forecasts
+    end
   end 
 
 end

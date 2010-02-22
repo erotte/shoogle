@@ -1,7 +1,12 @@
 
+#grow_wrap
+  %p Trage hier bitte das Schuhmodell ein, dessen Größen du ermitteln möchtest.
+  = render :partial => 'feet/searched_shoe_form'
 
-%p=link_to("passende Schuhe", more_fitting_url(@foot))
+  #add_shoe_form
+    = render :partial => 'feet/add_shoe_form' unless @foot.new_record?
+    
+  #shoes_list
+    = render :partial => 'feet/shoes' 
 
-= link_to 'Edit', edit_foot_path(@foot) 
-|
-= link_to 'Back', feet_path 
+#forecast_result

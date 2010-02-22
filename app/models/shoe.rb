@@ -4,5 +4,5 @@ class Shoe
 
   property :size
   property :model
-  property :manufacturer, :type => Manufacturer
+  property :manufacturer
 end

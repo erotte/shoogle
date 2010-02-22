@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :manufacturers
 
-  map.resources :feet, :has_many => :shoes, :shallow => true
+  map.resources :feet, :has_many => :shoes
   map.resources :shoes
 
 

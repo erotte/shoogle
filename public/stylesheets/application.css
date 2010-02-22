@@ -175,7 +175,7 @@ ul.metanav li a:hover {
 	position: relative;
 	width:  850px;
 	padding: 15px;
-	margin-top: 180px;
+	margin-top: 145px;
 	}
 
 #panel.active {
@@ -409,6 +409,11 @@ table#foot_check_shoes {
 
 .rating .bad_stars {
 	color: #aaaaaa;
+}
+
+#result_buttonwrap{
+	margin-left: 590px;
+	margin-bottom: 20px;
 }
 
 #show_result_button {
