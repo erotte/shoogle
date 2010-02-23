@@ -1,4 +1,4 @@
-- remote_form_for @foot, :html => {:class => 'foot_shoes_form', :id => 'foot_fields'}, :update => 'shoes_list', :success => 'shoe_add_success(event)' do |footform| 
+- remote_form_for @foot, add_shoe_form_attributes do |footform| 
   - footform.fields_for 'shoes_attributes[]', Shoe.new do |shoe|
     %p#losjetzt_eingeben
       Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!

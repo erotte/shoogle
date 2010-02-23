@@ -33,6 +33,7 @@ class FeetController < ApplicationController
   # GET /feet /1/edit
   def edit
     @foot = Foot.find(params[:id])
+    @dummy_shoe = Shoe.new
   end
 
   # POST /feet 
@@ -42,7 +43,7 @@ class FeetController < ApplicationController
         session[:foot_id] = @foot.id
         respond_to do |format|
           format.html { redirect_to edit_foot_path(@foot) }
-          format.js   { render :partial => 'feet/add_shoe_form' }
+          format.js   { render :partial => 'feet/forms' }
         end
       else 
         render :action => :new

@@ -5,12 +5,12 @@ Feature: Searching for a fitting shoe
 
   Scenario: New visitor sees only the search form
     Given I am on the homepage
-    Then I should not see "Bitte gib ein paar Schuhe ein"
+    Then I should not see "Trage jetzt die Schuhe"
 
   Scenario: New visitor saves its searched shoe 
     Given I am searching a "Nike" "Air Force 1"    
-    And I press "Weiter"
-    Then I should see "Bitte gib ein paar Schuhe ein"
+    And I press "Speichern"
+    Then I should see "Trage jetzt die Schuhe"
 
   Scenario: The visitor saves a shoe
     Given I am searching a "Nike" "Air Force 1"

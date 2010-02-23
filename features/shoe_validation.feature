@@ -9,8 +9,8 @@ Feature: Shoe validation
     And I fill in "foot_shoes_attributes__model" with "Samba"
     And I press "foot_submit"
     Then I should see "size muss ausgefüllt werden"
-    And I should see "Puma"
-    And I should see "Samba" 
+    # And I should see "Puma"
+    # And I should see "Samba" 
   
   
   

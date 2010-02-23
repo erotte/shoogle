@@ -1,6 +1,7 @@
+%h1 Edit
 
 =render :partial => 'feet/searched_shoe_form'
-
+= debug @foot
 #add_shoe_form
   = render :partial => 'feet/add_shoe_form' unless @foot.new_record?
 #shoes_list

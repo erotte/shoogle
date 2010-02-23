@@ -6,8 +6,8 @@ Feature: Search fitting brand
   
 Scenario: The visitor saves its searched brand
   Given I am searching for "Nike"    
-  And I press "Weiter"
-  Then I should see "Bitte gib ein paar Schuhe ein"
+  And I press "Speichern"
+  Then I should see "Trage jetzt die Schuhe"
 
   Scenario: The visitor proceeds to the result page
     Given I am searching for "Nike"    
