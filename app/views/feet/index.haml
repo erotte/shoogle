@@ -15,11 +15,10 @@
   =link_to "Check", foot_check_path(foot), :id => 'foot_check'
   
   %table{:border => 1, :cellpadding => 4 }
-    - foot.shoes.each do |shoe|
+    - foot.shoes.each_with_index do |shoe, shoe_counter|
       %tr
         %td=shoe.manufacturer
         %td=shoe.model
         %td=shoe.size
-        %td=link_to("Bearbeiten", edit_shoe_path(shoe))
-        %td=link_to 'Schuh löschen', shoe, :method => :delete #, :confirm => 'Wirklich löschen?'
+        %td=link_to image_tag('app/cross.png' , :class => 'delete'), "/feet/#{foot.id}/shoes/#{shoe_counter}", :method => :delete
   

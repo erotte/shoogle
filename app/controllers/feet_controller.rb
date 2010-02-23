@@ -3,7 +3,7 @@ class FeetController < ApplicationController
   # GET /feet 
   # GET /feet .xml
   def index
-    @feet  = Foot.all
+    @feet  = db.view(Foot.all)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @feet }
@@ -70,7 +70,7 @@ class FeetController < ApplicationController
   # DELETE /feet /1.xml
   def destroy
     @foot = db.load_document(params[:id])
-    @foot.destroy
+    db.destroy_document @foot
     flash[:message] = "Shoe #{params[:id]} destroyed."
     respond_to do |format|
       format.html { redirect_to(feet_path) }

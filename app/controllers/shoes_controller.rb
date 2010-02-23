@@ -19,6 +19,7 @@ class ShoesController < ApplicationController
     db.save_document @foot
     respond_to do |format|
       format.js   { render :partial => 'feet/shoes' }
+      format.html { redirect_to :back }
     end
   end
 end
