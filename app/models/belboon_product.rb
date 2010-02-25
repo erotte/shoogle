@@ -1,3 +1,5 @@
-class BelboonProduct < ActiveRecord::Base
-  named_scope :named, lambda {|name| {:conditions => ["productname ILIKE ?", "%#{name}%"]}}
+class BelboonProduct 
+    include CouchPotato::Persistence
+  
+  #TODO properties anlegen
 end

@@ -10,12 +10,9 @@ class ForecastsController < ApplicationController
   def index
   end
   
+  
   def fitting
-    a = @foot.shoes.last
-    b = @foot.searched_shoe
-    key = [a.manufacturer, b.manufacturer_name, a.model, b.model_name, a.size]
-#    key.why?
-    @forecast = db.view(Foot.fitting(:key => key)).why?# :manufacturer => @foot.searched_shoe.manufacturer_name, :model => @foot.searched_shoe.model_name
+    @forecast = Forecast.new(:foot => @foot)
     respond_to do |format|
       format.html
     end

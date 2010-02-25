@@ -1,8 +1,7 @@
-
 class Shoe 
   include CouchPotato::Persistence
 
-  property :size
+  property :size, :type => Float
   property :model
   property :manufacturer
   

@@ -8,22 +8,24 @@ class Foot
   
   view :all, :key => :created_at
   
+  class FittingResult < Struct.new(:size_sum, :num_feet);end
+  
   view :fitting, :type => :raw, 
     :map =>'
       function(doc) {
         for each (var a in doc.shoes) 
           for each (var b in doc.shoes) 
-            if (a != b) 
+            if (a != b && a.size > 30 && b.size > 30) 
               emit([a.manufacturer, b.manufacturer, a.model, b.model, a.size],b.size-a.size);
       }', 
     :reduce => '
-      function (key, values, rereduce) {
+      function (key, values, combine) {
         var result = {size_sum:0, num_feet:0}
 
-        if(rereduce){
-          for each (var intermediate in values) {
-              result.size_sum += intermediate.size_sum
-              result.num_feet += intermediate.num_feet        
+        if(combine){
+          for each (var intermediate_result in values) {
+              result.size_sum += intermediate_result.size_sum
+              result.num_feet += intermediate_result.num_feet        
           }
         } else {
           for each (var size in values) {
@@ -32,9 +34,44 @@ class Foot
           }
         }    
         return result
-      }', 
-    :group => true
-#    :results_filter => lambda{|rows| rows['rows'].map{|row| Fitting.new(row['key'], row['value'])}}
+      }', # bsp: {"rows"=>[{"value"=>{"size_sum"=>-0.5, "num_feet"=>1} 
+    :results_filter => lambda{|result| result['rows'].first['value'] if result['rows'].first}
+      
 
+  def direct_matches
+    matches = {}
+    shoes.each do |shoe|
+      key = [shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name, shoe.size]
+      result_hash = db.view(Foot.fitting(:key => key, :group => true))
+      matches[key] = Match.new(result_hash, shoe.size) if result_hash
+    end
+    matches
+  end
+
+  def transposed_matches
+    matches = {}
+    shoes.each do |shoe|
+      key = [shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name]
+      result_hash = db.view(Foot.fitting(:startkey => key, :group_level => 4, :limit => 1))
+      matches[key] = Match.new(result_hash, shoe.size) if result_hash
+    end
+    matches
+  end
+
+  def manufacturer_matches
+    matches = {}
+    shoes.each do |shoe|
+      key = [shoe.manufacturer, searched_shoe.manufacturer_name]
+      result_hash = db.view(Foot.fitting(:startkey => key, :group_level => 2, :limit => 1))
+      matches[key] = Match.new(result_hash, shoe.size) if result_hash
+    end
+    matches
+  end
+
+  private
+
+  def db
+    CouchPotato.database
+  end
   
 end

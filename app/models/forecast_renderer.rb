@@ -8,9 +8,7 @@ class ForecastRenderer
   
   def initialize params
     @foot = params[:foot]
-    @manufacturer = params[:manufacturer]
-    @model = params[:model]
-
+    
     compute_average_size
     compute_direct_matches
     compute_transposed_matches
@@ -18,17 +16,27 @@ class ForecastRenderer
   end
   
   def compute_direct_matches
-    matches = fetch_direct_matches
+    @direct_matches_size = 0
+    @direct_matches = 0
+    matches = @foot.direct_matches.values
+    matches.each do |match|
+      @direct_matches_size += match.size
+      @direct_matches += match.num_feet
+    end
+    @direct_matches_size /= matches.size if matches.size > 1
     log("direct matches", matches)
-    @direct_matches_size = matches.map(&:size).median if matches.any?
-    @direct_matches = matches.size
   end
 
   def compute_transposed_matches
-    matches = fetch_transposed_matches
+    @transposed_matches_size = 0
+    @transposed_matches = 0
+    matches = @foot.transposed_matches.values
+    matches.each do |match|
+      @transposed_matches_size += match.size
+      @transposed_matches += match.num_feet
+    end
+    @transposed_matches_size /= matches.size if matches.size > 1  
     log("transposed matches", matches)
-    @transposed_matches_size = matches.map(&:transposed_size).median if matches.any?
-    @transposed_matches = matches.size
   end
 
   def compute_average_size

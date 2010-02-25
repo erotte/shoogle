@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def db
      CouchPotato.database
-   end
+  end
    
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
