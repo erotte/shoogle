@@ -26,8 +26,6 @@ Rails::Initializer.run do |config|
   config.gem 'vlad', :lib => false
   config.gem 'vlad-git', :lib => false
   config.gem 'formtastic'
-  config.gem 'couch_potato', :source => 'http://gemcutter.org'
-  
   
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins
