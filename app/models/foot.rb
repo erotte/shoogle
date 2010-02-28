@@ -1,5 +1,3 @@
-require 'shoe'
-
 class Foot 
   include CouchPotato::Persistence
   
@@ -7,8 +5,6 @@ class Foot
   property :searched_shoe, :type => SearchedShoe
   
   view :all, :key => :created_at
-  
-  class FittingResult < Struct.new(:size_sum, :num_feet);end
   
   view :fitting, :type => :raw, 
     :map =>'
@@ -66,6 +62,14 @@ class Foot
       matches[key] = Match.new(result_hash, shoe.size) if result_hash
     end
     matches
+  end
+
+  def recommended_shoes
+    result = []
+    shoes.each do |shoe|
+      result << shoe.recommended
+    end
+    result.flatten.sort{|a,b| a.num_feet <=> b.num_feet}.reverse
   end
 
   private

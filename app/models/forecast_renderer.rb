@@ -24,6 +24,7 @@ class ForecastRenderer
       @direct_matches += match.num_feet
     end
     @direct_matches_size /= matches.size if matches.size > 1
+    @direct_matches_size = round @direct_matches_size
     log("direct matches", matches)
   end
 
@@ -36,6 +37,7 @@ class ForecastRenderer
       @transposed_matches += match.num_feet
     end
     @transposed_matches_size /= matches.size if matches.size > 1  
+    @transposed_matches_size = round @transposed_matches_size 
     log("transposed matches", matches)
   end
 
@@ -48,11 +50,10 @@ class ForecastRenderer
   end
 
   def choose_recommended_size
-    size = @direct_matches_size || @transposed_matches_size || @average_shoe_size
-    @size = round(size, 2)
+    @size = @direct_matches_size || @transposed_matches_size || @average_shoe_size
   end
 
-  def round(f, digits)
+  def round(f, digits=2)
     factor = (10 ** digits).to_f
     (f * factor).round / factor
   end

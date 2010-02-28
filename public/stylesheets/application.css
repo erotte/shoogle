@@ -71,6 +71,10 @@ pre {
 
 /* @end */
 
+table.shoes td {
+  padding: 5px;
+}
+
 /* @group base Typo */
 
 h3 {
