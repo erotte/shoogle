@@ -5,6 +5,8 @@
 	http://localhost:3000/stylesheets/application.css?1265582506
 	http://localhost:3000/stylesheets/application.css?1266188577
 	http://localhost:3000/stylesheets/application.css?1266188744
+	http://localhost:3000/stylesheets/application.css?1267310903
+	http://localhost:3000/stylesheets/application.css?1267355186
 */
 
 /* @group basics and resets */
@@ -291,6 +293,10 @@ input:focus {
 	width: 260px;
 }
 
+#add_shoe_form {
+	margin-top: 20px;
+}
+
 #add_shoe_form .labelwrap.size {
 	width: 96px;
 }
@@ -306,8 +312,12 @@ li.buttonwrap {
 }
 
 #losjetzt_eingeben {
-	width:  500px;
-	margin: 15px 10px;
+	width:  550px;
+	margin: 15px 0;
+	padding: 10px 10px 10px 20px;
+	background: #0080C9 url(/images/app/btn_pfeil.png) no-repeat left center;
+	color: white;
+	font-size: 16px;
 }
 
 input.passive {
