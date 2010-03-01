@@ -10,5 +10,9 @@ module FeetHelper
       :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }
     }  
   end
+  
+  def add_shoes_options
+    {:html => {:class => 'foot_shoes_form', :id => 'foot_fields'}, :update => 'shoe_area'}
+  end
 
 end

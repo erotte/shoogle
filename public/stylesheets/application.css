@@ -315,11 +315,11 @@ li.buttonwrap {
 
 }
 
-#losjetzt_eingeben {
-	width:  550px;
+.step_box {
+	width:  558px;
 	margin: 15px 0;
-	padding: 10px 10px 10px 20px;
-	background: #0080C9 url(/images/app/btn_pfeil.png) no-repeat left center;
+	padding: 10px 12px 28px 13px;
+	background: #0080C9 url(/images/app/step_pfeil.gif) repeat-x center bottom;
 	color: white;
 	font-size: 16px;
 }

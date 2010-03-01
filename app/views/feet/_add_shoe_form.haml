@@ -1,5 +1,5 @@
-- remote_form_for [@foot, @shoe || Shoe.new], :html => {:class => 'foot_shoes_form', :id => 'foot_fields'}, :update => 'shoe_area' do |f| 
-  %p#losjetzt_eingeben.hide
+- remote_form_for [@foot, @shoe || Shoe.new], add_shoes_options do |f| 
+  %p#losjetzt_eingeben.step_box.hide
     Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!
   = error_messages_for :shoe, :header_message => nil, :message => 'Bitte prüfen Sie die eingegeben Daten' 
   %fieldset.inputs
