@@ -15,7 +15,7 @@ class ShoesController < ApplicationController
   end
 
   def destroy
-    @foot.shoes.delete_at params[:id].to_i
+    @foot.shoes.reverse!.delete_at params[:id].to_i
     db.save_document @foot
     respond_to do |format|
       format.js   { render :partial => 'feet/shoes' }
