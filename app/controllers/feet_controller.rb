@@ -42,7 +42,7 @@ class FeetController < ApplicationController
       session[:foot_id] = @foot.id
       respond_to do |format|
         format.html { redirect_to edit_foot_path(@foot) }
-        format.js   { render :partial => 'feet/add_shoe_form' }
+        format.js   { render :edit, :layout => false }
       end
     else 
       render :action => :new
@@ -62,7 +62,7 @@ class FeetController < ApplicationController
     db.save(@foot)
     respond_to do |format|
       format.html { render :edit }
-      format.js   { render :partial => 'feet/shoe_area' }
+      format.js   { render :edit, :layout => false }
     end  
   end
 

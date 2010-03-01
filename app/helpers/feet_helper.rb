@@ -1,7 +1,7 @@
 module FeetHelper
 
   def searched_shoe_form_options
-    { :update => 'add_shoe_form',
+    { :update => 'panel',
       :complete => '$("#add_shoe_form").show();
                     init_shoe_completer();
                     $("#foot_fields input.manufacturer").focus();

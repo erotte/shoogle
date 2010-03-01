@@ -1,7 +1,8 @@
-
 #grow_wrap
-  %p Trage hier bitte das Schuhmodell ein, dessen Größen du ermitteln möchtest.
-  = render :partial => 'feet/searched_shoe_form'
+  - if @foot.searched_shoe.new_record?
+    = render :partial => 'feet/searched_shoe_form'
+  -else
+    = render :partial => 'feet/searched_shoe'
 
   = render :partial => 'feet/shoe_area' unless @foot.new_record?
 
