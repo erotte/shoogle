@@ -3,6 +3,8 @@ manufacturer_names = YAML.load(File.open(File.dirname(__FILE__) + "/../data/snea
 manufacturer_names.uniq!
 
 manufacturer_names.each do |name|
-  Manufacturer.find_or_create_by_name name 
+  manufacturer = Manufacturer.new
+  manufacturer.name = name
+  CouchPotato.database.save_document manufacturer
 end
 

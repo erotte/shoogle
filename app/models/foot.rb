@@ -9,10 +9,11 @@ class Foot
   view :fitting, :type => :raw, 
     :map =>'
       function(doc) {
-        for each (var a in doc.shoes) 
-          for each (var b in doc.shoes) 
-            if (a != b && a.size > 30 && b.size > 30) 
-              emit([a.manufacturer, b.manufacturer, a.model, b.model, a.size],b.size-a.size);
+        if (doc.ruby_class == "Foot")
+          for each (var a in doc.shoes) 
+            for each (var b in doc.shoes) 
+              if (a != b && a.size > 30 && b.size > 30) 
+                emit([a.manufacturer, b.manufacturer, a.model, b.model, a.size],b.size-a.size);
       }', 
     :reduce => '
       function (key, values, combine) {
