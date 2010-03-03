@@ -1,7 +1,7 @@
 - remote_form_for [@foot, @shoe || Shoe.new], add_shoes_options do |f| 
   %p#losjetzt_eingeben.step_box.hide
     Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!
-  = error_messages_for :shoe, :header_message => nil, :message => 'Bitte prüfen Sie die eingegeben Daten' 
+  = uniq_error_messages_for @shoe
   %fieldset.inputs
     %ol.shoe_row.shoe_completer
       %li.labelwrap

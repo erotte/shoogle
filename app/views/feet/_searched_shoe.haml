@@ -1,7 +1,7 @@
 %ol
   %li.labelwrap
-    = h @searched_shoe.manufacturer_name)
+    = h(@foot.searched_shoe.manufacturer_name)
   %li.labelwrap
-    = h @searched_shoe.model_name
+    = h(@foot.searched_shoe.model_name)
   %li.buttonwrap=submit_tag( 'ändern', :id => "searched_shoe_submit",  :class => 'awesome disabled right_submit')
       

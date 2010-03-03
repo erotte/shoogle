@@ -38,7 +38,7 @@ class FeetController < ApplicationController
   # POST /feet .xml
   def create
     @foot = Foot.new params[:foot]
-    if db.save(@foot)
+    if db.save!(@foot)
       session[:foot_id] = @foot.id
       respond_to do |format|
         format.html { redirect_to edit_foot_path(@foot) }

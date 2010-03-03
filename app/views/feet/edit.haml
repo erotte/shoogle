@@ -1,5 +1,5 @@
 #grow_wrap
-  - if @foot.searched_shoe.new_record?
+  - if @foot.new_record?
     = render :partial => 'feet/searched_shoe_form'
   -else
     = render :partial => 'feet/searched_shoe'
