@@ -1,3 +1,5 @@
+require "shoe"
+
 class Foot 
   include CouchPotato::Persistence
   
@@ -41,7 +43,7 @@ class Foot
       key = [shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name, shoe.size]
       result_hash = db.view(Foot.fitting(:key => key, :group => true))
       matches[key] = Match.new(result_hash, shoe.size) if result_hash
-    end
+    end if searched_shoe.model_name.present?
     matches
   end
 
@@ -51,7 +53,7 @@ class Foot
       key = [shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name]
       result_hash = db.view(Foot.fitting(:startkey => key, :group_level => 4, :limit => 1))
       matches[key] = Match.new(result_hash, shoe.size) if result_hash
-    end
+    end if searched_shoe.model_name.present?
     matches
   end
 
