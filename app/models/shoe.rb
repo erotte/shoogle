@@ -26,6 +26,22 @@ class Shoe
       }',
     :group => true,
     :results_filter => lambda{|results| results['rows'].map{|row| RecommendationResult.new(row['key'][2], row['key'][3], row['value'].to_i)}}
+
+    view :names_by_start_of_name, :type => :raw,
+      :map => '
+        function(doc) {
+          if (doc.ruby_class == "Foot")
+            for each (var shoe in doc.shoes)
+              for each (var word in shoe.model.toLowerCase().split(" "))
+                for(var length=1; length<word.length; length++)
+                  emit([word.substring(0,length), shoe.manufacturer, shoe.model], shoe.model)
+        }',
+      :reduce => '
+        function(key, values, combine){
+          return values[0]
+        }',
+      :group => true,
+      :results_filter => lambda{|results| results['rows'].map{|row| row['value']}}
     
   def recommended
     CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model], 
