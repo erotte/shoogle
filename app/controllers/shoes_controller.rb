@@ -11,6 +11,7 @@ class ShoesController < ApplicationController
     end
     respond_to do |format|
       format.js   { render :partial => 'feet/shoe_area' }
+      format.html { render 'feet/edit' }
     end
   end
 

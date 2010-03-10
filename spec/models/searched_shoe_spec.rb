@@ -9,6 +9,8 @@ describe SearchedShoe do
   end
 
   it "should create a new instance given valid attributes" do
-    SearchedShoe.create!(@valid_attributes)
+    searched_shoe = SearchedShoe.new(@valid_attributes)
+    searched_shoe.manufacturer_name.should_not be_nil
+    searched_shoe.model_name.should_not be_nil
   end
 end

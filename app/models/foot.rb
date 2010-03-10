@@ -1,4 +1,3 @@
-require "shoe"
 
 class Foot 
   include CouchPotato::Persistence
