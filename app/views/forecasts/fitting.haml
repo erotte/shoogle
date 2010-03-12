@@ -16,7 +16,7 @@
     %span.rating= rating_as_sign
     (#{rating_as_text})
   
-  /=render :partial => 'belboon_products/show', :locals => { :product => @forecast.belboon_product} if @forecast.belboon_product
+  =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoe => @affiliate_shoe} if @affiliate_shoe
     
 
 %p

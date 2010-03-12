@@ -96,11 +96,6 @@ class ForecastRenderer
   def max_rating
    3
   end
-
-  def belboon_product
-   products = BelboonProduct.named(@manufacturer).named(@model)
-   products.first if products.any?
-  end
   
   def log msg, matches 
     matches.each do |match|
