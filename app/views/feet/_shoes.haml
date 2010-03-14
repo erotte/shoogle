@@ -1,5 +1,5 @@
 -unless @foot.shoes.blank?   
-  %ol#forecast_shoes  
+  %ol.shoes_list  
     =render( :partial => 'feet/shoe', :collection => @foot.shoes.reverse)  
 %ol
   %li#result_buttonwrap.buttonwrap

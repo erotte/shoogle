@@ -1,13 +1,3 @@
-/* @override 
-	http://localhost:3000/stylesheets/application.css?1265574431
-	http://localhost:3000/stylesheets/application.css?1265582007
-	http://localhost:3000/stylesheets/application.css?1265582024
-	http://localhost:3000/stylesheets/application.css?1265582506
-	http://localhost:3000/stylesheets/application.css?1266188577
-	http://localhost:3000/stylesheets/application.css?1266188744
-	http://localhost:3000/stylesheets/application.css?1267310903
-	http://localhost:3000/stylesheets/application.css?1267355186
-*/
 
 /* @group basics and resets */
 
@@ -50,15 +40,13 @@ blockquote, q {
 	quotes: "" "";
 }
 
-a:link img {
-	border: 0 solid;
-}
 
-a:hover img {
-	border: 0 solid;
-}
-
+a img, 
+a:focus img,
+a:link img, 
+a:hover img,
 a:visited img {
+	outline: 0;
 	border: 0 solid;
 }
 
@@ -95,7 +83,7 @@ body {
 }
 
 #logo {
-  margin: 50px 45px 0;
+  margin: 20px 45px 0;
 }
 
 #logo a:link,
@@ -317,12 +305,21 @@ li.buttonwrap {
 
 .step_box {
 	width:  558px;
-	margin: 15px 0;
+	margin-bottom: 15px;
 	padding: 10px 12px 28px 13px;
 	background: #0080C9 url(/images/app/step_pfeil.gif) repeat-x center bottom;
 	color: white;
 	font-size: 16px;
 }
+
+.step_box.error {
+	margin-top: 15px;
+	padding: 28px 12px 12px 12px;
+	background: #900 url(/images/app/error_pfeil.gif) repeat-x center top;
+	color: white;
+	font-size: 16px;
+}
+
 
 input.passive {
 	color: #eaeaea;
@@ -403,15 +400,15 @@ ul#search_options {
 
 /* @end */
 
-/* @group Forecast */
+/* @group Shoes List */
 
-ol#forecast_shoes {
+ol.shoes_list {
 	width: 583px;
 	margin-top: 8px;
 	
 }
 
-#forecast_shoes li {
+.shoes_list li {
 	padding: 4px 8px;
 	line-height: 1.4em;
 	color: #333;
@@ -421,10 +418,19 @@ ol#forecast_shoes {
 	border: 1px solid #b8b8b8;
 }
 
-#forecast_shoes .delete {
+.shoes_list .delete,
+.shoes_list .edit {
 	float: right;
 	margin-top: 6px;
+	margin-right: 6px;
 }
+
+
+/* @end */
+
+
+
+/* @group Forecast */
 
 table#foot_check_shoes {
 	width: 95%;
