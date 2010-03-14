@@ -1,0 +1,5 @@
+
+development: sizefinder_development
+test: sizefinder_test
+cucumber: sizefinder_cucumber
+production: http://db.server/production_sizefinder

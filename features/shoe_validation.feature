@@ -5,12 +5,12 @@ Feature: Shoe validation
 
   Scenario: Inserting a Shoe without size
     Given I am searching a "Nike" "Air Force 1"
-    When I fill in "foot_shoes_attributes__manufacturer" with "Puma"
-    And I fill in "foot_shoes_attributes__model" with "Samba"
-    And I press "foot_submit"
-    Then I should see "size muss ausgefüllt werden"
-    # And I should see "Puma"
-    # And I should see "Samba" 
+    When I fill in "shoe[manufacturer]" with "Adidas"
+    And I fill in "shoe[model]" with "Samba"
+    And I press "shoe_submit"
+    Then I should see "Size can't be empty"
+
+
   
   
   

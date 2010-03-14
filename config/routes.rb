@@ -1,8 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :manufacturers
-
-  map.resources :feet, :has_many => :shoes, :shallow => true
-  map.resources :shoes
+  
+  map.resources :feet, :has_many => :shoes
+  # map.resources :feet, :singular => "foot",  :has_many => :shoes
+  # map.resources :shoes
 
 
   map.search  'feet/:foot_id/forecasts/search',  :controller => 'forecasts', :action => 'search'

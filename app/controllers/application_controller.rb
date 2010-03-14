@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+  def db
+     CouchPotato.database
+  end
+   
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   private
@@ -16,8 +20,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def find_current_or_new_foot      
-    @foot = session[:foot_id].blank? ? Foot.new : Foot.find_or_create_by_id(session[:foot_id])
+  def find_current_or_new_foot
+    if params[:foot_id]
+      @foot = db.load_document(params[:foot_id])
+    else
+      @foot = session[:foot_id].blank? ? Foot.new : db.load_document(session[:foot_id])
+    end
+    unless @foot 
+      redirect_to :action => :new, :controller => :forecasts
+    end
   end 
 
 end

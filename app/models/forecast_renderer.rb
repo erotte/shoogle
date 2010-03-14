@@ -1,34 +1,58 @@
 class ForecastRenderer
   # TODO rendert nicht nur sondern berechnet auch. das sollten zwei verschiedene klassen machen SRP!
-  
-  attr_accessor :manufacturer, :model, :size, 
+  # TODO weltschlimmster code, refactoring!
+  attr_accessor :size, 
     :average_shoe_size,
     :direct_matches, :direct_matches_size, 
-    :transposed_matches, :transposed_matches_size
+    :transposed_matches, :transposed_matches_size,
+    :manufacturer_matches, :manufacturer_matches_size
   
   def initialize params
     @foot = params[:foot]
-    @manufacturer = params[:manufacturer]
-    @model = params[:model]
-
     compute_average_size
     compute_direct_matches
     compute_transposed_matches
+    compute_manufacturer_matches
     choose_recommended_size
   end
   
   def compute_direct_matches
-    matches = fetch_direct_matches
+    @direct_matches = 0
+    matches = @foot.direct_matches.values
+    matches.each do |match|
+      @direct_matches_size ||= 0
+      @direct_matches_size += match.size
+      @direct_matches += match.num_feet
+    end
+    @direct_matches_size /= matches.size if matches.size > 1
+    @direct_matches_size = round @direct_matches_size
     log("direct matches", matches)
-    @direct_matches_size = matches.map(&:size).median if matches.any?
-    @direct_matches = matches.size
   end
 
   def compute_transposed_matches
-    matches = fetch_transposed_matches
+    @transposed_matches = 0
+    matches = @foot.transposed_matches.values
+    matches.each do |match|
+      @transposed_matches_size ||= 0
+      @transposed_matches_size += match.size
+      @transposed_matches += match.num_feet
+    end
+    @transposed_matches_size /= matches.size if matches.size > 1  
+    @transposed_matches_size = round @transposed_matches_size 
     log("transposed matches", matches)
-    @transposed_matches_size = matches.map(&:transposed_size).median if matches.any?
-    @transposed_matches = matches.size
+  end
+
+  def compute_manufacturer_matches
+    @manufacturer_matches = 0
+    matches = @foot.manufacturer_matches.values
+    matches.each do |match|
+      @manufacturer_matches_size ||= 0
+      @manufacturer_matches_size += match.size
+      @manufacturer_matches += match.num_feet
+    end
+    @manufacturer_matches_size /= matches.size if matches.size > 1  
+    @manufacturer_matches_size = round @manufacturer_matches_size 
+    log("manufacturer matches", matches)
   end
 
   def compute_average_size
@@ -40,17 +64,24 @@ class ForecastRenderer
   end
 
   def choose_recommended_size
-    size = @direct_matches_size || @transposed_matches_size || @average_shoe_size
-    @size = round(size, 2)
+    @size = @direct_matches_size || @transposed_matches_size || @manufacturer_matches_size || @average_shoe_size
   end
 
-  def round(f, digits)
+  def round(f, digits=2)
     factor = (10 ** digits).to_f
-    (f * factor).round / factor
+    (f * factor).round / factor if f
   end
   
   def has_model?
-    @model.present?
+    model.present?
+  end
+  
+  def model
+    @foot.searched_shoe.model_name
+  end
+
+  def manufacturer
+    @foot.searched_shoe.manufacturer_name
   end
 
   def rating
@@ -64,11 +95,6 @@ class ForecastRenderer
 
   def max_rating
    3
-  end
-
-  def belboon_product
-   products = BelboonProduct.named(@manufacturer).named(@model)
-   products.first if products.any?
   end
   
   def log msg, matches 

@@ -10,6 +10,7 @@ $(document).ready(function(){
   init_searched_shoe_toggles();
   init_searched_shoe_radio_toggles()	
 	init_opacity_layer()
+	$('#step-1').show("drop", { direction: "up", duration: 1200 })
 })	
 
 	init_opacity_layer = function() {

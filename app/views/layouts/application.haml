@@ -3,31 +3,30 @@
   %head
     %title shoe size finder 
     = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons'
-    = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete', | 
-      'jquery.plugins/jquery.custom', 'ui.min/ui.core.min','ui.min/effects.core.min', |
-      'ui.min/effects.scale.min', 'ui.min/effects.slide.min', |
-        'application' |
+    = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete',       | 
+      'jquery.plugins/jquery.custom', 'jquery-ui-1.7.2.custom.min',  'application' |
+
     /[if lte IE8]
       = stylesheet_link_tag 'ie'
     
     = yield :head
   %body
-    #opacity_layer
+    /#opacity_layer
     #page
       #header_wrapper
         #header
-          %h1#logo=link_to "<small>[logo]</small> schuhkombinat.de", root_path
+          %h1#logo=link_to image_tag("app/logo_ssf_invert_white.png"), root_path
           %ul.metanav
             %li= link_to "nochmal", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
           
       =#render :partial => 'layouts/claim' 
         
-      #panel.passive
+      #panel.active
         = yield 
       
-      #footer_wrapper
-        %ul.metanav
-          %li= link_to "Impressum", '#'
-          %li= link_to "AGB", '#'
+      / #footer_wrapper
+      /   %ul.metanav
+      /     %li= link_to "Impressum", '#'
+      /     %li= link_to "AGB", '#'
 
         

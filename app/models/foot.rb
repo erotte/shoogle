@@ -1,45 +1,83 @@
-# == Schema Information
-# Schema version: 20090921145038
-#
-# Table name: feet
-#
-#  id         :integer         not null, primary key
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#  gender     :string(255)
-#
 
-class Foot < ActiveRecord::Base
-  has_many :shoes
-  has_many :direct_matches
-  has_many :fitting_shoe_types, :through => :direct_matches, :source => :shoe_type, :group =>  ShoeType.column_names.collect {|c| "shoe_types.#{c}"}.join(", ")
-  has_many :transposed_matches
-  has_many :size_equalities
-  has_many :similar_feet, :through => :size_equalities
+class Foot 
+  include CouchPotato::Persistence
   
-  has_one  :searched_shoe
+  property :shoes, :default => []
+  property :searched_shoe, :type => SearchedShoe
   
-  accepts_nested_attributes_for :shoes, :allow_destroy => true
-  accepts_nested_attributes_for :searched_shoe, :allow_destroy => true
+  view :all, :key => :created_at
+  
+  view :fitting, :type => :raw, 
+    :map =>'
+      function(doc) {
+        if (doc.ruby_class == "Foot")
+          for each (var a in doc.shoes) 
+            for each (var b in doc.shoes) 
+              if (a != b && a.size > 30 && b.size > 30) 
+                emit([a.manufacturer, b.manufacturer, a.model, b.model, a.size],b.size-a.size);
+      }', 
+    :reduce => '
+      function (key, values, combine) {
+        var result = {size_sum:0, num_feet:0}
 
+        if(combine){
+          for each (var intermediate_result in values) {
+              result.size_sum += intermediate_result.size_sum
+              result.num_feet += intermediate_result.num_feet        
+          }
+        } else {
+          for each (var size in values) {
+            result.size_sum += size
+            result.num_feet++
+          }
+        }    
+        return result
+      }', # bsp: {"rows"=>[{"value"=>{"size_sum"=>-0.5, "num_feet"=>1} 
+    :results_filter => lambda{|result| result['rows'].first['value'] if result['rows'].first}
+      
 
-  def shoes_of_similar_feet
-    Shoe.of_equal_sized_feet self.id
+  def direct_matches
+    matches = {}
+    shoes.each do |shoe|
+      key = [shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name, shoe.size]
+      result_hash = db.view(Foot.fitting(:key => key, :group => true))
+      matches[key] = Match.new(result_hash, shoe.size) if result_hash
+    end if searched_shoe.model_name.present?
+    matches
   end
 
-  def fitting_shoes
-    fitting = fitting_shoe_types.map do |shoe_type|
-      Forecast.new :foot => self, :model => shoe_type.model, :manufacturer => shoe_type.manufacturer.name
+  def transposed_matches
+    matches = {}
+    shoes.each do |shoe|
+      key = [shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name]
+      result_hash = db.view(Foot.fitting(:startkey => key, :group_level => 4, :limit => 1))
+      matches[key] = Match.new(result_hash, shoe.size) if result_hash
+    end if searched_shoe.model_name.present?
+    matches
+  end
+
+  def manufacturer_matches
+    matches = {}
+    shoes.each do |shoe|
+      key = [shoe.manufacturer, searched_shoe.manufacturer_name]
+      result_hash = db.view(Foot.fitting(:startkey => key, :group_level => 2, :limit => 1))
+      matches[key] = Match.new(result_hash, shoe.size) if result_hash
     end
-    fitting.sort{ |a,b| b.direct_matches <=> a.direct_matches }
+    matches
   end
 
-  def fitting args
-    if args[:model].present?
-      Forecast.new :foot => self, :manufacturer => args[:manufacturer], :model => args[:model]
-    else
-      ManufacturerForecast.new :foot => self, :manufacturer => args[:manufacturer]
+  def recommended_shoes
+    result = []
+    shoes.each do |shoe|
+      result << shoe.recommended
     end
+    result.flatten.sort{|a,b| a.num_feet <=> b.num_feet}.reverse
   end
+
+  private
+
+  def db
+    CouchPotato.database
+  end
+  
 end

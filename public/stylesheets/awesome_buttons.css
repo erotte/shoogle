@@ -169,4 +169,15 @@
 	background-color: #fc9200;
 }
 
+.disabled.awesome {
+	background-color: #888;
+}
+
+.disabled.awesome:visited {
+	background-color: #888;
+}
+
+.disabled.awesome:hover {
+	background-color: #FF3C00;
+}
 /* @end */

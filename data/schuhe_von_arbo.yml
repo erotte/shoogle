@@ -1,0 +1,96 @@
+-
+  manufacturer: Puma
+  model: French 77
+  art_no: 34428602
+  size:
+    uk: 11
+    us: 12
+    eur: 46
+    cm: 30
+-
+  manufacturer: Nike
+  art_no: 630366
+  size:
+    uk: 11
+    us: 12
+    eur: 46
+    cm: 30
+-
+  manufacturer: Head
+  art_no: 272679
+  category: Tennis
+  size:
+    uk: 10.5
+    us: 11
+    eur: 45 1/3
+    jpn: 290
+-
+  manufacturer: Lacoste
+  art_no: 11cam0451
+  size:
+    uk: 11
+    us: 12
+    eur: 46
+    jpn: 290
+-
+  manufacturer: Nike
+  model: Air Force 1 Low
+  art_no: 306509-401
+  size:
+    uk: 11
+    us: 12
+    eur: 46
+    cm: 30
+-
+  manufacturer: Adidas
+  model: Vueltano
+  category: Bike
+  art_no: 383220
+  size:
+    uk: 11 1/2
+    us: 12
+    fr: 46 2/3
+    jpn: 300
+-
+  manufacturer: Puma
+  model: Madison EVO Lace
+  art_no: 34614704
+  size:
+    uk: 10 1/2
+    us: 11 1/2
+    eur: 45
+    cm: 29.5
+-
+  manufacturer: Adidas
+  model: GSG9 Mid
+  art_no: 654345
+  size:
+    uk: 11
+    us: 11 1/2
+    fr: 46
+    jpn: 295
+-
+  manufacturer: Puma
+  category: Jogging
+  art_no: 24577005
+  size:
+    uk: 11
+    us: 12
+    fr: 46
+    jpn: 30
+-
+  manufacturer: Adidas
+  model: Forum Mid Gruen
+  art_no: 019795
+  size:
+    uk: 10 1/2
+    us: 11
+    fr: 45 1/3
+    jpn: 290
+-
+  manufacturer: Vans
+  model: Suede Chukka Boot
+  art_no: VEGTBKA
+  size:
+    us: 12
+    

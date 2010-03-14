@@ -1,48 +1,52 @@
-# == Schema Information
-# Schema version: 20090921145038
-#
-# Table name: shoes
-#
-#  id           :integer         not null, primary key
-#  size         :float
-#  user_id      :integer
-#  created_at   :datetime
-#  updated_at   :datetime
-#  foot_id      :integer
-#  shoe_type_id :integer
-#
+class Shoe 
+  include CouchPotato::Persistence
 
-class Shoe < ActiveRecord::Base
-  belongs_to :foot
-  belongs_to :shoe_type
-  composed_of :formatted_size, :class_name => 'ShoeSize', :mapping => %w(size value)
+  property :size, :type => Float
+  property :model
+  property :manufacturer
+  
+  validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
+  validates_presence_of :model, :message => "Bitte gib ein Schuhmodell ein"
+  validates_presence_of :size, :message => "Bitte gib eine Größe ein" , :message => "Bitte gib eine Größe ein" 
+  # validates_numericality_of :size, :message => "Bitte" 
+  
+  class RecommendationResult < Struct.new(:manufacturer, :model, :num_feet);end
+  
+  view :recommended, :type => :raw,
+    :map => '
+      function(doc) {
+        for each (var a in doc.shoes)
+          for each (var b in doc.shoes)
+            if(a.manufacturer != b.manufacturer && a.model != b.model)
+              emit([a.manufacturer, a.model, b.manufacturer, b.model], 1);
+      }',
+    :reduce => '
+      function (key, values) {
+        return sum(values)
+      }',
+    :group => true,
+    :results_filter => lambda{|results| results['rows'].map{|row| RecommendationResult.new(row['key'][2], row['key'][3], row['value'].to_i)}}
 
-  validates_presence_of :size, :model, :manufacturer
+    view :names_by_start_of_name, :type => :raw,
+      :map => '
+        function(doc) {
+          if (doc.ruby_class == "Foot")
+            for each (var shoe in doc.shoes)
+              for each (var word in shoe.model.toLowerCase().split(" "))
+                for(var length=1; length<word.length; length++)
+                  emit([word.substring(0,length), shoe.manufacturer, shoe.model], shoe.model)
+        }',
+      :reduce => '
+        function(key, values, combine){
+          return values[0]
+        }',
+      :group => true,
+      :results_filter => lambda{|results| results['rows'].map{|row| row['value']}}
     
-  attr_writer :model, :manufacturer
-  before_save :assign_model_and_manufacturer_name
-  
-  named_scope :grouped_by_shoe_type, :group => :shoe_type
-  named_scope :of_equal_sized_feet, lambda{ |foot_id| { 
-    :joins => 'JOIN size_equalities ON shoes.foot_id = size_equalities.similar_foot_id',
-    :conditions => ['size_equalities.foot_id = ?', foot_id]
-  }}
-  
-  def manufacturer
-    @manufacturer ||= try(:shoe_type).try(:manufacturer).try(:name)
-  end
-
-  def model
-    @model ||= try(:shoe_type).try(:model)
+  def recommended
+    CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model], 
+                                                 :endkey   => [@manufacturer, @model, {}] ))
   end
   
-  private 
-    
-  def assign_model_and_manufacturer_name
-    if @model.present? and @manufacturer.present?
-      manufacturer = Manufacturer.find_or_create_by_name(@manufacturer)
-      self.shoe_type = ShoeType.find_or_create_by_model_and_manufacturer_id(@model, manufacturer.id)
-    end
-  end
-
+  
 end

@@ -1,15 +1,16 @@
-# == Schema Information
-# Schema version: 20090921145038
-#
-# Table name: manufacturers
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
-
-class Manufacturer < ActiveRecord::Base
+class Manufacturer
+  include CouchPotato::Persistence
+  
+  property :name
   validates_presence_of :name
-  has_many :shoe_types
+  
+  view :by_start_of_name, :type => :raw,
+    :map =>'
+      function(doc) {
+        if (doc.ruby_class == "Manufacturer")
+          for each (var word in doc.name.toLowerCase().split(" "))
+            for(var length=1; length<word.length; length++)
+              emit(word.substring(0,length), doc.name)
+      }',
+    :results_filter => lambda{|results| results['rows'].map{|row| m = Manufacturer.new; m.name=row['value']; m}}
 end

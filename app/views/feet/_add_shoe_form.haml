@@ -1,17 +1,20 @@
-- remote_form_for @foot, add_shoe_form_attributes do |footform| 
-  - footform.fields_for 'shoes_attributes[]', Shoe.new do |shoe|
-    %p#losjetzt_eingeben
-      Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!
-    %fieldset.inputs
-      %ol.shoe_row.shoe_completer
-        %li.labelwrap
-          =shoe.label(:manufacturer, 'Hersteller ')
-          =shoe.text_field(:manufacturer, :class => "manufacturer")
-        %li.labelwrap
-          =shoe.label(:model, 'Modell ')
-          =shoe.text_field(:model, :class => 'model') 
-        %li.labelwrap.size
-          =shoe.label(:size, 'Größe')
-          =shoe.text_field(:size, :class => 'size')
-        %li.buttonwrap  
-          =footform.submit 'Schuhe hinzufügen', :class => 'awesome red right_submit'
+- remote_form_for [@foot, @shoe || Shoe.new], add_shoes_options do |f| 
+  %p#losjetzt_eingeben.step_box.hide
+    Trage jetzt die Schuhe ein, die dir gut passen. Je mehr du einträgst, umso besser wird unsere Berechnung!
+  %fieldset.inputs
+    %ol.shoe_row.shoe_completer
+      %li.labelwrap
+        =f.label(:manufacturer, 'Hersteller ')
+        =f.text_field(:manufacturer, :class => "manufacturer")
+      %li.labelwrap
+        =f.label(:model, 'Modell ')
+        =f.text_field(:model, :class => 'model') 
+      %li.labelwrap.size
+        =f.label(:size, 'Größe')
+        =f.text_field(:size, :class => 'size', :autocomplete => 'off')
+      %li.buttonwrap  
+        =f.submit 'Hinzufügen', :class => 'awesome red right_submit'
+- unless @shoe.errors.blank?
+  .step_box.error.hide
+    = uniq_error_messages_for @shoe
+  =javascript_tag '$(".step_box.error.hide").show("drop", { direction: "down" })'

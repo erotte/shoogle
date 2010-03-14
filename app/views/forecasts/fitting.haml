@@ -16,12 +16,13 @@
     %span.rating= rating_as_sign
     (#{rating_as_text})
   
-  =render :partial => 'belboon_products/show', :locals => { :product => @forecast.belboon_product} if @forecast.belboon_product
+  =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoe => @affiliate_shoe} if @affiliate_shoe
     
 
 %p
-  ( Direkte Treffer: #{@forecast.direct_matches} ergeben #{@forecast.direct_matches_size}, |
+  ( direkte Treffer: #{@forecast.direct_matches} ergeben #{@forecast.direct_matches_size}, |
   umgerechnete Treffer: #{@forecast.transposed_matches} ergeben #{@forecast.transposed_matches_size}, |
+  Marken-Treffer: #{@forecast.manufacturer_matches} ergeben #{@forecast.manufacturer_matches_size}, |
   durchschnittliche Schuhgröße: #{@forecast.average_shoe_size})
 
 %p=link_to("Weitere passende Schuhe", more_fitting_url(@foot))

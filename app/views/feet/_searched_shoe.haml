@@ -1,0 +1,7 @@
+%p Du suchst nach:
+%ol.shoes_list
+  %li
+    =link_to_remote image_tag('app/icons_small/cross.png' , :class => 'delete'), :url => {:controller => :feet, :action => :delete_searched_shoe, :id => @foot}, :update => 'panel'
+    =link_to_remote image_tag('app/icons_small/edit.png' , :class => 'edit'), :url => {:controller => :feet, :action => :edit_searched_shoe, :id => @foot}, :update => 'searched_shoe'
+    = "#{@foot.searched_shoe.manufacturer_name} // #{@foot.searched_shoe.model_name} "
+      
