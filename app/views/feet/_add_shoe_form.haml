@@ -14,7 +14,8 @@
         =f.text_field(:size, :class => 'size', :autocomplete => 'off')
       %li.buttonwrap  
         =f.submit 'Hinzufügen', :class => 'awesome red right_submit'
-- unless @shoe.errors.blank?
-  .step_box.error.hide
-    = uniq_error_messages_for @shoe
-  =javascript_tag '$(".step_box.error.hide").show("drop", { direction: "down" })'
+-if @shoe
+  - unless @shoe.errors.blank?
+    .step_box.error.hide
+      = uniq_error_messages_for @shoe
+    =javascript_tag '$(".step_box.error.hide").show("drop", { direction: "down" })'
