@@ -13,10 +13,6 @@
 
  namespace :vlad do
    set :app_command, "/etc/init.d/nginx"
-  
- 
-   desc "Pull from git, run migrations, then (re)start the app server"
-   task :migrate_deploy => [:update, :migrate, :start_app, :cleanup ]
  
    desc "Pull from git then (re)start the app server"
    task :deploy => [:update, :start_app, :cleanup]
