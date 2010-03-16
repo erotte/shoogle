@@ -1,6 +1,7 @@
 #
  # General configuration
  #
+ #
  set :application,           'shoogle'
  set :user,                  'shooser'
  set :domain,                "#{user}@83.169.4.130"
