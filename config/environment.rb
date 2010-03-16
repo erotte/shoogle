@@ -23,8 +23,11 @@ Rails::Initializer.run do |config|
   config.gem 'haml'
   config.gem "simple_importer", :lib => false, :source => "http://gemcutter.org/"
   config.gem "fastercsv", :lib => false
-  config.gem 'vlad', :lib => false, :source  => "http://github.com/gabrielg/vlad.git"
-  config.gem 'vlad-git', :lib => false
+  config.gem 'vlad', :lib => false
+  config.gem 'couchrest', :lib => false
+  config.gem 'json', :lib => false
+  config.gem 'json_pure', :lib => false
+  config.gem 'validatable', :lib => false
   config.gem 'formtastic'
   
   
