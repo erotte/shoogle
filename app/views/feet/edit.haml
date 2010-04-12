@@ -1,10 +1,11 @@
+
 #grow_wrap
   #searched_shoe
-    - if @foot.new_record?
-      = render :partial => 'feet/searched_shoe_form'
-    -else
+    - if @foot.searched_shoe
       = render :partial => 'feet/searched_shoe'
-
-  = render :partial => 'feet/shoe_area' unless @foot.new_record?
+    - else
+      = render :partial => 'feet/searched_shoe_form'
+   
+  = render :partial => 'feet/shoe_area'
 
 #forecast_result

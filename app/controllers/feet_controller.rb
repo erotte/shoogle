@@ -25,9 +25,13 @@ class FeetController < ApplicationController
   # GET /feet /new
   # GET /feet /new.xml
   def new
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @foot }
+    if @foot.new_record?  
+      respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @foot }
+      end      
+    else
+      redirect_to edit_foot_path(@foot)
     end
   end
 
@@ -95,8 +99,7 @@ class FeetController < ApplicationController
 
   def delete_searched_shoe
     @foot = db.load_document(params[:id])
-    @foot.searched_shoe.manufacturer_name = nil
-    @foot.searched_shoe.model_name = nil
+    @foot.searched_shoe = nil
     db.save!(@foot)
     respond_to do |format|
       format.js {  render :edit, :layout => false }

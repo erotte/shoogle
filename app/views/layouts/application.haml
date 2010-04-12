@@ -17,7 +17,8 @@
         #header
           %h1#logo=link_to image_tag("app/logo_ssf_invert_white.png"), root_path
           %ul.metanav
-            %li= link_to "nochmal", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
+            %li= link_to "Sitzungsdaten löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
+            
           
       =#render :partial => 'layouts/claim' 
         

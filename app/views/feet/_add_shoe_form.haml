@@ -10,10 +10,10 @@
         =f.label(:model, 'Modell ')
         =f.text_field(:model, :class => 'model') 
       %li.labelwrap.size
-        =f.label(:size, 'Größe')
+        =f.label(:size, 'EUR')
         =f.text_field(:size, :class => 'size', :autocomplete => 'off')
       %li.buttonwrap  
-        =f.submit 'Hinzufügen', :class => 'awesome red right_submit'
+        =f.submit 'Passt mir!', :class => 'awesome red right_submit'
 -if @shoe
   - unless @shoe.errors.blank?
     .step_box.error.hide

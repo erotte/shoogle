@@ -151,7 +151,7 @@ ul.metanav a:visited{
 
 
 ul.metanav {
-  margin: 0 0 0 845px;
+  margin: 40px 0 0 750px;
 }
 
 ul.metanav li {
@@ -190,7 +190,7 @@ ul.metanav li a:hover {
 	position: relative;
 	width:  850px;
 	padding: 15px;
-	margin-top: 100px;
+	margin-top: 0px;
 	}
 
 #panel.active {
