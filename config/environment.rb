@@ -29,6 +29,7 @@ Rails::Initializer.run do |config|
   config.gem 'json_pure', :lib => false
   config.gem 'validatable', :lib => false
   config.gem 'formtastic'
+  config.gem 'devise', :lib => false, :version => '=1.0.6'
   
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins

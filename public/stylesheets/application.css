@@ -82,8 +82,13 @@ body {
 	font: normal 13px/1.4 helvetica, arial, sans-serif;
 }
 
+#header {
+  height: 180px;
+}
+
 #logo {
-  margin: 20px 45px 0;
+  margin: 10px 40px 0 45px;
+  float:left;
 }
 
 #logo a:link,
@@ -151,10 +156,11 @@ ul.metanav a:visited{
 
 
 ul.metanav {
-  margin: 40px 0 0 750px;
+  margin: 0 0 0 50px;
 }
 
 ul.metanav li {
+  float:left;
 }
 
 ul.metanav li a {

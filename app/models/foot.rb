@@ -4,6 +4,7 @@ class Foot
   
   property :shoes, :default => []
   property :searched_shoe, :type => SearchedShoe
+  property :account, :type => Account
   
   view :all, :key => :created_at
   
