@@ -18,8 +18,11 @@
           %h1#logo=link_to image_tag("app/logo_ssf_invert_white.png"), root_path
           %ul.metanav
             %li= link_to "Sitzungsdaten löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
-            %li= link_to "Account erstellen", {:action => :new, :controller => :forecasts}
-            %li= link_to "Login", {:action => :new, :controller => :forecasts}
+            - if user_signed_in? 
+              %li= link_to "#{current_user.email} (Ausloggen)", destroy_user_session_path
+            - else
+              %li= link_to "Login", new_user_session_path
+              %li= link_to "Account erstellen", new_user_registration_path
             
           
       =#render :partial => 'layouts/claim' 

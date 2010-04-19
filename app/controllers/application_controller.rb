@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   USER_NAME, PASSWORD = "shoomoo", "mooshoo"
-  before_filter :authenticate, :except => [ :index ] if RAILS_ENV.eql?('production')
+  before_filter :guard_beta_app, :except => [ :index ] if RAILS_ENV.eql?('production')
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   private
-  def authenticate
+  def guard_beta_app
     authenticate_or_request_with_http_basic do |user_name, password|
       user_name == USER_NAME && password == PASSWORD
     end
