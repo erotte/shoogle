@@ -22,7 +22,7 @@ module Devise
       end
       
       def find(*args)
-        puts "=\n=#{args.inspect}\n="
+        puts "=\n= CouchPotatoDevise find called \n= args:'#{args.inspect}'\n="
         case args.first
         when :first, :all
           send(args.shift, *args)

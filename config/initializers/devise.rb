@@ -2,7 +2,7 @@
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "mail@shoesizefinder.com"
+  config.mailer_sender = "shoesize finder <mail@shoesizefinder.com>"
   
   # Configure the content type of DeviseMailer mails (defaults to text/html")
   # config.mailer_content_type = "text/plain"
@@ -69,6 +69,8 @@ Devise.setup do |config|
   require 'devise/orm/couch_potato_devise'
   config.orm = :couch_potato_devise
 
+
+  require 'devise/hooks/delete_foot_id_on_session_when_loggin_out'
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "sessions/users/new". It's turned off by default because it's slower if you
   # are using only default views.

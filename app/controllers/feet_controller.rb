@@ -83,28 +83,4 @@ class FeetController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  # ====================
-  # = RESTLESS, o dear =
-  # ====================
-  
-  def edit_searched_shoe
-    @foot = db.load_document(params[:id])
-    respond_to do |format|
-      format.js { render :partial => "/feet/searched_shoe_form" }
-      format.html { redirect_to(feet_path) }
-      format.xml  { head :ok }
-    end
-  end  
-
-  def delete_searched_shoe
-    @foot = db.load_document(params[:id])
-    @foot.searched_shoe = nil
-    db.save!(@foot)
-    respond_to do |format|
-      format.js {  render :edit, :layout => false }
-      format.html { redirect_to(feet_path) }
-      format.xml  { head :ok }
-    end
-  end  
 end

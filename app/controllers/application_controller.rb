@@ -4,23 +4,22 @@
 class ApplicationController < ActionController::Base
   USER_NAME, PASSWORD = "shoomoo", "mooshoo"
   before_filter :guard_beta_app, :except => [ :index ] if RAILS_ENV.eql?('production')
+  before_filter :enhance_new_registering_user_with_current_foot, :only => [:create]
+  
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  # Scrub sensitive parameters from your log
+  # filter_parameter_logging :password
 
-  before_filter :enhance_new_registering_user_wiht_current_foot, :only => [:create]
-  def enhance_new_registering_user_wiht_current_foot
-    if params[:controller] == "registrations" and params[:user]
-      params[:user][:foot_id] = params[:foot_id] || session[:foot_id]
-    end
-  end
-
+  
+  protected
+  
   def db
      CouchPotato.database
   end
    
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
   private
+    
   def guard_beta_app
     authenticate_or_request_with_http_basic do |user_name, password|
       user_name == USER_NAME && password == PASSWORD
@@ -36,12 +35,20 @@ class ApplicationController < ActionController::Base
     unless @foot 
       redirect_to :action => :new, :controller => :forecasts
     end
-  end 
+  end
+  
+  # filter um vor devise-neuregistrierung user-model zu vervollständigen 
+  def enhance_new_registering_user_with_current_foot
+    if params[:controller] == "registrations" and params[:user]
+      params[:user][:foot_id] = params[:foot_id] || session[:foot_id]
+    end
+  end
 
+  # devise-hook bei erfolgreichem login pfad zu bauen
   def after_sign_in_path_for(resource)
     if resource.is_a?(User) && resource.foot_id?
       session[:foot_id] = resource.foot_id
-      edit_foot_path(resource.foot_id)
+      new_foot_searched_shoes_path(resource.foot_id)
     else
       super
     end
