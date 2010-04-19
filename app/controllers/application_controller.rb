@@ -7,6 +7,13 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+  before_filter :enhance_new_registering_user_wiht_current_foot, :only => [:create]
+  def enhance_new_registering_user_wiht_current_foot
+    if params[:controller] == "registrations" and params[:user]
+      params[:user][:foot_id] = params[:foot_id] || session[:foot_id]
+    end
+  end
+
   def db
      CouchPotato.database
   end
@@ -30,5 +37,14 @@ class ApplicationController < ActionController::Base
       redirect_to :action => :new, :controller => :forecasts
     end
   end 
+
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(User) && resource.foot_id?
+      session[:foot_id] = resource.foot_id
+      edit_foot_path(resource.foot_id)
+    else
+      super
+    end
+  end
 
 end

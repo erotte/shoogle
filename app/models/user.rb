@@ -35,7 +35,7 @@ class User
     end
     
     result = found.any? ? found.first : nil
-    Rails.logger.debug "--- found #{result}"
+    Rails.logger.debug "--- found ->#{result}<-"
     result
   end
   
