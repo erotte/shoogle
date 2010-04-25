@@ -1,0 +1,8 @@
+%p
+  Hallo #{@resource.email},
+%p
+  Willkommen bei Shoesizefinder!
+%p
+  Bitte klicke den folgenden Link um deine Login-Daten zu bestätigen:
+
+%p= link_to 'Login bestätigen', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)

@@ -5,20 +5,15 @@ class User
     include Devise::Models
   end
   
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable #, :confirmable
   
   property :foot_id
   
   view :by_id, :key => :_id
   view :by_email, :key => :email
   view :by_reset_password_token, :key => :reset_password_token
-  
-  before_save :find_foot
-  
-  def find_foot
-    
-  end
-  
+
+
   def self.first options
     Rails.logger.debug options.inspect
     conditions = options[:conditions]
