@@ -1,0 +1,24 @@
+%h1 Account erstellen
+%p
+  Du möchtest deine Schuhe speichern und nicht jedes mal neu eingeben?
+  Dann solltest du ein Shoesizefinder-Konto eröffnen.
+  Du kannst dich dann einfach mit deiner E-Mail-Adresse einloggen und neue Schuhe
+  einfach hinzufügen und ändern.
+.form_wrap.user_form
+  - form_for resource_name, resource, :url => registration_path(resource_name) do |f|
+    = f.error_messages
+    %li.labelwrap
+      = f.label :email, "E-Mail"
+      = f.text_field :email
+      
+    %li.labelwrap.half
+      = f.label :password, "gewünschtes Passwort"
+      = f.password_field :password
+    %li.labelwrap.half
+      = f.label :password_confirmation, "Bitte Passwort bestätigen"
+      = f.password_field :password_confirmation
+
+    %li.buttonwrap= f.submit "Account erstellen", :class => 'awesome red right_submit'
+  %p
+    %small= t(:data_hint)
+  = render :partial => "shared/devise_links" 

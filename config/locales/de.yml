@@ -15,7 +15,8 @@ de:
           \n Wenn du Interesse hast und benachrichtigt werden möchtest wenn wir starten, hinterlasse doch einfach deine Email-Adresse. 
           "
   data_hint: "Wir finden Spam und Datenklau genauso bescheuert wie du und versprechen Dir, dass wir 
-              sorgfältig mit deinen Daten umgehen  und nur zum oben genannten Zweck einsetzen werden."        
+              sorgfältig mit deinen Daten umgehen  und nur zum oben genannten Zweck einsetzen werden.
+               Ehrenwort!"        
   formtastic:
     # titles:
     #   user_name: "User details"
