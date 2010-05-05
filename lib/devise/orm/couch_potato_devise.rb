@@ -20,7 +20,7 @@ module Devise
           klass.send(mod) if klass.respond_to?(mod)
         end
       end
-      
+
       def find(*args)
         puts "=\n= CouchPotatoDevise find called \n= args:'#{args.inspect}'\n="
         case args.first
@@ -30,12 +30,12 @@ module Devise
           super
         end
       end
-      
+
       include Devise::Schema
 
-      # Tell how to apply schema methods. 
+      # Tell how to apply schema methods.
       #
-      # This automatically converts 
+      # This automatically converts
       # * DateTime to Time
       # * Integer to Fixnum
       def apply_schema(name, type, options={})
