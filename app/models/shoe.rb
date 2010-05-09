@@ -52,6 +52,13 @@ class Shoe
 
 
   def adjust_size_type
-    
+    new_size_type = nil 
+    if size.to_i.between?(5, 15)
+      new_size_type = "US"
+    elsif size.to_i.between?(25, 50)
+      new_size_type = "EUR"
+    end
+    self.size_type = new_size_type
   end
+
 end

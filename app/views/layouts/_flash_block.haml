@@ -1,9 +1,3 @@
-- if flash[:message]
-  #flash.message
-    %p=flash[:message]
-- elsif flash[:error]
-  #flash.error
-    %p=flash[:error]
-- elsif flash[:notice]
-  #flash.notice
-    %p=flash[:notice]
+- flash.each do |name, msg|
+  = content_tag(:p, msg, :id => "flash", :class => name) if msg.is_a?(String)
+

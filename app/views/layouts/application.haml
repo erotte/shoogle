@@ -23,10 +23,10 @@
               %li= link_to "Login", new_user_session_path
               %li= link_to "Account erstellen", new_user_registration_path
               %li= link_to "Sitzungsdaten löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
-            
-          
+
       =#render :partial => 'layouts/claim' 
       = render :partial => "/layouts/flash_block" if flash.present?    
+      =# debug current_user
       #panel.active
         = yield 
       

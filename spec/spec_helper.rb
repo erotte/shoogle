@@ -1,10 +1,10 @@
+$:.unshift File.join(File.dirname(__FILE__), '..')
 require 'rubygems'
 require 'spec'
-
 require 'couch_potato/rspec'
+require 'factory'
 
 CouchPotato::Config.database_name = 'couch_potato_test'
-
 
 #CouchPotato::Config.validation_framework = ENV['VALIDATION_FRAMEWORK'].to_sym unless ENV['VALIDATION_FRAMEWORK'].blank?
 

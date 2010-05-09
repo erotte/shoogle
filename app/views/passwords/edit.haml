@@ -1,6 +1,5 @@
 %h1 Passwort ändern
 - form_for resource_name, resource, :url => password_path(resource_name), :html => { :method => :put } do |f|
-  = f.error_messages
   = f.hidden_field :reset_password_token
   %ul
     %li.labelwrap.half
