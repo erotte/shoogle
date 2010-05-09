@@ -11,4 +11,5 @@ class ShoeTypesController < ApplicationController
       format.js  { render 'models.js', :layout => false}
     end
   end
+  
 end

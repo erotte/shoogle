@@ -1,8 +1,3 @@
-  
-  # =====================
-  # = RESTLESS, o yeah! =
-  # =====================
-
 class SearchedShoesController < ApplicationController
   
   def new

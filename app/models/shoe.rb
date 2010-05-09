@@ -2,9 +2,10 @@ class Shoe
   include CouchPotato::Persistence
 
   property :size, :type => Float
+  property :size_type
   property :model
   property :manufacturer
-  
+  before_save :adjust_size_type
   validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
   validates_presence_of :model, :message => "Bitte gib ein Schuhmodell ein"
   validates_presence_of :size, :message => "Bitte gib eine Größe ein" , :message => "Bitte gib eine Größe ein" 
@@ -47,6 +48,10 @@ class Shoe
     CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model], 
                                                  :endkey   => [@manufacturer, @model, {}] ))
   end
-  
-  
+
+
+
+  def adjust_size_type
+    
+  end
 end

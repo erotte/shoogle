@@ -4,7 +4,7 @@ class User
   class << self
     include Devise::Models
   end
-  
+  #TODO: :confirmable läuft nicht und schmeisst nen Fehler, weil das Callback klemmt  
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable #, :confirmable
   
   property :foot_id
@@ -12,7 +12,6 @@ class User
   view :by_id, :key => :_id
   view :by_email, :key => :email
   view :by_reset_password_token, :key => :reset_password_token
-
 
   def self.first options
     Rails.logger.debug options.inspect

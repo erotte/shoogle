@@ -16,10 +16,4 @@ module ApplicationHelper
     s << '</ul>'
     s
   end
-
-
-
-
-
-
 end
