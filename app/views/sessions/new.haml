@@ -1,0 +1,19 @@
+%h1 Anmelden
+    
+- form_for resource_name, resource, :url => session_path(resource_name) do |f|
+  %ul
+    %li.labelwrap
+      = f.label :email
+      = f.text_field :email
+    %li.labelwrap
+      = f.label :password
+      = f.password_field :password
+    %li.buttonwrap
+      = f.submit "Anmelden", :class => 'awesome red right_submit'
+  - if devise_mapping.rememberable?
+    %p{:style => 'margin-left: 450px'}
+      %small
+        = f.check_box :remember_me
+        = f.label :remember_me, "Anmeldung auf diesem Computer speichern"
+
+= render :partial => "shared/devise_links"
