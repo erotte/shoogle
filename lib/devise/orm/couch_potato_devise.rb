@@ -6,6 +6,7 @@ module Devise
           if options == false
             CouchPotato.database.save_document! self
           else
+            puts self.inspect
             CouchPotato.database.save_document  self
           end
         end
