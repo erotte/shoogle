@@ -26,7 +26,7 @@ Rails::Initializer.run do |config|
   config.gem 'vlad', :lib => false
   config.gem 'couchrest', :lib => false
   config.gem 'json', :lib => false
-  config.gem 'json_pure', :lib => false
+  config.gem 'json_pure', :lib => false, :version => "1.4.3"
   config.gem 'validatable', :lib => false
   config.gem 'formtastic'
   config.gem 'devise', :lib => false, :version => '=1.0.6'

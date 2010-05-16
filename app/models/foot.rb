@@ -5,7 +5,7 @@ class Foot
   property :shoes, :default => []
   property :searched_shoe, :type => SearchedShoe
   property :user, :type => User
-  
+#  before_save :adjust_shoe_sizes
   view :all, :key => :created_at
   
   view :fitting, :type => :raw, 
@@ -76,6 +76,13 @@ class Foot
   end
 
   private
+
+#  def adjust_shoe_sizes
+#    puts "foot.adjust_shoe_sizes"
+#    shoes.each do |shoe|
+#      shoe.adjust_size_type
+#    end
+#  end
 
   def db
     CouchPotato.database
