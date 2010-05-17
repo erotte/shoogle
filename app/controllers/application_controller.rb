@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def find_current_or_new_foot
+    p params[:foot_id]
     if params[:foot_id]
       @foot = db.load_document(params[:foot_id])
     else

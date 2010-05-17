@@ -77,12 +77,11 @@ class Foot
 
   private
 
-#  def adjust_shoe_sizes
-#    puts "foot.adjust_shoe_sizes"
-#    shoes.each do |shoe|
-#      shoe.adjust_size_type
-#    end
-#  end
+  def adjust_shoe_sizes
+    shoes.each do |shoe|
+      shoe.adjust_size_type
+    end
+  end
 
   def db
     CouchPotato.database

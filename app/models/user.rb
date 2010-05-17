@@ -5,7 +5,7 @@ class User
     include Devise::Models
   end
   #TODO: :confirmable läuft nicht und schmeisst nen Fehler, weil das Callback klemmt  
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable #, :confirmable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :confirmable
   
   property :foot_id
   
