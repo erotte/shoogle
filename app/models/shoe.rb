@@ -1,18 +1,40 @@
 class Shoe 
   include CouchPotato::Persistence
 
-  property :size, :type => Float
-  property :size_type
+#  property :size, :type => Float
+  property :eu_size, :type => Float
+  property :us_size, :type => Float
   property :model
   property :manufacturer
-  before_save :adjust_size_type
+#  before_save :adjust_size_type
   validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
   validates_presence_of :model, :message => "Bitte gib ein Schuhmodell ein"
-  validates_presence_of :size, :message => "Bitte gib eine Größe ein" , :message => "Bitte gib eine Größe ein" 
+  validates_presence_of :size, :message => "Bitte gib eine Größe ein" , :message => "Bitte gib eine Größe ein"
   # validates_numericality_of :size, :message => "Bitte" 
-  
+
+
+  def adjust_size_type
+    if size.to_i.between?(5, 15)
+      self.us_size = size
+    elsif size.to_i.between?(25, 50)
+      self.eu_size = size
+    end
+  end
+
+  def size
+    eu_size || us_size
+  end
+
+  def size= size
+    if size.to_i.between?(5, 15)
+      self.us_size = size
+    elsif size.to_i.between?(25, 50)
+      self.eu_size = size
+    end
+  end
+
   class RecommendationResult < Struct.new(:manufacturer, :model, :num_feet);end
-  
+
   view :recommended, :type => :raw,
     :map => '
       function(doc) {
@@ -43,22 +65,10 @@ class Shoe
         }',
       :group => true,
       :results_filter => lambda{|results| results['rows'].map{|row| row['value']}}
-    
+
   def recommended
-    CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model], 
+    CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model],
                                                  :endkey   => [@manufacturer, @model, {}] ))
-  end
-
-
-
-  def adjust_size_type
-    new_size_type = nil 
-    if size.to_i.between?(5, 15)
-      new_size_type = "US"
-    elsif size.to_i.between?(25, 50)
-      new_size_type = "EUR"
-    end
-    self.size_type = new_size_type
   end
 
 end

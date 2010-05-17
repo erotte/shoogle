@@ -5,7 +5,7 @@
 /*	background:  url(/images/app/btn_pfeil.png) no-repeat left center;	
 */	display: inline-block;
 	padding: 6px 10px 6px 12px;
-	color: #ffffff;
+	color: #ffffff!important;
 	text-decoration: none;
 /*	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -21,7 +21,7 @@
 
 .awesome:visited {
 	background: #222222 url(/images/app/alert-overlay.png) repeat-x;
-	color: #ffffff;
+	color: #ffffff!important;
 	text-decoration: none;
 /*	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;

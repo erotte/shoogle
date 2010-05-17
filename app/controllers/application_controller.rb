@@ -27,14 +27,13 @@ class ApplicationController < ActionController::Base
   end
 
   def find_current_or_new_foot
+    p params[:foot_id]
     if params[:foot_id]
       @foot = db.load_document(params[:foot_id])
     else
-      @foot = session[:foot_id].blank? ? Foot.new : db.load_document(session[:foot_id])
+      @foot ||= session['foot_id'].blank? ? Foot.new : db.load_document(session['foot_id'])
     end
-    unless @foot 
-      redirect_to :action => :new, :controller => :forecasts
-    end
+    @foot
   end
   
   # filter um vor devise-neuregistrierung user-model zu vervollständigen 
