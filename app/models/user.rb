@@ -4,7 +4,6 @@ class User
   class << self
     include Devise::Models
   end
-  #TODO: :confirmable läuft nicht und schmeisst nen Fehler, weil das Callback klemmt  
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :confirmable
   
   property :foot_id
@@ -12,6 +11,7 @@ class User
   view :by_id, :key => :_id
   view :by_email, :key => :email
   view :by_reset_password_token, :key => :reset_password_token
+  view :by_confirmation_token, :key => :confirmation_token
 
   def self.first options
     Rails.logger.debug options.inspect
@@ -24,8 +24,10 @@ class User
       found = CouchPotato.database.view(User.by_email(:key => conditions[:email], :limit => 1))
     elsif conditions.include? :reset_password_token
       found = CouchPotato.database.view(User.by_reset_password_token(:key => conditions[:reset_password_token], :limit => 1))
+    elsif conditions.include? :confirmation_token
+      found = CouchPotato.database.view(User.by_confirmation_token(:key => conditions[:confirmation_token], :limit => 1))
     else
-      Rails.logger.warn '!!!\n!!! not implemented\n!!!'
+      Rails.logger.warn "!!!\n!!! not implemented\n!!!\noptions=#{options.inspect}"
     end
     
     result = found.any? ? found.first : nil
