@@ -1,6 +1,6 @@
 $:.unshift File.join(File.dirname(__FILE__), '..')
 ENV["RAILS_ENV"] ||= 'test'
-require File.dirname(__FILE__) + "/../config/environment" #unless defined?(RAILS_ROOT)
+require File.dirname(__FILE__) + "/../config/environment" unless defined?(RAILS_ROOT)
 require 'spec/autorun'
 require 'spec/rails'
 require 'couch_potato/rspec'

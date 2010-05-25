@@ -1,0 +1,1 @@
+gource -s 0.07 --highlight-all-users  --auto-skip-seconds 0.1 --file-idle-time 300 --max-files 300 --multi-sampling -1280x720 --stop-at-end   --output-ppm-stream - | ffmpeg -y -b 5000K -r 30 -f image2pipe -vcodec ppm -i - -vcodec mpeg4 ./doc/gource.mp4 && echo "Fertig. Neuer Film liegt unter ./doc/gource.mp4"
