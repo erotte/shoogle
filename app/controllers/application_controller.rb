@@ -27,11 +27,12 @@ class ApplicationController < ActionController::Base
   end
 
   def find_current_or_new_foot
-    p params[:foot_id]
     if params[:foot_id]
       @foot = db.load_document(params[:foot_id])
+    elsif session[:foot_id]
+      @foot = db.load_document(session[:foot_id])
     else
-      @foot ||= session['foot_id'].blank? ? Foot.new : db.load_document(session['foot_id'])
+      @foot = Foot.new
     end
     @foot
   end
