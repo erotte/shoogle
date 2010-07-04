@@ -10,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.search  'feet/:foot_id/forecasts/search',  :controller => 'forecasts', :action => 'search'
   map.fitting 'feet/:foot_id/forecasts/fitting', :controller => 'forecasts', :action => 'fitting'
   map.more_fitting 'feet/:foot_id/forecasts/', :controller => 'forecasts', :action => 'index'
-  map.foot_check 'feet/:foot_id/foot_checks/', :controller => 'foot_checks', :action => 'index'
+  map.foot_check 'feet/:id/foot_checks/', :controller => 'foot_checks', :action => 'index'
   map.resources :feet, :has_many => :forecasts
 
   

@@ -8,8 +8,9 @@ Feature: Footcheck
       | Nike         | Air Force 1 | 46 |
       | Adidas       | Samba       | 45 |
     When I am on listing feet page
-    And I follow "foot_check"
-    Then I should see "Air Force 1"
+    And I follow "Check"
+    Then I should see "Nike"
+    And I should see "Adidas"
     And I should see "Durchschnittliche Größe"
   
   

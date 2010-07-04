@@ -8,8 +8,8 @@ class FootCheck
     forecasts ||= {}
     forecasts[shoe] ||= SelfCheckForecast.new( 
       :foot => @foot, 
-      :model => shoe.shoe_type.model, 
-      :manufacturer => shoe.shoe_type.manufacturer.name)
+      :model => shoe.model,
+      :manufacturer => shoe.manufacturer)
     forecasts[shoe]
   end
   
