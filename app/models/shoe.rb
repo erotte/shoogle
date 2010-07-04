@@ -9,9 +9,9 @@ class Shoe
 #  before_save :adjust_size_type
   validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
   validates_presence_of :model, :message => "Bitte gib ein Schuhmodell ein"
-  validates_presence_of :size, :message => "Bitte gib eine Größe ein" , :message => "Bitte gib eine Größe ein"
+  validates_presence_of :size, :message => "Bitte gib eine Größe ein" 
   # validates_numericality_of :size, :message => "Bitte" 
-
+  
 
   def adjust_size_type
     if size.to_i.between?(5, 15)
