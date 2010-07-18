@@ -44,14 +44,17 @@ class FeetController < ApplicationController
   # POST /feet .xml
   def create
     @foot = Foot.new params[:foot]
-    if db.save!(@foot)
+    if @foot.valid? and db.save!(@foot)
       session[:foot_id] = @foot.id
       respond_to do |format|
         format.html { redirect_to edit_foot_path(@foot) }
         format.js   { render :edit, :layout => false }
       end
     else 
-      render :action => :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js   { render :new, :layout => false }
+      end
     end
   end
 
@@ -59,17 +62,19 @@ class FeetController < ApplicationController
   # PUT /feet /1.xml
   def update
     @foot = db.load_document(params[:id])
-    if params[:foot][:shoes] and @foot.shoes
-      @foot.shoes = params[:foot][:shoes].concat(@foot.shoes)
-    else
-      @foot.attributes = params[:foot]
-    end
     @foot.attributes = params[:foot]
-    db.save(@foot)
-    respond_to do |format|
-      format.html { render :edit }
-      format.js   { render :edit, :layout => false }
-    end  
+    if @foot.valid?
+      db.save(@foot)
+      respond_to do |format|
+        format.html { render :edit }
+        format.js   { render :edit, :layout => false }
+      end
+    else 
+      respond_to do |format|
+        format.html { render :new }
+        format.js   { render :new, :layout => false }
+      end
+    end
   end
 
   # DELETE /feet /1

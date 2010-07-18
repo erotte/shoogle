@@ -13,6 +13,8 @@ class ForecastsController < ApplicationController
   
   
   def fitting
+    redirect_to root_url unless @foot.valid?
+    
     @forecast = Forecast.new(:foot => @foot)
     respond_to do |format|
       format.html

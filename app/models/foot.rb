@@ -87,4 +87,8 @@ class Foot
     CouchPotato.database
   end
   
+  def valid?
+    searched_shoe and searched_shoe.valid?
+  end
+  
 end
