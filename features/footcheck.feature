@@ -4,7 +4,8 @@ Feature: Footcheck
   I want to get a forecast every shoe of a foot
 
   Scenario: Check of an old foot
-    Given a foot with
+    Given I am searching a "Converse" "Chucks"
+    And a foot with
       | Nike         | Air Force 1 | 46 |
       | Adidas       | Samba       | 45 |
     When I am on listing feet page

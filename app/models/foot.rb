@@ -5,7 +5,7 @@ class Foot
   property :shoes, :default => []
   property :searched_shoe, :type => SearchedShoe
   property :user, :type => User
-#  before_save :adjust_shoe_sizes
+
   view :all, :key => :created_at
   
   view :fitting, :type => :raw, 
@@ -75,20 +75,13 @@ class Foot
     result.flatten.sort{|a,b| a.num_feet <=> b.num_feet}.reverse
   end
 
-  private
-
-  def adjust_shoe_sizes
-    shoes.each do |shoe|
-      shoe.adjust_size_type
-    end
+  def valid?
+    searched_shoe and searched_shoe.valid?
   end
+
+  private
 
   def db
     CouchPotato.database
   end
-  
-  def valid?
-    searched_shoe and searched_shoe.valid?
-  end
-  
 end

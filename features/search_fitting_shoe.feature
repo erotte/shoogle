@@ -9,7 +9,6 @@ Feature: Searching for a fitting shoe
 
   Scenario: New visitor saves its searched shoe 
     Given I am searching a "Nike" "Air Force 1"    
-    And I press "searched_shoe_submit"
     Then I should see "Trage jetzt die Schuhe ein, die dir gut passen"
 
   Scenario: The visitor saves a shoe

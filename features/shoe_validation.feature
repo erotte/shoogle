@@ -8,7 +8,7 @@ Feature: Shoe validation
     When I fill in "shoe[manufacturer]" with "Adidas"
     And I fill in "shoe[model]" with "Samba"
     And I press "shoe_submit"
-    Then I should see "Size can't be empty"
+    Then I should see "Bitte gib eine Größe ein"
 
 
   
