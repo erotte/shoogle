@@ -30,7 +30,7 @@ describe Shoe do
 
   it "should not save a invalid shoe" do
     shoe = Shoe.new(@valid_attributes.merge(:size => nil))
-    shoe.size_type.should be_nil
+    shoe.size.should be_nil
     @test_db.should_receive(:save_document!)
     @test_db.save_document!(shoe)
     @test_db.should_receive(:load)
@@ -38,16 +38,6 @@ describe Shoe do
     reloaded_shoe.should be_nil
   end
 
-  it "should adjust the shoe size type" do
-    shoe = Shoe.new(@valid_attributes.merge(:size => "11"))
-    @test_db.should_receive(:save_document!)
-    @test_db.should_receive(:load)
-    @test_db.should_receive(:adjust_size_type)
-    @test_db.save_document!(shoe)
-    reloaded_shoe = @test_db.load(shoe.id)
-    p reloaded_shoe
-
-  end
 
 
 #   Das hier läuft nicht
