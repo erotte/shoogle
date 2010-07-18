@@ -12,7 +12,7 @@
   |
   =link_to("weitere passende Schuhe", more_fitting_url(foot))
   |
-  =link_to "Check", foot_check_path(foot), :id => 'foot_check'
+  =link_to "Check", foot_check_path(foot)
   
   %table{:border => 1, :cellpadding => 4 }
     - foot.shoes.each_with_index do |shoe, shoe_counter|

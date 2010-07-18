@@ -6,7 +6,6 @@ Feature: Search fitting brand
   
 Scenario: The visitor saves its searched brand
   Given I am searching for "Nike"    
-  And I press "searched_shoe_submit"
   Then I should see "Trage jetzt die Schuhe ein, die dir gut passen"
 
   Scenario: The visitor proceeds to the result page
