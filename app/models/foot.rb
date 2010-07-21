@@ -6,6 +6,8 @@ class Foot
   property :searched_shoe, :type => SearchedShoe
   property :user, :type => User
 
+  before_save :set_shoe_sizes
+
   view :all, :key => :created_at
   
   view :fitting, :type => :raw, 
@@ -14,8 +16,11 @@ class Foot
         if (doc.ruby_class == "Foot")
           for each (var a in doc.shoes) 
             for each (var b in doc.shoes) 
-              if (a != b && a.size > 30 && b.size > 30) 
-                emit([a.manufacturer, b.manufacturer, a.model, b.model, a.size],b.size-a.size);
+              if (a != b && a.sizes && b.sizes)
+                for (var unit in a.sizes)
+                  if (b.sizes[unit])
+                    emit([unit, a.manufacturer, b.manufacturer, a.model, b.model, a.sizes[unit]], 
+                         b.sizes[unit]-a.sizes[unit]);
       }', 
     :reduce => '
       function (key, values, combine) {
@@ -33,16 +38,15 @@ class Foot
           }
         }    
         return result
-      }', # bsp: {"rows"=>[{"value"=>{"size_sum"=>-0.5, "num_feet"=>1} 
-    :results_filter => lambda{|result| result['rows'].first['value'] if result['rows'].first}
+      }'
       
 
   def direct_matches
     matches = {}
     shoes.each do |shoe|
-      key = [shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name, shoe.size]
-      result_hash = db.view(Foot.fitting(:key => key, :group => true))
-      matches[key] = Match.new(result_hash, shoe.size) if result_hash
+      key = ["eur", shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name, shoe.size]
+      result = db.view(Foot.fitting(:key => key, :group => true))
+      matches[key] = Match.new(result["rows"].first["value"], shoe.size) if result["rows"].first and key === result["rows"].first["key"]
     end if searched_shoe.model_name.present?
     matches
   end
@@ -50,9 +54,9 @@ class Foot
   def transposed_matches
     matches = {}
     shoes.each do |shoe|
-      key = [shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name]
-      result_hash = db.view(Foot.fitting(:startkey => key, :group_level => 4, :limit => 1))
-      matches[key] = Match.new(result_hash, shoe.size) if result_hash
+      key = ["eur", shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name]
+      result = db.view(Foot.fitting(:startkey => key, :group_level => 5, :limit => 1))
+      matches[key] = Match.new(result["rows"].first["value"], shoe.size) if result["rows"].first and key === result["rows"].first["key"]
     end if searched_shoe.model_name.present?
     matches
   end
@@ -60,9 +64,9 @@ class Foot
   def manufacturer_matches
     matches = {}
     shoes.each do |shoe|
-      key = [shoe.manufacturer, searched_shoe.manufacturer_name]
-      result_hash = db.view(Foot.fitting(:startkey => key, :group_level => 2, :limit => 1))
-      matches[key] = Match.new(result_hash, shoe.size) if result_hash
+      key = ["eur", shoe.manufacturer, searched_shoe.manufacturer_name]
+      result = db.view(Foot.fitting(:startkey => key, :group_level => 3, :limit => 1))
+      matches[key] = Match.new(result["rows"].first["value"], shoe.size) if result["rows"].first and key === result["rows"].first["key"]
     end
     matches
   end
@@ -79,8 +83,14 @@ class Foot
     searched_shoe and searched_shoe.valid?
   end
 
+  def set_shoe_sizes
+    shoes.each do |shoe|
+      shoe.set_sizes
+    end
+  end
+  
   private
-
+  
   def db
     CouchPotato.database
   end

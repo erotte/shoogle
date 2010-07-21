@@ -1,4 +1,4 @@
 
 %li{ :class => cycle('odd','even') }
   =link_to_remote image_tag('app/icons_small/cross.png' , :class => 'delete'), :url => "/feet/#{@foot.id}/shoes/#{shoe_counter}", :method => :delete, :update => 'shoes_list'
-  = "#{shoe.manufacturer} // #{shoe.model} // Size (EUR): #{shoe.size}" 
+  = "#{shoe.manufacturer} // #{shoe.model} // Size (#{shoe.has_eur_size? ? 'EUR' : 'US'}): #{shoe.size}" 

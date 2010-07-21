@@ -2,6 +2,7 @@ class Shoe
   include CouchPotato::Persistence
 
   property :size, :type => Float
+  property :sizes
   property :model
   property :manufacturer
 
@@ -45,6 +46,14 @@ class Shoe
   def recommended
     CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model],
                                                  :endkey   => [@manufacturer, @model, {}] ))
+  end
+  
+  def set_sizes
+    self.sizes = {( has_eur_size? ? :eur : :us ) => @size}
+  end
+
+  def has_eur_size?
+    @size > 25
   end
 
 end
