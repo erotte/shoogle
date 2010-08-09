@@ -37,16 +37,20 @@ class Foot
             result.num_feet++
           }
         }    
-        return result
+        return result 
       }'
       
 
   def direct_matches
     matches = {}
     shoes.each do |shoe|
-      key = ["eur", shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name, shoe.size]
-      result = db.view(Foot.fitting(:key => key, :group => true))
-      matches[key] = Match.new(result["rows"].first["value"], shoe.size) if result["rows"].first and key === result["rows"].first["key"]
+      shoe.sizes.each do |unit, size|
+        key = [unit.to_s, shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name, shoe.size]
+        result = db.view(Foot.fitting(:key => key, :group => true))["rows"].first
+        if result and key === result["key"]
+          matches[key] = Match.new(result["value"], size) 
+        end
+      end
     end if searched_shoe.model_name.present?
     matches
   end
@@ -54,9 +58,13 @@ class Foot
   def transposed_matches
     matches = {}
     shoes.each do |shoe|
-      key = ["eur", shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name]
-      result = db.view(Foot.fitting(:startkey => key, :group_level => 5, :limit => 1))
-      matches[key] = Match.new(result["rows"].first["value"], shoe.size) if result["rows"].first and key === result["rows"].first["key"]
+      shoe.sizes.each do |unit, size|
+        key = [unit.to_s, shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name]
+        result = db.view(Foot.fitting(:startkey => key, :group_level => 5, :limit => 1))["rows"].first
+        if result and key === result["key"]
+          matches[key] = Match.new(result["value"], size) 
+        end
+      end
     end if searched_shoe.model_name.present?
     matches
   end
@@ -64,9 +72,13 @@ class Foot
   def manufacturer_matches
     matches = {}
     shoes.each do |shoe|
-      key = ["eur", shoe.manufacturer, searched_shoe.manufacturer_name]
-      result = db.view(Foot.fitting(:startkey => key, :group_level => 3, :limit => 1))
-      matches[key] = Match.new(result["rows"].first["value"], shoe.size) if result["rows"].first and key === result["rows"].first["key"]
+      shoe.sizes.each do |unit, size|
+        key = [unit.to_s, shoe.manufacturer, searched_shoe.manufacturer_name]
+        result = db.view(Foot.fitting(:startkey => key, :group_level => 3, :limit => 1))["rows"].first
+        if result and key === result["key"]
+          matches[key] = Match.new(result["value"], size) 
+        end
+      end
     end
     matches
   end
