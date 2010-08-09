@@ -6,14 +6,15 @@
     %tr
       %th Hersteller
       %th Modell
-      /%th Größe
-      /%th Bild
       %th Treffer
+      %th
   %tbody    
     -@foot.recommended_shoes.each do |fitting_shoe|
       %tr{ :class => cycle('odd','even') }
         %td=fitting_shoe.manufacturer
         %td=fitting_shoe.model
-        /%td Größe: #{fitting_shoe.size}
-        /%td=render :partial => 'belboon_products/show', :locals => { :product => fitting_shoe.belboon_product}
         %td=fitting_shoe.num_feet
+        %td
+          - affiliate_shoes = AffiliateShoe.find(:model => fitting_shoe.model, :manufacturer => fitting_shoe.manufacturer)
+          =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => affiliate_shoes} if affiliate_shoes
+        

@@ -43,12 +43,13 @@ class AffiliateShoe
         }'
         
     #
-    # example: AffiliateShoe.find_by ['trainer', 'Puma']
-    #
-    def self.find_by(words)
-      CouchPotato.database.view(by_words_of_name(:key => words.map(&:downcase).sort))
+    # example: AffiliateShoe.find_by :model => 'trainer', :manufacturer => 'Puma'
+    #    
+    def self.find args
+      key =  args[:model].split(" ")
+      key += args[:manufacturer].split(" ") if args[:manufacturer]
+      CouchPotato.database.view(by_words_of_name(:key => key.map(&:downcase).sort))
     end
-
 
     def self.delete_all
       CouchPotato.database.view(all).each{|d| CouchPotato.database.destroy_document d}

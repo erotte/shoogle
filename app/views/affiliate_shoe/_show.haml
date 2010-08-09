@@ -1,3 +1,8 @@
-- if affiliate_shoe
-  %a{ :href => affiliate_shoe.deeplinkurl} 
-    %img{ :src => affiliate_shoe.imagesmallurl}
+- affiliate_shoes.each do |affiliate_shoe|
+  %p
+    %a{ :href => affiliate_shoe.deeplinkurl} 
+      %img{ :src => affiliate_shoe.imagesmallurl}
+    %br
+    %strong= "#{affiliate_shoe.price} &euro;"
+    %br
+    = affiliate_shoe.productname

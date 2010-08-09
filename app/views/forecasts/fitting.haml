@@ -15,14 +15,12 @@
     Passt 
     %span.rating= rating_as_sign
     (#{rating_as_text})
-  
-  =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoe => @affiliate_shoe} if @affiliate_shoe
-    
-
 %p
   ( direkte Treffer: #{@forecast.direct_matches} ergeben #{@forecast.direct_matches_size}, |
   umgerechnete Treffer: #{@forecast.transposed_matches} ergeben #{@forecast.transposed_matches_size}, |
   Marken-Treffer: #{@forecast.manufacturer_matches} ergeben #{@forecast.manufacturer_matches_size}, |
   durchschnittliche Schuhgröße: #{@forecast.average_shoe_size})
+
+=render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => @affiliate_shoes} if @affiliate_shoes
 
 %p=link_to("Weitere passende Schuhe", more_fitting_url(@foot))

@@ -24,13 +24,8 @@ class ForecastsController < ApplicationController
   private
   
   def find_affiliate_shoe
-    # todo dieses key gefummel umgehen
     searched_shoe = @foot.searched_shoe
-    key =  searched_shoe.model_name.split(" ")
-    key += searched_shoe.manufacturer_name.split(" ") if searched_shoe.manufacturer_name
-    
-    affiliate_shoes = AffiliateShoe.find_by(key)
-    @affiliate_shoe = affiliate_shoes.first if affiliate_shoes.any?
+    @affiliate_shoes = AffiliateShoe.find(:manufacturer => searched_shoe.manufacturer_name, :model => searched_shoe.model_name)
   end
 
 end
