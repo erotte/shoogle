@@ -6,10 +6,7 @@ class FootCheck
   
   def forecast_for shoe
     forecasts ||= {}
-    forecasts[shoe] ||= SelfCheckForecast.new( 
-      :foot => @foot, 
-      :model => shoe.model,
-      :manufacturer => shoe.manufacturer)
+    forecasts[shoe] ||= Forecast.new( :foot => @foot, :model => shoe.model, :manufacturer => shoe.manufacturer)
     forecasts[shoe]
   end
   

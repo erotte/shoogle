@@ -48,7 +48,7 @@ class Foot
         key = [unit.to_s, shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name, shoe.size]
         result = db.view(Foot.fitting(:key => key, :group => true))["rows"].first
         if result and key === result["key"]
-          matches[key] = Match.new(result["value"], size) 
+          matches[key] = Match.new(result["value"], size, unit) 
         end
       end
     end if searched_shoe.model_name.present?
@@ -62,7 +62,7 @@ class Foot
         key = [unit.to_s, shoe.manufacturer, searched_shoe.manufacturer_name, shoe.model, searched_shoe.model_name]
         result = db.view(Foot.fitting(:startkey => key, :group_level => 5, :limit => 1))["rows"].first
         if result and key === result["key"]
-          matches[key] = Match.new(result["value"], size) 
+          matches[key] = Match.new(result["value"], size, unit) 
         end
       end
     end if searched_shoe.model_name.present?
@@ -76,7 +76,7 @@ class Foot
         key = [unit.to_s, shoe.manufacturer, searched_shoe.manufacturer_name]
         result = db.view(Foot.fitting(:startkey => key, :group_level => 3, :limit => 1))["rows"].first
         if result and key === result["key"]
-          matches[key] = Match.new(result["value"], size) 
+          matches[key] = Match.new(result["value"], size, unit) 
         end
       end
     end
@@ -88,7 +88,7 @@ class Foot
     shoes.each do |shoe|
       result << shoe.recommended
     end
-    result.flatten.sort{|a,b| a.num_feet <=> b.num_feet}.reverse
+    result.flatten.sort_by{|recommended| recommended.num_feet }.reverse
   end
 
   def valid?
