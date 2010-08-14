@@ -15,8 +15,9 @@ class Shoe
       function(doc) {
         for each (var a in doc.shoes)
           for each (var b in doc.shoes)
-            if(a.manufacturer != b.manufacturer && a.model != b.model)
+            if (a.manufacturer != b.manufacturer || a.model != b.model)
               emit([a.manufacturer, a.model, b.manufacturer, b.model], 1);
+              
       }',
     :reduce => '
       function (key, values) {

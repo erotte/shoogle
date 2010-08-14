@@ -10,7 +10,8 @@
   %strong= @forecast.manufacturer 
   = rating_as_text
   in der Größe
-  %strong= @forecast.size 
+  %strong= "#{@forecast.size} #{@forecast.has_eur_size? ? 'EUR' : 'US'}"
+  
   %p
     Passt 
     %span.rating= rating_as_sign

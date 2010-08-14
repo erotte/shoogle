@@ -31,9 +31,10 @@ class ApplicationController < ActionController::Base
       @foot = db.load_document(params[:foot_id])
     elsif session[:foot_id]
       @foot = db.load_document(session[:foot_id])
-    else
-      @foot = Foot.new
     end
+
+    @foot = Foot.new unless @foot
+
     @foot
   end
   
