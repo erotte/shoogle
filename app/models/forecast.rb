@@ -75,16 +75,18 @@ class Forecast
   end
 
   def rating
-    case @direct_matches
-      when 0    then 0 
-      when 1..3 then 1
-      when 4..7 then 2
-      else 3
+    case (@direct_matches * 4 + @transposed_matches * 2 + @manufacturer_matches)
+      when     0  then 0 
+      when  1..10 then 1
+      when 11..20 then 2
+      when 21..30 then 3
+      when 31..50 then 4
+      else 5
     end
   end
 
   def max_rating
-   3
+   5
   end
   
   def log msg, matches 

@@ -1,9 +1,11 @@
 module ForecastsHelper
   def rating_as_text
     case @forecast.rating
-      when 3 then "mit Sicherheit" 
-      when 2 then "bestimmt" 
-      when 1 then "wahrscheinlich" 
+      when 5 then "mit Sicherheit" 
+      when 4 then "sehr wahrscheinlich" 
+      when 3 then "bestimmt" 
+      when 2 then "wahrscheinlich" 
+      when 1 then "vermutlich" 
       else "vielleicht"
     end
   end

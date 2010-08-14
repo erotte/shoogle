@@ -44,7 +44,7 @@ class Shoe
 
   def recommended
     CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model],
-                                                 :endkey   => [@manufacturer, @model, {}] ))
+                                                :endkey   => [@manufacturer, @model, {}] ))
   end
   
   def set_sizes
