@@ -84,11 +84,18 @@ class Foot
   end
 
   def recommended_shoes
-    result = []
+    all = {}
     shoes.each do |shoe|
-      result << shoe.recommended
+      shoe.recommended.each do |recommendation|
+        shoe_name = recommendation.full_shoe_name
+        if all[shoe_name]
+          sum = recommendation.num_feet + all[shoe_name].num_feet
+          recommendation = RecommendationResult.new(recommendation.manufacturer, recommendation.model, sum)
+        end
+        all[shoe_name] = recommendation
+      end
     end
-    result.flatten.sort_by{|recommended| recommended.num_feet }.reverse
+    all.values.sort_by{|recommendation| recommendation.num_feet}.reverse
   end
 
   def valid?

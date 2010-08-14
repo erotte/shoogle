@@ -10,8 +10,6 @@ class Shoe
   validates_presence_of :model, :message => "Bitte gib ein Schuhmodell ein"
   validates_presence_of :size, :message => "Bitte gib eine Größe ein" 
 
-  class RecommendationResult < Struct.new(:manufacturer, :model, :num_feet);end
-
   view :recommended, :type => :raw,
     :map => '
       function(doc) {

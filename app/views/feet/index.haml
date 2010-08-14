@@ -4,11 +4,9 @@
     
 - @feet.each do |foot|
   %br 
-  =link_to("Anzeigen", foot)
+  =link_to("Anzeigen und Suchen", foot)
   |
   =link_to 'Fuß löschen', foot, :method => :delete #, :confirm => 'Wirklich löschen?'
-  |
-  =link_to("passende Schuhe suchen", search_url(foot))
   |
   =link_to("weitere passende Schuhe", more_fitting_url(foot))
   |
