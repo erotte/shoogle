@@ -9,9 +9,9 @@ class Forecast
   
   def initialize params
     @foot = params[:foot]
-    @unit = :eur and compute_forcast
-    @unit = :us  and compute_forcast if not_enough_matches
-    choose_unit_of_most_shoes(:eur, :us) and compute_forcast if not_enough_matches
+    @unit = :eur and compute_forecast
+    @unit = :us  and compute_forecast if not_enough_matches
+    choose_unit_of_most_shoes(:eur, :us) and compute_forecast if not_enough_matches
     choose_recommended_size
   end
 
@@ -19,7 +19,7 @@ class Forecast
     direct_matches == 0 && transposed_matches == 0
   end
   
-  def compute_forcast
+  def compute_forecast
     compute_average_size
     (@direct_matches_size, @direct_matches)             = compute_size_and_count(@foot.direct_matches.values)
     (@transposed_matches_size, @transposed_matches)     = compute_size_and_count(@foot.transposed_matches.values)
@@ -53,7 +53,7 @@ class Forecast
   end
   
   def round(f, digits=2)
-    return unless f
+    return unless f.is_a? Numeric and not f.nan?
     factor = (10 ** digits).to_f
     (f * factor).round / factor
   end
