@@ -2,6 +2,9 @@
 	http://shoogle.local/stylesheets/application.css?1273094681
 	http://shoogle.local/stylesheets/application.css?1273095386
 	http://shoogle.local/stylesheets/application.css?1273879134
+	http://localhost:3000/stylesheets/application.css?1281901797
+	http://localhost:3000/stylesheets/application.css?1281902020
+	http://localhost:3000/stylesheets/application.css?1281902911
 */
 
 /* @group basics and resets */
@@ -575,6 +578,71 @@ body.registrations #panel p {
 	margin: 12px 0;
 	font-size: 14px;
 }
+
+/* @end */
+
+/* @group affiliate result */
+
+.affiliate_result h1 {
+	font-weight: normal;
+	margin: 20px 0;
+}
+.affiliate_result .computed_size {
+}
+
+ol.results{
+	overflow: auto;
+	
+}
+ol.results li{
+	position: relative;
+	width:  160px;
+	height: 300px;
+	overflow: hidden;
+	display: block;
+	float: left;
+	background: #cdf;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	
+}
+ol.results li:hover{
+	background: #0080C9;
+}
+ol.results li:hover p{
+	color:  #fff;;
+}
+
+ol.results a, 
+ol.results a:visited {
+	text-decoration: none;
+} 
+
+ol.results a img{
+	width:  150px;
+	margin: 5px;
+}
+ol.results .price {
+	position: absolute;
+	top: 170px;
+	right: 20px;
+	font-size: 22px;
+	font-weight: normal;
+	background: #fff;
+	opacity: 0.85;
+}
+ol.results .text{
+  display:  inline-block;
+  margin-left: 10px;
+  padding: 0;
+}
+ol.results a:hover .product_name {
+	text-decoration: underline;
+} 
+
+
+
+
 
 /* @end */
 
