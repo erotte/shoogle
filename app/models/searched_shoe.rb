@@ -4,6 +4,6 @@ class SearchedShoe
   property :manufacturer_name
   property :model_name
   
-  validates_presence_of :manufacturer_name
+#  validates_presence_of :manufacturer_name
 
 end

@@ -24,7 +24,15 @@ module ForecastsHelper
   def first_shoe?
     @foot.shoes.delete_if{|shoe| shoe.new_record?}.size == 1
   end
-  
+
+  def result_info
+    "( direkte Treffer: #{@forecast.direct_matches} ergeben #{@forecast.direct_matches_size},
+    umgerechnete Treffer: #{@forecast.transposed_matches} ergeben #{@forecast.transposed_matches_size},
+    Marken-Treffer: #{@forecast.manufacturer_matches} ergeben #{@forecast.manufacturer_matches_size}, 
+    durchschnittliche Schuhgröße: #{@forecast.average_shoe_size})"
+
+  end
+
   def add_target_shoe_form 
     remote_form_for( :foot, :url => {:action => 'add_target_shoe'}, :update => 'forecast_shoes_form', :complete => '$("#forecast_shoes_form").show(); $("#foot_fields input.manufacturer").focus(); $("#search_shoes_submit").val("Ändern")', :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }) 
   end

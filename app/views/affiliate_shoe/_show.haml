@@ -1,8 +1,8 @@
+
 - affiliate_shoes.each do |affiliate_shoe|
-  %p
-    %a{ :href => affiliate_shoe.deeplinkurl} 
+  %li
+    %a{ :href => affiliate_shoe.deeplinkurl}
       %img{ :src => affiliate_shoe.imagesmallurl}
-    %br
-    %strong= "#{affiliate_shoe.price} &euro;"
-    %br
-    = affiliate_shoe.productname
+      %strong.price= "#{affiliate_shoe.price} &euro;"
+      %p.text
+        %span.product_name= affiliate_shoe.productname

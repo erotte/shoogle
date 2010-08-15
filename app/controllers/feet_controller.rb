@@ -84,7 +84,7 @@ class FeetController < ApplicationController
     db.destroy_document @foot
     flash[:message] = "Shoe #{params[:id]} destroyed."
     respond_to do |format|
-      format.html { redirect_to(feet_path) }
+      format.html { redirect_to(:back) }
       format.xml  { head :ok }
     end
   end

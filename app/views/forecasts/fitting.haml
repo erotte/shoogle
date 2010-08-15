@@ -1,27 +1,23 @@
 
-.forecast
-  Dir passt 
-  - if @forecast.has_model?
-    der
-    %strong= @forecast.model
-    von
-  - else
-    die Marke
-  %strong= @forecast.manufacturer 
-  = rating_as_text
-  in der Größe
-  %strong= "#{@forecast.size} #{@forecast.has_eur_size? ? 'EUR' : 'US'}"
+.affiliate_result
+  %h1{:title => result_info}
+    Dir passt
+    - if @forecast.has_model?
+      der
+      %strong= @forecast.model.capitalize
+      von
+    - else
+      die Marke
+    %strong= @forecast.manufacturer.capitalize
+    = rating_as_text
+    in der Größe
+    %strong.computed_size= "#{@forecast.size} #{@forecast.has_eur_size? ? 'EUR' : 'US'}"
   
   %p
     Passt 
     %span.rating= rating_as_sign
     (#{rating_as_text})
-%p
-  ( direkte Treffer: #{@forecast.direct_matches} ergeben #{@forecast.direct_matches_size}, |
-  umgerechnete Treffer: #{@forecast.transposed_matches} ergeben #{@forecast.transposed_matches_size}, |
-  Marken-Treffer: #{@forecast.manufacturer_matches} ergeben #{@forecast.manufacturer_matches_size}, |
-  durchschnittliche Schuhgröße: #{@forecast.average_shoe_size})
-
-=render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => @affiliate_shoes} if @affiliate_shoes
+%ol.results
+  =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => @affiliate_shoes} if @affiliate_shoes
 
 %p=link_to("Weitere passende Schuhe", more_fitting_url(@foot))
