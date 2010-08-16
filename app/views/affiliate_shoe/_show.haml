@@ -3,6 +3,6 @@
   %li
     %a{ :href => affiliate_shoe.deeplinkurl}
       %img{ :src => affiliate_shoe.imagesmallurl}
-      %strong.price= "#{affiliate_shoe.price} &euro;"
+      %strong.price= "#{number_to_currency(affiliate_shoe.price, :unit => "&euro;", :separator => ",", :format => "%n %u")} "
       %p.text
         %span.product_name= affiliate_shoe.productname

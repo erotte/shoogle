@@ -16,5 +16,6 @@
         %td=fitting_shoe.num_feet
         %td
           - affiliate_shoes = AffiliateShoe.find(:model => fitting_shoe.model, :manufacturer => fitting_shoe.manufacturer)
-          =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => affiliate_shoes} if affiliate_shoes
+          %ol.results
+            =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => affiliate_shoes} if affiliate_shoes
         

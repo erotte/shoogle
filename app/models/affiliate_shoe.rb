@@ -46,7 +46,8 @@ class AffiliateShoe
     # example: AffiliateShoe.find_by :model => 'trainer', :manufacturer => 'Puma'
     #    
     def self.find args
-      key =  args[:model].gsub(/[!.\-\/,;]+/, " ").split(" ")
+      key = []
+      key +=  args[:model].gsub(/[!.\-\/,;]+/, " ").split(" ") if args[:model]
       key += args[:manufacturer].gsub(/[!.\-\/,;]+/, " ").split(" ") if args[:manufacturer]
       CouchPotato.database.view(by_words_of_name(:key => key.map(&:downcase).sort))
     end

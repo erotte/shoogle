@@ -26,6 +26,9 @@ class ForecastsController < ApplicationController
   def find_affiliate_shoe
     searched_shoe = @foot.searched_shoe
     @affiliate_shoes = AffiliateShoe.find(:manufacturer => searched_shoe.manufacturer_name, :model => searched_shoe.model_name)
+    if @affiliate_shoes.empty?
+      @affiliate_shoes = AffiliateShoe.find(:manufacturer => searched_shoe.manufacturer_name)
+    end
   end
 
 end
