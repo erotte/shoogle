@@ -8,4 +8,4 @@ class Admin::FeetController < Admin::BaseController
       format.xml  { render :xml => @feet }
     end
   end
- end
+end

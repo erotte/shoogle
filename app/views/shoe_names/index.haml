@@ -1,0 +1,4 @@
+%ol
+  - @shoe_names.each do |name|
+    %li
+      =link_to "#{name[0]} #{name[1]}", :controller => "shoe_names", :action => "approve_shoes", :params => {:manufacturer => name[0], :model => name[1]}
