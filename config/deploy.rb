@@ -84,7 +84,8 @@ namespace :vlad do
 
   desc 'Import Affiliate Data'
   remote_task :import_affiliate_data do
-    run "cd #{current_path}"
-    run "#{rake_cmd} simple_importer:belboon"
+    run [ "cd #{current_path}",
+          "#{rake_cmd} simple_importer:belboon RAILS_ENV=production"
+        ].join(" && ")
   end
 end
