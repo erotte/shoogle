@@ -32,12 +32,13 @@ class Shoe
         function(doc) {
           if (doc.ruby_class == "Foot")
             for each (var shoe in doc.shoes)
-              for each (var word in shoe.model.toLowerCase().split(" "))
-                for(var length=1; length<word.length; length++)
-                  emit([word.substring(0,length), shoe.manufacturer, shoe.model], shoe.model)
+              if (shoe.approved)
+                for each (var word in shoe.model.toLowerCase().split(" "))
+                  for(var length=1; length<word.length; length++)
+                    emit([word.substring(0,length), shoe.manufacturer, shoe.model], shoe.model)
         }',
       :reduce => '
-        function(key, values, combine){
+        function(key, values){
           return values[0]
         }',
       :group => true,
