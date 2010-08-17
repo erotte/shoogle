@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    <head>
+        <title>shoe size finder</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <script src="http://raphaeljs.com/raphael.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://g.raphaeljs.com/g.raphael.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://g.raphaeljs.com/g.dot.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            window.onload = function () {
+                var r = Raphael("holder"),
+                    xs =    [40.0,  40.5,  41.0,  41.5,  42.0,  42.5,  43.0,  43.5,  44.0,  44.5, 45.0, 45.5, 46.0, 46.5, 47.0, 47.5, 48.0, 40.0,  40.5,  41.0,  41.5,  42.0,  42.5,  43.0,  43.5,  44.0,  44.5, 45.0, 45.5, 46.0, 46.5, 47.0, 47.5, 48.0, 40.0,  40.5,  41.0,  41.5,  42.0,  42.5,  43.0,  43.5,  44.0,  44.5, 45.0, 45.5, 46.0, 46.5, 47.0, 47.5, 48.0],
+                    ys =    [1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
+                    data =  [ 0,  0,  0,  1,  1,  2,  1,  0,  1,  0,  0,  0,  0,  0,  0,  0, 0,
+                              0,  0,  1,  1,  2,  5,  0,  1,  0,  0,  0,  0,  0,  0,  0,  0, 0,
+                              0,  0,  0,  0,  3,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0],
+                    axisylabels = ["Direct", "Transposed", "Manufacturer"],
+                    axisxlabels = [];
+                r.g.txtattr.font = "11px 'Fontin Sans', Fontin-Sans, sans-serif";
+                
+                r.g.dotchart(10, 10, 650, 200, xs, ys, data, {symbol: "o", max: 10, heat: true, axis: "0 0 1 1", axisxstep: 16, axisystep: 2, axisxlabels: axisxlabels, axisxtype: " ", axisytype: " ", axisylabels: axisylabels}).hover(function () {
+                    this.tag = this.tag || r.g.tag(this.x, this.y, this.value, 0, this.r + 2).insertBefore(this);
+                    this.tag.show();
+                }, function () {
+                    this.tag && this.tag.hide();
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <div id="holder"></div>
+    </body>
+</html>
