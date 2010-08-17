@@ -82,4 +82,9 @@ namespace :vlad do
     puts "NginX gestartet."
   end
 
+  desc 'Import Affiliate Data'
+  remote_task :import_affiliate_data do
+    run "cd #{current_path}"
+    run "#{rake_cmd} simple_importer:belboon"
+  end
 end
