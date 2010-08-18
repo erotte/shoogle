@@ -5,7 +5,7 @@ class Admin::BaseController < ApplicationController
   private
 
   def guard_admin_area
-    authenticate_or_request_with_http_basic do |user_name, password|
+    authenticate_or_request_with_http_basic('Administration') do |user_name, password|
       user_name == ADMIN_NAME && password == ADMIN_NAME
     end
   end
