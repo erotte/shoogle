@@ -41,7 +41,8 @@ class AffiliateShoe
             emit(group.sort(), doc._id)
           }
         }'
-        
+
+    
     #
     # example: AffiliateShoe.find_by :model => 'trainer', :manufacturer => 'Puma'
     #    

@@ -1,7 +1,15 @@
-%br
-%br
+- content_for :head do
+  = javascript_include_tag 'jquery.plugins/jquery.jcarousel.min.js'
+  = stylesheet_link_tag  'jcarousel/tango/skin.css'
+  :javascript
+    $(document).ready(function() {
+      $('#fitting_shoes').jcarousel({
+        visible: 4
+      });                                
+    });
+
 %h2 Passende Schuhe:
-%table.shoes
+%table.fitting_shoes
   %thead
     %tr
       %th Hersteller
@@ -10,12 +18,15 @@
       %th
   %tbody    
     -@foot.recommended_shoes.each do |fitting_shoe|
+
       %tr{ :class => cycle('odd','even') }
-        %td=fitting_shoe.manufacturer
-        %td=fitting_shoe.model
+        %td=fitting_shoe.manufacturer.capitalize
+        %td=fitting_shoe.model.capitalize
         %td=fitting_shoe.num_feet
         %td
-          - affiliate_shoes = AffiliateShoe.find(:model => fitting_shoe.model, :manufacturer => fitting_shoe.manufacturer)
-          %ol.results
-            =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => affiliate_shoes} if affiliate_shoes
-        
+          - if fitting_shoe.affiliate_shoes.present?
+            %ol#fitting_shoes.results.jcarousel-skin-tango
+              =render 'affiliate_shoe/show', :affiliate_shoes => fitting_shoe.affiliate_shoes
+          - else
+            %p
+              =image_tag 'app/not_available.png', :alt => "Dieser Schuh ist leider nicht verfügbar"

@@ -96,6 +96,7 @@ class Foot
       end
     end
     all.values.sort_by{|recommendation| recommendation.num_feet}.reverse
+    all.values.sort_by{|recommendation| recommendation.affiliate_shoes.size}.reverse
   end
 
   def valid?

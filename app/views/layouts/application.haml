@@ -3,14 +3,14 @@
   %head
     %title shoe size finder 
     = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons'
-    = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete',       |
+    = javascript_include_tag 'jquery-1.4.2.min.js', 'jquery.plugins/jquery.autocomplete',       |
       'jquery.plugins/jquery.custom', 'jquery-ui-1.7.2.custom.min',  'application' |
 
     /[if lte IE7]
       = stylesheet_link_tag 'ie'
     
     = yield :head
-  %body{:class => @controller.controller_name }
+  %body{:class => body_class }
     /#opacity_layer
     #page
       #header_wrapper
