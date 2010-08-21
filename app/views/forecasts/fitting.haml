@@ -4,11 +4,11 @@
     Dir passt
     - if @forecast.has_model?
       der
-      %strong= @forecast.model.capitalize
+      %strong= @forecast.model
       von
     - else
       die Marke
-    %strong= @forecast.manufacturer.capitalize
+    %strong= @forecast.manufacturer
     = rating_as_text
     in der Größe
     %strong.computed_size= "#{@forecast.size} #{@forecast.has_eur_size? ? 'EUR' : 'US'}"
@@ -17,8 +17,12 @@
     Passt 
     %span.rating= rating_as_sign
     (#{rating_as_text})
-    
+  
+  =render :partial => 'buttons'
+  
   %ol.results
     =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => @affiliate_shoes} if @affiliate_shoes
-
-  %p=link_to("Weitere passende Schuhe", more_fitting_url(@foot))
+    
+  - if @affiliate_shoes && @affiliate_shoes.size >= 10
+    =render :partial => 'buttons'
+  
