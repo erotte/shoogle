@@ -17,7 +17,8 @@
     Passt 
     %span.rating= rating_as_sign
     (#{rating_as_text})
-%ol.results
-  =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => @affiliate_shoes} if @affiliate_shoes
+    
+  %ol.results
+    =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => @affiliate_shoes} if @affiliate_shoes
 
-%p=link_to("Weitere passende Schuhe", more_fitting_url(@foot))
+  %p=link_to("Weitere passende Schuhe", more_fitting_url(@foot))

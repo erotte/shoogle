@@ -1,4 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
+include LayoutHelper
+
 module ApplicationHelper
   
   def debug_toggle(object)
@@ -15,5 +17,9 @@ module ApplicationHelper
     end
     s << '</ul>'
     s
+  end
+
+  def render_price price
+    number_to_currency(price, :unit => "&euro;", :separator => ",", :format => "%n %u")
   end
 end

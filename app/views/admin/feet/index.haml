@@ -1,0 +1,22 @@
+%h1 Listing Feet and Shoes
+-if flash[:message]
+  %p.message=flash[:message]   
+    
+- @feet.each do |foot|
+  %br 
+  =link_to("Anzeigen und Suchen", foot)
+  |
+  =link_to 'Fuß löschen', foot, :method => :delete #, :confirm => 'Wirklich löschen?'
+  |
+  =link_to("weitere passende Schuhe", more_fitting_url(foot))
+  |
+  =link_to "Check", foot_check_path(foot)
+  
+  %table{:border => 1, :cellpadding => 4 }
+    - foot.shoes.each_with_index do |shoe, shoe_counter|
+      %tr
+        %td=shoe.manufacturer
+        %td=shoe.model
+        %td=shoe.size
+        %td=link_to image_tag('app/cross.png' , :class => 'delete'), "/feet/#{foot.id}/shoes/#{shoe_counter}", :method => :delete
+  

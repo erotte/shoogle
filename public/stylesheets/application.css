@@ -5,6 +5,7 @@
 	http://localhost:3000/stylesheets/application.css?1281901797
 	http://localhost:3000/stylesheets/application.css?1281902020
 	http://localhost:3000/stylesheets/application.css?1281902911
+	http://localhost:3000/stylesheets/application.css?1282260013
 */
 
 /* @group basics and resets */
@@ -146,7 +147,7 @@ body {
 #page {
 	position: absolute;
 	width: 80%;
-	margin: 0 8%;
+	margin: 0 5%;
 	z-index: 50;
 }
 
@@ -597,7 +598,7 @@ ol.results{
 ol.results li{
 	position: relative;
 	width:  160px;
-	height: 300px;
+	height: 270px;
 	overflow: hidden;
 	display: block;
 	float: left;
@@ -640,6 +641,53 @@ ol.results a:hover .product_name {
 	text-decoration: underline;
 } 
 
+
+
+/* @group Matching Shoes List (Smaller) */
+
+#matching_shoes .results  {
+  width: 600px;
+}
+
+#matching_shoes .results li {
+	width:  120px;
+	height: 210px;
+	font-size: 12px;
+}
+#matching_shoes .results li img {
+	width:  110px;
+}
+#matching_shoes ol.results .price {
+	top: 100px;
+	right: 15px;
+	font-size: 17px;
+}
+table.fitting_shoes{
+	border-width: 1px 0 1px 1px ;
+	border-style: solid;
+	border-color: #c0c0c0;
+}
+table.fitting_shoes tr{
+	vertical-align: top;
+}
+table.fitting_shoes th{
+	background: #eaeaea;
+	padding: 2px 6px;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #c0c0c0;
+}
+table.fitting_shoes td{
+   padding: 8px;
+	border-width: 0 1px 0 0;
+	border-style: solid;
+	border-color: #c0c0c0;   
+}
+
+table.fitting_shoes tr.even td{
+	background: #f9f9f9;
+}
+/* @end */
 
 
 
