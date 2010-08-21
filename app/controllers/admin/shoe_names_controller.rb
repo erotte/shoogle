@@ -11,7 +11,7 @@ class Admin::ShoeNamesController < Admin::BaseController
   def approve_shoes
     feet = Shoe.unapproved_by_model_and_manufacturer(:manufacturer => params[:manufacturer], :model => params[:model])
     feet.each do |foot|
-      shoes = foot.shoes.select{ |shoe| shoe.manufacturer == params[:manufacturer] && params[:model]}
+      shoes = foot.shoes.select{ |shoe| shoe.manufacturer == params[:manufacturer] && shoe.model == params[:model]}
       shoes.each{|shoe| shoe.approved = true}
       db.save_document foot
     end

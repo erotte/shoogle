@@ -40,7 +40,8 @@ class AffiliateShoe
           for each (var group in all_subgroups_of(uniq_words)) {
             emit(group.sort(), doc._id)
           }
-        } JS
+        } 
+        JS
         
     #
     # example: AffiliateShoe.find_by :model => 'trainer', :manufacturer => 'Puma'
