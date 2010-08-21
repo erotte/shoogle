@@ -16,7 +16,7 @@ class AffiliateShoe
     view :all, :key => :created_at
 
     view :by_words_of_name, :type => :custom, :include_docs => true,
-      :map => '
+      :map => <<-JS
         function(doc) {
           if (doc.ruby_class != "AffiliateShoe") return
 
@@ -40,7 +40,7 @@ class AffiliateShoe
           for each (var group in all_subgroups_of(uniq_words)) {
             emit(group.sort(), doc._id)
           }
-        }'
+        } JS
         
     #
     # example: AffiliateShoe.find_by :model => 'trainer', :manufacturer => 'Puma'

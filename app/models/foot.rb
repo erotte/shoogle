@@ -11,7 +11,7 @@ class Foot
   view :all, :key => :created_at
   
   view :fitting, :type => :raw, 
-    :map =>'
+    :map => <<-JS
       function(doc) {
         if (doc.ruby_class == "Foot")
           for each (var a in doc.shoes) 
@@ -21,8 +21,9 @@ class Foot
                   if (b.sizes[unit])
                     emit([unit, a.manufacturer, b.manufacturer, a.model, b.model, a.sizes[unit]], 
                          b.sizes[unit]-a.sizes[unit]);
-      }', 
-    :reduce => '
+      } JS
+      , 
+    :reduce => <<-JS
       function (key, values, combine) {
         var result = {size_sum:0, num_feet:0}
 
@@ -38,7 +39,7 @@ class Foot
           }
         }    
         return result 
-      }'
+      } JS
       
 
   def direct_matches
