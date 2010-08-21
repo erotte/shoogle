@@ -528,6 +528,14 @@ table#foot_check_shoes {
 	width: 95%;
 }
 
+.button_wrap .right_space {
+  margin-right:5px;
+}
+.button_wrap {
+  text-align:right;
+  margin: 15px 15px 10px 10px;
+}
+
 /* @end */
 
 /* @group Rating */
