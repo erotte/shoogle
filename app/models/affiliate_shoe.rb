@@ -11,7 +11,7 @@ class AffiliateShoe
     property :keywords
     property :descriptionshort
     property :descriptionslong
-    property :male
+    property :sex
 
     view :all, :key => :created_at
 
