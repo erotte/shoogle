@@ -1,7 +1,7 @@
 class Admin::BaseController < ApplicationController
   ADMIN_NAME, ADMIN_PASSWORD = "ssf_admin", "a24.12.iW"
   skip_before_filter :guard_beta_app
-  before_filter :guard_admin_area if RAILS_ENV.eql?('production')
+#  before_filter :guard_admin_area if RAILS_ENV.eql?('production')
 
   private
 
