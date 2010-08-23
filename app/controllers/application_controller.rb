@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   USER_NAME, PASSWORD = "shoomoo", "mooshoo"
-  before_filter :guard_beta_app, :except => [ :index ] if RAILS_ENV.eql?('production')
+  # before_filter :guard_beta_app, :except => [ :index ] if RAILS_ENV.eql?('production')
   before_filter :enhance_new_registering_user_with_current_foot, :only => [:create]
   
   helper :all # include all helpers, all the time
