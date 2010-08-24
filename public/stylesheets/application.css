@@ -753,9 +753,16 @@ table.fitting_shoes tr.even td{
 	background: #f9f9f9;
 }
 /* @end */
+/* @end */
 
-
+/* @group Static Pages */
+  body.pages p {
+	margin-bottom: 1.4em ;
+	width: 75%;
+}
+  body.pages address {
+	margin: 1.4em 0;
+}
 
 
 /* @end */
-
