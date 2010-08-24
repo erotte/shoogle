@@ -1,12 +1,4 @@
-/* @override 
-	http://shoogle.local/stylesheets/application.css?1273094681
-	http://shoogle.local/stylesheets/application.css?1273095386
-	http://shoogle.local/stylesheets/application.css?1273879134
-	http://localhost:3000/stylesheets/application.css?1281901797
-	http://localhost:3000/stylesheets/application.css?1281902020
-	http://localhost:3000/stylesheets/application.css?1281902911
-	http://localhost:3000/stylesheets/application.css?1282260013
-*/
+/* @override http://shoesizefinder.com/stylesheets/application.css?1282418199 */
 
 /* @group basics and resets */
 
@@ -606,7 +598,7 @@ ol.results{
 ol.results li{
 	position: relative;
 	width:  160px;
-	height: 270px;
+	height: 260px;
 	overflow: hidden;
 	display: block;
 	float: left;
@@ -625,25 +617,34 @@ ol.results li:hover p{
 ol.results a, 
 ol.results a:visited {
 	text-decoration: none;
+	background: #fff url(/images/app/not_available.png) no-repeat 0 8px;
+	display: block;
+	height: 180px;
+	width: 150px;
+	overflow: hidden;	
+	margin: 5px;
 } 
 
 ol.results a img{
 	width:  150px;
-	margin: 5px;
+	border: 1px solid red;
 }
 ol.results .price {
 	position: absolute;
-	top: 170px;
-	right: 20px;
+	top: 145px;
+	right: 16px;
 	font-size: 22px;
 	font-weight: normal;
 	background: #fff;
-	opacity: 0.85;
+	opacity: 0.8;
 }
 ol.results .text{
   display:  inline-block;
   margin-left: 10px;
   padding: 0;
+  position: absolute;
+  top: 200px;
+  font-size: 12px;
 }
 ol.results a:hover .product_name {
 	text-decoration: underline;
