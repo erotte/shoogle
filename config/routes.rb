@@ -13,7 +13,6 @@ ActionController::Routing::Routes.draw do |map|
   map.foot_check 'feet/:id/foot_checks/', :controller => 'foot_checks', :action => 'index'
   map.resources :feet, :has_many => :forecasts
 
-  
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "feet", :action => "new"
   
