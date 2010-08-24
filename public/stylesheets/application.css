@@ -627,7 +627,6 @@ ol.results a:visited {
 
 ol.results a img{
 	width:  150px;
-	border: 1px solid red;
 }
 ol.results .price {
 	position: absolute;
