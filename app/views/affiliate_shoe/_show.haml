@@ -2,7 +2,8 @@
 - affiliate_shoes.each do |affiliate_shoe|
   %li
     %a{ :href => affiliate_shoe.deeplinkurl}
-      %img{ :src => affiliate_shoe.imagesmallurl}
-      %strong.price= render_price affiliate_shoe.price
+      %p.imagewrap
+        %img{ :src => affiliate_shoe.imagesmallurl}
+        %strong.price= render_price affiliate_shoe.price
       %p.text
-        %span.product_name= affiliate_shoe.productname
+        %span.product_name= truncate( affiliate_shoe.productname, :length => 56, :omission => " &hellip;")

@@ -1,4 +1,8 @@
-/* @override http://shoesizefinder.com/stylesheets/application.css?1282418199 */
+/* @override 
+	http://shoesizefinder.com/stylesheets/application.css?1282418199
+	http://shoesizefinder.com/stylesheets/application.css?1282648280
+	http://localhost:3000/stylesheets/application.css?1282653832
+*/
 
 /* @group basics and resets */
 
@@ -597,7 +601,7 @@ ol.results{
 }
 ol.results li{
 	position: relative;
-	width:  160px;
+	width:  154px;
 	height: 260px;
 	overflow: hidden;
 	display: block;
@@ -611,7 +615,7 @@ ol.results li:hover{
 	background: #0080C9;
 }
 ol.results li:hover p{
-	color:  #fff;;
+	color:  #fff;
 }
 
 ol.results a, 
@@ -619,11 +623,18 @@ ol.results a:visited {
 	text-decoration: none;
 	background: #fff url(/images/app/not_available.png) no-repeat 0 8px;
 	display: block;
-	height: 180px;
+	height: 185px;
 	width: 150px;
 	overflow: hidden;	
-	margin: 5px;
+	margin: 2px;
 } 
+
+ol.results a .imagewrap {
+	background: #fff;
+	height: 185px;
+	display: table-cell;
+	vertical-align: middle;
+}
 
 ol.results a img{
 	width:  150px;
@@ -636,40 +647,83 @@ ol.results .price {
 	font-weight: normal;
 	background: #fff;
 	opacity: 0.8;
+	color: #111;
+	text-shadow: 1px 1px 1px #aaa;
+	padding: 4px 6px;
+	white-space: nowrap;
 }
 ol.results .text{
   display:  inline-block;
-  margin-left: 10px;
+  margin: 0 7px;
   padding: 0;
   position: absolute;
-  top: 200px;
+  top: 195px;
   font-size: 12px;
 }
 ol.results a:hover .product_name {
 	text-decoration: underline;
 } 
+/* @group nix gefunden */
+
+.not_found {
+  vertical-align: middle;
+  text-align: center;
+  width: 150px;
+  height: 121px;
+  margin: 12px;	
+}
 
 
+.not_found span {
+	position: relative;
+	top: -65px;
+	color: #333;
+	background-color: #f5f7f7;
+	opacity: 0.85;
+	padding: 1px 3px ;
+}
+
+/* @end */
 
 /* @group Matching Shoes List (Smaller) */
 
 #matching_shoes .results  {
-  width: 600px;
+	margin: 10px;
 }
 
 #matching_shoes .results li {
-	width:  120px;
-	height: 210px;
+	width:  100px;
+	height: 180px;
 	font-size: 12px;
 }
+#matching_shoes .results .imagewrap {
+	height:  110px;
+}
+
+#matching_shoes .results .text {
+	top: 117px;
+	font-size: 11px;
+}
+
 #matching_shoes .results li img {
-	width:  110px;
+	width:  100px;
 }
 #matching_shoes ol.results .price {
-	top: 100px;
-	right: 15px;
+	top: 85px;
+	left: 7px;
 	font-size: 17px;
+	padding: 1px 2px;
+	line-height: 1.1em;
 }
+
+#matching_shoes ol.results a, 
+#matching_shoes ol.results a:visited {
+	background: #fff url(/images/app/not_available_small.png) no-repeat 0 4px;
+	height: 110px;
+	width: 98px;
+	margin: 1px;
+}
+
 table.fitting_shoes{
 	border-width: 1px 0 1px 1px ;
 	border-style: solid;
@@ -679,19 +733,22 @@ table.fitting_shoes tr{
 	vertical-align: top;
 }
 table.fitting_shoes th{
-	background: #eaeaea;
+	background: #cdf;
 	padding: 2px 6px;
 	border-width: 0 1px 1px 0;
 	border-style: solid;
 	border-color: #c0c0c0;
 }
 table.fitting_shoes td{
-   padding: 8px;
+    padding: 8px;
 	border-width: 0 1px 0 0;
 	border-style: solid;
 	border-color: #c0c0c0;   
 }
 
+table.fitting_shoes td.shoes{
+  padding: 0;
+}
 table.fitting_shoes tr.even td{
 	background: #f9f9f9;
 }
