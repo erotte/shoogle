@@ -6,4 +6,4 @@
         %img{ :src => affiliate_shoe.imagesmallurl}
         %strong.price= render_price affiliate_shoe.price
       %p.text
-        %span.product_name= truncate( affiliate_shoe.productname, :length => 56, :omission => " &hellip;")
+        %span.product_name= truncate( affiliate_shoe.productname, :length => 50, :omission => "&nbsp;&hellip;")
