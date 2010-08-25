@@ -1,14 +1,21 @@
 %h1 Impressum
 
 %p
-  Shoesizefinder ist ein Experiment von Arbo von Monkiewitsch und Eckhard Rotte.
+  Shoesizefinder ist ein Experiment von
+  %a{:href => "https://www.xing.com/profile/Arbo_vonMonkiewitsch"}
+    Arbo von Monkiewitsch
+  und
+  %a{:href => "https://www.xing.com/profile/Eckhard_Rotte"}
+    Eckhard Rotte.
 
-%address
-  Eckhard Rotte &amp; Arbo von Monkiewitsch GbR
+%address.vcard
+  %span.org von Monkiewitsch &amp; Rotte GbR
   %br
-  Goesselstr. 10
+  %span.adr
+    %span.street-address Waller Ring 89
+    %br
+    %span.postal-code 28217
+    %span.locality Bremen
   %br
-  28215 Bemen
-  %br
-  %a{:href => "mailto:info@shoesizefinder.de"}
-    info@shoesizefinder.de
+  %a.email{:href => "mailto:info@shoesizefinder.com"}
+    info@shoesizefinder.com
