@@ -1,0 +1,19 @@
+-#Grab Google CDN's jQuery. fall back to local if necessary
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
+:javascript
+  !window.jQuery && document.write('<script src="/javascripts/jquery.js"><\/script>')
+= javascript_include_tag 'jquery.plugins/jquery.autocomplete',       |
+  'jquery.plugins/jquery.custom', 'jquery-ui-1.7.2.custom.min',  'application' |
+/[if lt IE 7 ]
+  =javascript_include_tag "dd_belatedpng"
+-#  asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
+-#  change the UA-XXXXX-X to be your site's ID
+:javascript
+  var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+  (function(d, t) {
+   var g = d.createElement(t),
+       s = d.getElementsByTagName(t)[0];
+   g.async = true;
+   g.src = '//www.google-analytics.com/ga.js';
+   s.parentNode.insertBefore(g, s);
+  })(document, 'script');
