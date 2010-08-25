@@ -1,28 +1,39 @@
-!!!
-%html
+!!! 5
+%html.no-js
   %head
-    %title shoe size finder 
+    -# www.phpied.com/conditional-comments-block-downloads/
+    /[if IE]
+  
+    %meta{ 'http-equiv' => "X-UA-Compatible", 'content' => "IE=edge,chrome=1"}
+    %title shoe size finder
+
+    %meta{ :name => "description",  :content => ""}
+    %meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}
+
+    -#%link{:href => "/favicon.ico", :rel => "shortcut icon"}
+    -#%link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}
+    -# For the less-enabled mobile browsers like Opera Mini
+    -# All JavaScript at the bottom, except for Modernizr which enables HTML5 elements &amp; feature detects
+    = javascript_include_tag "modernizr-1.5.min.js"
+
     = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons'
-    = javascript_include_tag 'jquery', 'jquery.plugins/jquery.autocomplete',       |
-      'jquery.plugins/jquery.custom', 'jquery-ui-1.7.2.custom.min',  'application' |
+    = stylesheet_link_tag "handheld.css", :media => "handheld"
 
     /[if lte IE7]
       = stylesheet_link_tag 'ie'
     
     = yield :head
   %body{:class => body_class }
-    /#opacity_layer
     #page
-      #header_wrapper
-        #header
-          %h1#logo=link_to image_tag("app/logo_ssf_invert_white.png"), root_path
-          %ul.metanav
-            - if user_signed_in? 
-              %li= link_to "#{current_user.email} (Ausloggen)", destroy_user_session_path
-            - else
-              %li= link_to "Login", new_user_session_path
-              %li= link_to "Account erstellen", new_user_registration_path
-              %li= link_to "Sitzungsdaten löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
+      %header
+        %h1#logo=link_to image_tag("app/logo_ssf_invert_white.png"), root_path
+        %ul.metanav
+          - if user_signed_in? 
+            %li= link_to "#{current_user.email} (Ausloggen)", destroy_user_session_path
+          - else
+            %li= link_to "Login", new_user_session_path
+            %li= link_to "Account erstellen", new_user_registration_path
+            %li= link_to "Sitzungsdaten löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
 
       =#render :partial => 'layouts/claim' 
       = render :partial => "/layouts/flash_block" if flash.present?    
@@ -30,8 +41,10 @@
       #panel.active
         = yield 
       
-      #footer_wrapper
+      %footer
         %ul.metanav
           %li= link_to "Kontakt und Impressum", '/pages/impressum'
           %li= link_to "Nutzungsbedingungen", '/pages/agb'
 
+    = render :partial => '/layouts/bottom'
+    = yield :bottom
