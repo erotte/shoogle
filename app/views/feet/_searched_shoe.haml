@@ -1,8 +1,8 @@
 %p Du suchst nach:
 %ol.shoes_list
   %li
-    =link_to_remote image_tag('app/icons_small/cross.png' , :class => 'delete'), :url => foot_searched_shoes_path(@foot), :method => :delete, :update => 'panel'
-    =link_to_remote image_tag('app/icons_small/edit.png' , :class => 'edit'), :url => edit_foot_searched_shoes_path(@foot), :method => :get, :update => 'searched_shoe'
+    = delete_seached_shoe_button
+    = edit_seached_shoe_button
     = "#{@foot.searched_shoe.manufacturer_name}"
     = " // #{@foot.searched_shoe.model_name}" if @foot.searched_shoe.model_name.present?
     
