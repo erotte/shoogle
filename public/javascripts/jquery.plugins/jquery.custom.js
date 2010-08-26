@@ -25,7 +25,6 @@
 	jQuery.fn.shoe_completer = function() {
     this.each(function(i, that) {
 			var $manufacturer = $('input.manufacturer', $(that))
-            console.debug($manufacturer)
 			var $model = $('input.model', $(that))
 			var manufacturer_value = function(){return $manufacturer.val()};
 			$manufacturer.autocomplete("/manufacturers.js");
