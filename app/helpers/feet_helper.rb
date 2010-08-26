@@ -12,6 +12,20 @@ module FeetHelper
       :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }
     }  
   end
+
+  def delete_seached_shoe_button
+    link_to_remote image_tag('app/icons_small/cross.png' , :class => 'delete'),
+                   :url => foot_searched_shoes_path(@foot),
+                   :method => :delete, :update => 'panel'
+  end
+
+  def edit_seached_shoe_button
+     link_to_remote image_tag('app/icons_small/edit.png' , :class => 'edit'),
+                    :url => edit_foot_searched_shoes_path(@foot),
+                    :method => :get, 
+                    :update => 'searched_shoe',
+                    :complete => "$('#searched_shoe_form').shoe_completer()"  
+  end
   
   def add_shoes_options
     { :update => 'shoe_area',
