@@ -24,9 +24,7 @@ class ApplicationController < ActionController::Base
     elsif session[:foot_id]
       @foot = db.load_document(session[:foot_id])
     end
-
     @foot = Foot.new unless @foot
-
     @foot
   end
   

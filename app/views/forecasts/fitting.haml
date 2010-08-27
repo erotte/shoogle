@@ -18,11 +18,13 @@
     %span.rating= rating_as_sign
     (#{rating_as_text})
   
-  =render :partial => 'buttons'
-  
-  %ol.results
-    =render :partial => 'affiliate_shoe/show', :locals => { :affiliate_shoes => @affiliate_shoes} if @affiliate_shoes
-    
-  - if @affiliate_shoes && @affiliate_shoes.size >= 10
-    =render :partial => 'buttons'
+  = render :partial => 'buttons' if (@affiliate_shoes.size >= 10)
+  - if @affiliate_shoes
+    %ol#results.results
+      = render 'affiliate_shoe/show', :affiliate_shoes => @affiliate_shoes if @affiliate_shoes
+      -#= will_paginate(@affiliate_shoes)
+      %br
+      = pageless(@affiliate_shoes.total_pages, fitting_path(@foot))
+
+  =render :partial => 'buttons' if @affiliate_shoes.size >= 10
   

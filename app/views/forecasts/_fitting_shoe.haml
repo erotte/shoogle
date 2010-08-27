@@ -10,6 +10,8 @@
     });
 
 %h2 Passende Schuhe:
+=render :partial => 'buttons'
+
 %table.fitting_shoes
   %thead
     %tr
@@ -18,17 +20,4 @@
       %th Treffer
       %th
   %tbody    
-    -@foot.recommended_shoes.each do |fitting_shoe|
-
-      %tr{ :class => cycle('odd','even') }
-        %td=fitting_shoe.manufacturer.capitalize
-        %td=fitting_shoe.model.capitalize
-        %td=fitting_shoe.num_feet
-        %td.shoes
-          - if fitting_shoe.affiliate_shoes.present?
-            %ol#fitting_shoes.results.jcarousel-skin-ssf
-              =render 'affiliate_shoe/show', :affiliate_shoes => fitting_shoe.affiliate_shoes
-          - else
-            %p.not_found
-              = image_tag 'app/not_available.png', :title => "Dieser Schuh ist leider nicht verfügbar"
-              %span Leider keine passenden Schuhe gefunden
+    = render :partial => 'recommended_shoe', :collection => @foot.recommended_shoes

@@ -30,7 +30,8 @@ Rails::Initializer.run do |config|
   config.gem 'validatable', :lib => false
   config.gem 'formtastic'
   config.gem 'devise', :lib => false, :version => '=1.0.6'
-  
+  config.gem "will_paginate"
+
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins
   # config.gem 'rails_sql_views', :lib => 'rails_sql_views', :version => '>= 0.7.0', :source => "http://gems.github.com"
