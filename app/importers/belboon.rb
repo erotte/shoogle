@@ -1,7 +1,7 @@
 
 importer :belboon do
   desc 'Import affiliate data from belboon/adbutler'
-  
+
   file Dir.glob("data/belboon/*_alle.csv")
   col_sep ','
   quote_char '"'
@@ -22,9 +22,21 @@ importer :belboon do
       
       if (lowercase_line.include?('schuhe') || lowercase_line.include?('sneaker'))  
         
-        sex = 'unisex'
-        sex = 'man' if (lowercase_line.include? 'herren')
-        sex = 'woman' if (lowercase_line.include? 'damen')
+        is_female = lowercase_line.include?('damen')  || lowercase_line.include?(' woman ') || lowercase_line.include?(' women ')
+        is_male   = lowercase_line.include?('herren') || lowercase_line.include?(' man ')   || lowercase_line.include?(' men ')
+        
+        puts "hermaphrodite" if is_female and is_male
+        
+        sex = if is_female
+          'female'
+        elsif is_male
+          'male'
+        else
+          'unisex'
+        end
+        
+        manufacturer = row[:brand].downcase
+        manufacturer = row[:manufacturer].downcase if manufacturer == 'NULL'
         
         product = AffiliateShoe.new(
           :productname              => row[:product_title],
@@ -36,12 +48,16 @@ importer :belboon do
           :imagebigurl              => row[:image_big_url],
           :keywords                 => row[:keywords],
           :descriptionshort         => row[:product_description_short],
-          :descriptionslong         => row[:product_description_long  ],
+          :descriptionslong         => row[:product_description_long],
+          :manufacturer             => manufacturer,
           :sex                      => sex
         )
         CouchPotato.database.save_document product
       end
     end
+
   end
+  
+  
 end
 
