@@ -11,6 +11,7 @@ class AffiliateShoe
     property :keywords
     property :descriptionshort
     property :descriptionslong
+    property :manufacturer
     property :sex
 
     view :all, :key => :created_at
@@ -40,7 +41,7 @@ class AffiliateShoe
           for each (var group in all_subgroups_of(uniq_words)) {
             emit(group.sort(), doc._id)
           }
-        } 
+        }
         JS
         
     #
