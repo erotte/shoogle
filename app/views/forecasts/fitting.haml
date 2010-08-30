@@ -1,30 +1,40 @@
-
-.affiliate_result
+-#- content_for :bottom do
+-#  :javascript
+-#    $(document).ready(function(){
+-#      $('#computed_size .value').pulsate()
+-#    })
+.result
   %h1{:title => result_info}
-    Dir passt
-    - if @forecast.has_model?
-      der
-      %strong= @forecast.model
-      von
-    - else
-      die Marke
-    %strong= @forecast.manufacturer
-    = rating_as_text
-    in der Größe
-    %strong.computed_size= "#{@forecast.size} #{@forecast.has_eur_size? ? 'EUR' : 'US'}"
-  
-  %p
-    Passt 
-    %span.rating= rating_as_sign
-    (#{rating_as_text})
-  
-  = render :partial => 'buttons' if (@affiliate_shoes.size >= 10)
-  - if @affiliate_shoes
-    %ol#results.results
-      = render 'affiliate_shoe/show', :affiliate_shoes => @affiliate_shoes if @affiliate_shoes
-      -#= will_paginate(@affiliate_shoes)
-      %br
-      = pageless(@affiliate_shoes.total_pages, fitting_path(@foot))
+    Dein Ergebnis:
 
-  =render :partial => 'buttons' if @affiliate_shoes.size >= 10
+  - if @forecast.manufacturer
+    %p#searched_shoe
+      %small für den Schuh
+      %br
+      %strong= @forecast.manufacturer
+      %strong= @forecast.model
+
+  #computed_size
+    %p.size
+      %strong.value= @forecast.size
+      %span.region= size_region
+    %p.result_quality
+      Ergebnisqualität:
+      %br
+      = result_quality
+
+
+= render :partial => 'buttons' if (@affiliate_shoes.size >= 10)
+- if @affiliate_shoes
+  %h2
+    Du findest
+    = shoe_name_or_manufacturer
+    bei unseren Online-Partnern:   
+  %ol#results.results
+    = render 'affiliate_shoe/show', :affiliate_shoes => @affiliate_shoes if @affiliate_shoes
+    -#= will_paginate(@affiliate_shoes)
+    %br
+    = pageless(@affiliate_shoes.total_pages, fitting_path(@foot))
+
+=render :partial => 'buttons' if @affiliate_shoes.size >= 10
   
