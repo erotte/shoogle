@@ -8,7 +8,12 @@
 :javascript
   !window.jQuery && document.write('<script src="/javascripts/jquery.js"><\/script>')
 = javascript_include_tag 'jquery.plugins/jquery.autocomplete',       |
-  'jquery.plugins/jquery.custom', 'jquery-ui-1.7.3.custom.min',  'application' |
+  'jquery.plugins/jquery.custom', 'jquery-ui-1.7.3.custom.min', 'jquery.plugins/jquery.tipsy', 'application' |
+:javascript
+  $(function() {
+      $('a[rel=tipsy]').tipsy({fade: true, gravity: 's', live: true}).click(function(){console.debug(this);$(this).tipsy('hide')});
+  });
+}
 /[if lt IE 7 ]
   =javascript_include_tag "dd_belatedpng"
 

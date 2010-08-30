@@ -12,6 +12,7 @@
 	http://shoogle.local/stylesheets/application.css?1283125499
 	http://shoogle.local/stylesheets/application.css?1283126355
 	http://shoogle.local/stylesheets/application.css?1283128101
+	http://shoogle.local/stylesheets/application.css?1283128197
 */
 
 /* @group basics and resets */
@@ -623,7 +624,7 @@ body.registrations #panel p {
 .result #computed_size {
   background: #f0f2f2;
   width: 220px;
-  padding: 8px;
+  padding: 10px;
   position: absolute;
   right: 15px;
   top: 15px;
@@ -636,14 +637,17 @@ body.registrations #panel p {
   font-size: 22px;
   position:absolute;
   top: 10px;
-  right: 10px;
+  left: 15px;
 }
 
 .result #searched_shoe {
   width: 500px;
   font-size: 32px;  	
 }
-
+.result #searched_shoe small {
+  width: 500px;
+  font-size: 16px;  	
+}
 ol.results{
 	overflow: auto;
 }
