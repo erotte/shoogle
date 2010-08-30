@@ -11,7 +11,7 @@
   'jquery.plugins/jquery.custom', 'jquery-ui-1.7.3.custom.min', 'jquery.plugins/jquery.tipsy', 'application' |
 :javascript
   $(function() {
-      $('a[rel=tipsy]').tipsy({fade: true, gravity: 's', live: true}).click(function(){console.debug(this);$(this).tipsy('hide')});
+      $('a[rel=tipsy]').tipsy({fade: true, gravity: 's', live: true}).live('click', function(){return $(this).tipsy('hide')});
   });
 }
 /[if lt IE 7 ]
