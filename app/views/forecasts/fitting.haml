@@ -5,11 +5,14 @@
 -#    })
 .result
   %h1{:title => result_info}
-    Dein Ergebnis:
+    Dein Ergebnis
 
   - if @forecast.manufacturer
     %p#searched_shoe
-      %small für den Schuh
+      - if @forecast.manufacturer.present? && @forecast.model.present?
+        %small für den Schuh
+      - elsif @forecast.manufacturer.present? && @forecast.model.blank?
+        %small für den Hersteller
       %br
       %strong= @forecast.manufacturer
       %strong= @forecast.model
