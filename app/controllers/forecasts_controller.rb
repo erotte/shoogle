@@ -17,7 +17,6 @@ class ForecastsController < ApplicationController
     respond_to do |format|
       format.html
       format.js {
-        sleep(2)
         render :partial => 'affiliate_shoe/show', :locals => {:affiliate_shoes => @affiliate_shoes}
       }
     end
