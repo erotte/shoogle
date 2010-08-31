@@ -1,8 +1,9 @@
--#- content_for :bottom do
--#  :javascript
--#    $(document).ready(function(){
--#      $('#computed_size .value').pulsate()
--#    })
+- content_for :bottom do
+  = javascript_include_tag 'jquery.plugins/jquery.color.js', 'jquery.plugins/jquery.glow.js'
+  -#:javascript
+  -#  $(document).ready(function(){
+  -#    $('#computed_size .value').pulsate()
+  -#  })
 .result
   %h1{:title => result_info}
     Dein Ergebnis
@@ -14,8 +15,8 @@
       - elsif @forecast.manufacturer.present? && @forecast.model.blank?
         %small für den Hersteller
       %br
-      %strong= @forecast.manufacturer
-      %strong= @forecast.model
+      %strong= @forecast.manufacturer.capitalize
+      %strong= @forecast.model.capitalize
 
   #computed_size
     %p.size
@@ -28,7 +29,7 @@
 
 
 = render :partial => 'buttons' if (@affiliate_shoes.size >= 10)
-- if @affiliate_shoes
+- if @affiliate_shoes.present?
   %h2
     Du findest
     = shoe_name_or_manufacturer
