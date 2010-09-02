@@ -47,6 +47,8 @@ describe Shoe do
     shoe.size.should eql(11.5)
     shoe = Shoe.new(@valid_attributes.merge(:size => nil))
     shoe.size.should be_nil
+    shoe = Shoe.new(@valid_attributes.merge(:size => 0))
+    shoe.size.should be_nil
   end
 
 end
