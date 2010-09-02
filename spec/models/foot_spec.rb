@@ -26,7 +26,9 @@ describe Foot do
     end
     
   end
+
   
+
   describe "when computing transposed matches" do 
     
     it "should yield a match" do  
