@@ -36,4 +36,8 @@ module ApplicationHelper
     end
   end
 
+  def formatted_size size
+    number_with_precision( size, :precision => 1, :separator => ".", :strip_insignificant_zeros => true)
+
+  end
 end
