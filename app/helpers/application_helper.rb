@@ -12,7 +12,7 @@ module ApplicationHelper
   def uniq_error_messages_for object
     return "" if !object || object.errors.empty?
     s = '<ul class="errorList">'
-    object.errors.collect { |e| e[1] }.sort.uniq.each do |error|
+    object.errors.errors.values.flatten.uniq.each do |error|
       s << "<li>#{error}</li>"
     end
     s << '</ul>'
@@ -22,7 +22,6 @@ module ApplicationHelper
   def render_price price
     number_to_currency(price, :unit => "&euro;", :separator => ",", :format => "%n %u")
   end
-
 
   def pageless(total_pages, url=nil)
     opts = {
@@ -37,4 +36,8 @@ module ApplicationHelper
     end
   end
 
+  def formatted_size size
+    number_with_precision( size, :precision => 1, :separator => ".", :strip_insignificant_zeros => true)
+
+  end
 end

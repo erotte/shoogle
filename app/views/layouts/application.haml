@@ -4,10 +4,11 @@
     -# www.phpied.com/conditional-comments-block-downloads/
     /[if IE]
   
-    %meta{ 'http-equiv' => "X-UA-Compatible", 'content' => "IE=edge,chrome=1"}
-    %title shoe size finder
+    %title ShoeSizeFinder - wir finden den passenden Schuh für dich.
+    %meta{ :name => "description",  :content => "Probleme mit der Schuhgröße? Deine Sneaker von einer Marke passen, du kennst aber die richtige Größe bei einen anderen Hersteller nicht? Shoesizefinder findet den passenden Schuh für dich!"}
+    %meta{ :name => "keywords",  :content => "Schuhgröße, Schuhgrößenvergleich, Schuhgrößentabelle, Schuhgröße ermitteln"}
 
-    %meta{ :name => "description",  :content => ""}
+    %meta{ 'http-equiv' => "X-UA-Compatible", 'content' => "IE=edge,chrome=1"}
     %meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}
 
     -#%link{:href => "/favicon.ico", :rel => "shortcut icon"}
@@ -16,7 +17,7 @@
     -# All JavaScript at the bottom, except for Modernizr which enables HTML5 elements &amp; feature detects
     = javascript_include_tag "modernizr-1.5.min.js"
 
-    = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons'
+    = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons', 'tipsy'
     = stylesheet_link_tag "handheld.css", :media => "handheld"
 
     /[if lte IE7]

@@ -38,16 +38,17 @@ describe Shoe do
     reloaded_shoe.should be_nil
   end
 
-
-
-#   Das hier läuft nicht
-#   Spec::Mocks::MockExpectationError: Stub "couch_potato_test" received unexpected message :info with (no args)
-#  it 'should save' do
-#    couchrest_db = stub 'couch_potato_test'
-#    database = CouchPotato::Database.new couchrest_db
-#    shoe = Shoe.new
-#    couchrest_db.should_receive(:save_document)
-#    database.save_document shoe
-#  end
+  it "should format shoe size" do
+    shoe = Shoe.new(@valid_attributes.merge(:size => 11.5))
+    shoe.size.should eql(11.5)
+    shoe = Shoe.new(@valid_attributes.merge(:size => "11,5"))
+    shoe.size.should eql(11.5)
+    shoe = Shoe.new(@valid_attributes.merge(:size => "11.5"))
+    shoe.size.should eql(11.5)
+    shoe = Shoe.new(@valid_attributes.merge(:size => nil))
+    shoe.size.should be_nil
+    shoe = Shoe.new(@valid_attributes.merge(:size => 0))
+    shoe.size.should be_nil
+  end
 
 end

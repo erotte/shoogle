@@ -1,4 +1,8 @@
-%p#step-1.step_box.hide Trage hier bitte das Schuhmodell ein, dessen Größen du ermitteln möchtest.
+%p#step-1.step_box.hide
+  Du suchst nach einem bestimmten Schuh?
+  %br
+  Dann trage hier bitte Hersteller und Modell ein.
+  Falls du nur stöbern und passende Schuhe finden möchtest lass die Felder einfach leer.
 - remote_form_for( @foot, searched_shoe_form_options ) do |f|
   - f.fields_for :searched_shoe , @foot.searched_shoe do |searched|
     %ol.shoe_row.shoe_completer
@@ -8,5 +12,5 @@
       %li.labelwrap
         = searched.label(:model_name, "Modell")
         = searched.text_field(:model_name, :class => "model")
-      %li.buttonwrap=submit_tag( 'OK', :id => "searched_shoe_submit",  :class => 'awesome red right_submit')
+      %li.buttonwrap=submit_tag( 'OK', :id => "searched_shoe_submit",  :class => 'button right_submit')
       

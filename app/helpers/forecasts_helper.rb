@@ -1,12 +1,12 @@
 module ForecastsHelper
   def rating_as_text
     case @forecast.rating
-      when 5 then "mit Sicherheit" 
+      when 5 then "mit Sicherheit"
       when 4 then "sehr wahrscheinlich" 
       when 3 then "bestimmt" 
       when 2 then "wahrscheinlich" 
-      when 1 then "vermutlich" 
-      else "vielleicht"
+      when 1 then "wahrscheinlich" 
+      else "wahrscheinlich"
     end
   end
 
@@ -30,7 +30,27 @@ module ForecastsHelper
     umgerechnete Treffer: #{@forecast.transposed_matches} ergeben #{@forecast.transposed_matches_size},
     Marken-Treffer: #{@forecast.manufacturer_matches} ergeben #{@forecast.manufacturer_matches_size}, 
     durchschnittliche Schuhgröße: #{@forecast.average_shoe_size})"
+  end
 
+  def size_region
+    @forecast.has_eur_size? ? 'EUR' : 'US'
+  end
+
+  def result_quality
+    capture_haml do
+      haml_tag :span, :title => rating_as_text, :class => "stars q-#{@forecast.rating}" do
+        haml_tag :i, rating_as_sign
+      end
+    end  
+  end
+
+  def shoe_name_or_manufacturer
+    if @forecast.manufacturer.present? && @forecast.model.present?
+      "den #{@forecast.manufacturer.capitalize} #{@forecast.model.capitalize}"
+    elsif @forecast.manufacturer.present? && @forecast.model.blank?
+      "Schuhe von #{@forecast.manufacturer.capitalize}"
+      
+    end
   end
 
   def add_target_shoe_form 

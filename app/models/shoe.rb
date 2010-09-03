@@ -1,5 +1,7 @@
-class Shoe 
+class Shoe
+  SIZE_REGEXP = /^\d{1,2}(,?|.?)\d?$/
   include CouchPotato::Persistence
+  include ActionView::Helpers::NumberHelper
 
   property :size, :type => Float
   property :sizes
@@ -10,6 +12,7 @@ class Shoe
   validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
   validates_presence_of :model, :message => "Bitte gib ein Schuhmodell ein"
   validates_presence_of :size, :message => "Bitte gib eine Größe ein" 
+  validates_format_of :size, :with => SIZE_REGEXP, :message => "Bitte gib die Größe mit max. einer Nachkommastelle an, z.B. 10, 10.5,  44,5. "
 
   view :recommended, :type => :raw,
     :map => <<-JS,
@@ -81,13 +84,23 @@ class Shoe
     CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model],
                                                 :endkey   => [@manufacturer, @model, {}] ))
   end
-  
+
+#  skippt leider die Validierung  
+#  def size
+#    separator = I18n.translate(:'number.format')[:separator]
+#    number_with_precision( @size, :precision => 1, :separator => separator, :strip_insignificant_zeros => true)
+#  end
+
+  def size= value
+    @size = value.blank? ? nil : value.to_s.gsub(',', '.').to_f
+  end
+
   def set_sizes
     self.sizes = {( has_eur_size? ? :eur : :us ) => @size}
   end
 
   def has_eur_size?
-    @size > 25
+    @size.to_f > 25
   end
 
 end

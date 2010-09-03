@@ -1,8 +1,4 @@
-/* @override 
-	http://shoesizefinder.com/stylesheets/application.css?1282418199
-	http://shoesizefinder.com/stylesheets/application.css?1282648280
-	http://localhost:3000/stylesheets/application.css?1282653832
-*/
+/* @override http://shoogle.local/stylesheets/application.css?1283167778 */
 
 /* @group basics and resets */
 
@@ -73,6 +69,9 @@ table.shoes td {
 }
 
 /* @group base Typo */
+h1, h2 {
+	font-weight: normal;
+}
 
 h3 {
 	font-size: 16px;
@@ -88,7 +87,7 @@ html {
 }
 
 body {
-	font: normal 13px/1.4 helvetica, arial, sans-serif;
+	font: normal 13px/1.4 helvetica neue, helvetica, arial, sans-serif;
 }
 
 header {
@@ -231,7 +230,7 @@ ul.metanav li {
   float: left;
   margin-right: 2px;
   margin: 0;
-  padding: 0;	
+  padding: 0;
 }
 
 ul.metanav li a {
@@ -505,12 +504,13 @@ ol.shoes_list {
 	font-size: 20px;
 	margin-bottom:8px;
 	border: 1px solid #b8b8b8;
+	min-height: 28px;
 }
 
 .shoes_list .delete,
 .shoes_list .edit {
 	float: right;
-	margin-top: 6px;
+	margin-top: 4px;
 	margin-right: 6px;
 }
 
@@ -532,24 +532,6 @@ table#foot_check_shoes {
   text-align:right;
   margin: 15px 15px 10px 10px;
 }
-
-/* @end */
-
-/* @group Rating */
-
-.rating {
-	font-size: 25px;
-	vertical-align: sub;
-}
-
-.rating .good_stars {
-	color: #ff8855;
-}
-
-.rating .bad_stars {
-	color: #aaaaaa;
-}
-
 #result_buttonwrap{
 	margin-left: 590px;
 	margin-bottom: 20px;
@@ -561,6 +543,32 @@ table#foot_check_shoes {
 }
 
 /* @end */
+
+/* @group Rating */
+
+.stars {
+  background-image:  url(/images/app/rating_stars.png);
+  background-repeat: no-repeat;	
+  display: inline-block;	
+  width: 120px;
+  height: 20px;
+}
+.stars.q-0{	background-position: 0 -125px;} 
+.stars.q-1{	background-position: 0 -100px;} 
+.stars.q-2{	background-position: 0 -75px;} 
+.stars.q-3{	background-position: 0 -50px;} 
+.stars.q-4{	background-position: 0 -25px;} 
+.stars.q-5{	background-position: 0 0;} 
+
+.stars i {
+	display: inline-block;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+/* @end */
+
+
 
 /* @group Devise */
 
@@ -589,17 +597,47 @@ body.registrations #panel p {
 
 /* @group affiliate result */
 
-.affiliate_result h1 {
-	font-weight: normal;
-	margin: 20px 0;
-}
-.affiliate_result .computed_size {
+.result{
+  position: relative;
+  height: 18em;
 }
 
+.result h1 {
+	font-size: 44px;
+	font-weight: normal;
+	width: 300px;
+}
+.result #computed_size {
+  background: #f0f2f2;
+  width: 220px;
+  padding: 10px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.result #computed_size .size{
+  color: #FF3B00;
+  font-size: 92px;
+}
+.result #computed_size .region{
+  font-size: 22px;
+  position:absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.result #searched_shoe {
+  width: 500px;
+  font-size: 32px;  	
+}
+.result #searched_shoe small {
+  width: 500px;
+  font-size: 16px;  	
+}
 ol.results{
 	overflow: auto;
-	
 }
+
 ol.results li{
 	position: relative;
 	width:  154px;
