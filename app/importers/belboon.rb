@@ -7,9 +7,9 @@ importer :belboon do
   col_sep ','
   quote_char '"'
 
-  # before do
-  #   AffiliateShoe.delete_all
-  # end
+  before do
+    AffiliateShoe.delete_all
+  end
 
 
   foreach_file do |file|
