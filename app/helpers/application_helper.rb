@@ -23,7 +23,6 @@ module ApplicationHelper
     number_to_currency(price, :unit => "&euro;", :separator => ",", :format => "%n %u")
   end
 
-
   def pageless(total_pages, url=nil)
     opts = {
             :totalPages => total_pages,
