@@ -1,19 +1,4 @@
-/* @override 
-	http://shoesizefinder.com/stylesheets/application.css?1282418199
-	http://shoesizefinder.com/stylesheets/application.css?1282648280
-	http://localhost:3000/stylesheets/application.css?1282653832
-	http://shoogle.local/stylesheets/application.css?1283007498
-	http://shoogle.local/stylesheets/application.css?1283114663
-	http://shoogle.local/stylesheets/application.css?1283115608
-	http://shoogle.local/stylesheets/application.css?1283116121
-	http://shoogle.local/stylesheets/application.css?1283116555
-	http://shoogle.local/stylesheets/application.css?1283116597
-	http://shoogle.local/stylesheets/application.css?1283116886
-	http://shoogle.local/stylesheets/application.css?1283125499
-	http://shoogle.local/stylesheets/application.css?1283126355
-	http://shoogle.local/stylesheets/application.css?1283128101
-	http://shoogle.local/stylesheets/application.css?1283128197
-*/
+/* @override http://shoogle.local/stylesheets/application.css?1283167778 */
 
 /* @group basics and resets */
 
@@ -519,12 +504,13 @@ ol.shoes_list {
 	font-size: 20px;
 	margin-bottom:8px;
 	border: 1px solid #b8b8b8;
+	min-height: 28px;
 }
 
 .shoes_list .delete,
 .shoes_list .edit {
 	float: right;
-	margin-top: 6px;
+	margin-top: 4px;
 	margin-right: 6px;
 }
 
