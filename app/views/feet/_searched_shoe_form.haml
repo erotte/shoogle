@@ -2,7 +2,6 @@
   Du suchst nach einem bestimmten Schuh?
   %br
   Dann trage hier bitte Hersteller und Modell ein.
-  Falls du nur stöbern und passende Schuhe finden möchtest lass die Felder einfach leer.
 - remote_form_for( @foot, searched_shoe_form_options ) do |f|
   - f.fields_for :searched_shoe , @foot.searched_shoe do |searched|
     %ol.shoe_row.shoe_completer
