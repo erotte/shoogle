@@ -27,7 +27,7 @@ class AffiliateShoe
             return r
           }
 
-          var txt = doc.productname.replace(/[!.\-\/,;]+/g, " ").replace(/[ ]+/g, " ").toLowerCase()
+          var txt = doc.productname.replace(/[!.\-\/,\(\);]+/g, " ").replace(/[ ]+/g, " ").toLowerCase()
           var found = {}
           var uniq_words = []
           var skip = {"schuhe":1, "topseller":1, "fashion":1, "edelsneaker":1, "stiefel":1, "damen":1, "damenschuhe":1, "woman":1, "herren":1, "herrenschuhe":1, "man":1, "schwarz":1, "sneakers":1, "sneaker":1, "silber":1, "silver":1, "von":1, "für":1, "by":1, "blue":1, "blau":1, "black":1, "pink":1, "weiß":1, "weiss":1, "white":1, "grey":1, "rot":1, "red":1, "orange":1, "violet":1,  "und":1,  "mit":1}
@@ -38,7 +38,7 @@ class AffiliateShoe
             }
           }
 
-          for each (var group in all_subgroups_of(uniq_words)) {
+          for each (var group in all_subgroups_of(uniq_words.splice(0,5))) {
             emit(group.sort(), doc._id)
           }
         }

@@ -2,13 +2,14 @@
 importer :belboon do
   desc 'Import affiliate data from belboon/adbutler'
 
-  file Dir.glob("data/belboon/*_alle.csv")
+  
+  file Dir.glob("data/belboon/*.csv")
   col_sep ','
   quote_char '"'
 
-  before do
-    AffiliateShoe.delete_all
-  end
+  # before do
+  #   AffiliateShoe.delete_all
+  # end
 
 
   foreach_file do |file|
@@ -17,11 +18,11 @@ importer :belboon do
     row_index = 1
     foreach do |row|
       row_index += 1
-      puts "importing line: #{row_index}"
+      
       lowercase_line = row.to_s.downcase
       
-      if (lowercase_line.include?('schuhe') || lowercase_line.include?('sneaker'))  
-        
+      if (row[:belboon_programid] != "14332" && (lowercase_line.include?('schuhe') || lowercase_line.include?('sneaker')))  
+        puts "importing line: #{row_index}" 
         is_female = lowercase_line.include?('damen')  || lowercase_line.include?(' woman ') || lowercase_line.include?(' women ')
         is_male   = lowercase_line.include?('herren') || lowercase_line.include?(' man ')   || lowercase_line.include?(' men ')
         
