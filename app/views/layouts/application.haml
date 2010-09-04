@@ -31,10 +31,11 @@
         %ul.metanav
           - if user_signed_in? 
             %li= link_to "#{current_user.email} (Ausloggen)", destroy_user_session_path
+            %li= link_to "Einstellungen", edit_registration_path(:user)
           - else
             %li= link_to "Login", new_user_session_path
             %li= link_to "Account erstellen", new_user_registration_path
-            %li= link_to "Sitzungsdaten löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die Sitzungdaten werden gelöscht.\n Fortfahren?"
+            %li= link_to "Alle Schuhe löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die eingegeben Schuhe werden gelöscht.\n Fortfahren?"
 
       =#render :partial => 'layouts/claim' 
       = render :partial => "/layouts/flash_block" if flash.present?    

@@ -35,4 +35,15 @@ class User
     result
   end
   
+  def update_attributes attributes
+    attributes.each do |key, value|
+      meth = "#{key}=".to_sym
+      self.send(meth, value) if self.respond_to? meth
+    end
+    CouchPotato.database.save! self
+  end
+  
+  def destroy
+    CouchPotato.database.destroy_document(self)
+  end
 end

@@ -14,9 +14,9 @@ de:
           \n Hier findest du bald einen Service, der dir hilft, passende Schuhe zu finden.
           \n Wenn du Interesse hast und benachrichtigt werden möchtest wenn wir starten, hinterlasse doch einfach deine Email-Adresse. 
           "
-  data_hint: "Wir finden Spam und Datenklau genauso bescheuert wie du und versprechen Dir, dass wir 
-              sorgfältig mit deinen Daten umgehen  und nur zum oben genannten Zweck einsetzen werden.
-               Ehrenwort!"        
+  data_hint: "Wir sind absolut gegen Spam und Datenklau und versprechen dir, dass wir 
+              sorgfältig mit deinen Daten umgehen und nur zum oben genannten Zweck einsetzen werden.
+              Ehrenwort!"        
   formtastic:
     # titles:
     #   user_name: "User details"
