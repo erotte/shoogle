@@ -1,7 +1,7 @@
 
 - affiliate_shoes.each do |affiliate_shoe|
   %li
-    %a{ :href => affiliate_shoe.deeplinkurl.gsub(/^.*http:/, 'http:')}
+    %a{ :href => affiliate_shoe.deeplinkurl.gsub(/^.*http:/, 'http:'), :target => "_blank"}
       %p.imagewrap
         %img{ :src => affiliate_shoe.imagesmallurl}
         %strong.price= render_price affiliate_shoe.price

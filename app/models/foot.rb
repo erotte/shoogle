@@ -105,6 +105,11 @@ class Foot
     searched_shoe and searched_shoe.valid?
   end
 
+  def has_valid_shoes?
+    shoes.size > 0 and shoes.each(&:valid?)
+  end
+
+
   def set_shoe_sizes
     shoes.each do |shoe|
       shoe.set_sizes
