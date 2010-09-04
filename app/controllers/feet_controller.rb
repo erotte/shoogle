@@ -46,6 +46,7 @@ class FeetController < ApplicationController
     @foot = Foot.new params[:foot]
     if @foot.valid? and db.save!(@foot)
       session[:foot_id] = @foot.id
+      save_foot_to_current_user
       respond_to do |format|
         format.html { redirect_to edit_foot_path(@foot) }
         format.js   { render :edit, :layout => false }
@@ -88,4 +89,15 @@ class FeetController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+  def save_foot_to_current_user
+    user = current_user
+    if user
+      user.foot_id = @foot.id 
+      db.save!(user)
+    end
+  end
+  
 end
