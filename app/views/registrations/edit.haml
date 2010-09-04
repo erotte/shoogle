@@ -1,0 +1,33 @@
+%h1 Deine Einstellungen
+%p
+  .form_wrap.user_form
+    - form_for resource_name, resource, :url => registration_path(resource_name), :html => { :method => :put } do |f|
+      %li= f.error_messages
+
+      %li.labelwrap
+        = f.label :email, "E-Mail"
+        = f.text_field :email
+      
+      %li.labelwrap
+        = f.label :password, "Dein neues Passwort"
+        (wenn du es leer läßt, ändern wir dein Passwort nicht)
+        = f.password_field :password
+
+      %li.labelwrap
+        = f.label :password_confirmation, "Dein neues Passwort wiederholen"
+        = f.password_field :password_confirmation
+      
+      %li.labelwrap
+        = f.label :current_password, "Dein aktuelles Passwort"
+        (wir brauchen dein aktuelles Passwort um die Änderung zu bestätigen)
+        = f.password_field :current_password
+
+      %li.buttonwrap= f.submit "Ändern", :class => 'button right_submit'
+    
+  %h3 Account löschen
+
+  %p
+    Unzufrieden?
+    = link_to "Ich will meinen Account löschen", registration_path(resource_name), :confirm => "Möchtest du wirklich, dass dein Account gelöscht wird?", :method => :delete
+
+  = render :partial => "shared/devise_links" 

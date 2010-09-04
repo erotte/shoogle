@@ -5,7 +5,7 @@ de:
       signed_in: 'Erfolgreich eingeloggt.'
       signed_out: 'Erfolgreich ausgeloggt.'
       unauthenticated: 'Du musst dich anmelden um fortzufahren.'
-      unconfirmed: 'Du musst deinen Account bestätigen um fortzufahren.'
+      unconfirmed: 'Du musst deinen Account bestätigen um fortzufahren. Check deine Emails.'
       locked: 'Dein Account ist gesperrt.'
       invalid: 'Falsches Passwort oder falsche Email-Adresse.'
       invalid_token: 'Unbekannter Authentifizierungstoken.'
@@ -13,15 +13,15 @@ de:
       inactive: 'Dein Account ist noch nicht aktiviert worden.'
     passwords:
       link: 'Passwort vergessen?'
-      send_instructions: 'Du bekommst in wenigen Minuten eine Email mit Anweisungen mit denen Du Dein Passwort zurücksetzten kannst.'
+      send_instructions: 'Du bekommst in wenigen Minuten eine Email mit Anweisungen mit denen du dein Passwort zurücksetzten kannst.'
       updated: 'Dein Passwort wurde erfolgreich geändert. Du bist nun eingeloggt.'
     confirmations:
-      link: "Hast Du keine Bestätigungsanweisungen bekommen?"
-      send_instructions: 'Du bekommst in wenigen Minuten eine Email mit Anweisungen mit denen Du Dein Account bestätigen kannst.'
+      link: "Hast du keine Bestätigungsanweisungen bekommen?"
+      send_instructions: 'Du bekommst in wenigen Minuten eine Email mit Anweisungen mit denen du Dein Account bestätigen kannst.'
       confirmed: 'Dein Account wurde erfolgreich bestätigt. Du bist nun eingeloggt.'
     registrations:
       link: 'Account erstellen'
-      signed_up: 'Du hast Dich erfolgreich registriert.'
+      signed_up: 'Du hast dich erfolgreich registriert. Du bekommst in wenigen Minuten eine Email mit Anweisungen mit denen du deinen Account bestätigen kannst.'
       updated: 'Du hast Deinen Account erfolgreich angepasst.'
       destroyed: 'Tschüss! Dein Account wurde erfolgreich gelöscht. Hoffentlich sehen wir uns bald wieder.'
     unlocks:
