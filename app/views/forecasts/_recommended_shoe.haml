@@ -4,7 +4,7 @@
   %td=recommended_shoe.num_feet
   %td.shoes
     - if recommended_shoe.affiliate_shoes.present?
-      %ol#fitting_shoes.results.jcarousel-skin-ssf
+      %ol.results.jcarousel-skin-ssf
         = render 'affiliate_shoe/show', :affiliate_shoes => recommended_shoe.affiliate_shoes
     - else
       %p.not_found

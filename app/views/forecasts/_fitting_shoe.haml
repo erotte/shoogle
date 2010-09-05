@@ -3,7 +3,7 @@
   = stylesheet_link_tag  'jcarousel/ssf/skin.css'
   :javascript
     $(document).ready(function() {
-      $('#fitting_shoes').jcarousel({
+      $('#fitting_shoes .results').jcarousel({
         visible: 5,
         scroll: 5
       });                                
@@ -12,7 +12,7 @@
 %h2 Passende Schuhe:
 =render :partial => 'buttons'
 
-%table.fitting_shoes
+%table#fitting_shoes
   %thead
     %tr
       %th Hersteller
