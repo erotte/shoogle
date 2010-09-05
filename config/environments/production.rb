@@ -28,9 +28,9 @@ config.action_mailer.default_charset = "utf-8"
 config.action_mailer.smtp_settings = {
   :address => "localhost" ,
   :port => 25,
-  :domain => "shoesizefinder.de"
+  :domain => "shoesizefinder.com"
 }
 
 # Enable threaded mode
 # config.threadsafe!
-config.action_mailer.default_url_options = { :host => 'beta.shoesizefinder.com' }
+config.action_mailer.default_url_options = { :host => 'shoesizefinder.com' }
