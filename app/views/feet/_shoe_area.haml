@@ -1,5 +1,5 @@
 #shoe_area
   #add_shoe_form
     = render :partial => 'feet/add_shoe_form' unless @foot.new_record?
-  #shoes_list
+  #shoes_list_wrap
     = render :partial => 'feet/shoes' if @foot.shoes.any?

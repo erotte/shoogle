@@ -41,6 +41,7 @@ module FeetHelper
   def add_shoes_options
     { :update => 'shoe_area',
       :html => {:class => 'foot_shoes_form', :id => 'foot_fields'},
+      :complete => '$("#foot_fields input.manufacturer").focus()'  
     }
   end
 

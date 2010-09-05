@@ -489,6 +489,9 @@ ul#search_options {
 /* @end */
 
 /* @group Shoes List */
+#shoes_list_wrap {
+	position: relative;	
+}
 
 ol.shoes_list {
 	width: 583px;
@@ -532,9 +535,10 @@ table#foot_check_shoes {
   text-align:right;
   margin: 15px 15px 10px 10px;
 }
-#result_buttonwrap{
-	margin-left: 590px;
-	margin-bottom: 20px;
+#result_button{
+	position: absolute;
+	top: 48px;
+    left: 611px;
 }
 
 #show_result_button {
