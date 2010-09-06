@@ -415,7 +415,7 @@ input:focus {
 #goto_result{
 	position: absolute;
 	left: 590px;
-	top: 30px;
+	top: 50px;
 }
 
 /* @group Error Fields */
@@ -492,7 +492,7 @@ ul#search_options {
 /* @group Shoes List */
 #shoes_list_wrap {
 	position: relative;	
-	min-height: 85px;
+	min-height: 95px;
 }
 
 ol.shoes_list {
