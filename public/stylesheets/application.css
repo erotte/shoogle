@@ -535,6 +535,7 @@ table#foot_check_shoes {
 }
 
 .forecasts .buttonwrap {
+  display: block;
   text-align: right;
   margin: 15px 15px 10px 10px;
 }
