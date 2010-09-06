@@ -22,18 +22,18 @@ module FeetHelper
   end
 
   def edit_seached_shoe_button opts={}
-     link_to_remote image_tag('app/icons_small/edit.png' ),
-                    {:url => edit_foot_searched_shoes_path(@foot),
-                    :method => :get, 
+    link_to_remote image_tag('app/icons_small/edit.png'),
+                   {:url => edit_foot_searched_shoes_path(@foot),
+                    :method => :get,
                     :update => 'searched_shoe',
-                    :html => {:title => "bearbeiten", :rel => 'tipsy', :class => 'edit'},        
-                    :complete => "$('#searched_shoe_form').shoe_completer()"}.merge(opts)  
+                    :html => {:title => "bearbeiten", :rel => 'tipsy', :class => 'edit'},
+                    :complete => "$('#searched_shoe_form').shoe_completer()"}.merge(opts)
   end
 
   def delete_shoe_button counter
     link_to_remote image_tag('app/icons_small/cross.png'),
                    :url => "/feet/#{@foot.id}/shoes/#{counter}",
-                   :method => :delete, :update => 'shoes_list',
+                   :method => :delete, :update => 'shoes_list_wrap',
                    :html => {:class => 'delete', :title => 'Schuh löschen', :rel => 'tipsy'}
 
   end

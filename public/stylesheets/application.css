@@ -1,4 +1,9 @@
-/* @override http://shoogle.local/stylesheets/application.css?1283167778 */
+/* @override 
+	http://shoogle.local/stylesheets/application.css?1283167778
+	http://shoogle.local/stylesheets/application.css?1283765705
+	http://shoogle.local/stylesheets/application.css?1283766467
+	http://shoogle.local/stylesheets/application.css?1283767215
+*/
 
 /* @group basics and resets */
 
@@ -384,11 +389,10 @@ input:focus {
 	width: 86px;
 }
 
-li.buttonwrap {
+.buttonwrap {
 	display: inline-block;
 	background:  url(/images/app/btn_pfeil.png) no-repeat left center;
 	padding-left: 20px;
-
 }
 
 .step_box {
@@ -408,13 +412,10 @@ li.buttonwrap {
 	font-size: 16px;
 }
 
-
-input.passive {
-	color: #eaeaea;
-}
-
-p.buttonbox {
-	width: 88%;
+#goto_result{
+	position: absolute;
+	left: 590px;
+	top: 30px;
 }
 
 /* @group Error Fields */
@@ -491,6 +492,7 @@ ul#search_options {
 /* @group Shoes List */
 #shoes_list_wrap {
 	position: relative;	
+	min-height: 85px;
 }
 
 ol.shoes_list {
@@ -528,22 +530,13 @@ table#foot_check_shoes {
 	width: 95%;
 }
 
-.button_wrap .right_space {
+.buttonwrap .right_space {
   margin-right:5px;
 }
-.button_wrap {
-  text-align:right;
-  margin: 15px 15px 10px 10px;
-}
-#result_button{
-	position: absolute;
-	top: 48px;
-    left: 611px;
-}
 
-#show_result_button {
-	width: 766px;
-	margin-top: 30px;
+.forecasts .buttonwrap {
+  text-align: right;
+  margin: 15px 15px 10px 10px;
 }
 
 /* @end */
