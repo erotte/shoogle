@@ -1,7 +1,9 @@
 class User
   include CouchPotato::Persistence
 
-#  validates_acceptance_of :agb_accept, :message => "Bitte akzeptiere unsere Nutzungsbedingungen"
+  validates_acceptance_of :agb_accept,
+                          :message => "Bitte akzeptiere unsere Nutzungsbedingungen",
+                          :on => :create
 
   class << self
     include Devise::Models
@@ -9,7 +11,7 @@ class User
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :confirmable
   
   property :foot_id
-  property  :agb_accept, :type => :boolean
+  property :agb_accept, :type => :boolean
   
   view :by_id, :key => :_id
   view :by_email, :key => :email

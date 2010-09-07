@@ -1,11 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.devise_for :users
+
+  map.resources :feedbacks
+
   map.resources :manufacturers
   
   map.resources :feet, :has_many => :shoes, :has_one => :searched_shoes
   # map.resources :feet, :singular => "foot",  :has_many => :shoes
   # map.resources :shoes
-
 
   map.search  'feet/:foot_id/forecasts/search',  :controller => 'forecasts', :action => 'search'
   map.fitting 'feet/:foot_id/forecasts/fitting', :controller => 'forecasts', :action => 'fitting'
