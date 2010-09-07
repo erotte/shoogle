@@ -418,6 +418,16 @@ input:focus {
 	top: 50px;
 }
 
+/* @group default errors */
+
+.errorList {
+	margin: 12px 0;
+	padding: 8px 12px;
+  	background-color: #ffa8a9;
+}
+
+/* @end*/
+
 /* @group Error Fields */
 
 .fieldWithErrors input {
@@ -596,6 +606,12 @@ body.registrations #panel p {
 	font-size: 14px;
 }
 
+body.registrations .errorList {
+	width: 553px;
+	margin: 12px 0;
+	font-size: 14px;
+	
+}
 /* @end */
 
 /* @group affiliate result */

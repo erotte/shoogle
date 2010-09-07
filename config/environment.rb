@@ -29,6 +29,7 @@ Rails::Initializer.run do |config|
   config.gem 'json_pure', :lib => false, :version => "1.4.3"
   config.gem 'devise', :lib => false, :version => '=1.0.6'
   config.gem "will_paginate"
+  config.gem "email_veracity"
 
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins

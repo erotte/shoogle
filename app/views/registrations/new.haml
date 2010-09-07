@@ -6,8 +6,7 @@
   einfach hinzufügen und ändern.
 .form_wrap.user_form
   - form_for resource_name, resource, :url => registration_path(resource_name) do |f|
-    .errors= f.error_messages
-
+    .step_box_error= uniq_error_messages_for(resource)
     %ul
       %li.labelwrap
         = f.label :email, "E-Mail"

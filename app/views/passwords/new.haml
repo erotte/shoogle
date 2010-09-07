@@ -1,7 +1,9 @@
 %h1 Passwort vergessen?
 - form_for resource_name, resource, :url => password_path(resource_name) do |f|
+
+  .step_box_error= uniq_error_messages_for(resource)
+
   %ul
-    %li= f.error_messages
     %li.labelwrap       
       = f.label :email
       = f.text_field :email
