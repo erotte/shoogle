@@ -3,7 +3,7 @@ class User
 
   validates_acceptance_of :agb_accept,
                         :message => "Bitte akzeptiere unsere Nutzungsbedingungen",
-                        :if => Proc.new{|u| u.new_rec ord?}
+                        :if => Proc.new{|u| u.new_record?}
 
   class << self
     include Devise::Models
