@@ -19,7 +19,7 @@ class User
 
   property :foot_id
   property :agb_accept, :type => :boolean
-
+  
   view :by_id, :key => :_id
   view :by_email, :key => :email
   view :by_reset_password_token, :key => :reset_password_token
@@ -41,12 +41,12 @@ class User
     else
       Rails.logger.warn "!!!\n!!! not implemented\n!!!\noptions=#{options.inspect}"
     end
-
+    
     result = found.any? ? found.first : nil
     Rails.logger.debug "--- found ->#{result}<-"
     result
   end
-
+  
   def update_attributes attributes
     attributes.each do |key, value|
       meth = "#{key}=".to_sym
@@ -54,7 +54,7 @@ class User
     end
     CouchPotato.database.save! self
   end
-
+  
   def destroy
     CouchPotato.database.destroy_document(self)
   end
