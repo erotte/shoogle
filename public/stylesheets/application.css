@@ -540,6 +540,11 @@ table#foot_check_shoes {
   margin: 15px 15px 10px 10px;
 }
 
+#results a {
+	target-new: tab !important;
+	-moz-target-new: tab;
+}
+
 /* @end */
 
 /* @group Rating */

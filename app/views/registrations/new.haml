@@ -6,18 +6,24 @@
   einfach hinzufügen und ändern.
 .form_wrap.user_form
   - form_for resource_name, resource, :url => registration_path(resource_name) do |f|
-    %li.labelwrap
-      = f.label :email, "E-Mail"
-      = f.text_field :email
-      
-    %li.labelwrap.half
-      = f.label :password, "gewünschtes Passwort"
-      = f.password_field :password
-    %li.labelwrap.half
-      = f.label :password_confirmation, "Bitte Passwort bestätigen"
-      = f.password_field :password_confirmation
+    .errors= f.error_messages
 
-    %li.buttonwrap= f.submit "Account erstellen", :class => 'button right_submit'
+    %ul
+      %li.labelwrap
+        = f.label :email, "E-Mail"
+        = f.text_field :email
+      
+      %li.labelwrap.half
+        = f.label :password, "gewünschtes Passwort"
+        = f.password_field :password
+      %li.labelwrap.half
+        = f.label :password_confirmation, "Bitte Passwort bestätigen"
+        = f.password_field :password_confirmation
+
+      %li.buttonwrap= f.submit "Account erstellen", :class => 'button right_submit'
+    %p
+      = f.check_box :agb_accept
+      = f.label :agb_accept, "Ich akzeptiere die #{link_to('Nutzungsbedingungen', '/pages/agb', :target => 'popup')} von Shoesizefinder."
   %p
     %small= t(:data_hint)
   = render :partial => "shared/devise_links" 

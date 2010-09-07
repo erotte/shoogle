@@ -7,48 +7,18 @@ jQuery.ajaxSetup({
 $(document).ready(function(){
 	init_shoe_completer();
 	$("input.passive").toggleDefaultValue();
-  init_searched_shoe_toggles();
-  init_searched_shoe_radio_toggles()	
 	$('#step-1').show("drop", { direction: "up", duration: 1200 })
-})	
+})
 
 
 init_shoe_completer = function(){
 	$('.shoe_completer').shoe_completer();
 }
 
-init_searched_shoe_radio_toggles = function(){
-  var $searched_shoe_form = $('#searched_shoe_form')
-  var $shoe_row = $('.shoe_row', $searched_shoe_form)
-	$("#with_searched_shoe_false").change(function(event){
-    this.checked ? $shoe_row.hide('normal') : $shoe_row.show('normal') 
-    $('input[type=text]', $searched_shoe_form).attr('disabled', 'disabled')	 
-	})
-  $("#with_searched_shoe_true").change(function(event){
-    this.checked ? $shoe_row.show('normal') : $shoe_row.hide('normal') 
-    $('input[type=text]', $searched_shoe_form).removeAttr('disabled')	 	 
-	})
-}
-
-init_searched_shoe_toggles = function(){
-	$('#toggle_model_search').click( function(event){
-		event.preventDefault()
-		var $clicked_link = $(this);
-		$('span.model', $(this).closest('form')).toggle(0, function(){
-			var linktext = $(this).is(":visible") ? "nur nach Marke suchen" : "Hersteller und Modell suchen"
-			var intro = $(this).is(":visible") ? "In welcher Größe passt mir von " : "Im welcher Größe passen mir Schuhe vom Hersteller"
-				$clicked_link.text(linktext).highlight();
-				$("#searched_shoe_intro").text(intro).highlight();
-		})
-	});
-
-
-}
 
 shoe_add_success = function(that){
 	$('.manufacturer, .model, .size', $(that.target)).val('');
 	$('.manufacturer').focus();
-	
 }
 
 
