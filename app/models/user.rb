@@ -1,9 +1,9 @@
 class User
   include CouchPotato::Persistence
 
-#  validates_acceptance_of :agb_accept,
-#                          :message => "Bitte akzeptiere unsere Nutzungsbedingungen",
-#                          :on => :create
+  validates_acceptance_of :agb_accept,
+                        :message => "Bitte akzeptiere unsere Nutzungsbedingungen",
+                        :if => Proc.new{|u| u.new_rec ord?}
 
   class << self
     include Devise::Models
