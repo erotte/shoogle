@@ -12,10 +12,9 @@ Scenario: The visitor saves its searched brand
     Given I am searching for "Nike"    
     And I have a "Adidas" "Superstar" in "46"
     And I have a "Adidas" "Samba" in "45"
-    When I follow "Ergebnis"
-    Then I should see "Dir passt die Marke" 
+    When I follow "meine Größe anzeigen"
+    Then I should see "Deine Größe"
     And I should see "Nike" 
-    And I should see "in der Größe"
 
 
 
