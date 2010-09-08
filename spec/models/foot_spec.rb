@@ -25,6 +25,32 @@ describe Foot do
       matches.should be_empty
     end
     
+    it "should yield a match" do  
+      @db.should_receive(:view).and_return({
+        "rows" => [{ 
+            "key" => ["eur","Adidas","Nike","Samba","AF1", 45], 
+            "value" => {"size_sum" => 2, "num_feet" => 2} }]
+      }, {
+        "rows" => []
+      })
+      matches = @foot.direct_matches
+      matches.size.should eql(1)
+    end
+    
+    it "should skip shoes without model name" do  
+      @db.should_receive(:view).once.and_return({
+        "rows" => [{ 
+            "key" => ["eur","Adidas","Nike","Samba","AF1", 45], 
+            "value" => {"size_sum" => 2, "num_feet" => 2} }]
+      })
+      
+      shoe_without_model_name = Shoe.new :manufacturer => "Rieker", :model => "", :sizes => {:eur => 45}
+      @foot.shoes = [@samba, shoe_without_model_name]
+      
+      matches = @foot.direct_matches
+      matches.size.should eql(1)
+    end
+    
   end
 
   
@@ -55,6 +81,20 @@ describe Foot do
       matches.should be_empty
     end
     
+    
+    it "should skip shoes without model name" do  
+      @db.should_receive(:view).once.and_return({
+        "rows" => [{ 
+            "key" => ["eur","Adidas","Nike","Samba","AF1"], 
+            "value" => {"size_sum" => 2, "num_feet" => 2} }]
+      })
+      
+      shoe_without_model_name = Shoe.new :manufacturer => "Rieker", :model => "", :sizes => {:eur => 45}
+      @foot.shoes = [@samba, shoe_without_model_name]
+      
+      matches = @foot.transposed_matches
+      matches.size.should be_eql(1)
+    end
   end
   
   describe "when computing recommended shoes" do
