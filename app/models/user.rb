@@ -9,8 +9,17 @@ class User
                      :logic => Proc.new{|v| ev = EmailVeracity::Address.new(v.email);ev.valid? && !ev.domain.blacklisted?},
                      :message => "Bitte gib eine gültige Email-Adresse an"
 
-  validates_presence_of :password, :password_confirmation, :level=> 1, :message => "Bitte gib ein Passwort und eine Passwortbestätigung ein"
-  validates_confirmation_of :password, :level=> 2, :message => "Die Passwortbestätigung muss mit dem Passwort übereinstimmen"
+  validates_presence_of :password, 
+                        :password_confirmation, 
+                        :level=> 1, 
+                        :message => "Bitte gib ein Passwort und eine Passwortbestätigung ein",
+                        :if => Proc.new { |u| u.new_record? }
+                        
+  
+  validates_confirmation_of :password, 
+                            :level=> 2, 
+                            :message => "Die Passwortbestätigung muss mit dem Passwort übereinstimmen",
+                            :if => Proc.new { |u| u.new_record? }
 
   class << self
     include Devise::Models
