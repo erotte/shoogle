@@ -1,0 +1,14 @@
+---
+default: &default
+  mail_from: mail@shoesizefinder.com
+  feedback_mail_recipient: shoesizefinder@googlemail.com
+
+development:
+  <<: *default
+  feedback_mail_recipient: erotte@gmail.com
+
+test:
+  <<: *default
+
+production: &production
+  <<: *default

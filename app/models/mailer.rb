@@ -3,7 +3,7 @@ class Mailer < ActionMailer::Base
   def feedback feedback
     subject    'Feedback ssf'
     body       :feedback => feedback
-    recipients "erotte@gmail.com"
-    from       "mailer@shoesizefinder.com"
+    recipients APP_CONFIG['feedback_mail_recipient']
+    from       APP_CONFIG['mail_from']
   end
 end
