@@ -15,7 +15,7 @@ $(document).ready(function() {
                                     $('#feedback.sidebar').animate({left: -$('#feedback.sidebar').outerWidth() })
                                 }
             )
-    $('.shoe_completer').shoe_completer();
+    init_shoe_completer()
     $("input.passive").toggleDefaultValue();
     $('#step-1').show("drop", { direction: "up", duration: 1200 })
 //    $('#feedback input[type=submit]').live('click', function(event){
@@ -25,6 +25,9 @@ $(document).ready(function() {
 
 })
 
+init_shoe_completer = function(){
+	$('.shoe_completer').shoe_completer();
+}
 
 shoe_add_success = function(that) {
     $('.manufacturer, .model, .size', $(that.target)).val('');
