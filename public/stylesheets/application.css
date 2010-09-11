@@ -227,6 +227,9 @@ footer .metanav {
   font-size: 13px;
   margin-bottom: 15px;
 }
+.labelwrap.required label {
+  font-weight: bold;
+}
 
 #feedback_toggle {
 	position: absolute;
@@ -651,19 +654,19 @@ table#foot_check_shoes {
 
 /* @group Devise */
 
-body.registrations .labelwrap {
+body.registrations #panel .labelwrap {
 	width: 560px;
 	margin-bottom: 15px;
 }
-body.registrations .labelwrap input[type=text],
-body.registrations .labelwrap input[type=password]{
+body.registrations #panel .labelwrap input[type=text],
+body.registrations #panel .labelwrap input[type=password]{
 	width: 545px;
 }
-body.registrations .labelwrap.half{
+body.registrations #panel .labelwrap.half{
 	width: 268px;
 }
-body.registrations .labelwrap.half input[type=text],
-body.registrations .labelwrap.half input[type=password]{
+body.registrations #panel .labelwrap.half input[type=text],
+body.registrations #panel .labelwrap.half input[type=password]{
 	width: 255px;
 }
 body.registrations #panel p {

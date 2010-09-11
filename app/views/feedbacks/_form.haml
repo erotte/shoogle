@@ -9,11 +9,13 @@
       %li.labelwrap
         = f.label :lastname, "Nachname"
         = f.text_field :lastname
-      %li.labelwrap
-        = f.label :email, "E-Mail"
+      %li.labelwrap.required
+        = f.label :email, "E-Mail *"
         = f.text_field :email
-      %li.labelwrap
-        = f.label :message, "Deine Nachricht"
+      %li.labelwrap.required
+        = f.label :message, "Deine Nachricht *"
         = f.text_area :message, :rows => 8, :cols => 45
       %li.buttonwrap.tar
         =submit_tag( 'abschicken', :class => 'button right_submit')
+  %p.small
+    * erforderliche Angabe
