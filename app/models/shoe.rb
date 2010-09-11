@@ -10,7 +10,6 @@ class Shoe
   property :approved
 
   validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
-  validates_presence_of :model, :message => "Bitte gib ein Schuhmodell ein"
   validates_presence_of :size, :message => "Bitte gib eine Größe ein" 
   validates_format_of :size, :with => SIZE_REGEXP, :message => "Bitte gib die Größe mit max. einer Nachkommastelle an, z.B. 10, 10.5,  44,5. "
 
@@ -30,7 +29,11 @@ class Shoe
       }
       JS
     :group => true,
-    :results_filter => lambda{|results| results['rows'].map{|row| RecommendationResult.new(row['key'][2], row['key'][3], row['value'].to_i)}}
+    :results_filter =>  lambda{ |results| 
+                          results['rows'].map do |row| 
+                            RecommendationResult.new(row['key'][2], row['key'][3], row['value'].to_i)
+                          end
+                        }
 
     view :names_by_start_of_name, :type => :raw,
       :map => <<-JS,

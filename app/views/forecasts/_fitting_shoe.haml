@@ -10,14 +10,14 @@
     });
 
 %h2 Passende Schuhe:
-=render :partial => 'buttons'
+.buttonwrap
+  =link_to "Neue Suche", foot_path(@foot), :class => 'button secondary'
 
-%table#fitting_shoes
-  %thead
-    %tr
-      %th Hersteller
-      %th Modell
-      %th Treffer
-      %th
-  %tbody    
-    = render :partial => 'recommended_shoe', :collection => @foot.recommended_shoes
+
+
+- if @foot.recommended_shoes.present?
+  %table#fitting_shoes
+    %tbody    
+      = render :partial => 'recommended_shoe', :collection => @foot.recommended_shoes
+- else
+  Wir haben leider keine passenden Schuhe gefunden!

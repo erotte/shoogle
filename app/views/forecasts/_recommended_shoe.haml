@@ -1,12 +1,5 @@
 %tr{ :class => cycle('odd','even') }
-  %td=recommended_shoe.manufacturer.capitalize
-  %td=recommended_shoe.model.capitalize
-  %td=recommended_shoe.num_feet
   %td.shoes
     - if recommended_shoe.affiliate_shoes.present?
       %ol.results.jcarousel-skin-ssf
         = render 'affiliate_shoe/show', :affiliate_shoes => recommended_shoe.affiliate_shoes
-    - else
-      %p.not_found
-        = image_tag 'app/not_available.png', :title => "Dieser Schuh ist leider nicht verfügbar"
-        %span Leider keine passenden Schuhe gefunden
