@@ -41,7 +41,7 @@ class FeedbacksController < ApplicationController
   # POST /feedbacks
   # POST /feedbacks.xml
   def create
-    sleep 2
+    sleep 0.2
     @feedback = Feedback.new(params[:feedback])
     respond_to do |format|
       if db.save(@feedback)

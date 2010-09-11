@@ -202,7 +202,7 @@ footer .metanav {
 
 #feedback.sidebar {
 	position: fixed;
-	top: 160px;
+	top: 140px;
 	left: -450px;
 	background: #fff;
 	z-index: 90;
@@ -356,12 +356,12 @@ ul.metanav li a:hover {
 
 #panel.active {
 	-moz-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 6px 12px 14px rgba(0, 0, 0, 0.5);
 }
 
 .dropshadow {
 	-moz-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 4px 12px 14px rgba(0, 0, 0, 0.5);
 }
 	
 .form_wrap {

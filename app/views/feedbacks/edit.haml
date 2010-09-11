@@ -1,0 +1,8 @@
+%h1 Editing feedback
+- form_for(@feedback) do |f|
+  = f.error_messages
+  %p
+    = f.submit 'Update'
+= link_to 'Show', @feedback
+|
+\#{link_to 'Back', feedbacks_path}
