@@ -9,7 +9,10 @@ class Feedback
   property :ua
   property :session_data
 
-  validates_presence_of :email, :message => "Bitte gib eine gültige Email-Adresse an"
+  validates_true_for :email,
+                     :logic => Proc.new{|v| ev = EmailVeracity::Address.new(v.email);ev.valid? && !ev.domain.blacklisted?},
+                     :message => "Bitte gib eine gültige Email-Adresse an"
+
   validates_presence_of :message, :message => "Bitte gib eine Nachricht ein"
 
   view :all, :key => :created_at

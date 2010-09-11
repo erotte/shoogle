@@ -18,9 +18,10 @@ $(document).ready(function() {
     $('.shoe_completer').shoe_completer();
     $("input.passive").toggleDefaultValue();
     $('#step-1').show("drop", { direction: "up", duration: 1200 })
-    $('#feedback input[type=submit]').live('click', function(event){
-       $(this).disable();
-    })
+//    $('#feedback input[type=submit]').live('click', function(event){
+//       $(this).disable();
+//       return true;
+//    })
 
 })
 
