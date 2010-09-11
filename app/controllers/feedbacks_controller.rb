@@ -1,4 +1,5 @@
 class FeedbacksController < ApplicationController
+  before_filter :collect_ua_data, :only => [:create, :update]
   # GET /feedbacks
   # GET /feedbacks.xml
   def index
@@ -40,14 +41,16 @@ class FeedbacksController < ApplicationController
   # POST /feedbacks
   # POST /feedbacks.xml
   def create
+    sleep 2
     @feedback = Feedback.new(params[:feedback])
-
     respond_to do |format|
       if db.save(@feedback)
         format.html { redirect_to(@feedback, :notice => 'Feedback was successfully created.') }
+        format.js{ flash.now[:notice] = "Vielen Dank für dein Feedback!"; render :partial => 'feedbacks/form' }
         format.xml  { render :xml => @feedback, :status => :created, :location => @feedback }
       else
         format.html { render :action => "new" }
+        format.js { render :partial => 'feedbacks/form', :success => false}
         format.xml  { render :xml => @feedback.errors, :status => :unprocessable_entity }
       end
     end
@@ -80,4 +83,11 @@ class FeedbacksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def collect_ua_data
+    return unless @feedback.present?
+    @feedback.ua ||= request.env['HTTP_USER_AGENT']
+    @feedback.session_data ||= request.env.to_json
+  end
+
 end

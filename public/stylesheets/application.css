@@ -1,8 +1,8 @@
 /* @override 
-	http://shoogle.local/stylesheets/application.css?1283167778
-	http://shoogle.local/stylesheets/application.css?1283765705
-	http://shoogle.local/stylesheets/application.css?1283766467
-	http://shoogle.local/stylesheets/application.css?1283767215
+	http://ssf/stylesheets/application.css?1284140667
+	http://ssf/stylesheets/application.css?1284142224
+	http://ssf/stylesheets/application.css?1284198951
+	http://ssf/stylesheets/application.css?1284199121
 */
 
 /* @group basics and resets */
@@ -194,6 +194,69 @@ footer .metanav {
 }
 
 
+/* @end */
+
+
+/* @group Feedback */
+
+#feedback.sidebar {
+	position: fixed;
+	top: 160px;
+	left: -450px;
+	background: #fff;
+	z-index: 90;
+	font-size: 13px;
+	width: 450px;
+} 
+#feedback_wrap{
+	margin: 20px; 
+}
+
+#feedback.sidebar #flash {
+	width:  auto;
+}
+#feedback.sidebar h3{
+	margin-top: 0;
+}	
+#feedback.sidebar p {
+	margin-bottom: 1em;
+}
+
+#feedback.sidebar .labelwrap {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+#feedback_toggle {
+	position: absolute;
+	display: block;
+	width: 28px;
+	height: 100px;
+	top: 0;
+	right: -28px;
+	background: red;
+	outline: 0;
+}
+
+#feedback.sidebar input[type="text"],
+#feedback.sidebar textarea {
+	font-size: 13px;
+}
+#feedback_firstname,
+#feedback_lastname{
+	width: 170px;
+}
+#feedback_email,
+#feedback.sidebar textarea {
+	width: 375px;
+}
+#feedback.sidebar textarea {
+	height: 100px;
+}
+
+#feedback.sidebar .buttonwrap {
+	display: block;
+}
 /* @end */
 
 /* @group Helper */

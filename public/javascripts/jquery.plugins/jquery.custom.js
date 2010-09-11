@@ -50,9 +50,9 @@
 /**
  * Enables or disables any matching elements.
  */
-$.fn.enable = function(b) { 
-    if (b == undefined) b = true;
-    return this.each(function() { 
-        this.disabled = !b 
-    });
+$.fn.disable = function() {
+    $(this).attr('disabled', "disabled").addClass('disabled')
+};
+$.fn.enable = function() {
+    $(this).removeAttr('disabled').removeClass('disabled')
 };

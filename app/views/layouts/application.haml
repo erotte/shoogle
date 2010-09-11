@@ -36,8 +36,7 @@
             %li= link_to "Login", new_user_session_path
             %li= link_to "Account erstellen", new_user_registration_path
             %li= link_to "Alle Schuhe löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die eingegeben Schuhe werden gelöscht.\n Fortfahren?"
-
-      =#render :partial => 'layouts/claim' 
+      =#render :partial => 'layouts/claim'
       = render :partial => "/layouts/flash_block" if flash.present?    
       =# debug current_user
       #panel.active
@@ -48,5 +47,6 @@
           %li= link_to "Kontakt und Impressum", '/pages/impressum'
           %li= link_to "Nutzungsbedingungen", '/pages/agb'
 
+    = render :partial => 'layouts/feedback'
     = render :partial => '/layouts/bottom'
     = yield :bottom
