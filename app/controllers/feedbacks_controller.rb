@@ -43,6 +43,7 @@ class FeedbacksController < ApplicationController
   def create
     sleep 0.2
     @feedback = Feedback.new(params[:feedback])
+    collect_ua_data
     respond_to do |format|
       if db.save(@feedback)
         format.html { redirect_to(@feedback, :notice => 'Feedback was successfully created.') }
@@ -86,8 +87,8 @@ class FeedbacksController < ApplicationController
 
   def collect_ua_data
     return unless @feedback.present?
-    @feedback.ua ||= request.env['HTTP_USER_AGENT']
-    @feedback.session_data ||= request.env.to_json
+    @feedback.ua = request.env['HTTP_USER_AGENT']
+#    @feedback.session_data = request.env.to_json
   end
 
 end
