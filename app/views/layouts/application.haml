@@ -20,8 +20,8 @@
     = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons', 'tipsy'
     = stylesheet_link_tag "handheld.css", :media => "handheld"
 
-    /[if lte IE7]
-      = stylesheet_link_tag 'ie'
+    /[if lte IE 7]
+      = stylesheet_link_tag 'ie7'
     
     = yield :head
   %body{:class => body_class }

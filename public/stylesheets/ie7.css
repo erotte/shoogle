@@ -1,0 +1,10 @@
+
+.labelwrap {
+	float: left	;
+}
+
+.buttonwrap {
+	position: absolute;
+	left:  589px;
+	margin-top: 24px;
+}
