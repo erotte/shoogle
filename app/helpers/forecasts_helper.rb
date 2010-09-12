@@ -45,9 +45,9 @@ module ForecastsHelper
   end
 
   def shoe_name_or_manufacturer
-    if @forecast.manufacturer.present? && @forecast.model.present?
+    if @forecast.manufacturer.present? && @forecast.model.present? && !@fallback_to_manufacturer_search
       "den #{@forecast.manufacturer.capitalize} #{@forecast.model.capitalize}"
-    elsif @forecast.manufacturer.present? && @forecast.model.blank?
+    elsif @forecast.manufacturer.present?
       "Schuhe von #{@forecast.manufacturer.capitalize}"
       
     end
