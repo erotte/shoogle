@@ -29,6 +29,7 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js {render :layout => false }
       format.xml  { render :xml => @feedback }
     end
   end
@@ -47,11 +48,14 @@ class FeedbacksController < ApplicationController
     respond_to do |format|
       if db.save(@feedback)
         format.html { redirect_to(@feedback, :notice => 'Feedback was successfully created.') }
-        format.js{ flash.now[:notice] = "Vielen Dank für dein Feedback!"; render :partial => 'feedbacks/form' }
+        format.js do
+          flash.now[:notice] = "Vielen Dank für dein Feedback!"
+          render :partial => 'feedbacks/completed', :layout => false
+        end
         format.xml  { render :xml => @feedback, :status => :created, :location => @feedback }
       else
         format.html { render :action => "new" }
-        format.js { render :partial => 'feedbacks/form', :success => false}
+        format.js { render :action => "new", :layout => false, :success => false}
         format.xml  { render :xml => @feedback.errors, :status => :unprocessable_entity }
       end
     end

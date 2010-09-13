@@ -27,7 +27,8 @@
   %body{:class => body_class }
     #page
       %header
-        %h1#logo=link_to image_tag("app/logo_ssf_invert_white.png"), root_path
+        = image_tag("app/betabadge.png", :alt => "beta!")
+        %h1#logo=link_to image_tag("app/logo_ssf_invert_white.png", :alt => "Shoesizefinder"), root_path
         %ul.metanav
           - if user_signed_in? 
             %li= link_to "#{current_user.email} (Ausloggen)", destroy_user_session_path

@@ -2,8 +2,7 @@ module FeedbacksHelper
 
   def feedback_form_options
     {
-      :update => 'feedback_wrap',
-      :success => "console.debug('success', this)"
+      :update => 'feedback_wrap'
     }
   end
 end

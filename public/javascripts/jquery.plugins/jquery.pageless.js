@@ -48,7 +48,7 @@
     params:       {}, // params of the query you can pass auth_token here
     distance:     100, // page distance in px to the end when the ajax function is launch
     loaderImage:  "/images/load.gif",
-	scrape: function(data) {console.debug("scrape data: ", data ); return data; }  // Don't do anything by default
+	scrape: function(data) { }  // Don't do anything by default
   };
   
   $.pageless.loaderHtml = function(){

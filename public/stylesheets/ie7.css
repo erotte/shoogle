@@ -3,8 +3,12 @@
 	float: left	;
 }
 
-.buttonwrap {
+#panel .buttonwrap {
 	position: absolute;
 	left:  589px;
 	margin-top: 24px;
 }
+
+#searched_shoe, #shoe_area {
+	clear: both;
+} 

@@ -657,11 +657,11 @@ body.registrations #panel .labelwrap input[type=text],
 body.registrations #panel .labelwrap input[type=password]{
 	width: 545px;
 }
-body.registrations #panel .labelwrap.half{
+#panel .labelwrap.half{
 	width: 268px;
 }
-body.registrations #panel .labelwrap.half input[type=text],
-body.registrations #panel .labelwrap.half input[type=password]{
+#panel .labelwrap.half input[type=text],
+#panel .labelwrap.half input[type=password]{
 	width: 255px;
 }
 body.registrations #panel p {
@@ -670,7 +670,7 @@ body.registrations #panel p {
 	font-size: 14px;
 }
 
-body.registrations .errorList {
+body.registrations #panel .errorList {
 	width: 553px;
 	margin: 12px 0;
 	font-size: 14px;
