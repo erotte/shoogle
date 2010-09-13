@@ -28,6 +28,7 @@ class ForecastsController < ApplicationController
     searched_shoe = @foot.searched_shoe
     @affiliate_shoes = AffiliateShoe.find(:manufacturer => searched_shoe.manufacturer_name, :model => searched_shoe.model_name)
     if @affiliate_shoes.empty?
+      @fallback_to_manufacturer_search = true
       @affiliate_shoes = AffiliateShoe.find(:manufacturer => searched_shoe.manufacturer_name)
     end
     @affiliate_shoes = @affiliate_shoes.paginate(:per_page => 10, :page => params[:page])
