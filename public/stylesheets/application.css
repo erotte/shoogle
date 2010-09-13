@@ -754,17 +754,19 @@ ol.results a:visited {
 ol.results a .imagewrap {
 	background: #fff;
 	height: 185px;
+	width: 150px;
 	display: table-cell;
 	vertical-align: middle;
 }
 
 ol.results a img{
-	width:  150px;
+	width: 140px;
+	margin-left: 10px;
 }
 ol.results .price {
 	position: absolute;
 	top: 145px;
-	right: 16px;
+	right: 3px;
 	font-size: 22px;
 	font-weight: normal;
 	background: #fff;
