@@ -1,3 +1,7 @@
+/* @override 
+	http://localhost:3000/stylesheets/application.css?1284462650
+	http://localhost:3000/stylesheets/application.css?1284462885
+*/
 
 /* @group basics and resets */
 
@@ -96,6 +100,12 @@ header {
   padding: 0 15px;
   margin-top: 0;
   position: relative;
+}
+
+#betabadge{
+	position: absolute;
+	left: 390px;
+	top: 6px;
 }
 
 header .metanav {
@@ -350,14 +360,11 @@ ul.metanav li a:hover {
 	z-index: 30;
 	}
 
-#panel.active {
-	-moz-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 6px 12px 14px rgba(0, 0, 0, 0.5);
-}
-
+#panel.active,
 .dropshadow {
-	-moz-box-shadow: 0 12px 12px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 4px 12px 14px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 4px 5px 14px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 4px 5px 14px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 4px 5px 14px 4px rgba(0, 0, 0, 0.5);
 }
 	
 .form_wrap {

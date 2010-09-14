@@ -27,7 +27,7 @@
   %body{:class => body_class }
     #page
       %header
-        = image_tag("app/betabadge.png", :alt => "beta!")
+        = image_tag("app/betabadge.png", :id => 'betabadge', :alt => "beta!")
         %h1#logo=link_to image_tag("app/logo_ssf_invert_white.png", :alt => "Shoesizefinder"), root_path
         %ul.metanav
           - if user_signed_in? 
