@@ -1,6 +1,7 @@
 /* @override 
 	http://localhost:3000/stylesheets/application.css?1284462650
 	http://localhost:3000/stylesheets/application.css?1284462885
+	http://localhost:3000/stylesheets/application.css?1284463083
 */
 
 /* @group basics and resets */
@@ -362,9 +363,9 @@ ul.metanav li a:hover {
 
 #panel.active,
 .dropshadow {
-	-moz-box-shadow: 4px 5px 14px 4px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 4px 5px 14px 4px rgba(0, 0, 0, 0.5);
-	box-shadow: 4px 5px 14px 4px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 6px 14px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 2px 6px 14px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 6px 14px 4px rgba(0, 0, 0, 0.5);
 }
 	
 .form_wrap {
