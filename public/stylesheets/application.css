@@ -244,8 +244,9 @@ footer .metanav {
 	right: -28px;
 	background: red;
 	outline: 0;
-	-moz-box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.5);
 }
 
 #feedback.sidebar input[type="text"],
