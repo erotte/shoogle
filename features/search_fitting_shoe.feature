@@ -26,4 +26,17 @@ Feature: Searching for a fitting shoe
     Then I should see "Deine Größe"
     Then I should see "für den Schuh"
     And I should see "Nike"
-    And I should see "Air Force 1" 
+    And I should see "Air Force 1"
+
+  Scenario: The visitor saves shoes with comma separator
+    Given I am searching a "Nike" "Air Force 1"
+    And I have a "Puma" "Handball" in "11,5"
+    Then I should see "11.5"
+
+  Scenario: The visitor saves shoes with comma or fractions
+    Given I am searching a "Nike" "Air Force 1"
+    And I have a "Adidas" "Samba" in "44 2/3"
+    Then I should see "44 2/3"
+    And I should see "44.67"
+
+
