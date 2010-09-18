@@ -33,7 +33,7 @@ Feature: Searching for a fitting shoe
     And I have a "Puma" "Handball" in "11,5"
     Then I should see "11.5"
 
-  Scenario: The visitor saves shoes with comma or fractions
+  Scenario: The visitor saves shoes with fractions
     Given I am searching a "Nike" "Air Force 1"
     And I have a "Adidas" "Samba" in "44 2/3"
     Then I should see "44 2/3"

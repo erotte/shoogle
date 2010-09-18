@@ -2,4 +2,7 @@
 %li{ :class => cycle('odd','even') }
   = delete_shoe_button(shoe_counter) 
   = "#{shoe.manufacturer} // #{shoe.model.present? ? shoe.model+' //' : '' }"
-  = "Größe <small>(#{size_code(shoe)})</small>: #{shoe.size_string} <small>(#{formatted_size(shoe)}</small>)"
+  Größe
+  %small{:title => formatted_size(shoe)}
+    = "(#{size_code(shoe)}):"
+  = shoe.size_string
