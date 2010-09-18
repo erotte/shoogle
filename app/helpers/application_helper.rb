@@ -36,8 +36,12 @@ module ApplicationHelper
     end
   end
 
-  def formatted_size size
-    number_with_precision( size, :precision => 1, :separator => ".", :strip_insignificant_zeros => true)
-
+  def formatted_size shoe
+    number_with_precision( shoe.size, :precision => 2, :separator => ".", :strip_insignificant_zeros => true)
   end
+
+  def size_code shoe
+    shoe.has_eur_size? ? 'EUR' : 'US'
+  end
+
 end

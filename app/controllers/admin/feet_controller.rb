@@ -4,7 +4,7 @@ class Admin::FeetController < Admin::BaseController
   def index
     @feet  = db.view(Foot.all)
     respond_to do |format|
-      format.html { render "feet/index" }
+      format.html
       format.xml  { render :xml => @feet }
     end
   end

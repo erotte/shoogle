@@ -17,3 +17,6 @@ production:
 
 test:
   google: false
+
+cucumber:
+  google: false

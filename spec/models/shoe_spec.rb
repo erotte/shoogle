@@ -52,6 +52,6 @@ describe Shoe do
   it "should format shoe sizes with fractions" do
     shoe = Shoe.new(@valid_attributes.merge(:size => "44 1/3"))
     shoe.size.should_not be_nil
-    shoe.size.should eql(44.33)
+    shoe.size.should eql(44.0 +1.0 /3.0)
   end
 end

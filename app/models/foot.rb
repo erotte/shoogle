@@ -1,7 +1,6 @@
 
 class Foot 
   include CouchPotato::Persistence
-  
   property :shoes, :default => []
   property :searched_shoe, :type => SearchedShoe
   property :user, :type => User
@@ -9,7 +8,7 @@ class Foot
   before_save :set_shoe_sizes
 
   view :all, :key => :created_at
-  
+
   view :fitting, :type => :raw, 
     :map => <<-JS,
       function(doc) {
@@ -121,8 +120,9 @@ class Foot
   end
   
   private
-  
+
   def db
     CouchPotato.database
   end
+
 end

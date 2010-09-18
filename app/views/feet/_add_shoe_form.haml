@@ -11,7 +11,7 @@
         =f.text_field(:model, :class => 'model') 
       %li.labelwrap.size
         =f.label(:size, 'Size')
-        =f.text_field(:size, :class => 'size', :autocomplete => 'off')
+        =f.text_field(:size_string, :class => 'size', :autocomplete => 'off')
       %li.buttonwrap  
         =f.submit 'Passt mir!', :class => 'button right_submit'
 -if @shoe

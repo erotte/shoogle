@@ -61,7 +61,7 @@ module EmailVeracity
       }xi,
       :must_include => [],
       :timeout => 2,
-      :skip_lookup => false,
+      :skip_lookup => true,
       :enforce_blacklist => false,
       :enforce_whitelist => true }
     @options = DEFAULT_OPTIONS.clone

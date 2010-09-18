@@ -1,17 +1,20 @@
 class Shoe
-  SIZE_REGEXP = /^\d{1,2}(,?|.?)\d{1,2}?$/
+
+  SIZE_REGEXP = /^\d{1,2}(,|.)?(\d{1,2}?|\s?(\d\/\d|&.{6};))$/ # 42, 42,5, 42.5, 42 1/2, 42 &frac12;
   include CouchPotato::Persistence
   include ActionView::Helpers::NumberHelper
 
   property :size, :type => Float
+  property :size_string
   property :sizes
   property :model
   property :manufacturer
   property :approved
 
+  before_save :set_sizes
   validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
-  validates_presence_of :size, :message => "Bitte gib eine Größe ein" 
-  validates_format_of :size, :with => SIZE_REGEXP, :message => "Bitte gib die Größe mit einer, maximal zwei Nachkommastellen an, z.B. 10, 10.5,  44,5, 43.66. "
+  validates_presence_of :size_string, :message => "Bitte gib eine Größe ein"
+  validates_format_of :size_string, :with => SIZE_REGEXP, :message => "Bitte gib die Größe mit einer, maximal zwei Nachkommastellen an, z.B. 10, 10.5,  44,5, 43.66. "
 
   view :recommended, :type => :raw,
     :map => <<-JS,
@@ -89,10 +92,11 @@ class Shoe
   end
 
   def size= value
-    @size = Size.new(value).to_f.round(2)
+    @size = SizeFormatter.new(value).to_f
   end
 
   def set_sizes
+    self.size = SizeFormatter.new(size_string).to_f  if size_string.present?
     self.sizes = {( has_eur_size? ? :eur : :us ) => @size}
   end
 

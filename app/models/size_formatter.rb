@@ -1,4 +1,4 @@
-class Size
+class SizeFormatter
   include ActionView::Helpers::NumberHelper
   @@separator = '.'
   #I18n.translate(:'number.format')[:separator]
@@ -11,11 +11,11 @@ class Size
   end
 
   def to_s
-    strip_insignificant_zeros formatted_number(to_f)
+    strip_insignificant_zeros(formatted_number(to_f)) rescue nil
   end
 
   def to_f
-    (@integer + @fraction).to_f rescue nil
+    (@integer + @fraction).to_f  rescue nil
   end
 
   def to_i
@@ -24,7 +24,7 @@ class Size
 
   def extract_int
     val = nil
-    if fraction_string?
+    if got_fraction_string?
       val = @value_string.gsub(/\s*\d\/\d/, '')
     else
       val = formatted_number(@value_string)
@@ -39,7 +39,7 @@ class Size
 
   def extract_fraction
     fraction = nil
-    if fraction_string?
+    if got_fraction_string?
       fract_part = @value_string[/\d\/\d/]
       fraction = fract_part.split('/').inject { |a, b| a.to_f / b.to_f }
     else
@@ -48,7 +48,7 @@ class Size
     fraction
   end
 
-  def fraction_string?
+  def got_fraction_string?
     /\s*\d\/\d/ === @value_string
   end
 

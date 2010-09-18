@@ -7,7 +7,6 @@ describe User do
             :email => "aaa@bbb.de",
             :password => 'geheim',
             :password_confirmation => 'geheim'
-
     }
   end
 

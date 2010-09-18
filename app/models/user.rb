@@ -6,7 +6,7 @@ class User
                           :if => Proc.new { |u| u.new_record? }
 
   validates_true_for :email,
-                     :logic => Proc.new{|v| ev = EmailVeracity::Address.new(v.email);ev.valid? && !ev.domain.blacklisted?},
+                     :logic => Proc.new{|v| ev = EmailVeracity::Address.new(v.email); (ev.valid? && !ev.domain.blacklisted?)},
                      :message => "Bitte gib eine gültige Email-Adresse an"
 
   validates_presence_of :password, 

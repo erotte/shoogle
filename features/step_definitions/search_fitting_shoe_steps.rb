@@ -20,5 +20,5 @@ end
 def fill_shoe_inputs manufacturer, model, size
   fill_in("shoe[manufacturer]", :with => manufacturer)
   fill_in("shoe[model]", :with => model)
-  fill_in("shoe[size]", :with => size)
+  fill_in("shoe[size_string]", :with => size)
 end
