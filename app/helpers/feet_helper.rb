@@ -4,11 +4,11 @@ module FeetHelper
     { :update => 'panel',
       :complete => "
                     $('#add_shoe_form').show();
-                    init_shoe_completer();
-                    $('#losjetzt_eingeben').show('drop', { direction: 'up' })
-                    $('#search_shoes_submit').val('Ändern')
+                    $('#losjetzt_eingeben').show('drop', { direction: 'up' });
+                    $('#search_shoes_submit').val('Ändern');
                     $('#foot_fields input.manufacturer').focus();
-                    ",
+                    $('#searched_shoe_form').shoe_completer()
+                   ",
       :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }
     }  
   end
@@ -18,7 +18,8 @@ module FeetHelper
                    {
                     :url => foot_searched_shoes_path(@foot),
                     :html => {:title  => "löschen", :class => 'delete', :rel => 'tipsy'},
-                    :method => :delete, :update => 'panel'}.merge(opts)
+                    :method => :delete, :update => 'panel'}.merge(opts),
+                    :complete => "$('#searched_shoe_form').shoe_completer()"
   end
 
   def edit_seached_shoe_button opts={}
@@ -27,7 +28,8 @@ module FeetHelper
                     :method => :get,
                     :update => 'searched_shoe',
                     :html => {:title => "bearbeiten", :rel => 'tipsy', :class => 'edit'},
-                    :complete => "$('#searched_shoe_form').shoe_completer()"}.merge(opts)
+                    :complete => "$('#searched_shoe_form').shoe_completer()"
+                   }.merge(opts)
   end
 
   def delete_shoe_button counter
@@ -42,6 +44,7 @@ module FeetHelper
     { :update => 'shoe_area',
       :complete => "
                     $('#foot_fields input.manufacturer').focus();
+                    $('#foot_fields').shoe_completer()
                    ",
     :html => {:class => 'foot_shoes_form', :id => 'foot_fields'}
     }
