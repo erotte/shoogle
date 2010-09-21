@@ -63,7 +63,7 @@ module ApplicationHelper
       "7/8" => '&#x215E;'   # Seven eighths
     }
     entities_list.each do |key, value|
-      size_string.gsub!(key, value)
+      size_string.gsub!(/\s?#{key}/, value)
     end
     size_string
   end
