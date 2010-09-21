@@ -44,4 +44,28 @@ module ApplicationHelper
     shoe.has_eur_size? ? 'EUR' : 'US'
   end
 
+  def pretty_size size_string
+    entities_list = {
+      "1/2" => '&frac12;',  # One half
+      "1/4" => '&frac14;',  # One quarter
+      "3/4" => '&frac34;',  # Three quarters
+      "1/3" => '&#x2153;',  # One third
+      "2/3" => '&#x2154;',  # Two thirds
+      "1/5" => '&#x2155;',  # One fifth
+      "2/5" => '&#x2156;',  # Two fifths
+      "3/5" => '&#x2157;',  # Three fifths
+      "4/5" => '&#x2158;',  # Four fifths
+      "1/6" => '&#x2159;',  # One sixth
+      "5/6" => '&#x215A;',  # Five sixths
+      "1/8" => '&#x215B;',  # One eighth
+      "3/8" => '&#x215C;',  # Three eighths
+      "5/8" => '&#x215D;',  # Five eighths
+      "7/8" => '&#x215E;'   # Seven eighths
+    }
+    entities_list.each do |key, value|
+      size_string.gsub!(key, value)
+    end
+    size_string
+  end
+
 end

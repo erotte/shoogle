@@ -3,6 +3,6 @@
   = delete_shoe_button(shoe_counter) 
   = "#{shoe.manufacturer} // #{shoe.model.present? ? shoe.model+' //' : '' }"
   Größe
-  %small{:title => formatted_size(shoe)}
+  %small
     = "(#{size_code(shoe)}):"
-  = shoe.size_string
+  %span{:title => formatted_size(shoe)}= pretty_size(shoe.size_string)

@@ -16,7 +16,7 @@ Feature: Searching for a fitting shoe
     And I enter shoe "Adidas" "Superstar" in "46"
     When I press "shoe_submit"
     Then I should see "Adidas"
-    And I should see "46.0"
+    And I should see "46"
 
   Scenario: The visitor proceeds to the result page
     Given I am searching a "Nike" "Air Force 1"
@@ -31,12 +31,11 @@ Feature: Searching for a fitting shoe
   Scenario: The visitor saves shoes with comma separator
     Given I am searching a "Nike" "Air Force 1"
     And I have a "Puma" "Handball" in "11,5"
-    Then I should see "11.5"
+    Then I should see "11,5"
 
   Scenario: The visitor saves shoes with fractions
     Given I am searching a "Nike" "Air Force 1"
     And I have a "Adidas" "Samba" in "44 2/3"
-    Then I should see "44 2/3"
-    And I should see "44.67"
+    Then I should see "44 ⅔"
 
 
