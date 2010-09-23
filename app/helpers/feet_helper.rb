@@ -7,7 +7,7 @@ module FeetHelper
                     $('#losjetzt_eingeben').show('drop', { direction: 'up' });
                     $('#search_shoes_submit').val('Ändern');
                     $('#foot_fields input.manufacturer').focus();
-                    $('#searched_shoe_form').shoe_completer()
+                    init_shoe_completer()
                    ",
       :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }
     }  
