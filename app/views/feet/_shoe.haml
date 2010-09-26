@@ -5,4 +5,5 @@
   Größe
   %small
     = "(#{size_code(shoe)}):"
-  %span{:title => formatted_size(shoe)}= pretty_size(shoe.size_string)
+  %span= formatted_size(shoe)
+  

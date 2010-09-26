@@ -2,15 +2,6 @@ require 'Shoe' unless defined? Shoe
 
 class FeetController < ApplicationController
   before_filter :find_current_or_new_foot,  :only =>[:new, :create, :update]
-  # GET /feet 
-  # GET /feet .xml
-  def index
-    @feet  = db.view(Foot.all)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @feet }
-    end
-  end
 
   # GET /feet /1
   # GET /feet /1.xml
