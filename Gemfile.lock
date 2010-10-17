@@ -53,7 +53,7 @@ GEM
       term-ansicolor (~> 1.0.5)
     cucumber-rails (0.2.4)
       cucumber (>= 0.6.2)
-    database_cleaner (0.4.3)
+    database_cleaner (0.5.2)
     devise (1.0.6)
       warden (~> 0.10.3)
     diff-lcs (1.1.2)
@@ -115,7 +115,7 @@ DEPENDENCIES
   couchrest
   cucumber
   cucumber-rails (~> 0.2.4)
-  database_cleaner (~> 0.4.3)
+  database_cleaner
   devise (= 1.0.6)
   email_veracity
   erotte-validatable!
