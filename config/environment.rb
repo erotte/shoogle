@@ -26,17 +26,6 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  config.gem 'haml'
-  config.gem "simple_importer", :lib => false, :source => "http://gemcutter.org/"
-  config.gem "fastercsv", :lib => false
-  config.gem 'vlad', :lib => false
-  config.gem 'couchrest', :lib => false
-  config.gem 'json', :lib => false
-  config.gem 'json_pure', :lib => false, :version => "1.4.3"
-  config.gem 'devise', :lib => false, :version => '=1.0.6'
-  config.gem "will_paginate"
-  config.gem "email_veracity"
-
   
   # direkt als plugin -> git clone http://github.com/aeden/rails_sql_views vendor/plugins
   # config.gem 'rails_sql_views', :lib => 'rails_sql_views', :version => '>= 0.7.0', :source => "http://gems.github.com"
