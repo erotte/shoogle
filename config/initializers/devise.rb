@@ -67,7 +67,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default), :mongo_mapper
   # (requires mongo_ext installed) and :data_mapper (experimental).
   require 'devise/orm/couch_potato_devise'
-  config.orm = :couch_potato_devise
+  #config.orm = :couch_potato_devise
 
 
   require 'devise/hooks/delete_foot_id_on_session_when_loggin_out'

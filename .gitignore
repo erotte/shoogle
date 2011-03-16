@@ -1,5 +1,4 @@
-.idea/*
-log/*
+.bundle
 db/*.sqlite3
-*.DS_Store
-rerun.txt
+log/*.log
+tmp/**/*
