@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/arbovm/couch_potato
-  revision: d5a1857c448b224b247a550322b330460eaf958b
-  specs:
-    couch_potato (0.2.31)
-      couchrest (>= 0.24)
-      json
-
-GIT
   remote: git://github.com/ianwhite/pickle.git
   revision: 60a96b9f84d9a76c42c654472f35fc49bb47a5e5
   specs:
@@ -37,16 +29,7 @@ GEM
       activesupport (= 3.0.5)
       builder (~> 2.1.2)
       i18n (~> 0.4)
-    activerecord (3.0.5)
-      activemodel (= 3.0.5)
-      activesupport (= 3.0.5)
-      arel (~> 2.0.2)
-      tzinfo (~> 0.3.23)
-    activeresource (3.0.5)
-      activemodel (= 3.0.5)
-      activesupport (= 3.0.5)
     activesupport (3.0.5)
-    arel (2.0.9)
     autotest-growl (0.2.9)
     autotest-rails (4.1.0)
       ZenTest
@@ -54,6 +37,10 @@ GEM
     builder (2.1.2)
     ci_reporter (1.6.4)
       builder (>= 2.1.2)
+    couch_potato (0.4.0)
+      activemodel
+      couchrest (>= 1.0.1)
+      json
     couchrest (1.0.1)
       json (>= 1.4.6)
       mime-types (>= 1.15)
@@ -94,14 +81,6 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rails (3.0.5)
-      actionmailer (= 3.0.5)
-      actionpack (= 3.0.5)
-      activerecord (= 3.0.5)
-      activeresource (= 3.0.5)
-      activesupport (= 3.0.5)
-      bundler (~> 1.0)
-      railties (= 3.0.5)
     railties (3.0.5)
       actionpack (= 3.0.5)
       activesupport (= 3.0.5)
@@ -126,7 +105,6 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.5.0)
-    simple_importer (0.1.0)
     spork (0.8.4)
     syntax (1.0.0)
     term-ansicolor (1.0.5)
@@ -150,11 +128,13 @@ PLATFORMS
 
 DEPENDENCIES
   ZenTest
+  actionmailer
+  actionpack
+  activemodel
   autotest-growl
   autotest-rails
   ci_reporter
-  couch_potato!
-  couchrest
+  couch_potato
   cucumber
   cucumber-rails
   database_cleaner
@@ -165,10 +145,9 @@ DEPENDENCIES
   json
   json_pure (= 1.4.3)
   pickle!
-  rails (= 3.0.5)
+  railties
   rspec
   rspec-rails
-  simple_importer
   spork
   syntax
   validatable

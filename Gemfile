@@ -1,12 +1,14 @@
 source :rubygems
-gem "rails", "3.0.5"
+#gem "rails", "3.0.5"
+gem 'railties'
+gem 'actionpack'
+gem 'actionmailer'
+gem 'activemodel'
+gem 'couch_potato'
 gem 'haml', "2.2.3"
-gem "simple_importer", :require => false
 gem "fastercsv", :require => false
 gem 'vlad', :require => false
 gem 'vlad-git', :require => false
-gem 'couchrest'
-gem 'couch_potato', :git => "git://github.com/arbovm/couch_potato"
 gem 'json'
 gem 'json_pure', "1.4.3"
 gem 'devise'
@@ -27,6 +29,7 @@ group :test do
 	gem 'database_cleaner', :require => false 
 	gem 'rspec'
 	gem 'rspec-rails'
+  gem 'couch_potato'
   gem "pickle", :git => "git://github.com/ianwhite/pickle.git"
   gem 'ci_reporter'
 end

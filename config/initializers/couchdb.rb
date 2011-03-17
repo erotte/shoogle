@@ -33,4 +33,6 @@ else
   }
 
   COUCHDB_SERVER = CouchRest.new COUCHDB_CONFIG[:host_path]
+
+  CouchPotato::Config.validation_framework = :validatable
 end
