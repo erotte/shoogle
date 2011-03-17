@@ -1,4 +1,3 @@
-require 'Shoe' unless defined? Shoe
 
 class Admin::FeetController < Admin::BaseController
   def index

@@ -11,11 +11,9 @@ class Shoe
   property :manufacturer
   property :approved
 
-  before_save :set_sizes
-# TODO
-#  validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
-#  validates_presence_of :size_string, :message => "Bitte gib eine Größe ein"
-#  validates_format_of :size_string, :with => SIZE_REGEXP, :message => "Bitte gib die Größe mit einer, maximal zwei Nachkommastellen an, z.B. 10, 10.5,  44,5, 43.66. "
+  validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
+  validates_presence_of :size_string, :message => "Bitte gib eine Größe ein"
+  validates_format_of :size_string, :with => SIZE_REGEXP, :message => "Bitte gib die Größe mit einer, maximal zwei Nachkommastellen an, z.B. 10, 10.5,  44,5, 43.66. "
 
   view :recommended, :type => :raw,
     :map => <<-JS,

@@ -1,4 +1,3 @@
-require 'Shoe' unless defined? Shoe
 
 class FeetController < ApplicationController
   before_filter :find_current_or_new_foot,  :only =>[:new, :create, :update]
