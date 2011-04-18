@@ -25,16 +25,16 @@ group :test do
   gem 'syntax'
   gem 'spork'
   gem "cucumber"
-	gem 'cucumber-rails'
-	gem 'database_cleaner', :require => false 
-	gem 'rspec'
-	gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'database_cleaner', :require => false 
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'couch_potato'
   gem "pickle", :git => "git://github.com/ianwhite/pickle.git"
   gem 'ci_reporter'
 end
 
 group :development do
-	gem 'rspec'
-	gem 'rspec-rails'
+  gem 'rspec'
+  gem 'rspec-rails'
 end

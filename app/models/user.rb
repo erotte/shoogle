@@ -1,23 +1,28 @@
 class User
   include CouchPotato::Persistence
 
-  validates_acceptance_of :agb_accept,
-                          :message => "Bitte akzeptiere unsere Nutzungsbedingungen",
-                          :if => Proc.new { |u| u.new_record? }
+  #validates_acceptance_of :agb_accept,
+                          #:message => "Bitte akzeptiere unsere Nutzungsbedingungen",
+                          #:if => Proc.new { |u| u.new_record? }
+
+  validates_true_for :agb_accept,
+                     :logic => Proc.new{|u| u.agb_accept},
+                     :message => "Bitte akzeptiere unsere Nutzungsbedingungen",
+                     :if => Proc.new { |u| u.new_record? }
 
   validates_true_for :email,
                      :logic => Proc.new{|v| ev = EmailVeracity::Address.new(v.email); (ev.valid? && !ev.domain.blacklisted?)},
                      :message => "Bitte gib eine gültige Email-Adresse an"
 
-  validates_presence_of :password, 
-                        :password_confirmation, 
-                        :level=> 1, 
+  validates_presence_of :password,
+                        :password_confirmation,
+                        :level=> 1,
                         :message => "Bitte gib ein Passwort und eine Passwortbestätigung ein",
                         :if => Proc.new { |u| u.new_record? }
-                        
-  
-  validates_confirmation_of :password, 
-                            :level=> 2, 
+
+
+  validates_confirmation_of :password,
+                            :level=> 2,
                             :message => "Die Passwortbestätigung muss mit dem Passwort übereinstimmen",
                             :if => Proc.new { |u| u.new_record? }
 
@@ -28,7 +33,10 @@ class User
 
   property :foot_id
   property :agb_accept, :type => :boolean
-  
+  property :email
+  property :password_salt
+  property :encrypted_password
+
   view :by_id, :key => :_id
   view :by_email, :key => :email
   view :by_reset_password_token, :key => :reset_password_token
@@ -50,12 +58,12 @@ class User
     else
       Rails.logger.warn "!!!\n!!! not implemented\n!!!\noptions=#{options.inspect}"
     end
-    
+
     result = found.any? ? found.first : nil
     Rails.logger.debug "--- found ->#{result}<-"
     result
   end
-  
+
   def update_attributes attributes
     attributes.each do |key, value|
       meth = "#{key}=".to_sym
@@ -63,7 +71,7 @@ class User
     end
     CouchPotato.database.save! self
   end
-  
+
   def destroy
     CouchPotato.database.destroy_document(self)
   end
