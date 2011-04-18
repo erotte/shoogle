@@ -27,6 +27,7 @@ group :test do
   gem "cucumber"
   gem 'cucumber-rails'
   gem 'database_cleaner', :require => false 
+  gem 'capybara'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'couch_potato'
