@@ -5,7 +5,7 @@ gem 'actionpack'
 gem 'actionmailer'
 gem 'activemodel'
 gem 'couch_potato'
-gem 'haml', "2.2.3"
+gem 'haml', "3.0.25"
 gem "fastercsv", :require => false
 gem 'vlad', :require => false
 gem 'vlad-git', :require => false

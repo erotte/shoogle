@@ -2,8 +2,8 @@
   Du möchtest deine Schuhgröße für einen bestimmten Schuh wissen?
   %br
   Dann trage hier bitte mindestens den Hersteller ein.
-- remote_form_for( @foot, searched_shoe_form_options ) do |f|
-  - f.fields_for :searched_shoe , @foot.searched_shoe do |searched|
+= form_for( :foot, searched_shoe_form_options ) do |f|
+  = f.fields_for :searched_shoe, @foot.searched_shoe do |searched|
     %ol.shoe_row.shoe_completer
       %li.labelwrap
         = searched.label( :manufacturer_name, "Hersteller")
@@ -12,4 +12,4 @@
         = searched.label(:model_name, "Modell")
         = searched.text_field(:model_name, :class => "model")
       %li.buttonwrap=submit_tag( 'OK', :id => "searched_shoe_submit",  :class => 'button right_submit')
-      
+

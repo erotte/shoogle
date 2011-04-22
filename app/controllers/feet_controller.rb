@@ -15,11 +15,11 @@ class FeetController < ApplicationController
   # GET /feet /new
   # GET /feet /new.xml
   def new
-    if @foot.new_record?  
+    if @foot.new_record?
       respond_to do |format|
         format.html # new.html.erb
         format.xml  { render :xml => @foot }
-      end      
+      end
     else
       redirect_to edit_foot_path(@foot)
     end
@@ -30,8 +30,8 @@ class FeetController < ApplicationController
     @foot = db.load_document(params[:id])
   end
 
-  # POST /feet 
-  # POST /feet .xml
+  # POST /feet
+  # POST /feet.xml
   def create
     @foot = Foot.new params[:foot]
     if @foot.valid? and db.save!(@foot)
@@ -79,15 +79,15 @@ class FeetController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   private
-  
+
   def save_foot_to_current_user
     user = current_user
     if user
-      user.foot_id = @foot.id 
+      user.foot_id = @foot.id
       db.save!(user)
     end
   end
-  
+
 end

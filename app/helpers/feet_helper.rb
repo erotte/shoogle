@@ -9,8 +9,11 @@ module FeetHelper
                     $('#foot_fields input.manufacturer').focus();
                     init_shoe_completer()
                    ",
-      :html => {:class => "foot_shoes_form", :id => "searched_shoe_form" }
-    }  
+      :html => { :class => "foot_shoes_form", :id => "searched_shoe_form" },
+      :method => :create,
+      :url => feet_path,
+      :remote => true
+    }
   end
 
   def delete_seached_shoe_button opts={}

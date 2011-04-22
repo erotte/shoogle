@@ -1,18 +1,16 @@
 Shoogle::Application.routes.draw do
-  resources :blas
 
   resources :feedbacks
 
   devise_for :users
   resources :manufacturers
 
-  resources :feet, :has_many => :shoes, :has_one => :searched_shoes
+  resources :feet, :has_many => :shoes, :has_one => :searched_shoes, :has_many => :forecasts
 
   match 'feet/:foot_id/forecasts/search' => 'forecasts#search', :as => :search
-  match 'feet/:foot_id/forecasts/fitting' => 'forecasts#fitting', :as => :fitting 
-  match 'feet/:foot_id/forecasts/' => 'forecasts#index', :as => :more_fitting 
-  match 'feet/:id/foot_checks/' => 'foot_checks#index', :as => :foot_check 
-  resources :feet, :has_many => :forecasts
+  match 'feet/:foot_id/forecasts/fitting' => 'forecasts#fitting', :as => :fitting
+  match 'feet/:foot_id/forecasts/' => 'forecasts#index', :as => :more_fitting
+  match 'feet/:id/foot_checks/' => 'foot_checks#index', :as => :foot_check
 
   root :to => 'feet#new'
 

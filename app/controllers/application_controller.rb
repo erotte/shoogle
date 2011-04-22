@@ -3,19 +3,19 @@
 
 class ApplicationController < ActionController::Base
   before_filter :enhance_new_registering_user_with_current_foot, :only => [:create]
-  
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  
+
   protected
-  
+
   def db
      CouchPotato.database
   end
-   
+
   private
-    
+
   def find_current_or_new_foot
     if params[:foot_id]
       @foot = db.load_document(params[:foot_id])
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     end
     @foot
   end
-  
+
   # filter um vor devise-neuregistrierung user-model zu vervollständigen 
   def enhance_new_registering_user_with_current_foot
     if params[:controller] == "registrations" and params[:user]
