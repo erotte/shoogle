@@ -17,5 +17,5 @@
 /[if lt IE 7 ]
   =javascript_include_tag "dd_belatedpng"
 
-= render :partial => 'layouts/google_analytics'  if RAILS_ENV.eql?('production')
+= render :partial => 'layouts/google_analytics'  if ::Rails.env.eql?('production')
 

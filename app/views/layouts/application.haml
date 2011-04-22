@@ -3,7 +3,7 @@
   %head
     -# www.phpied.com/conditional-comments-block-downloads/
     /[if IE]
-  
+
     %title shoesizefinder.com - wir kennen deine Schuhgröße.
     %meta{ :name => "description",  :content => "Probleme mit der Schuhgröße? Deine Sneaker von einer Marke passen, du kennst aber die richtige Größe bei einen anderen Hersteller nicht? Shoesizefinder findet den passenden Schuh für dich!"}
     %meta{ :name => "keywords",  :content => "Schuhgröße, Schuhgrößenvergleich, Schuhgrößentabelle, Schuhgröße ermitteln"}
@@ -20,9 +20,14 @@
     = stylesheet_link_tag 'application', 'jquery.autocomplete', 'formtastic', 'awesome_buttons', 'tipsy'
     = stylesheet_link_tag "handheld.css", :media => "handheld"
 
+    / TODO stylesheets und js rails 3 like
+    /<%= stylesheet_link_tag :all %>
+    /<%= javascript_include_tag :defaults %>
+    = csrf_meta_tag
+
     /[if lte IE 7]
       = stylesheet_link_tag 'ie7'
-    
+
     = yield :head
   %body{:class => body_class }
     #page
@@ -36,13 +41,13 @@
           - else
             %li= link_to "Login", new_user_session_path
             %li= link_to "Account erstellen", new_user_registration_path
-            %li= link_to "Alle Schuhe löschen", {:action => :new, :controller => :forecasts}, :confirm => "Die eingegeben Schuhe werden gelöscht.\n Fortfahren?"
+            /TODO %li= link_to "Alle Schuhe löschen", new_foot_forecast_path, :confirm => "Die eingegeben Schuhe werden gelöscht.\n Fortfahren?"
       =#render :partial => 'layouts/claim'
-      = render :partial => "/layouts/flash_block" if flash.present?    
+      = render :partial => "/layouts/flash_block" if flash.present?
       =# debug current_user
       #panel.active
-        = yield 
-      
+        = yield
+
       %footer
         %ul.metanav
           %li= link_to "Kontakt und Impressum", '/pages/impressum'

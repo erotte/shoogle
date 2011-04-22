@@ -5,15 +5,15 @@ Shoogle::Application.routes.draw do
   devise_for :users
   resources :manufacturers
 
-  resources :feet do
-    resource  :searched_shoe
-    resources :shoes, :forecasts
-  end
-
   match 'feet/:foot_id/forecasts/search' => 'forecasts#search', :as => :search
   match 'feet/:foot_id/forecasts/fitting' => 'forecasts#fitting', :as => :fitting
   match 'feet/:foot_id/forecasts/' => 'forecasts#index', :as => :more_fitting
   match 'feet/:id/foot_checks/' => 'foot_checks#index', :as => :foot_check
+
+  resources :feet do
+    resource  :searched_shoe
+    resources :shoes, :forecasts
+  end
 
   root :to => 'feet#new'
 
@@ -72,5 +72,5 @@ Shoogle::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end

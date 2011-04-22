@@ -1,14 +1,14 @@
 class ForecastsController < ApplicationController
-  before_filter :find_current_or_new_foot,  :only =>[:index, :fitting]  
+  before_filter :find_current_or_new_foot,  :only =>[:index, :fitting]
   before_filter :redirect_to_root_url_for_invalid_foot, :only =>[:fitting]
   before_filter :redirect_to_index_for_empty_searched_shoe, :only =>[:fitting]
   before_filter :find_affiliate_shoe, :only =>[:fitting]
-  
+
   def new
     session[:foot_id] = session[:searched_shoe] = nil
     redirect_to root_url
   end
-  
+
   def index
   end
 
@@ -21,7 +21,7 @@ class ForecastsController < ApplicationController
       end
     end
   end
-  
+
   private
 
   def find_affiliate_shoe
@@ -39,9 +39,9 @@ class ForecastsController < ApplicationController
       redirect_to :action => :index 
     end
   end
-  
+
   def redirect_to_root_url_for_invalid_foot
     redirect_to root_url unless @foot.has_valid_shoes?
   end
-  
+
 end

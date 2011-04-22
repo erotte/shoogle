@@ -1,5 +1,5 @@
 = render :partial => 'layouts/flash_block'
-- form_for((@feedback || Feedback.new), feedback_form_options ) do |f|
+= form_for((@feedback || Feedback.new), feedback_form_options ) do |f|
   .step_box_error= uniq_error_messages_for(@feedback)
   %fieldset.inputs
     %ol
