@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if resource.is_a?(User) && resource.foot_id?
       session[:foot_id] = resource.foot_id
-      new_foot_searched_shoes_path(resource.foot_id)
+      new_foot_searched_shoe_path(resource.foot_id)
     else
       super
     end

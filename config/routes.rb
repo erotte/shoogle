@@ -5,7 +5,10 @@ Shoogle::Application.routes.draw do
   devise_for :users
   resources :manufacturers
 
-  resources :feet, :has_many => :shoes, :has_one => :searched_shoes, :has_many => :forecasts
+  resources :feet do
+    resource  :searched_shoe
+    resources :shoes, :forecasts
+  end
 
   match 'feet/:foot_id/forecasts/search' => 'forecasts#search', :as => :search
   match 'feet/:foot_id/forecasts/fitting' => 'forecasts#fitting', :as => :fitting
