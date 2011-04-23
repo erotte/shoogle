@@ -7,8 +7,8 @@ Feature: Searching for a fitting shoe
     Given I am on the homepage
     Then I should not see "Trage jetzt die Schuhe ein, die dir gut passen"
 
-  Scenario: New visitor saves its searched shoe 
-    Given I am searching a "Nike" "Air Force 1"    
+  Scenario: New visitor saves its searched shoe
+    Given I am searching a "Nike" "Air Force 1"
     Then I should see "Trage jetzt die Schuhe ein, die dir gut passen"
 
   Scenario: The visitor saves a shoe
@@ -28,11 +28,13 @@ Feature: Searching for a fitting shoe
     And I should see "Nike"
     And I should see "Air Force 1"
 
+  @wip
   Scenario: The visitor saves shoes with comma separator
     Given I am searching a "Nike" "Air Force 1"
     And I have a "Puma" "Handball" in "11,5"
     Then I should see "11,5"
 
+  @wip
   Scenario: The visitor saves shoes with fractions
     Given I am searching a "Nike" "Air Force 1"
     And I have a "Adidas" "Samba" in "44 2/3"

@@ -15,6 +15,9 @@ Shoogle::Application.routes.draw do
     resources :shoes, :forecasts
   end
 
+  namespace :admin do
+    resources :feet
+  end
   root :to => 'feet#new'
 
   # The priority is based upon order of creation:

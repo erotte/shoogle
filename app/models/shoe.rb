@@ -22,7 +22,7 @@ class Shoe
           for each (var b in doc.shoes)
             if (a.manufacturer != b.manufacturer || a.model != b.model)
               emit([a.manufacturer, a.model, b.manufacturer, b.model], 1);
-              
+
       }
       JS
     :reduce =><<-JS,
@@ -31,8 +31,8 @@ class Shoe
       }
       JS
     :group => true,
-    :results_filter =>  lambda{ |results| 
-                          results['rows'].map do |row| 
+    :results_filter =>  lambda{ |results|
+                          results['rows'].map do |row|
                             RecommendationResult.new(row['key'][2], row['key'][3], row['value'].to_i)
                           end
                         }
@@ -75,16 +75,16 @@ class Shoe
           return false
         }
         JS
-        
+
   def self.unapproved_names
     CouchPotato.database.view( Shoe.unapproved(:group => true))["rows"].select{|row| not row["value"]}.map{|row| row["key"]}
   end
-  
+
   def self.unapproved_by_model_and_manufacturer params
-    CouchPotato.database.view( 
+    CouchPotato.database.view(
       Shoe.unapproved(:key => [params[:manufacturer], params[:model]], :reduce => false, :include_docs => true))["rows"].map{|row| row["doc"]}  
   end
-        
+
   def recommended
     CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model],
                                                 :endkey   => [@manufacturer, @model, {}] ))
@@ -95,7 +95,7 @@ class Shoe
   end
 
   def set_sizes
-    self.size = SizeFormatter.new(size_string).to_f  if size_string.present?
+    self.size = SizeFormatter.new(size_string).to_f if size_string.present?
     self.sizes = {( has_eur_size? ? :eur : :us ) => @size}
   end
 

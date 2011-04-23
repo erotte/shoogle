@@ -7,7 +7,7 @@ class Admin::ShoeNamesController < Admin::BaseController
       format.xml  { render :xml => @shoe_names }
     end
   end
-  
+
   def approve_shoes
     feet = Shoe.unapproved_by_model_and_manufacturer(:manufacturer => params[:manufacturer], :model => params[:model])
     feet.each do |foot|

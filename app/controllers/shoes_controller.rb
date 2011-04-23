@@ -1,11 +1,11 @@
 class ShoesController < ApplicationController
-  
+
   before_filter :find_current_or_new_foot
 
   def create
-    @shoe = Shoe.new(params[:shoe])    
+    @shoe = Shoe.new(params[:shoe])
     if @shoe.valid?
-      @foot.shoes << @shoe
+      @foot.shoes = [@shoe] + @foot.shoes
       db.save_document @foot
       @shoe = Shoe.new
     end

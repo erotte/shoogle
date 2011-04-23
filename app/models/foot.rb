@@ -1,5 +1,5 @@
 
-class Foot 
+class Foot
   include CouchPotato::Persistence
   property :shoes, :default => []
   property :searched_shoe, :type => SearchedShoe
@@ -9,12 +9,12 @@ class Foot
 
   view :all, :key => :created_at
 
-  view :fitting, :type => :raw, 
+  view :fitting, :type => :raw,
     :map => <<-JS,
       function(doc) {
         if (doc.ruby_class == "Foot")
-          for each (var a in doc.shoes) 
-            for each (var b in doc.shoes) 
+          for each (var a in doc.shoes)
+            for each (var b in doc.shoes)
               if (a != b && a.sizes && b.sizes)
                 for (var unit in a.sizes)
                   if (b.sizes[unit])
@@ -29,18 +29,18 @@ class Foot
         if(combine){
           for each (var intermediate_result in values) {
               result.size_sum += intermediate_result.size_sum
-              result.num_feet += intermediate_result.num_feet        
+              result.num_feet += intermediate_result.num_feet
           }
         } else {
           for each (var size in values) {
             result.size_sum += size
             result.num_feet++
           }
-        }    
-        return result 
+        }
+        return result
       }
       JS
-      
+
 
   def direct_matches
     matches = {}
@@ -118,7 +118,7 @@ class Foot
       shoe.set_sizes
     end
   end
-  
+
   private
 
   def db

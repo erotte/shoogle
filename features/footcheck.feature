@@ -13,6 +13,6 @@ Feature: Footcheck
     Then I should see "Nike"
     And I should see "Adidas"
     And I should see "Durchschnittliche Größe"
-  
-  
-  
+
+
+
