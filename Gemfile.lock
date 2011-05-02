@@ -41,6 +41,8 @@ GEM
     autotest-rails (4.1.0)
       ZenTest
     builder (2.1.2)
+    ci_reporter (1.6.3)
+      builder (>= 2.1.2)
     couchrest (1.0.1)
       json (>= 1.4.6)
       mime-types (>= 1.15)
@@ -111,6 +113,7 @@ DEPENDENCIES
   ZenTest
   autotest-growl
   autotest-rails
+  ci_reporter
   couch_potato!
   couchrest
   cucumber
