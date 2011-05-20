@@ -19,7 +19,7 @@ namespace :vlad do
 
   desc 'Restart Passenger Rails'
   remote_task :restart do
-    puts "Touching: #{deploy_to}≤/tmp/restart.txt"
+    puts "Touching: #{deploy_to}/tmp/restart.txt"
     run "touch #{deploy_to}/current/tmp/restart.txt"
   end
 

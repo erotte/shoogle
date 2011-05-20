@@ -1,21 +1,18 @@
 source :rubygems
-#gem "rails", "3.0.5"
+# gem "rails", "3.0.7" # we don't want to load activerecord so we can't require rails (install rails manually)
 gem 'railties'
 gem 'actionpack'
 gem 'actionmailer'
 gem 'activemodel'
 gem 'couch_potato'
-gem 'haml', "3.0.25"
+gem 'haml'
 gem "fastercsv", :require => false
 gem 'vlad', :require => false
 gem 'vlad-git', :require => false
-gem 'json'
-gem 'json_pure', "1.4.3"
 gem 'devise'
 gem "will_paginate"
 gem "email_veracity"
 gem "validatable"
-
 
 
 group :test do
@@ -30,7 +27,6 @@ group :test do
   gem 'capybara'
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'couch_potato'
   gem "pickle", :git => "git://github.com/ianwhite/pickle.git"
   gem 'ci_reporter'
 end
