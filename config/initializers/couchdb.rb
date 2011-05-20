@@ -1,6 +1,6 @@
 begin
 
-  env = ENV['RAILS_ENV'] || 'development'
+  env = Rails.env || 'development'
 
   couchdb_config = YAML::load(ERB.new(IO.read(::Rails.root.to_s + "/config/couchdb.yml")).result)[env]
 
