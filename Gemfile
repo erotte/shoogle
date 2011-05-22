@@ -5,7 +5,6 @@ gem 'railties'
 gem 'actionpack'
 gem 'actionmailer'
 gem 'activemodel'
-# DB Stuff
 gem 'couch_potato'
 
 # Basic Extensions
@@ -17,13 +16,12 @@ gem "email_veracity"
 
 # falls ruby >= 1.9.2 => raus damit!
 gem "fastercsv", :require => false
-      
+
+# Frontend Stuff
+gem 'haml-rails'
+gem 'jquery-rails'
 gem 'compass'
 gem 'compass-colors'
-
-# Frontend
-gem 'jquery-rails'
-gem 'haml-rails'
 
 # Deployment
 gem 'vlad'
@@ -33,7 +31,6 @@ gem 'vlad-extras'
 group :development do
   gem 'unicorn'
 end
-
 
 group :test do
   gem 'rspec'
