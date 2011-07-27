@@ -193,6 +193,7 @@ DEPENDENCIES
   actionmailer (= 3.0.9)
   actionpack (= 3.0.9)
   activemodel (= 3.0.9)
+  bundler (~> 1.0.15)
   capybara
   compass
   compass-colors
