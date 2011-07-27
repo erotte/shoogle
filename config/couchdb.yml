@@ -1,5 +1,0 @@
-#
-development: sizefinder_development
-test: sizefinder_test
-cucumber: sizefinder_cucumber
-production: sizefinder_production
