@@ -1,4 +1,6 @@
 source :rubygems
+
+gem 'bundler', '~> 1.0.15'
 # gem "rails", "3.0.9" # we don't want to load activerecord so we can't require rails (install rails manually)
 # Rails stuff without AR
 gem 'railties', '3.0.9'

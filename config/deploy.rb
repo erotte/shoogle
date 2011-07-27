@@ -39,7 +39,8 @@ set :revision, "origin/rails3"
 set :bundle_cmd, "/usr/local/rvm/gems/ree-1.8.7-2011.03/bin/bundle"
 set :web_command, "/etc/init.d/nginx"
 set :symlinks, { 'config/couchdb.yml' => 'config/couchdb.yml' }
-
+# add shared/bundle to setup
+set :shared_paths, shared_paths.merge({'bundle' => '.bundle'})
 role :app, domain
 role :web, domain
 role :db,  domain, :primary => true
@@ -49,7 +50,7 @@ require 'bundler/vlad'
 namespace :vlad do
   desc "Full deployment cycle: Update, install bundle, migrate, restart, cleanup"
   remote_task :deploy, :roles => :app do
-    %w(update symlink bundle:install migrate start_app cleanup).each do |task|
+    %w(update symlink bundle:install start_app cleanup).each do |task|
       Rake::Task["vlad:#{task}"].invoke
     end
   end
