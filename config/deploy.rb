@@ -38,7 +38,7 @@ set :repository, "git@github.com:erotte/#{application}.git"
 set :revision, "origin/rails3"
 set :bundle_cmd, "/usr/local/rvm/gems/ree-1.8.7-2011.03/bin/bundle"
 set :web_command, "/etc/init.d/nginx"
-set :symlinks, { 'config/couchdb.yml' => 'config/couchdb.yml' }
+set :symlinks, { 'couchdb.yml' => 'config/couchdb.yml' }
 # add shared/bundle to setup
 set :shared_paths, shared_paths.merge({'bundle' => '.bundle'})
 role :app, domain
