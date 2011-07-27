@@ -6,6 +6,7 @@ tmp/
 .autotest
 .sass-cache
 config/database.yml
+config/couchdb.yml
 log/*.log
 coverage
 *.pid
@@ -17,3 +18,4 @@ vendor/cache/*
 .idea
 .rake_tasks~
 .livereload
+Guardfile

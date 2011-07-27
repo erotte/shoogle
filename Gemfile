@@ -1,10 +1,10 @@
 source :rubygems
-# gem "rails", "3.0.7" # we don't want to load activerecord so we can't require rails (install rails manually)
+# gem "rails", "3.0.9" # we don't want to load activerecord so we can't require rails (install rails manually)
 # Rails stuff without AR
-gem 'railties'
-gem 'actionpack'
-gem 'actionmailer'
-gem 'activemodel'
+gem 'railties', '3.0.9'
+gem 'actionpack', '3.0.9'
+gem 'actionmailer', '3.0.9'
+gem 'activemodel', '3.0.9'
 gem 'couch_potato'
 
 # Basic Extensions
@@ -24,9 +24,11 @@ gem 'compass'
 gem 'compass-colors'
 
 # Deployment
-gem 'vlad'
-gem 'vlad-git'
-gem 'vlad-extras'
+group :rake do
+  gem 'vlad'
+  gem 'vlad-git'
+  gem 'vlad-extras'
+end
 
 group :development do
   gem 'unicorn'
