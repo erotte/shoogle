@@ -1,8 +1,9 @@
-/* @override 
-	http://localhost:3000/stylesheets/application.css?1284462650
-	http://localhost:3000/stylesheets/application.css?1284462885
-	http://localhost:3000/stylesheets/application.css?1284463083
-*/
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree .
 
 /* @group basics and resets */
 
@@ -87,7 +88,7 @@ h3 {
 /* @group Layout */
 
 html {
-	background: #0080C9 url(/images/app/karton_bg.jpg) repeat-x;
+	background: #0080C9 url(/assets/app/karton_bg.jpg) repeat-x;
 }
 
 body {
@@ -370,7 +371,7 @@ ul.metanav li a:hover {
 }
 	
 .form_wrap {
-	background: #fff url(/images/app/grau_bg.gif) repeat-y 590px 0;
+	background: #fff url(/assets/app/grau_bg.gif) repeat-y 590px 0;
 	position: relative;
 }
 .message {
@@ -462,7 +463,7 @@ input:focus {
 
 .buttonwrap {
 	display: inline-block;
-	background:  url(/images/app/btn_pfeil.png) no-repeat left center;
+	background:  url(/assets/app/btn_pfeil.png) no-repeat left center;
 	padding-left: 20px;
 }
 
@@ -470,7 +471,7 @@ input:focus {
 	width:  558px;
 	margin-bottom: 15px;
 	padding: 10px 12px 28px 13px;
-	background: #0080C9 url(/images/app/step_pfeil.gif) repeat-x center bottom;
+	background: #0080C9 url(/assets/app/step_pfeil.gif) repeat-x center bottom;
 	color: white;
 	font-size: 16px;
 }
@@ -478,7 +479,7 @@ input:focus {
 .step_box.error {
 	margin-top: 15px;
 	padding: 28px 12px 12px 12px;
-	background: #900 url(/images/app/error_pfeil.gif) repeat-x center top;
+	background: #900 url(/assets/app/error_pfeil.gif) repeat-x center top;
 	color: white;
 	font-size: 16px;
 }
@@ -633,7 +634,7 @@ table#foot_check_shoes {
 /* @group Rating */
 
 .stars {
-  background-image:  url(/images/app/rating_stars.png);
+  background-image:  url(/assets/app/rating_stars.png);
   background-repeat: no-repeat;	
   display: inline-block;	
   width: 120px;
@@ -752,7 +753,7 @@ ol.results li:hover p{
 ol.results a, 
 ol.results a:visited {
 	text-decoration: none;
-	background: #fff url(/images/app/not_available.png) no-repeat 0 8px;
+	background: #fff url(/assets/app/not_available.png) no-repeat 0 8px;
 	display: block;
 	height: 185px;
 	width: 150px;
@@ -850,8 +851,10 @@ ol.results a:hover .product_name {
 }
 
 #matching_shoes ol.results a, 
+
+
 #matching_shoes ol.results a:visited {
-	background: #fff url(/images/app/not_available_small.png) no-repeat 0 4px;
+	background: #fff url(/assets/app/not_available_small.png) no-repeat 0 4px;
 	height: 110px;
 	width: 98px;
 	margin: 1px;

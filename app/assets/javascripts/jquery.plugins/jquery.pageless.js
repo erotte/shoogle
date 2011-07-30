@@ -47,7 +47,7 @@
     url:          location.href,
     params:       {}, // params of the query you can pass auth_token here
     distance:     100, // page distance in px to the end when the ajax function is launch
-    loaderImage:  "/images/load.gif",
+    loaderImage:  "/assets/load.gif",
 	scrape: function(data) { }  // Don't do anything by default
   };
   
