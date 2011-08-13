@@ -31,7 +31,7 @@ gem "validatable"
 gem 'devise'
 gem "will_paginate" # may be replaced by kaminari
 gem "email_veracity"
-# gem 'settingslogic'
+gem 'settingslogic'
 
 # falls ruby >= 1.9.2 => raus damit!
 gem "fastercsv", :require => false
