@@ -1,21 +1,10 @@
--# Typekit Demo
--#%script{:src => "http://use.typekit.com/qvh7vcn.js"}
--#:javascript
--#  try{Typekit.load();}catch(e){}
 
--#Grab Google CDN's jQuery. fall back to local if necessary
-%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
-:javascript
-  !window.jQuery && document.write('<script src="/javascripts/jquery.js"><\/script>')
-= javascript_include_tag 'jquery.plugins/jquery.autocomplete',       |
-  'jquery.plugins/jquery.custom', 'jquery-ui-1.7.3.custom.min', 'jquery.plugins/jquery.tipsy', 'application' |
-:javascript
-  $(function() {
-      $('a[rel=tipsy]').tipsy({fade: true, gravity: 's', live: true}).live('click', function(){return $(this).tipsy('hide')});
-  });
 
-/[if lt IE 7 ]
-  =javascript_include_tag "dd_belatedpng"
+= javascript_include_tag 'application'
+:javascript
+  -#$(function() {
+  -#    $('a[rel=tipsy]').tipsy({fade: true, gravity: 's', live: true}).live('click', function(){return $(this).tipsy('hide')});
+  -#});
 
 = render :partial => 'layouts/google_analytics'  if ::Rails.env.eql?('production')
 

@@ -14,7 +14,7 @@ Shoogle::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
-  
+
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 

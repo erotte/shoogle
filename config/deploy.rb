@@ -35,7 +35,7 @@ set :domain, "178.77.76.127"
 set :deploy_to, "/var/www/#{application}"
 set :repository, "git@github.com:erotte/#{application}.git"
 # Revision defaults to master
-set :revision, "origin/rails3"
+set :revision, "origin/rails3.1"
 set :bundle_cmd, "/usr/local/rvm/gems/ree-1.8.7-2011.03/bin/bundle"
 set :web_command, "/etc/init.d/nginx"
 set :symlinks, { 'couchdb.yml' => 'config/couchdb.yml' }
@@ -50,8 +50,14 @@ require 'bundler/vlad'
 namespace :vlad do
   desc "Full deployment cycle: Update, install bundle, migrate, restart, cleanup"
   remote_task :deploy, :roles => :app do
-    %w(update symlink bundle:install start_app cleanup).each do |task|
+    %w(update symlink bundle:install assets start_app cleanup).each do |task|
       Rake::Task["vlad:#{task}"].invoke
     end
+  end
+
+
+  desc "Compile assets"
+  task :assets do
+    run "cd #{release_path}; RAILS_ENV=#{rails_env}; #{bundle_cmd} exec rake assets:precompile"
   end
 end

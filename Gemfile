@@ -6,7 +6,7 @@ gem 'bundler', '~> 1.0.15'
 gem 'railties',     '3.1.0.rc5'
 gem 'actionpack',   '3.1.0.rc5'
 gem 'actionmailer', '3.1.0.rc5'
-gem 'activemodel',  '3.1.0.rc5'  
+gem 'activemodel',  '3.1.0.rc5'
 
 
 gem 'couch_potato'
@@ -14,8 +14,8 @@ gem 'couch_potato'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "~> 3.1.0.rc"
-  gem 'coffee-rails', "~> 3.1.0.rc"
+  gem 'sass-rails', "~> 3.1.0.rc.5"
+  gem 'coffee-rails', "~> 3.1.0.rc.5"
   gem 'uglifier'
 end
 

@@ -6,7 +6,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery-ui
+//= require_tree ./jquery.plugins
+// require_tree .
 
 
 
