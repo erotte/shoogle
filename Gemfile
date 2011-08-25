@@ -8,7 +8,6 @@ gem 'actionpack',   '3.1.0.rc5'
 gem 'actionmailer', '3.1.0.rc5'
 gem 'activemodel',  '3.1.0.rc5'
 
-
 gem 'couch_potato'
 
 # Gems used only for assets and not required
@@ -63,6 +62,7 @@ group :test do
   gem 'syntax'
   gem 'database_cleaner'
   gem 'capybara'
+  gem "capybara-webkit"
   gem "pickle", :git => "git://github.com/ianwhite/pickle.git"
   gem 'email_spec'
 end
