@@ -62,7 +62,7 @@ group :test do
   gem 'syntax'
   gem 'database_cleaner'
   gem 'capybara'
-  gem "capybara-webkit"
+  #gem "capybara-webkit"
   gem "pickle", :git => "git://github.com/ianwhite/pickle.git"
   gem 'email_spec'
 end
