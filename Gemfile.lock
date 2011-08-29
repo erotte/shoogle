@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/couchrest/couchrest_model.git
+  revision: 1c695f58bf76e310259f5928c884c961bfa47586
+  specs:
+    couchrest_model (1.1.2)
+      activemodel (~> 3.0)
+      couchrest (~> 1.1.2)
+      mime-types (~> 1.15)
+      tzinfo (~> 0.3.22)
+
+GIT
   remote: git://github.com/ianwhite/pickle.git
   revision: ffc1c3e15932f6167670ba9444b992577c30b754
   specs:
@@ -64,15 +74,6 @@ GIT
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.6)
-
-GIT
-  remote: https://github.com/langalex/couch_potato.git
-  revision: 28bf95524df9069ca4e149a1f2b2e934c7f6475f
-  specs:
-    couch_potato (0.5.7)
-      activemodel
-      couchrest (>= 1.0.1)
-      json
 
 GEM
   remote: http://rubygems.org/
@@ -268,7 +269,7 @@ DEPENDENCIES
   coffee-rails
   compass
   compass-colors
-  couch_potato!
+  couchrest_model!
   cucumber-rails
   database_cleaner
   decent_exposure

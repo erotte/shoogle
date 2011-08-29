@@ -1,4 +1,4 @@
-class Match
+class Match 
   attr_accessor :num_feet, :size, :size_diff, :unit 
   
   def initialize result_hash, size, unit

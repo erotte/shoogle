@@ -5,7 +5,8 @@ gem 'bundler', '~> 1.0.15'
 # Edge Rails 3.1:
 gem 'rails', :git => "git://github.com/rails/rails.git", :branch => "3-1-stable" 
 # ToDo: Switch app to couchrest and couchrest_model 
-gem 'couch_potato', :git => 'https://github.com/langalex/couch_potato.git'
+# gem 'couch_potato', :git => 'https://github.com/langalex/couch_potato.git'
+gem 'couchrest_model', :git  => 'git://github.com/couchrest/couchrest_model.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

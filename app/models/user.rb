@@ -1,6 +1,4 @@
-class User
-  include CouchPotato::Persistence
-
+class User < CouchRest::Model::Base
 
   validates_acceptance_of :agb_accept,
                      :message => "Bitte akzeptiere unsere Nutzungsbedingungen",
@@ -28,15 +26,15 @@ class User
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :confirmable
 
   property :foot_id
-  property :agb_accept, :type => :boolean
+  property :agb_accept, TrueClass
   property :email
   property :password_salt
   property :encrypted_password
 
-  view :by_id, :key => :_id
-  view :by_email, :key => :email
-  view :by_reset_password_token, :key => :reset_password_token
-  view :by_confirmation_token, :key => :confirmation_token
+  view_by :id
+  view_by :email
+  view_by :reset_password_token
+  view_by :confirmation_token
 
   def self.first options
     Rails.logger.debug options.inspect

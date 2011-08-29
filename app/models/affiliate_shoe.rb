@@ -1,5 +1,4 @@
-class AffiliateShoe 
-    include CouchPotato::Persistence
+class AffiliateShoe < CouchRest::Model::Base
   
     property :productname
     property :price

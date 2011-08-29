@@ -1,10 +1,9 @@
-class Shoe
+class Shoe < CouchRest::Model::Base
 
   SIZE_REGEXP = /^\d{1,2}(,|.)?(\d{1,2}?|\s?(\d\/\d|&.{6};))$/ # 42, 42,5, 42.5, 42 1/2, 42 &frac12;
-  include CouchPotato::Persistence
   include ActionView::Helpers::NumberHelper
 
-  property :size, :type => Float
+  property :size, Float
   property :size_string
   property :sizes
   property :model

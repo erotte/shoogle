@@ -1,5 +1,4 @@
-class Manufacturer
-  include CouchPotato::Persistence
+class Manufacturer < CouchRest::Model::Base
   
   property :name
   validates_presence_of :name

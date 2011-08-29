@@ -1,4 +1,4 @@
-class Forecast
+class Forecast < CouchRest::Model::Base
 
   attr_accessor :size, 
     :average_shoe_size,

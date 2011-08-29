@@ -1,11 +1,10 @@
-class Feedback
-  include CouchPotato::Persistence
+class Feedback  < CouchRest::Model::Base
   after_save :send_as_mail
   property :firstname
   property :lastname
   property :email
   property :message
-  property :created_at, :type => Time
+  property :created_at, Time
   property :ua
   property :session_data
 

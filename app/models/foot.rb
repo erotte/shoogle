@@ -1,9 +1,8 @@
 
-class Foot
-  include CouchPotato::Persistence
+class Foot < CouchRest::Model::Base
   property :shoes, :default => []
-  property :searched_shoe, :type => SearchedShoe
-  property :user, :type => User
+  property :searched_shoe, SearchedShoe
+  property :user, User
 
   before_save :set_shoe_sizes
 
