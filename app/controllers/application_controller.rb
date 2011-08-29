@@ -1,12 +1,10 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
   before_filter :enhance_new_registering_user_with_current_foot, :only => [:create]
+  respond_to :html, :js
+  # can't believe that this isn't the default:
+  layout proc{ |c| c.request.xhr? ? false : "application" }
 
-  helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
 
   protected
 
@@ -18,13 +16,15 @@ class ApplicationController < ActionController::Base
 
   def find_current_or_new_foot
     if params[:foot_id]
-      @foot = db.load_document(params[:foot_id])
+      foot = db.load_document(params[:foot_id])
     elsif session[:foot_id]
-      @foot = db.load_document(session[:foot_id]) || Foot.new
+      foot = db.load_document(session[:foot_id]) || Foot.new
     else
-      @foot = Foot.new unless @foot
+      foot = Foot.new unless foot
     end
-    @foot
+    p foot
+    p foot.new_record?
+    foot
   end
 
   # filter um vor devise-neuregistrierung user-model zu vervollständigen 

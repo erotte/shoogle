@@ -545,15 +545,15 @@ input:focus {
 
 /* @end */
 
-.foot_shoes_form input.manufacturer {
+form.new_foot input.manufacturer {
 	width: 10em;
 }
 
-.foot_shoes_form input.model {
+form.new_foot input.model {
 	width: 10em;
 }
 
-.foot_shoes_form input.size {
+form.new_foot input.size {
 	width: 5em;
 }
 

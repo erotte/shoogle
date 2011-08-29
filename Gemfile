@@ -23,6 +23,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'compass'
 gem 'compass-colors'
+gem 'simple_form'
 
 # Basic Extensions
 gem 'tzinfo'
@@ -31,6 +32,8 @@ gem 'devise'
 gem "will_paginate" # may be replaced by kaminari
 gem "email_veracity"
 gem 'settingslogic'
+#gem 'responders'
+gem 'decent_exposure'
 
 # falls ruby >= 1.9.2 => raus damit!
 gem "fastercsv", :require => false

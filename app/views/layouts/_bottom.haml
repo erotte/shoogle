@@ -2,9 +2,9 @@
 
 = javascript_include_tag 'application'
 :javascript
-  -#$(function() {
-  -#    $('a[rel=tipsy]').tipsy({fade: true, gravity: 's', live: true}).live('click', function(){return $(this).tipsy('hide')});
-  -#});
+  //$(function() {
+  //    $('a[rel=tipsy]').tipsy({fade: true, gravity: 's', live: true}).live('click', function(){return $(this).tipsy('hide')});
+  //});
 
-= render :partial => 'layouts/google_analytics'  if ::Rails.env.eql?('production')
+= render :partial => 'layouts/google_analytics' if ::Rails.env.eql?('production')
 

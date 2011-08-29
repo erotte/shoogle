@@ -2,7 +2,7 @@
 -if flash[:message]
   %p.message=flash[:message]   
     
-- @feet.each do |foot|
+- feet.each do |foot|
   %br 
   =link_to("Anzeigen und Suchen", foot)
   |
@@ -18,5 +18,5 @@
         %td=shoe.manufacturer
         %td=shoe.model
         %td=shoe.size
-        %td=link_to image_tag('app/cross.png' , :class => 'delete'), "/feet/#{foot.id}/shoes/#{shoe_counter}", :method => :delete
+        %td=link_to image_tag('app/cross.png' , :class => 'delete'), "/admin/feet/#{foot.id}/shoes/#{shoe_counter}", :method => :delete
   

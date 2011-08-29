@@ -1,17 +1,18 @@
 module FeetHelper
 
   def searched_shoe_form_options
-    { :update => 'panel',
-      :complete => "
-                    $('#add_shoe_form').show();
-                    $('#losjetzt_eingeben').show('drop', { direction: 'up' });
-                    $('#search_shoes_submit').val('Ändern');
-                    $('#foot_fields input.manufacturer').focus();
-                    init_shoe_completer()
-                   ",
-      :html => { :class => "foot_shoes_form", :id => "searched_shoe_form" },
-      :method => :create,
-      :url => feet_path,
+    {
+      #  :update => 'panel',
+      #:complete => "
+      #              $('#add_shoe_form').show();
+      #              $('#losjetzt_eingeben').show('drop', { direction: 'up' });
+      #              $('#search_shoes_submit').val('Ändern');
+      #              $('#foot_fields input.manufacturer').focus();
+      #              init_shoe_completer()
+      #             ",
+      #:html => { :class => "foot_shoes_form", :id => "searched_shoe_form" },
+      #:method => :create,
+      #:url => feet_path,
       :remote => true
     }
   end
@@ -19,7 +20,7 @@ module FeetHelper
   def delete_seached_shoe_button opts={}
     link_to image_tag('app/icons_small/cross.png' ),
                    {
-                    :url => foot_searched_shoe_path(@foot),
+                    :url => foot_searched_shoe_path(foot),
                     :method => :delete, :update => 'panel',
                     :before => '$(this).parent("li").slideUp()',
                     :complete => "
@@ -49,7 +50,7 @@ module FeetHelper
 
   def delete_shoe_button counter
     link_to image_tag('app/icons_small/cross.png'),
-                   :url => "/feet/#{@foot.id}/shoes/#{counter}",
+                   :url => "/feet/#{foot.id}/shoes/#{counter}",
                    :method => :delete, :update => 'shoes_list_wrap',
                    :before => '$(this).parent("li").slideUp()',
                    :html => {:class => 'delete', :title => 'Schuh löschen', :rel => 'tipsy'},

@@ -1,8 +1,10 @@
 Shoogle::Application.routes.draw do
 
-  resources :feedbacks
+  root :to => 'feet#new'
 
   devise_for :users
+
+  resources :feedbacks
   resources :manufacturers
 
   match 'feet/:foot_id/forecasts/search' => 'forecasts#search', :as => :search
@@ -18,7 +20,6 @@ Shoogle::Application.routes.draw do
   namespace :admin do
     resources :feet
   end
-  root :to => 'feet#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -7,25 +7,29 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require_tree ./jquery.plugins
+// require_tree ./jquery.plugins
 // require_tree .
-
-
-
 
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-jQuery.ajaxSetup({
-    'beforeSend': function(xhr) {
-        xhr.setRequestHeader('Accept', 'text/javascript')
-    }
-})
 
 $(document).ready(function() {
+$('#new_foot')
+  .live('ajax:complete', function(evt, data, status, xhr){
+    $('#panel').html(data.responseText);
+    $('#add_shoe_form').show();
+    // do something with 'data' response object
+  })
+      //
+      //              $('#losjetzt_eingeben').show('drop', { direction: 'up' });
+      //              $('#search_shoes_submit').val('Ändern');
+      //              $('#foot_fields input.manufacturer').focus();
+      //              init_shoe_completer()
+      //             ",
 
-    init_shoe_completer()
+//    init_shoe_completer()
     init_feedback_slider()
-    $("input.passive").toggleDefaultValue();
+//    $("input.passive").toggleDefaultValue();
     $('#step-1').show("drop", { direction: "up", duration: 1200 })
 //    $('#feedback input[type=submit]').live('click', function(event){
 //       $(this).disable();

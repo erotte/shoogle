@@ -1,7 +1,7 @@
 
 .form_wrap
   #searched_shoe
-    - if @foot.searched_shoe
+    - if foot.searched_shoe
       = render :partial => 'feet/searched_shoe'
     - else
       = render :partial => 'feet/searched_shoe_form'
