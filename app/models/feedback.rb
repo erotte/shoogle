@@ -9,8 +9,8 @@ class Feedback
   property :ua
   property :session_data
 
-  validates_true_for :email,
-                     :logic => Proc.new{|v| ev = EmailVeracity::Address.new(v.email);ev.valid? && !ev.domain.blacklisted?},
+  validates_format_of :email,
+                     :with  => Devise.email_regexp,
                      :message => "Bitte gib eine gültige Email-Adresse an"
 
   validates_presence_of :message, :message => "Bitte gib eine Nachricht ein"

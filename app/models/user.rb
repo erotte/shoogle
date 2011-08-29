@@ -1,18 +1,13 @@
 class User
   include CouchPotato::Persistence
 
-  #validates_acceptance_of :agb_accept,
-                          #:message => "Bitte akzeptiere unsere Nutzungsbedingungen",
-                          #:if => Proc.new { |u| u.new_record? }
 
-  validates_true_for :agb_accept,
-                     :logic => Proc.new{|u| u.agb_accept},
+  validates_acceptance_of :agb_accept,
                      :message => "Bitte akzeptiere unsere Nutzungsbedingungen",
                      :if => Proc.new { |u| u.new_record? }
 
-  validates_true_for :email,
-                     :logic => Proc.new{|v| ev = EmailVeracity::Address.new(v.email); (ev.valid? && !ev.domain.blacklisted?)},
-                     :message => "Bitte gib eine gültige Email-Adresse an"
+  validates_format_of :email,
+                     :with  => Devise.email_regexp
 
   validates_presence_of :password,
                         :password_confirmation,
@@ -28,7 +23,8 @@ class User
 
   class << self
     include Devise::Models
-  end
+  end   
+  
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :confirmable
 
   property :foot_id

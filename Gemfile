@@ -1,22 +1,28 @@
 source :rubygems
 
-gem 'bundler', '~> 1.0.15'
-# gem "rails", "3.0.9" # we don't want to load activerecord so we can't require rails (install rails manually)
-# Rails stuff without AR
-gem 'railties',     '3.1.0.rc5'
-gem 'actionpack',   '3.1.0.rc5'
-gem 'actionmailer', '3.1.0.rc5'
-gem 'activemodel',  '3.1.0.rc5'
+gem 'bundler', '~> 1.0.15'                                                      
 
-gem 'couch_potato'
+# Edge Rails 3.1:
+gem 'rails', :git => "git://github.com/rails/rails.git", :branch => "3-1-stable" 
+# ToDo: Switch app to couchrest and couchrest_model 
+gem 'couch_potato', :git => 'https://github.com/langalex/couch_potato.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "~> 3.1.0.rc.5"
-  gem 'coffee-rails', "~> 3.1.0.rc.5"
+  gem 'sass-rails', :branch => "3-1-stable"       
+  gem 'coffee-rails', :branch => "3-1-stable"       
   gem 'uglifier'
 end
+
+# Basic Extensions
+gem 'tzinfo'
+gem "devise", :git  => "git://github.com/plataformatec/devise.git"
+gem "will_paginate" # may be replaced by kaminari
+gem "email_veracity"
+gem 'settingslogic'
+#gem 'responders'
+gem 'decent_exposure'
 
 # Frontend Stuff
 gem 'haml-rails'
@@ -24,21 +30,11 @@ gem 'jquery-rails'
 gem 'compass'
 gem 'compass-colors'
 gem 'simple_form'
-
-# Basic Extensions
-gem 'tzinfo'
-gem "validatable"
-gem 'devise'
-gem "will_paginate" # may be replaced by kaminari
-gem "email_veracity"
-gem 'settingslogic'
-#gem 'responders'
-gem 'decent_exposure'
+gem 'rails-backbone'
 
 # falls ruby >= 1.9.2 => raus damit!
 gem "fastercsv", :require => false
-
-
+                     
 # Deployment
 group :rake do
   gem 'vlad'
