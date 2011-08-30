@@ -3,7 +3,7 @@ class Manufacturer < CouchRest::Model::Base
   property :name
   validates_presence_of :name
   
-  view :by_start_of_name, :type => :raw,
+  view_by :start_of_name, :type => :raw,
     :results_filter => lambda{|results| results['rows'].map{|row| m = Manufacturer.new; m.name=row['value']; m}},
     :map => <<-JS
       function(doc) {

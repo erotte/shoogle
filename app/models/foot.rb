@@ -3,43 +3,45 @@ class Foot < CouchRest::Model::Base
   property :searched_shoe, SearchedShoe
   property :user, User
 
-
   before_save :set_shoe_sizes
 
-  #view :all, :key => :created_at
-  #
-  #view :fitting, :type => :raw,
-  #  :map => <<-JS,
-  #    function(doc) {
-  #      if (doc.ruby_class == "Foot")
-  #        for each (var a in doc.shoes)
-  #          for each (var b in doc.shoes)
-  #            if (a != b && a.sizes && b.sizes)
-  #              for (var unit in a.sizes)
-  #                if (b.sizes[unit])
-  #                  emit([unit, a.manufacturer, b.manufacturer, a.model, b.model, a.sizes[unit]],
-  #                       b.sizes[unit]-a.sizes[unit]);
-  #    }
-  #    JS
-  #  :reduce => <<-JS
-  #    function (key, values, combine) {
-  #      var result = {size_sum:0, num_feet:0}
-  #
-  #      if(combine){
-  #        for each (var intermediate_result in values) {
-  #            result.size_sum += intermediate_result.size_sum
-  #            result.num_feet += intermediate_result.num_feet
-  #        }
-  #      } else {
-  #        for each (var size in values) {
-  #          result.size_sum += size
-  #          result.num_feet++
-  #        }
-  #      }
-  #      return result
-  #    }
-  #    JS
+  design do
 
+    #view :all, :key => :created_at
+
+    view :fitting, :raw => true,
+      :map => <<-JS,
+        function(doc) {
+          if (doc.ruby_class == "Foot" || doc.type == "Foot")
+            for each (var a in doc.shoes)
+              for each (var b in doc.shoes)
+                if (a != b && a.sizes && b.sizes)
+                  for (var unit in a.sizes)
+                    if (b.sizes[unit])
+                      emit([unit, a.manufacturer, b.manufacturer, a.model, b.model, a.sizes[unit]],
+                           b.sizes[unit]-a.sizes[unit]);
+        }
+        JS
+      :reduce => <<-JS
+        function (key, values, combine) {
+          var result = {size_sum:0, num_feet:0}
+
+          if(combine){
+            for each (var intermediate_result in values) {
+                result.size_sum += intermediate_result.size_sum
+                result.num_feet += intermediate_result.num_feet
+            }
+          } else {
+            for each (var size in values) {
+              result.size_sum += size
+              result.num_feet++
+            }
+          }
+          return result
+        }
+        JS
+
+  end
 
   def direct_matches
     matches = {}

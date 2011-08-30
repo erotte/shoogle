@@ -2,11 +2,6 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'couch_potato/rspec'
-require 'factory'
-
-#Capybara.javascript_driver = :webkit
-
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -30,13 +25,3 @@ RSpec.configure do |config|
   # instead of true.
   #config.use_transactional_fixtures = true
 end
-
-CouchPotato::Config.database_name = 'couch_potato_test'
-
-#CouchPotato::Config.validation_framework = ENV['VALIDATION_FRAMEWORK'].to_sym unless ENV['VALIDATION_FRAMEWORK'].blank?
-
-def recreate_db
-  CouchPotato.couchrest_database.recreate!
-end
-#recreate_db
-

@@ -13,9 +13,7 @@ class AffiliateShoe < CouchRest::Model::Base
     property :manufacturer
     property :sex
 
-    view :all, :key => :created_at
-
-    view :by_words_of_name, :type => :custom, :include_docs => true,
+    view_by :words_of_name, :type => :custom, :include_docs => true,
       :map => <<-JS
         function(doc) {
           if (doc.ruby_class != "AffiliateShoe") return
