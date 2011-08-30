@@ -1,21 +1,22 @@
 class Shoe < CouchRest::Model::Base
-
   SIZE_REGEXP = /^\d{1,2}(,|.)?(\d{1,2}?|\s?(\d\/\d|&.{6};))$/ # 42, 42,5, 42.5, 42 1/2, 42 &frac12;
   include ActionView::Helpers::NumberHelper
 
   property :size, Float
-  property :size_string
-  property :sizes
-  property :model
-  property :manufacturer
-  property :approved
+  property :size_string, String
+  property :sizes, [Float]
+  property :model, String
+  property :manufacturer, String
+  property :approved, TrueClass
+  timestamps!
 
   validates_presence_of :manufacturer, :message => "Bitte gib einen Hersteller ein"
   validates_presence_of :size_string, :message => "Bitte gib eine Größe ein"
   validates_format_of :size_string, :with => SIZE_REGEXP, :message => "Bitte gib die Größe mit einer, maximal zwei Nachkommastellen an, z.B. 10, 10.5,  44,5, 43.66. "
 
-  view :recommended, :type => :raw,
-    :map => <<-JS,
+  design do
+    view :recommended, :raw => true,
+      :map => <<-JS,
       function(doc) {
         for each (var a in doc.shoes)
           for each (var b in doc.shoes)
@@ -24,22 +25,21 @@ class Shoe < CouchRest::Model::Base
 
       }
       JS
-    :reduce =><<-JS,
+      :reduce =><<-JS,
       function (key, values) {
         return sum(values)
       }
       JS
-    :group => true,
-    :results_filter =>  lambda{ |results|
-                          results['rows'].map do |row|
-                            RecommendationResult.new(row['key'][2], row['key'][3], row['value'].to_i)
-                          end
-                        }
-
+      :group => true,
+      :results_filter => lambda { |results|
+        results['rows'].map do |row|
+          RecommendationResult.new(row['key'][2], row['key'][3], row['value'].to_i)
+        end
+      }
     view :names_by_start_of_name, :type => :raw,
       :map => <<-JS,
         function(doc) {
-          if (doc.ruby_class == "Foot")
+          if (doc.ruby_class == "Foot"  ||  doc.type == "Foot")
             for each (var shoe in doc.shoes)
               if (shoe.approved)
                 for each (var word in shoe.model.toLowerCase().split(" "))
@@ -55,10 +55,10 @@ class Shoe < CouchRest::Model::Base
       :group => true,
       :results_filter => lambda{|results| results['rows'].map{|row| row['value']}}
 
-    view :unapproved, :type => :raw,
+    view :unapproved, :raw => true,
       :map => <<-JS,
         function(doc) {
-          if (doc.ruby_class == "Foot")
+          if (doc.ruby_class == "Foot" ||  doc.type == "Foot")
             for each (var shoe in doc.shoes)
               if (shoe.approved)
                 emit([shoe.manufacturer, shoe.model], true)
@@ -74,24 +74,25 @@ class Shoe < CouchRest::Model::Base
           return false
         }
         JS
-
-  def self.unapproved_names
-    CouchPotato.database.view( Shoe.unapproved(:group => true))["rows"].select{|row| not row["value"]}.map{|row| row["key"]}
   end
 
-  def self.unapproved_by_model_and_manufacturer params
-    CouchPotato.database.view(
-      Shoe.unapproved(:key => [params[:manufacturer], params[:model]], :reduce => false, :include_docs => true))["rows"].map{|row| row["doc"]}  
-  end
-
-  def recommended
-    CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model],
-                                                :endkey   => [@manufacturer, @model, {}] ))
-  end
-
-  def size= value
-    @size = SizeFormatter.new(value).to_f
-  end
+  #def self.unapproved_names
+  #  CouchPotato.database.view( Shoe.unapproved(:group => true))["rows"].select{|row| not row["value"]}.map{|row| row["key"]}
+  #end
+  #
+  #def self.unapproved_by_model_and_manufacturer params
+  #  CouchPotato.database.view(
+  #    Shoe.unapproved(:key => [params[:manufacturer], params[:model]], :reduce => false, :include_docs => true))["rows"].map{|row| row["doc"]}
+  #end
+  #
+  #def recommended
+  #  CouchPotato.database.view( Shoe.recommended(:startkey => [@manufacturer, @model],
+  #                                              :endkey   => [@manufacturer, @model, {}] ))
+  #end
+  #
+  #def size= value
+  #  @size = SizeFormatter.new(value).to_f
+  #end
 
   def set_sizes
     self.size = SizeFormatter.new(size_string).to_f if size_string.present?
