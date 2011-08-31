@@ -13,8 +13,8 @@ describe Foot do
     @foot.shoes = [@samba, @allstar]
   end
 
-  describe "it should have associated shoes" do
-    @foot.should_not be_nil
+  describe "it should validate" do
+    p Factory.build(:shoe)
   end
 
   #describe "when computing direct matches" do

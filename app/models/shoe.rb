@@ -90,9 +90,10 @@ class Shoe < CouchRest::Model::Base
   #                                              :endkey   => [@manufacturer, @model, {}] ))
   #end
   #
-  #def size= value
-  #  @size = SizeFormatter.new(value).to_f
-  #end
+  def size= value
+    @size = SizeFormatter.new(value).to_f
+    set_sizes
+  end
 
   def set_sizes
     self.size = SizeFormatter.new(size_string).to_f if size_string.present?

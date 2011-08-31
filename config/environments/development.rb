@@ -24,3 +24,8 @@ Shoogle::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+# Replace IRB with Pry for rails console.
+if defined? IRB
+  Object.send(:remove_const, :IRB)
+  IRB = Pry
+end

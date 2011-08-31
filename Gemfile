@@ -45,18 +45,25 @@ end
 
 group :development do
   gem 'unicorn'
+  gem 'pry'
+  gem 'pry-doc'
+end
+
+group :test, :development do
+  gem 'factory_girl_rails' #, :require => nil  
+  gem 'faker', :git => 'git://github.com/kuehnert/faker.git'
 end
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
-
   gem 'rspec'
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'fuubar'
   gem 'fuubar-cucumber'    
   gem 'spork'
+  gem 'factory_girl_rails'
   gem 'infinity_test'
   gem 'launchy'
   gem 'syntax'
